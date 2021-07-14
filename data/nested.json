@@ -1,0 +1,85 @@
+{
+  "monsters": [
+    {
+      "id": 1,
+      "name": "goblin",
+      "ac": "15",
+      "hp": "7",
+      "cr": "0.5"
+    },
+    {
+      "id": 2,
+      "name": "dragon",
+      "ac": "17",
+      "hp": "240",
+      "cr": "15"
+    },
+    {
+      "id": 3,
+      "name": "wolf",
+      "ac": "12",
+      "hp": "15",
+      "cr": "1"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "1",
+      "name": "Sword Coast Adventures",
+      "npcs": [
+        {
+          "id": "1",
+          "name": "Gundren Rockseeker"
+        }
+      ],
+      "adventures": [
+        {
+          "id": "1",
+          "name": "Goblin Arrows",
+          "encounters": [
+            {
+              "id": "1",
+              "name": "Ambush on the Tribor Trail"
+            },
+            {
+              "id": "2",
+              "name": "Cave entrance"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Jungles of Chult",
+      "adventures": [
+        {
+          "id": "1",
+          "name": ""
+        },
+        {
+          "id": "2",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Curse of Strahd",
+      "adventures": [
+        {
+          "id": "1",
+          "name": ""
+        },
+        {
+          "id": "2",
+          "name": ""
+        }
+      ]
+    }
+  ]
+}
