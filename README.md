@@ -46,8 +46,15 @@ The app will make use of several pages, using React Router functionality. https:
 State will be passed through the app via the react-router-dom Link component. Then accessed using useLocation(). https://dev.to/maxcell/react-router-using-location-state-for-custom-ui-navigation-2ia9?utm_source=pocket_mylist
 
 Home
-* Monsters
-    * Edit Monsters
-    * Edit Monsters
+* Monsters List
+    * Add monster
+    * View monster
+        * Edit monster
+        * Delete monster
+* Campaigns list
+    * Add campaign
+    * View campaign. Shows the list of adventures in the campaign.
+        * Edit campaign
+        * Delete campaign
      
     
