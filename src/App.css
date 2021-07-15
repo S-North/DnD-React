@@ -1,38 +1,239 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+body {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    margin: 0px;
+    border: 0px;
+    background-color: rgb(235, 235, 235);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+/* ----- typography --- */
+/* -------------------- */
+p, h1, h2, h3 {
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.3ch;
+}
+
+h1 {
+    font-size: 3ch;
+}
+
+h2 {
+    font-size: 2.2ch;
+}
+
+h3 {
+    font-size: 1.6ch;
+    font-weight: normal;
+}
+
+
+
+/* ------ layout ------ */
+/* -------------------- */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1ch 0ch 2ch 0ch;
+    color: ghostwhite;
+    background-color: rgb(86, 84, 116);
+}
+
+.navbar > div {
+    max-width: 160ch;
+    margin: auto;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 4px;
+    color: ghostwhite;
+}
+
+main {
+    margin: auto;
+    padding: 0ch 1ch;
+}
+
+
+.main-header {
+    padding: 1ch;
+    max-width: 100ch;
+    padding-bottom: 2ch;
+}
+
+.content {
+    padding: 2ch;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 4px;
+    /* justify-content: center; */
+}
+
+.flex-row {
+    display: flex;
+    gap: 1ch;
+    align-items: center;
+    min-height: 2ch;
+}
+
+/* ---- forms/input --- */
+/* -------------------- */
+
+.form {
+    box-sizing: inherit;
+}
+
+form label {
+    text-align: left;
+}
+
+input, textarea, select {
+    width: 100%;
+    margin: 10px 0px;
+    display: inline-block;
+    background-color: ghostwhite;
+    box-shadow: inset 0 1px 3px #ddd;
+    padding: 12px 20px 12px 20px;
+    resize: none;
+    box-sizing: border-box;
+    min-width: 12ch;
+}
+
+input[type=number] {
+    text-align: center;
   }
+
+form textarea {
+    height: 12ch;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
   }
-  to {
-    transform: rotate(360deg);
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
   }
+
+
+
+/* ---- components ---- */
+/* -------------------- */
+
+.link-button {
+    border: 0px;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+
+}
+.btn {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.green {
+    background-color: darkgreen;
+    color: ghostwhite;
+}
+
+.red {
+    background-color: rgb(175, 29, 29);
+    color: ghostwhite;
+}
+
+.blue {
+    background-color: rgb(52, 52, 151);
+    color: ghostwhite;
+}
+
+
+.item-list {
+    /* padding: 4px; */
+    border: black;
+    flex-basis: 60ch;
+    flex-grow: 1;
+    max-width: 90ch;
+}
+
+.item-preview {
+    margin-bottom: 5px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.item-preview h3 {
+    margin-bottom: 1ch;
+    margin-top: 0ch;
+}
+
+.item-preview a {
+    color: ghostwhite;
+    background: rgb(22, 22, 22);
+    text-decoration: none;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border: 1 solid black;
+    border-radius: 5px;;
+}
+
+.dice-roller {
+    margin: 10px 0px;
+}
+
+.dice-roller .flexbox .text {
+    padding: 0.5ch 1ch;
+}
+.dice-results {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.dice {
+    width: 5ch;
+    height: 5ch;
+    text-align: center;
+    vertical-align: middle;
+    background: black;
+    color: ghostwhite;
+    /* margin: 3px; */
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.dice p {
+    font-weight: bold;
+    padding-top: 1.2ch;
+}
+
+.dice-roller .total {
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    
 }

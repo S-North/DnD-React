@@ -1,25 +1,58 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Campaigns from './components/Campaigns';
+import StateParent from './components/StateParent';
+import StateChild from './components/StateChild';
+// import AdventuresList from './components/AdventuresList';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+  const [ config, setConfig ] = useState({
+    "title": "Home",
+    "profile": "guest",
+    "campaign": "",
+    "adventure": "",
+    "encounter": ""
+  })
+
+  const [ campaigns, setCampaigns ] = useState([]);
+  useEffect(() => {
+    fetch('http://192.168.1.200:8002/campaigns')
+    .then(response => response.json())
+           .then((data) => {
+               setCampaigns(data);
+               console.log(`Result of fetch`, data);
+           });
+
+    return () => {
+    }
+  }, [])
+
+    return (
+      <>
+      <Router>
+        <Navbar campaigns={campaigns} config={config}></Navbar>
+        <Switch>
+          <Route exact path="/">
+            <Home title="Home" config={ config } campaigns={ campaigns } setConfig={ setConfig }></Home>
+          </Route>
+          <Route exact path="/campaigns">
+            <Campaigns></Campaigns>
+          </Route>
+          <Route exact path="/parent">
+            <StateParent></StateParent>
+          </Route>
+          <Route exact path="/parent/child">
+            <StateChild></StateChild>
+          </Route>
+        </Switch>  
+      </Router>
+      </>
+    )
 }
 
 export default App;
