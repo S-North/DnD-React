@@ -6,7 +6,7 @@
 
 The state will be served by json-server using Javascript fetch requests. https://www.npmjs.com/package/json-server
 
-The structure for the data is as follows;
+The structure for the data is as follows (this will be updated as features are added and the data structure grows & changes);
 ```json
 {
   "monsters": [
