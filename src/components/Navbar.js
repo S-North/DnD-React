@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
     const campaigns = props.campaigns;
+    const monsters = props.monsters;
     const config = props.config;
 
     return (
@@ -12,10 +13,13 @@ const Navbar = (props) => {
                 <h1>DnD Campaign Tracker</h1>
                 <Link to="/">Home</Link>
                 <Link to={{
-                    pathname: "campaigns",
+                    pathname: "/campaigns",
                     state: { campaigns, config }
                 }}>Campaigns</Link>
-                <Link to="/monsters">Monsters</Link>
+                <Link to={{
+                    pathname: "/monsters",
+                    state: { monsters, config }
+                }}>Monsters</Link>
                 <Link to="/parent">State Parent</Link>
 
             </div>

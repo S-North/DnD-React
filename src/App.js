@@ -18,14 +18,23 @@ function App() {
   })
 
   const [ campaigns, setCampaigns ] = useState([]);
+  const [ monsters, setMonsters ] = useState([]);
+  
   useEffect(() => {
     fetch('http://192.168.1.200:8002/campaigns')
     .then(response => response.json())
-           .then((data) => {
-               setCampaigns(data);
-               console.log(`Result of fetch`, data);
-           });
-
+            .then((campaigns) => {
+                setCampaigns(campaigns);
+                console.log(`Result of campaigns fetch`, campaigns);
+    
+            });
+    fetch('http://192.168.1.200:8002/monsters')
+    .then(response => response.json())
+            .then((monsters) => {
+                setMonsters(monsters);
+                console.log(`Result of monsters fetch`, monsters);
+    
+            });
     return () => {
     }
   }, [])
@@ -33,7 +42,7 @@ function App() {
     return (
       <>
       <Router>
-        <Navbar campaigns={campaigns} config={config}></Navbar>
+        <Navbar campaigns={campaigns} monsters={monsters} config={config}></Navbar>
         <Switch>
           <Route exact path="/">
             <Home title="Home" config={ config } campaigns={ campaigns } setConfig={ setConfig }></Home>
