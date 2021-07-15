@@ -3,7 +3,9 @@
 
  ## Data
  The state for this app is stored in json https://www.w3schools.com/whatis/whatis_json.asp
- The state will be served by json-server using Javascript fetch requests. https://www.npmjs.com/package/json-server
+
+The state will be served by json-server using Javascript fetch requests. https://www.npmjs.com/package/json-server
+
 The structure for the data is as follows;
 ```json
 {
