@@ -9,37 +9,76 @@ The state will be served by json-server using Javascript fetch requests. https:/
 The structure for the data is as follows (this will be updated as features are added and the data structure grows & changes);
 ```json
 {
-  "monsters": [
-    {
-      "id": 1,
-      "name": "",
-      "ac": "",
-      "hp": "",
-      "cr": ""
-    }
-  ],
-  "campaigns": [
-    {
-      "id": "1",
-      "name": "",
-      "npcs": [
+    "monsters": [
         {
-          "id": "1",
-          "name": ""
+            "id": 1,
+            "name": "",
+            "description",
+            "type": "monster",
+            "ac": "",
+            "hp": "",
+            "cr": "",
+            "str": "",
+            "dex": "",
+            "etc": "..."
         }
-      ],
-      "adventures": [
+    ],
+    "campaigns": [
         {
-          "id": "1",
-          "name": "",
-          "encounters": [
-            {
-              "id": "1",
-              "name": ""
-            }
-          ]
+            "id": "1",
+            "name": "",
+            "description",
+            "pcs": [
+                {
+                    "id": 1,
+                    "name": "",
+                    "description",
+                    "type": "player",
+                    "ac": "",
+                    "hp": "",
+                    "cr": "",
+                    "str": "",
+                    "dex": "",
+                    "etc": "..."
+                }
+            ],
+            "npcs": [
+                {
+                    "id": "1",
+                    "name": "",
+                    "description",
+                    "type": "npc",
+                    "notes": ["array of notes"],
+                    "stats, like PC/monster stats": "etc"
+                }
+            ],
+            "adventures": [
+                {
+                    "id": "1",
+                    "name": "",
+                    "description",
+                    "notes": ["array of notes"],
+                    "npcs": ["Like in the campaigns. An array of NPC objects", "That can be copied from the campaign state"],
+                    "encounters": [
+                        {
+                        "id": "1",
+                        "name": "",
+                        "description",
+                        "notes": ["array of notes"],
+                        "combatants": [
+                            "A list of objects containing monsters, npcs & player characters",
+                            {
+                                "type": "npc",
+                                "type": "monster",
+                                "type": "player",
+                            }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
-  ]
+    ]
 }
 ```
 ## App layout
