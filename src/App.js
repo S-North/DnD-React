@@ -6,8 +6,6 @@ import Home from './components/Home';
 import Campaigns from './components/Campaigns';
 import StateParent from './components/StateParent';
 import StateChild from './components/StateChild';
-// import AdventuresList from './components/AdventuresList';
-
 
 function App() {
   
