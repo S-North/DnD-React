@@ -46,6 +46,9 @@ The app will make use of several pages, using React Router functionality. https:
 State will be passed through the app via the react-router-dom Link component. Then accessed using useLocation(). https://dev.to/maxcell/react-router-using-location-state-for-custom-ui-navigation-2ia9?utm_source=pocket_mylist
 
 Home
+* Tools page
+    * Dice roller
+    * Random tables (loot, injury, encounters, etc)
 * Monsters List
     * Add monster
     * View monster
@@ -53,8 +56,14 @@ Home
         * Delete monster
 * Campaigns list
     * Add campaign
-    * View campaign. Shows the list of adventures in the campaign.
+    * View campaign. Shows the list of adventures, notes & campaign NPCs in the campaign.
         * Edit campaign
         * Delete campaign
+        * View adventure. Shows the list of encounters, notes & campaign NPCs in the adventure.
+            * Edit adventure
+            * Delete adventure
+            * View encounter. Shows the list of combatants (PC's, NPCs and monsters) in the adventure.
+                * Edit encounter (add remove combatants, notes, treasure, etc)
+                * Delete encounter
      
     
