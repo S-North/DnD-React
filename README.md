@@ -54,6 +54,7 @@ Home
     * View monster
         * Edit monster
         * Delete monster
+        * Copy monster (creating custom monsters)
 * Campaigns list
     * Add campaign
     * View campaign. Shows the list of adventures, notes & campaign NPCs in the campaign.
