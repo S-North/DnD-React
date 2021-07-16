@@ -7,6 +7,7 @@ const ItemList = ({ title, description, buttonText, route, items, config, setCon
             <div className="widget">
                 <button className="btn green float-right">{ buttonText }</button>
                 <h3>{ title }</h3>
+                <br />
                 <p>{ description }</p>
                 <div className="item-list">
                     {items ? items.map((item) => (

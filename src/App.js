@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Campaigns from './components/Campaigns';
 import CampaignView from './components/CampaignView';
@@ -45,28 +46,31 @@ function App() {
       <>
       <Router>
         <Navbar campaigns={campaigns} monsters={monsters} config={config}></Navbar>
-          <main>
-            <Switch>
-              <Route exact path="/">
-                  <Home title="Home" config={ config } campaigns={ campaigns } monsters={ monsters } setConfig={ setConfig }></Home>
-              </Route>
-              <Route exact path="/campaigns">
-                <Campaigns></Campaigns>
-              </Route>
-              <Route exact path="/campaign">
-                <CampaignView></CampaignView>
-              </Route>
-              <Route exact path="/adventure">
-                <AdventureView></AdventureView>
-              </Route>
-              <Route exact path="/encounter">
-                <EncounterView></EncounterView>
-              </Route>
-              <Route exact path="/monster">
-                <MonsterDetail></MonsterDetail>
-              </Route>
-            </Switch>  
-          </main>
+        <div className="footer-container">
+        <main>
+          <Switch>
+            <Route exact path="/">
+                <Home title="Home" config={ config } campaigns={ campaigns } monsters={ monsters } setConfig={ setConfig }></Home>
+            </Route>
+            <Route exact path="/campaigns">
+              <Campaigns></Campaigns>
+            </Route>
+            <Route exact path="/campaign">
+              <CampaignView></CampaignView>
+            </Route>
+            <Route exact path="/adventure">
+              <AdventureView></AdventureView>
+            </Route>
+            <Route exact path="/encounter">
+              <EncounterView></EncounterView>
+            </Route>
+            <Route exact path="/monster">
+              <MonsterDetail></MonsterDetail>
+            </Route>
+          </Switch>  
+        </main>
+        <Footer></Footer>
+        </div>
       </Router>
       </>
     )

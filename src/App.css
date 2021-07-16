@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+html {scrollbar-width: none;  /* Firefox */}
+
 body {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -6,8 +8,12 @@ body {
     margin: 0px;
     border: 0px;
     background-color: rgb(235, 235, 235);
+    -ms-overflow-style: none;  /* IE and Edge */
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
 
 
 /* ----- typography --- */
@@ -18,6 +24,7 @@ p, h1, h2, h3 {
 
 a {
     text-decoration: none;
+    color: ghostwhite;
 }
 
 p {
@@ -43,11 +50,15 @@ h3 {
 /* -------------------- */
 
 .navbar {
+    min-height: 15vh;
     display: flex;
     align-items: center;
-    padding: 1ch 0ch 2ch 0ch;
     color: ghostwhite;
     background-color: rgb(86, 84, 116);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
 }
 
 .navbar > div {
@@ -62,13 +73,33 @@ h3 {
     overflow: hidden;
 }
 
+.footer-container {
+    display: flex;
+    min-height: 85vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer {
+    height: 10ch;
+    /* background-image: url("https://media.dnd.wizards.com/styles/news_banner_header/public/images/head-banner/04-PRODUCT-INFO_Tabletop_Hero_PHB.jpg"); */
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 3ch;
+    font-size: small;
+    color: ghostwhite;
+}
+
+
 main {
-    margin: auto;
-    padding: 2ch;
+    /* margin: auto; */
+    padding: 1ch;
 }
 
 .main-header {
     max-width: 100ch;
+    margin-bottom: 1ch;
 }
 
 .section {
@@ -79,7 +110,10 @@ main {
 }
 
 .widget {
-    flex-basis: 50ch;
+    flex-basis: 48ch;
+    background-color: rgb(245, 245, 245);
+    padding: 1ch;
+    border-radius: 2px;
 }
 
 .flex-row {
@@ -181,7 +215,7 @@ input[type="number"] {
     margin-bottom: 5px;
     padding: 8px;
     border: 1px solid black;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 .item-preview h3 {
@@ -200,7 +234,7 @@ input[type="number"] {
 }
 
 .dice-roller {
-    margin: 10px 0px;
+    margin-top: 10px;
 }
 
 .dice-roller .flexbox .text {
@@ -208,9 +242,9 @@ input[type="number"] {
 }
 .dice-results {
     display: flex;
-    gap: 3px;
+    gap: 9px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: px;
 }
 
 .dice {

@@ -10,7 +10,7 @@ const Home = ({ title, config, campaigns, monsters, setConfig }) => {
             <div className="section">
                 <DiceRoller />
                 <ItemList 
-                    title="Generic Item List"
+                    title="Active Campaigns"
                     description="Please select a campaign below to access campaign notes, npcs, adventures and encounters."
                     buttonText="New Campaign"
                     items={ campaigns }

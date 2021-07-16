@@ -24,6 +24,22 @@ const AdventureView = () => {
                     route="/encounter"
                     config={ config } 
                 />
+                <ItemList 
+                    title="Adventure Notes"
+                    description="Please select an encounter below to view and run the encounter."
+                    buttonText="New Note"
+                    items={ adventure.notes }
+                    route="/note"
+                    config={ config } 
+                />
+                 <ItemList 
+                    title="Adventure NPCs"
+                    description="Please select an encounter below to view and run the encounter."
+                    buttonText="New NPC"
+                    items={ adventure.npcs }
+                    route="/npc"
+                    config={ config } 
+                />
             </div>
         </>
     );

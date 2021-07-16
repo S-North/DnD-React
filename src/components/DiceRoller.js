@@ -65,7 +65,7 @@ const DiceRoller = () => {
                             />
                         </div>
                     </form>
-                    <br />
+                    {/* <br /> */}
                     <div className="flex-row">
                     {result && <div className="total">
                         <h2>{`Total = ${result[2]}`}</h2>
