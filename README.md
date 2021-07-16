@@ -1,5 +1,6 @@
 # DnD React
- 2.0 of the DnD react app.
+ 2.0 of my DnD React app. 
+ I'm a novice programmer and this project is a learn-as-you-go effort, so please concider it alpha-as-f$%k.
 
 ## App layout
 The app will make use of several pages, using React Router functionality. https://www.freecodecamp.org/news/a-complete-beginners-guide-to-react-router-include-router-hooks/
