@@ -9,9 +9,6 @@ import AdventureView from './components/AdventureView';
 import EncounterView from './components/EncounterView';
 import MonsterDetail from './components/MonsterDetail';
 
-import StateParent from './components/StateParent';
-import StateChild from './components/StateChild';
-
 function App() {
   
   const [ config, setConfig ] = useState({
@@ -67,12 +64,6 @@ function App() {
               </Route>
               <Route exact path="/monster">
                 <MonsterDetail></MonsterDetail>
-              </Route>
-              <Route exact path="/parent">
-                <StateParent></StateParent>
-              </Route>
-              <Route exact path="/parent/child">
-                <StateChild></StateChild>
               </Route>
             </Switch>  
           </main>

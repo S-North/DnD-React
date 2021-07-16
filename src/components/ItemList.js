@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import background from '../assets/adventure-bg.jpg';
 
 const ItemList = ({ title, description, buttonText, route, items, config, setConfig }) => {
-
     return (
         <>
             <div className="widget">
@@ -10,7 +9,7 @@ const ItemList = ({ title, description, buttonText, route, items, config, setCon
                 <h3>{ title }</h3>
                 <p>{ description }</p>
                 <div className="item-list">
-                    {items.map((item) => (
+                    {items ? items.map((item) => (
                         <Link   to={{
                                 pathname: route,
                                 state: { item, config }
@@ -23,7 +22,8 @@ const ItemList = ({ title, description, buttonText, route, items, config, setCon
                             </div>
 
                         </Link>
-                    ))}
+                    ))
+                : <p>No notes to display</p>}
                 </div>
             </div>
         </>

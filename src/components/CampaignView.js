@@ -25,6 +25,22 @@ const CampaignView = () => {
                     route="/adventure"
                     config={ config } 
                 />
+                <ItemList 
+                    title="NPCs"
+                    description="Please select an NPC below to view their details"
+                    buttonText="New NPC"
+                    items={ campaign.npcs }
+                    route="/npc"
+                    config={ config } 
+                />
+                <ItemList 
+                    title="Notes"
+                    description="Campaign notes"
+                    buttonText="New Note"
+                    items={ campaign.notes }
+                    route="/note"
+                    config={ config } 
+                />
             </div>
         </>
     );

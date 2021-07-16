@@ -54,13 +54,32 @@
       "npcs": [
         {
           "id": "1",
-          "name": "Gundren Rockseeker"
+          "name": "Gundren Rockseeker",
+          "description": "Dwarven merchent that hired the adventurers to transport expidition supplies to Phandalin. Has been kidnapped on the road to town."
+        },
+        {
+          "id": "2",
+          "name": "Paris Yaeldrin",
+          "description": "Elven guildmaster of the Neverwinter adventurers guild."
+        }
+      ],
+      "notes": [
+        {
+          "id": "1",
+          "name": "character backstory",
+          "description": "write a note here detailing the character backstories"
+        },
+        {
+          "id": "2",
+          "name": "character backstory",
+          "description": "write a note here detailing the character backstories"
         }
       ],
       "adventures": [
         {
           "id": "1",
           "name": "Goblin Arrows",
+          "description": "Stuff happens on the way to Phandalin",
           "encounters": [
             {
               "id": "1",
@@ -77,6 +96,7 @@
         {
           "id": "2",
           "name": "Redbrand in Phandalin",
+          "description": "Whats going on in Phandalin. Bunch of thugs causing trouble, thats what!",
           "encounters": [
             {
               "id": "1",
@@ -91,6 +111,7 @@
         {
           "id": "3",
           "name": "The Hunt",
+          "description": "Do the party have any leads? Time to follow up and invesigate...",
           "encounters": [
             {
               "id": "1",

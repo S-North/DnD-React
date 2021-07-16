@@ -11,17 +11,18 @@ const Navbar = (props) => {
           }}>
             <div className="container">
                 <h1>DnD Campaign Tracker</h1>
+
                 <Link to="/">Home</Link>
+
                 <Link to={{
                     pathname: "/campaigns",
                     state: { campaigns, config }
                 }}>Campaigns</Link>
+                
                 <Link to={{
                     pathname: "/monsters",
                     state: { monsters, config }
                 }}>Monsters</Link>
-                <Link to="/parent">State Parent</Link>
-
             </div>
         </div>
     );

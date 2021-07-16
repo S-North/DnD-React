@@ -8,8 +8,16 @@ const MonsterDetail = () => {
 
     return (
         <>
-            <h1>{ monster.name }</h1>
-            <p>{ monster.description }</p>
+            <div className="main-header">
+                <h1>Monster Overview</h1>
+                <h2>{ monster.name }</h2>
+                <p>{ monster.description }</p>
+            </div>
+            <div className="section">
+                <p>Type: { monster.type }</p>
+                <p>AC: { monster.ac }</p>
+                <p>HP: { monster.hp }</p>
+            </div>
         </>
     );
 }
