@@ -2,30 +2,55 @@
   "monsters": [
     {
       "id": 1,
-      "name": "goblin",
+      "name": "Goblin",
+      "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
       "ac": "15",
       "hp": "7",
-      "cr": "0.5"
+      "cr": "0.5",
+      "type": "Humanoid"
     },
     {
       "id": 2,
-      "name": "dragon",
+      "name": "Red Dragon Wyrmling",
+      "description": "The odor of sulfur and pumice surrounds a red dragon, whose swept-back horns and spinal frill define its silhouette. Its beaked snout vents smoke at all times, and its eyes dance with flame when it is angry.",
       "ac": "17",
-      "hp": "240",
-      "cr": "15"
+      "hp": "75",
+      "cr": "4",
+      "type": "Dragon"
     },
     {
       "id": 3,
-      "name": "wolf",
-      "ac": "12",
-      "hp": "15",
-      "cr": "1"
+      "name": "Cloud Giant",
+      "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+      "ac": "14",
+      "hp": "200",
+      "cr": "9",
+      "type": "Giant"
+    },
+    {
+      "id": 4,
+      "name": "Phase Spider",
+      "description": "A phase Spider possesses the magical ability to phase in and out of the Ethereal Plane. It seems to appear out of nowhere and quickly vanishes after attacking. Its Movement on the Ethereal Plane before coming back to The Material Plane makes it seem like it can Teleport.",
+      "ac": "13",
+      "hp": "32",
+      "cr": "3",
+      "type": "Large monstrosity"
+    },
+    {
+      "id": 5,
+      "name": "Giggle Pig",
+      "description": "A pig that giggles if you are more than 5' from it",
+      "ac": "27",
+      "hp": "1",
+      "cr": "70",
+      "type": "Beast"
     }
   ],
   "campaigns": [
     {
       "id": "1",
       "name": "Sword Coast Adventures",
+      "description": "First campaign with Jake, Felix, Alex and Matt. Set in the Sword Coast with characters Raskas, Alan (Stealth Killer), Sherlock and Polydeuces.",
       "npcs": [
         {
           "id": "1",
@@ -39,45 +64,73 @@
           "encounters": [
             {
               "id": "1",
-              "name": "Ambush on the Tribor Trail"
+              "name": "Ambush on the Tribor Trail",
+              "description": "You've been on the Triboar Trail for about half a day. As you come around a bend, you spot two dead horses sprawled about fifty feet ahead of you, blocking the path. Each has several black-feathered arrows sticking out of it. The woods press close to the trail here, with a steep embankment and dense thickets on either side."
             },
             {
               "id": "2",
-              "name": "Cave entrance"
+              "name": "Cave entrance",
+              "description": "On the east side of the stream flowing from the cave mouth, a small area in the briar thickets has been hollowed out to form a lookout post or blind. Wooden planks flatten out the briars and provide room for guards to lie hidden and watch the area-including a pair of goblins lurking there right now!"
             }
           ]
         },
         {
           "id": "2",
-          "name": ""
+          "name": "Redbrand in Phandalin",
+          "encounters": [
+            {
+              "id": "1",
+              "name": "Scuffle in the Street"
+            },
+            {
+              "id": "2",
+              "name": "Manor: Area 1"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "The Hunt",
+          "encounters": [
+            {
+              "id": "1",
+              "name": "Moslashes-Katashes"
+            },
+            {
+              "id": "2",
+              "name": "Dragon Encounter"
+            }
+          ]
         }
       ]
     },
     {
       "id": "2",
       "name": "Jungles of Chult",
+      "description": "Jakes game with Kepesk @Stuart, Thea @Alex, Glee @Felix and Hazrah @Matt.",
       "adventures": [
         {
           "id": "1",
-          "name": ""
+          "name": "On the Island"
         },
         {
           "id": "2",
-          "name": ""
+          "name": "In the City"
         }
       ]
     },
     {
       "id": "3",
       "name": "Curse of Strahd",
+      "description": "Alex's campaign.",
       "adventures": [
         {
           "id": "1",
-          "name": ""
+          "name": "Adventure 1"
         },
         {
           "id": "2",
-          "name": ""
+          "name": "Adventure 2"
         }
       ]
     }

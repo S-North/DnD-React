@@ -1,26 +1,31 @@
-import { Link } from 'react-router-dom';
 import DiceRoller from './DiceRoller';
-import CampaignList from './CampaignList';
+import ItemList from './ItemList';
 
-const Home = ({ title, config, campaigns, setConfig }) => {
+const Home = ({ title, config, campaigns, monsters, setConfig }) => {
     return (
         <>
             <div className="main-header">
                 <h1>{ title }</h1>
             </div>
-            <div className="content">
-                <p>Try rolling some dice!</p>
-                <div className="section">
-                    <DiceRoller />
-                    {!config.campaign ?
-                        <div className="section" id="campaign-list">
-                            {campaigns && <CampaignList campaigns={ campaigns } config={ config } setConfig={ setConfig }/>}
-                        </div> :
-                        <p>No Config</p>
-                    }
-                </div>
-                <div className="content">
-                </div>
+            <div className="section">
+                <DiceRoller />
+                <ItemList 
+                    title="Generic Item List"
+                    description="Please select a campaign below to access campaign notes, npcs, adventures and encounters."
+                    buttonText="New Campaign"
+                    items={ campaigns }
+                    route="/campaign"
+                    config={ config } 
+                    setConfig={ setConfig }/>
+
+                <ItemList 
+                    title="Monster List"
+                    description="Please select a monster below to view its details, customise and duplicate."
+                    buttonText="New Monster"
+                    items={ monsters }
+                    route="/monster"
+                    config={ config } 
+                    setConfig={ setConfig }/>
             </div>
         </>
     );
