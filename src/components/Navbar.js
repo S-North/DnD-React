@@ -9,7 +9,7 @@ const Navbar = (props) => {
     return (
         <div className="navbar" style={{ backgroundImage: "url(" + background + ")"}}>
             <div className="container">
-                <h1>DnD Campaign Tracker</h1>
+                <h1>D&D Campaign Tracker</h1>
 
                 <Link to="/">Home</Link>
 

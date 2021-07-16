@@ -41,7 +41,7 @@ The structure for the data is as follows (this will be updated as features are a
         {
             "id": 1,
             "name": "",
-            "description",
+            "description": "",
             "type": "monster",
             "ac": "",
             "hp": "",
@@ -55,12 +55,12 @@ The structure for the data is as follows (this will be updated as features are a
         {
             "id": "1",
             "name": "",
-            "description",
+            "description": "",
             "pcs": [
                 {
                     "id": 1,
                     "name": "",
-                    "description",
+                    "description": "",
                     "type": "player",
                     "ac": "",
                     "hp": "",
@@ -74,7 +74,7 @@ The structure for the data is as follows (this will be updated as features are a
                 {
                     "id": "1",
                     "name": "",
-                    "description",
+                    "description": "",
                     "type": "npc",
                     "notes": ["array of notes"],
                     "stats, like PC/monster stats": "etc"
@@ -84,14 +84,14 @@ The structure for the data is as follows (this will be updated as features are a
                 {
                     "id": "1",
                     "name": "",
-                    "description",
+                    "description": "",
                     "notes": ["array of notes"],
                     "npcs": ["Like in the campaigns. An array of NPC objects", "That can be copied from the campaign state"],
                     "encounters": [
                         {
                         "id": "1",
                         "name": "",
-                        "description",
+                        "description": "",
                         "notes": ["array of notes"],
                         "combatants": [
                             "A list of objects containing monsters, npcs & player characters",
