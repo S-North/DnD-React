@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -11,6 +11,8 @@ import EncounterView from './components/EncounterView';
 import MonsterDetail from './components/MonsterDetail';
 
 function App() {
+  const history = useHistory();
+  console.log(history);
   
   const [ config, setConfig ] = useState({
     "title": "Home",
@@ -42,9 +44,19 @@ function App() {
     }
   }, [])
 
+  const deleteCampaign = async (id) => {
+    await fetch(`http://192.168.1.200:8002/campaigns/${id}`, {
+      method: 'DELETE'
+    })
+
+    console.log('delete', id);
+    setCampaigns(campaigns.filter((campaign) => campaign.id !== id));
+    history.push("/")
+  }
+
     return (
       <>
-      <Router>
+      
         <Navbar campaigns={campaigns} monsters={monsters} config={config}></Navbar>
         <div className="footer-container">
         <main>
@@ -56,7 +68,7 @@ function App() {
               <Campaigns></Campaigns>
             </Route>
             <Route exact path="/campaign">
-              <CampaignView></CampaignView>
+              <CampaignView deleteCampaign={deleteCampaign}></CampaignView>
             </Route>
             <Route exact path="/adventure">
               <AdventureView></AdventureView>
@@ -71,7 +83,7 @@ function App() {
         </main>
         <Footer></Footer>
         </div>
-      </Router>
+
       </>
     )
 }
