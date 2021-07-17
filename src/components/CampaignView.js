@@ -5,10 +5,6 @@ const CampaignView = ({ deleteCampaign }) => {
     const location = useLocation();
     const campaign = location.state.item;
     const config = location.state.config;
-    // const setConfig = location.state.setConfig;
-    console.log(location);
-    console.log(campaign);
-    console.log(deleteCampaign);
 
     return (
         <>
