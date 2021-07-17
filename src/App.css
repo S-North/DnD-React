@@ -106,11 +106,11 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
-    gap: 2ch;
+    gap: 1ch;
 }
 
 .widget {
-    flex-basis: 48ch;
+    flex-basis: 47ch;
     background-color: rgb(245, 245, 245);
     padding: 1ch;
     border-radius: 2px;
@@ -242,7 +242,7 @@ input[type="number"] {
 }
 .dice-results {
     display: flex;
-    gap: 9px;
+    gap: 8px;
     flex-wrap: wrap;
     margin-top: px;
 }

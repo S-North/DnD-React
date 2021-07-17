@@ -54,6 +54,23 @@ function App() {
     history.push("/")
   }
 
+  const addItem = (table, data, url) => {
+      fetch(url, {
+          method: 'POST',
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+      }).then(() => {
+          console.log(data);
+          if (table === "campaign") {
+            setCampaigns([...campaigns, data])
+          }
+          if (table === "monster") {
+            setMonsters([...monsters, data])
+          }
+          history.push("/");            
+      })
+  }
+
     return (
       <>
       
@@ -62,13 +79,13 @@ function App() {
         <main>
           <Switch>
             <Route exact path="/">
-                <Home title="Home" config={ config } campaigns={ campaigns } monsters={ monsters } setConfig={ setConfig }></Home>
+                <Home title="Home" config={ config } campaigns={ campaigns } monsters={ monsters } setConfig={ setConfig }  addItem={ addItem }></Home>
             </Route>
             <Route exact path="/campaigns">
               <Campaigns></Campaigns>
             </Route>
             <Route exact path="/campaign">
-              <CampaignView deleteCampaign={deleteCampaign}></CampaignView>
+              <CampaignView deleteCampaign={ deleteCampaign } addItem={ addItem }></CampaignView>
             </Route>
             <Route exact path="/adventure">
               <AdventureView></AdventureView>

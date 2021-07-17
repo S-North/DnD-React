@@ -1,7 +1,8 @@
 import DiceRoller from './DiceRoller';
 import ItemList from './ItemList';
 
-const Home = ({ title, config, campaigns, monsters, setConfig }) => {
+const Home = ({ title, config, campaigns, monsters, setConfig, addItem }) => {
+    console.log(addItem);
     return (
         <>
             <div className="main-header">
@@ -15,8 +16,9 @@ const Home = ({ title, config, campaigns, monsters, setConfig }) => {
                     buttonText="New Campaign"
                     items={ campaigns }
                     route="/campaign"
-                    config={ config } 
-                    setConfig={ setConfig }/>
+                    config={ config }
+                    setConfig={ setConfig }
+                    addItem={ addItem }/>
 
                 <ItemList 
                     title="Monster List"
@@ -25,7 +27,8 @@ const Home = ({ title, config, campaigns, monsters, setConfig }) => {
                     items={ monsters }
                     route="/monster"
                     config={ config } 
-                    setConfig={ setConfig }/>
+                    setConfig={ setConfig }
+                    addItem={ addItem }/>
             </div>
         </>
     );

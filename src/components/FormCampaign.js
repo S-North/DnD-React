@@ -1,28 +1,24 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 
-const FormCampaign = () => {
+const FormCampaign = ({ addItem, setWidget }) => {
+    const history = useHistory();
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
+    // const data = { name, description}
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = { name, description}
         console.log(data);
-        // // useAdd('http://192.168.1.200:8001/campaigns', data);
-        
-        // fetch(' http://192.168.1.200:8001/campaigns', {
-        //     method: 'POST',
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify(data)
-        // }).then(() => {
-        //     console.log(data);
-        //     history.push('/campaigns');            
-        // })
+        addItem("campaign", data, 'http://192.168.1.200:8002/campaigns');
+        setWidget({"edit": false});
+        history.push("/");
     }
 
     return (
         <>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={(e) => handleSubmit(e) }>
                     <label>Name</label>
                     <input
                         className="input-text"

@@ -44,6 +44,33 @@
       "hp": "1",
       "cr": "70",
       "type": "Beast"
+    },
+    {
+      "name": "kjhkjhkjh",
+      "description": "jghkj hk gjkh gjk ",
+      "ac": "76",
+      "hp": "876",
+      "cr": "67",
+      "type": "plant",
+      "id": 6
+    },
+    {
+      "name": "some kind of Cake monster",
+      "description": "Deadly but delicious",
+      "ac": "56",
+      "hp": "7",
+      "cr": "876",
+      "type": "undead",
+      "id": 7
+    },
+    {
+      "name": "this is a monster",
+      "description": "no really, its not a campaign",
+      "ac": "45",
+      "hp": "35435",
+      "cr": "65",
+      "type": "monster",
+      "id": 8
     }
   ],
   "campaigns": [
