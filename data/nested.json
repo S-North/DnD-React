@@ -71,6 +71,24 @@
       "cr": "65",
       "type": "monster",
       "id": 8
+    },
+    {
+      "name": "Ricki Fuji",
+      "description": "Do it do idk if do hi I'd stuck Kerry using",
+      "ac": "5",
+      "hp": "563",
+      "cr": "7",
+      "type": "aberration",
+      "id": 9
+    },
+    {
+      "name": "Bob marley ",
+      "description": "He is a God at music ",
+      "ac": "100",
+      "hp": "6000",
+      "cr": "200",
+      "type": "Musician ",
+      "id": 10
     }
   ],
   "campaigns": [
@@ -181,6 +199,11 @@
           "name": "Adventure 2"
         }
       ]
+    },
+    {
+      "name": "Bob",
+      "description": "Bob marley",
+      "id": "-vJl2aK"
     }
   ]
 }
