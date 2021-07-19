@@ -48,7 +48,7 @@
   ],
   "campaigns": [
     {
-      "id": "1",
+      "campaignId": "1",
       "name": "Sword Coast Adventures",
       "description": "First campaign with Jake, Felix, Alex and Matt. Set in the Sword Coast with characters Raskas, Alan (Stealth Killer), Sherlock and Polydeuces.",
       "npcs": [
@@ -59,72 +59,72 @@
       ]
     },
     {
-      "id": "2",
+      "campaignId": "2",
       "name": "Jungles of Chult",
       "description": "Jakes game with Kepesk @Stuart, Thea @Alex, Glee @Felix and Hazrah @Matt."
     },
     {
-      "id": "3",
+      "campaignId": "3",
       "name": "Curse of Strahd",
       "description": ""
     },
     {
-      "id": "4",
+      "campaignId": "4",
       "name": "Storm Kings Thunder",
       "description": ""
     },
     {
       "name": "adsasd",
       "description": "asfdasgfafsdfgfa as fasd asdf gfd dfgh sdgh",
-      "id": "e4qL95d"
+      "campaignId": "e4qL95d"
     },
     {
       "name": "asd asdasdasd as",
       "description": "dsf dfg fdhjfghjfd gsdhgf dfghjdfhgfs h",
-      "id": "6ku1IlQ"
+      "campaignId": "6ku1IlQ"
     },
     {
       "name": "asda sdasd",
       "description": "asfdg gfdhdfgh sdgsfdgh dfgh fdh",
-      "id": "1dpS3Vk"
+      "campaignId": "1dpS3Vk"
     },
     {
       "name": "asd asd",
       "description": "f fdsa gsdfg ",
-      "id": "GsvyyLG"
+      "campaignId": "GsvyyLG"
     },
     {
       "name": "fdhgdfhg jk",
       "description": "hgjk i76y gff",
-      "id": "lhNT1rV"
+      "campaignId": "lhNT1rV"
     },
     {
       "name": "iuyy ty tytr",
       "description": "6578900i uerty",
-      "id": "uUIYnt5"
+      "campaignId": "uUIYnt5"
     }
   ],
   "adventures": [
     {
-      "id": "1",
+      "adventureId": "1",
       "campaign": "1",
       "name": "Goblin Arrows",
       "description": "The party are waylaid on the road to Phandalin and discover their employer has been kidnapped."
     },
     {
-      "id": "2",
+      "adventureId": "2",
       "campaign": "1",
       "name": "Redbrands in Town",
       "description": "Things in town are not all well. The can discover that the bad guys are linked to the the kidnapping of Gundren."
     },
     {
-      "id": "3",
+      "adventureId": "3",
       "campaign": "1",
       "name": "Spiders Web",
       "description": "The party explore the local area and try to find clues as to the whereabouts of Gundren and the Black Spider."
     },
     {
-      "id": "4",
+      "adventureId": "4",
       "campaign": "2",
       "name": "Island - Street Brawl",
       "description": "The party get attacked by some street thugs"
@@ -132,21 +132,21 @@
   ],
   "encounters": [
     {
-      "id": "1",
+      "encounterId": "1",
       "campaign": "1",
       "adventure": "1",
       "name": "Ambush on the Tribor Trail",
       "description": "The party are waylaid on the road to Phandalin by a goblin ambush."
     },
     {
-      "id": "2",
+      "encounterId": "2",
       "campaign": "1",
       "adventure": "1",
       "name": "Cave entrance",
       "description": "The goblin cave entrance has another ambush."
     },
     {
-      "id": "3",
+      "encounterId": "3",
       "campaign": "1",
       "adventure": "1",
       "name": "Wolf lair",
