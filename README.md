@@ -38,6 +38,7 @@ cUrl for testing e.g.;
 * curl -X POST -H "Content-Type: application/json" -d '{"campaign":"1","name":"curl","description":"put this on the server with Curl"}' http://localhost:8001/adventures
 *  curl -X DELETE http://localhost:8001/adventures/${id}
 *  curl -X GET -i http://localhost:8001/adventures/${id}
+*  curl -X  GET -i http://192.168.1.200:8001/adventures/2?_embed=npcs
 
 The structure for the data is as follows (this will be updated as features are added and the data structure grows & changes);
 ```json
