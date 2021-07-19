@@ -34,6 +34,11 @@ Home
 
 The state will be served by json-server using Javascript fetch requests. https://www.npmjs.com/package/json-server
 
+cUrl for testing e.g.;
+* curl -X POST -H "Content-Type: application/json" -d '{"campaign":"1","name":"curl","description":"put this on the server with Curl"}' http://localhost:8001/adventures
+*  curl -X DELETE http://localhost:8001/adventures/${id}
+*  curl -X GET -i http://localhost:8001/adventures/${id}
+
 The structure for the data is as follows (this will be updated as features are added and the data structure grows & changes);
 ```json
 {
