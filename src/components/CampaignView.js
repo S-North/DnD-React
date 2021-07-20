@@ -3,9 +3,9 @@ import ItemList from './ItemList';
 
 const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
     const location = useLocation();
-    const config = location.state.config;
     const collection = "campaigns";
     const campaign = location.state.item;
+    console.log(`campaignView page: ${campaign.id}`)
 
     return (
         <>
@@ -21,8 +21,8 @@ const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
                     buttonText="New Adventure"
                     items={ adventures.filter((adventure) => {return adventure.campaignId === campaign.id}) }
                     route="/adventure"
-                    config={ config }
                     addItem={ addItem }
+                    deleteItem={ deleteItem }
                     campaignId={ campaign.id }
 
                 />
@@ -32,18 +32,18 @@ const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
                     buttonText="New NPC"
                     items={ players.filter((npc) => {return npc.campaignId === campaign.id && npc.npc === "true"})  }
                     route="/character"
-                    config={ config }
                     addItem={ addItem }
+                    deleteItem={ deleteItem }
                     campaignId={ campaign.id }
                 />
                 <ItemList 
                     title="Notes"
-                    description="Campaign notes"
+                    description="Campaign Notes"
                     buttonText="New Note"
                     items={ notes.filter((notes) => {return notes.campaignId === campaign.id})  }
                     route="/note"
-                    config={ config }
                     addItem={ addItem }
+                    deleteItem={ deleteItem }
                     campaignId={ campaign.id }
                 />
             </div>

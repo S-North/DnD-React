@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const FormPlayer = ({ campaignId, AdventureId, EncounterId, addItem, setWidget }) => {
-    console.log(`campaignId ${campaignId}`)
+const FormPlayer = ({ campaignId, adventureId, EncounterId, addItem, setWidget }) => {
+    console.log(`campaignId ${campaignId}, adventureId ${adventureId}`)
     const collection = "players";
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
@@ -9,7 +9,8 @@ const FormPlayer = ({ campaignId, AdventureId, EncounterId, addItem, setWidget }
     const handleSubmit = (e) => {
         e.preventDefault();
         const npc = "true";
-        const data = { name, description, campaignId, npc}
+        const data = { name, description, campaignId, adventureId, npc};
+        console.log(data);
         addItem(collection, data );
         setWidget({"edit": false});
     }

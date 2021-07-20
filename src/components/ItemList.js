@@ -5,10 +5,11 @@ import FormCampaign from "./FormCampaign";
 import FormMonster from "./FormMonster";
 import FormAdventure from "./FormAdventure";
 import FormPlayer from "./FormPlayer";
-import FormNote from "../FormNote";
+import FormNote from "./FormNote";
 
-const ItemList = ({ title, description: formDescription, buttonText, route, items, config, setConfig, addItem, campaignId }) => {
+const ItemList = ({ title, description: formDescription, buttonText, route, items, addItem, campaignId, adventureId, deleteItem }) => {
     const [widget, setWidget] = useState({"edit": false})
+    console.log(`campaign: ${campaignId}, adventure: ${adventureId}`);
     const truncate = (string) => {
         if (string && string.length > 120) {
             return string.substring(0, 116) + " ..."
@@ -28,7 +29,7 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                     {items ? items.map((item) => (
                         <Link key={ item.id } to={{
                                 pathname: route,
-                                state: { item, config }
+                                state: { item, campaignId, adventureId }
                                 }} 
                         >
 
@@ -43,11 +44,11 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                 </div>}
 
                 {(widget.edit && route === "/campaign") && <FormCampaign addItem={ addItem } setWidget={ setWidget }></FormCampaign>}
-                {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId }></FormAdventure>}
+                {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId }></FormAdventure>}
                 {(widget.edit && route === "/encounter") && <h1>Encounter Form</h1>}
                 {(widget.edit && route === "/monster") && <FormMonster addItem={ addItem } setWidget={ setWidget }></FormMonster>}
-                {(widget.edit && route === "/character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId }></FormPlayer>}
-                {(widget.edit && route === "/note") && <FormNote addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId }></FormNote>}
+                {(widget.edit && route === "/character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId }></FormPlayer>}
+                {(widget.edit && route === "/note") && <FormNote addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId }></FormNote>}
             </div>
         </>
     );

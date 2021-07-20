@@ -1,17 +1,18 @@
 import { useLocation } from "react-router";
 import ItemList from './ItemList';
 
-const AdventureView = () => {
+const AdventureView = ({ addItem, deleteItem, campaignId, notes, players }) => {
+    console.log(deleteItem);
     const location = useLocation();
+    const collection = "adventures";
     const adventure = location.state.item;
-    const config = location.state.config;
-    console.log(config);
-    console.log(adventure);
+    console.log(`campaign: ${location.state.campaignId}, adventure: ${adventure.id}`)
 
     return (
         <>
             <div className="main-header">
-                <h1>Adventure Overview</h1>
+            <button className="btn red float-right" onClick={ () => deleteItem(adventure.id, collection) }>Delete Adventure</button>
+                <h1>Adventure: { adventure.name }</h1>
                 <h2>{ adventure.name }</h2>
                 <p>{ adventure.description }</p>
             </div>
@@ -22,23 +23,29 @@ const AdventureView = () => {
                     buttonText="New Encounter"
                     items={ adventure.encounters }
                     route="/encounter"
-                    config={ config } 
+                    addItem={ addItem }
+                    campaignId={ location.state.campaignId }
+                    adventureId={ adventure.id }
                 />
                 <ItemList 
                     title="Adventure Notes"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New Note"
-                    items={ adventure.notes }
+                    items={ notes.filter((notes) => {return notes.adventureId === adventure.id})  }
                     route="/note"
-                    config={ config } 
+                    addItem={ addItem }
+                    campaignId={ location.state.campaignId }
+                    adventureId={ adventure.id }
                 />
                  <ItemList 
                     title="Adventure NPCs"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New NPC"
-                    items={ adventure.npcs }
-                    route="/npc"
-                    config={ config } 
+                    items={ players.filter((player) => {return player.adventureId === adventure.id && player.npc === "true"}) }
+                    route="/character"
+                    addItem={ addItem }
+                    campaignId={ location.state.campaignId }
+                    adventureId={ adventure.id }
                 />
             </div>
         </>

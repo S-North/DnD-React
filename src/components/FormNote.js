@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-const FormNote = ({ campaignId, AdventureId, EncounterId, addItem, setWidget }) => {
-    console.log(addItem);
-    console.log(`campaignId ${campaignId}`)
+const FormNote = ({ campaignId, adventureId, EncounterId, addItem, setWidget }) => {
     const collection = "notes";
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
+    console.log(`campaign: ${campaignId}, adventure: ${adventureId}`)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description, campaignId }
+        const data = { name, description, campaignId, adventureId, EncounterId }
+        console.log(data);
         addItem(collection, data );
         setWidget({"edit": false});
     }
@@ -37,7 +37,7 @@ const FormNote = ({ campaignId, AdventureId, EncounterId, addItem, setWidget }) 
                     <input
                         className='btn green'
                         type='submit' 
-                        value='Save Adventure' 
+                        value='Save Note' 
                         />
                 </form>
         </>
