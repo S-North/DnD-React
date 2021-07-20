@@ -69,6 +69,7 @@ function App() {
       setEncounters(encounters.filter((encounter) => encounter.campaignId !== id));
       setPlayers(players.filter((player) => player.campaignId !== id));
       setNotes(notes.filter((note) => note.campaignId !== id));
+      history.push(`/`);
     }
 
     if (collection === "adventures") {
@@ -76,10 +77,11 @@ function App() {
       setEncounters(encounters.filter((encounter) => encounter.adventureId !== id));
       setPlayers(players.filter((player) => player.adventureId !== id));
       setNotes(notes.filter((note) => note.adventureId !== id));
+      history.goBack();
     }
     if (collection === "monsters") setMonsters(monsters.filter((monster) => monster.id !== id));
 
-    history.push("/")
+    
     }
   }
 

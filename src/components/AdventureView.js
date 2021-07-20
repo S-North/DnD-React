@@ -28,21 +28,21 @@ const AdventureView = ({ addItem, deleteItem, campaignId, notes, players }) => {
                     adventureId={ adventure.id }
                 />
                 <ItemList 
-                    title="Adventure Notes"
-                    description="Please select an encounter below to view and run the encounter."
-                    buttonText="New Note"
-                    items={ notes.filter((notes) => {return notes.adventureId === adventure.id})  }
-                    route="/note"
-                    addItem={ addItem }
-                    campaignId={ location.state.campaignId }
-                    adventureId={ adventure.id }
-                />
-                 <ItemList 
                     title="Adventure NPCs"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New NPC"
                     items={ players.filter((player) => {return player.adventureId === adventure.id && player.npc === "true"}) }
                     route="/character"
+                    addItem={ addItem }
+                    campaignId={ location.state.campaignId }
+                    adventureId={ adventure.id }
+                />
+                <ItemList 
+                    title="Adventure Notes"
+                    description="Please select an encounter below to view and run the encounter."
+                    buttonText="New Note"
+                    items={ notes.filter((notes) => {return notes.adventureId === adventure.id})  }
+                    route="/note"
                     addItem={ addItem }
                     campaignId={ location.state.campaignId }
                     adventureId={ adventure.id }

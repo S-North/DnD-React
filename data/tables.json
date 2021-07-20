@@ -45,50 +45,6 @@
       "campaignId": "2",
       "npc": "true",
       "id": "dsstdRd"
-    },
-    {
-      "name": "kljlkj",
-      "description": "lkjlkjklj",
-      "campaignId": "WHraCST",
-      "npc": "true",
-      "id": "kaPV-Jk"
-    },
-    {
-      "name": "kjhkjhkj",
-      "description": "kjhkjhkj",
-      "campaignId": "WHraCST",
-      "npc": "true",
-      "id": "Lzt2ZoO"
-    },
-    {
-      "name": "new",
-      "description": "lkjlkjl",
-      "campaignId": "WHraCST",
-      "npc": "true",
-      "id": "_l86sHE"
-    },
-    {
-      "name": "kjhkj",
-      "description": "jhkkjhkjh",
-      "campaignId": "WHraCST",
-      "npc": "true",
-      "id": "zS9Rjyr"
-    },
-    {
-      "name": "kjhkjh",
-      "description": "kjhkjhkjhkh",
-      "campaignId": "WHraCST",
-      "adventureId": "Q_8s11a",
-      "npc": "true",
-      "id": "rfpz64z"
-    },
-    {
-      "name": "another",
-      "description": "lkjlkj",
-      "campaignId": "WHraCST",
-      "adventureId": "Q_8s11a",
-      "npc": "true",
-      "id": "JJhq7ez"
     }
   ],
   "notes": [
@@ -133,12 +89,6 @@
       "id": "_h-Le7u"
     },
     {
-      "name": "kljlkjlk",
-      "description": "lkjlkj lj lk",
-      "campaignId": "WHraCST",
-      "id": "A8gq0KJ"
-    },
-    {
       "name": "jkkjhk",
       "description": "jhkjhkjhkj",
       "id": "Mog_MMI"
@@ -157,26 +107,6 @@
       "name": "nkjkjhkjhj",
       "description": "jhkjhkjhhkjh",
       "id": "cC3bKcf"
-    },
-    {
-      "name": "khjkhkjh",
-      "description": "kjhkjhkjhkh",
-      "campaignId": "WHraCST",
-      "id": "SRLp5gV"
-    },
-    {
-      "name": "jhgjhgjh",
-      "description": "jhjhgjhgh",
-      "campaignId": "WHraCST",
-      "adventureId": "Q_8s11a",
-      "id": "FJJIXq0"
-    },
-    {
-      "name": ",nkj",
-      "description": "hkjhkj",
-      "campaignId": "WHraCST",
-      "adventureId": "Q_8s11a",
-      "id": "NxLJXcx"
     }
   ],
   "monsters": [
@@ -256,11 +186,6 @@
       "id": "4",
       "name": "Storm Kings Thunder",
       "description": ""
-    },
-    {
-      "name": "Test Campaign",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "id": "WHraCST"
     }
   ],
   "adventures": [
@@ -299,12 +224,6 @@
       "description": "The party must make a long journey if they are to find the information they need.",
       "campaignId": "4",
       "id": "e_jUn22"
-    },
-    {
-      "name": "test adventure",
-      "description": "lkjlk",
-      "campaignId": "WHraCST",
-      "id": "Q_8s11a"
     }
   ],
   "encounters": [
