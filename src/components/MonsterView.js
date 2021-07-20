@@ -1,14 +1,16 @@
 import { useLocation } from "react-router";
 
-const MonsterDetail = () => {
+const MonsterView = ({ deleteItem }) => {
     const location = useLocation();
+    const collection = "monsters";
     const monster = location.state.item;
-    console.log(location);
-    console.log(monster);
+    // const config = location.state.config;
+    console.log(deleteItem, monster.id, collection)
 
     return (
         <>
             <div className="main-header">
+            <button className="btn red float-right" onClick={ () => deleteItem(monster.id, collection) }>Delete Monster</button>
                 <h1>Monster Overview</h1>
                 <h2>{ monster.name }</h2>
                 <p>{ monster.description }</p>
@@ -22,4 +24,4 @@ const MonsterDetail = () => {
     );
 }
  
-export default MonsterDetail;
+export default MonsterView;

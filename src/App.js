@@ -8,11 +8,12 @@ import Campaigns from './components/Campaigns';
 import CampaignView from './components/CampaignView';
 import AdventureView from './components/AdventureView';
 import EncounterView from './components/EncounterView';
-import MonsterDetail from './components/MonsterDetail';
+import MonsterView from './components/MonsterView';
 
 function App() {
   const history = useHistory();
-  console.log(history);
+  // console.log(history);
+  const jsonserver = "http://localhost:8000";
   
   const [ config, setConfig ] = useState({
     "title": "Home",
@@ -26,54 +27,59 @@ function App() {
   const [ monsters, setMonsters ] = useState([]);
   
   useEffect(() => {
-    fetch('http://192.168.1.200:8002/campaigns')
+    fetch(`${jsonserver}/campaigns`)
     .then(response => response.json())
             .then((campaigns) => {
                 setCampaigns(campaigns);
-                console.log(`Result of campaigns fetch`, campaigns);
+                // console.log(`Result of campaigns fetch`, campaigns);
     
             });
-    fetch('http://192.168.1.200:8002/monsters')
+    fetch(`${jsonserver}/monsters`)
     .then(response => response.json())
             .then((monsters) => {
                 setMonsters(monsters);
-                console.log(`Result of monsters fetch`, monsters);
+                // console.log(`Result of monsters fetch`, monsters);
     
             });
     return () => {
     }
   }, [])
 
-  const deleteCampaign = async (id) => {
-    await fetch(`http://192.168.1.200:8002/campaigns/${id}`, {
+  const deleteItem = async (id, collection) => {
+    const url = `${jsonserver}/${collection}/${id}`;
+    // console.log(id, collection, url);
+    await fetch(url, {
       method: 'DELETE'
     })
 
     console.log('delete', id);
-    setCampaigns(campaigns.filter((campaign) => campaign.id !== id));
+    if (collection === "campaigns") setCampaigns(campaigns.filter((campaign) => campaign.id !== id));
+    if (collection === "monsters") setMonsters(monsters.filter((monster) => monster.id !== id));
+
     history.push("/")
   }
 
-  const addItem = (table, data, url) => {
-      fetch(url, {
-          method: 'POST',
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
+  const addItem = (collection, data) => {
+    const url = `${jsonserver}/${collection}`;
+    // console.log(collection, url)
+    fetch(url, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
       }).then(() => {
-          console.log(data);
-          if (table === "campaign") {
-            setCampaigns([...campaigns, data])
-          }
-          if (table === "monster") {
-            setMonsters([...monsters, data])
-          }
-          history.push("/");            
-      })
+        console.log(data);
+        if (collection === "campaigns") {
+          setCampaigns([...campaigns, data])
+        }
+        if (collection === "monsters") {
+          setMonsters([...monsters, data])
+        }
+        history.push("/");            
+    })
   }
 
     return (
       <>
-      
         <Navbar campaigns={campaigns} monsters={monsters} config={config}></Navbar>
         <div className="footer-container">
         <main>
@@ -85,7 +91,7 @@ function App() {
               <Campaigns></Campaigns>
             </Route>
             <Route exact path="/campaign">
-              <CampaignView deleteCampaign={ deleteCampaign } addItem={ addItem }></CampaignView>
+              <CampaignView deleteItem={ deleteItem } addItem={ addItem }></CampaignView>
             </Route>
             <Route exact path="/adventure">
               <AdventureView></AdventureView>
@@ -94,7 +100,7 @@ function App() {
               <EncounterView></EncounterView>
             </Route>
             <Route exact path="/monster">
-              <MonsterDetail></MonsterDetail>
+              <MonsterView deleteItem={ deleteItem }></MonsterView>
             </Route>
           </Switch>  
         </main>

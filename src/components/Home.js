@@ -2,14 +2,13 @@ import DiceRoller from './DiceRoller';
 import ItemList from './ItemList';
 
 const Home = ({ title, config, campaigns, monsters, setConfig, addItem }) => {
-    console.log(addItem);
+    // console.log(addItem);
     return (
         <>
             <div className="main-header">
                 <h1>{ title }</h1>
             </div>
             <div className="section">
-                <DiceRoller />
                 <ItemList 
                     title="Active Campaigns"
                     description="Please select a campaign below to access campaign notes, npcs, adventures and encounters."
@@ -29,6 +28,7 @@ const Home = ({ title, config, campaigns, monsters, setConfig, addItem }) => {
                     config={ config } 
                     setConfig={ setConfig }
                     addItem={ addItem }/>
+                <DiceRoller />
             </div>
         </>
     );

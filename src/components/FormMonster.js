@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 
 const FormMonster = ({ addItem, setWidget }) => {
-    console.log(addItem);
     const history = useHistory();
+    console.log(addItem);
+    const collection = "monsters";
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
     const [ac, setAc] = useState(``);
@@ -15,7 +16,7 @@ const FormMonster = ({ addItem, setWidget }) => {
         e.preventDefault();
         const data = { name, description, ac, hp, cr, type }
         console.log(data);
-        addItem("monster", data, 'http://192.168.1.200:8002/monsters');
+        addItem(collection, data);
         setWidget({"edit": false});
         history.push("/");
     }

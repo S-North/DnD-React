@@ -6,8 +6,9 @@ import FormMonster from "./FormMonster";
 
 const ItemList = ({ title, description: formDescription, buttonText, route, items, config, setConfig, addItem }) => {
     const [widget, setWidget] = useState({"edit": false})
-    console.log(widget.edit);
-    console.log(addItem);
+    console.log(items);
+    // console.log(widget.edit);
+    // console.log(addItem);
 
     return (
         <>
@@ -19,20 +20,21 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                 {!widget.edit && <p>{ formDescription }</p>}
                 {!widget.edit && <div className="item-list">
                     {items ? items.map((item) => (
-                        <Link   to={{
+                        <Link key={ item.id } to={{
                                 pathname: route,
                                 state: { item, config }
                                 }} 
-                                key={item.id}>
+                        >
 
                             <div className="item-preview" style={{ backgroundImage: `url(${background})`, color: "white", imageSize: "cover" }}>
                                 <h3>{ item.name }</h3>
-                                <p>{  item.description }</p>
+                                <p>{ item.id }</p>
+                                <p>{ item.description }</p>
                             </div>
 
                         </Link>
                     ))
-                : <p>No notes to display</p>}
+                : <p>No items to display</p>}
                 </div>}
 
                 {(widget.edit && route === "/campaign") && <FormCampaign addItem={ addItem } setWidget={ setWidget }></FormCampaign>}

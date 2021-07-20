@@ -1,15 +1,16 @@
 import { useLocation } from "react-router";
 import ItemList from './ItemList';
 
-const CampaignView = ({ deleteCampaign }) => {
+const CampaignView = ({ deleteItem }) => {
     const location = useLocation();
+    const collection = "campaigns";
     const campaign = location.state.item;
     const config = location.state.config;
 
     return (
         <>
             <div className="main-header">
-                <button className="btn red float-right" onClick={ () => deleteCampaign(campaign.id) }>Delete Campaign</button>
+                <button className="btn red float-right" onClick={ () => deleteItem(campaign.id, collection) }>Delete Campaign</button>
                 <h1>Campaign Overview</h1>
                 <h2>{ campaign.name }</h2>
                 <p>{ campaign.description }</p>

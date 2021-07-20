@@ -1,4 +1,31 @@
 {
+  "players": [
+    {
+      "id": "1",
+      "name": "Sir Kepesk",
+      "npc": "false",
+      "campaignId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Bloom",
+      "npc": "false",
+      "campaignId": "1"
+    },
+    {
+      "id": "3",
+      "name": "Paris Yealdrin",
+      "npc": "true",
+      "campaignId": "1"
+    },
+    {
+      "id": "4",
+      "name": "Harbin Wester",
+      "npc": "true",
+      "campaignId": "1",
+      "adventureId": "2"
+    }
+  ],
   "monsters": [
     {
       "id": 1,
@@ -44,11 +71,29 @@
       "hp": "1",
       "cr": "70",
       "type": "Beast"
+    },
+    {
+      "name": "Batman",
+      "description": "His ears are batwings and he can hover.",
+      "ac": "12",
+      "hp": "10",
+      "cr": "1",
+      "type": "humanoid",
+      "id": 6
+    },
+    {
+      "name": "kjkhkjh",
+      "description": "gjg jh gj g j",
+      "ac": "6",
+      "hp": "678",
+      "cr": "7",
+      "type": "kjhkjhk",
+      "id": 7
     }
   ],
   "campaigns": [
     {
-      "campaignId": "1",
+      "id": "1",
       "name": "Sword Coast Adventures",
       "description": "First campaign with Jake, Felix, Alex and Matt. Set in the Sword Coast with characters Raskas, Alan (Stealth Killer), Sherlock and Polydeuces.",
       "npcs": [
@@ -59,96 +104,71 @@
       ]
     },
     {
-      "campaignId": "2",
+      "id": "2",
       "name": "Jungles of Chult",
       "description": "Jakes game with Kepesk @Stuart, Thea @Alex, Glee @Felix and Hazrah @Matt."
     },
     {
-      "campaignId": "3",
+      "id": "3",
       "name": "Curse of Strahd",
       "description": ""
     },
     {
-      "campaignId": "4",
+      "id": "4",
       "name": "Storm Kings Thunder",
       "description": ""
     },
     {
-      "name": "adsasd",
-      "description": "asfdasgfafsdfgfa as fasd asdf gfd dfgh sdgh",
-      "campaignId": "e4qL95d"
-    },
-    {
-      "name": "asd asdasdasd as",
-      "description": "dsf dfg fdhjfghjfd gsdhgf dfghjdfhgfs h",
-      "campaignId": "6ku1IlQ"
-    },
-    {
-      "name": "asda sdasd",
-      "description": "asfdg gfdhdfgh sdgsfdgh dfgh fdh",
-      "campaignId": "1dpS3Vk"
-    },
-    {
-      "name": "asd asd",
-      "description": "f fdsa gsdfg ",
-      "campaignId": "GsvyyLG"
-    },
-    {
-      "name": "fdhgdfhg jk",
-      "description": "hgjk i76y gff",
-      "campaignId": "lhNT1rV"
-    },
-    {
-      "name": "iuyy ty tytr",
-      "description": "6578900i uerty",
-      "campaignId": "uUIYnt5"
+      "name": "sdfsdsdf",
+      "description": "jhkjhkjhkjh",
+      "id": "fwLLA2B"
     }
   ],
   "adventures": [
     {
-      "adventureId": "1",
-      "campaign": "1",
+      "id": "1",
+      "campaignId": "1",
       "name": "Goblin Arrows",
       "description": "The party are waylaid on the road to Phandalin and discover their employer has been kidnapped."
     },
     {
-      "adventureId": "2",
-      "campaign": "1",
+      "id": "2",
+      "campaignId": "1",
       "name": "Redbrands in Town",
       "description": "Things in town are not all well. The can discover that the bad guys are linked to the the kidnapping of Gundren."
     },
     {
-      "adventureId": "3",
-      "campaign": "1",
+      "id": "3",
+      "campaignId": "1",
       "name": "Spiders Web",
       "description": "The party explore the local area and try to find clues as to the whereabouts of Gundren and the Black Spider."
     },
     {
-      "adventureId": "4",
-      "campaign": "2",
+      "id": "4",
+      "campaignId": "2",
       "name": "Island - Street Brawl",
       "description": "The party get attacked by some street thugs"
     }
   ],
   "encounters": [
     {
-      "encounterId": "1",
-      "campaign": "1",
-      "adventure": "1",
+      "id": "1",
+      "campaignId": "1",
+      "adventureId": "1",
       "name": "Ambush on the Tribor Trail",
       "description": "The party are waylaid on the road to Phandalin by a goblin ambush."
     },
     {
-      "encounterId": "2",
-      "campaign": "1",
-      "adventure": "1",
+      "id": "2",
+      "campaignId": "1",
+      "adventureId": "1",
       "name": "Cave entrance",
       "description": "The goblin cave entrance has another ambush."
     },
     {
-      "encounterId": "3",
-      "campaign": "1",
-      "adventure": "1",
+      "id": "3",
+      "campaignId": "1",
+      "adventureId": "1",
       "name": "Wolf lair",
       "description": "Wolves are chained up in this cave. They can be pacified or are likely to break free and attack."
     }
