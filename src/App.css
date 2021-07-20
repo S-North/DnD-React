@@ -16,6 +16,7 @@ body::-webkit-scrollbar {
 }
 
 
+
 /* ----- typography --- */
 /* -------------------- */
 p, h1, h2, h3 {
@@ -59,6 +60,7 @@ h3 {
     background-repeat: no-repeat;
     background-position: top left;
     background-size: cover;
+    /* box-shadow: 0 20px 10px -20px gray; */
 }
 
 .navbar > div {
@@ -78,10 +80,12 @@ h3 {
     min-height: 85vh;
     flex-direction: column;
     justify-content: space-between;
+    /* background-color: rgb(219, 213, 203); */
+    background-image: url('assets/45degreee_fabric.png');
 }
 
 .footer {
-    height: 10ch;
+    /* height: 10ch; */
     /* background-image: url("https://media.dnd.wizards.com/styles/news_banner_header/public/images/head-banner/04-PRODUCT-INFO_Tabletop_Hero_PHB.jpg"); */
     background-position: bottom;
     background-attachment: fixed;
@@ -95,6 +99,8 @@ h3 {
 main {
     /* margin: auto; */
     padding: 1ch;
+    /* background-color: rgb(219, 213, 203); */
+    background-image: url('assets/45degreee_fabric.png');
 }
 
 .main-header {

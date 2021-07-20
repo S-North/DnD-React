@@ -12,11 +12,6 @@ const Navbar = (props) => {
                 <h1>D&D Campaign Tracker</h1>
 
                 <Link to="/">Home</Link>
-
-                <Link to={{
-                    pathname: "/campaigns",
-                    state: { campaigns, config }
-                }}>Campaigns</Link>
                 
                 <Link to={{
                     pathname: "/monsters",

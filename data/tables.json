@@ -24,6 +24,59 @@
       "npc": "true",
       "campaignId": "1",
       "adventureId": "2"
+    },
+    {
+      "name": "storm king",
+      "description": "asdas",
+      "campaignId": "4",
+      "npc": "true",
+      "id": "lRat6T_"
+    },
+    {
+      "name": "Another NPC :)",
+      "description": "asdasd",
+      "campaignId": "4",
+      "npc": "true",
+      "id": "RLsXj6n"
+    },
+    {
+      "name": "Sindra",
+      "description": "Masked tavern owner.",
+      "campaignId": "2",
+      "npc": "true",
+      "id": "dsstdRd"
+    }
+  ],
+  "notes": [
+    {
+      "id": "1",
+      "campaignId": "1",
+      "name": "First note",
+      "description": "asdhaslkdsa dljasl dkasldla sjd"
+    },
+    {
+      "name": "sdfasd",
+      "description": "l;klkjlk",
+      "campaignId": "4",
+      "id": "jYYOrwD"
+    },
+    {
+      "name": "kjkjh",
+      "description": "kjhkjh",
+      "campaignId": "4",
+      "id": "z4tIBXT"
+    },
+    {
+      "name": "jkhkjhk",
+      "description": "jhkjhkj",
+      "campaignId": "1",
+      "id": "EIrDzfn"
+    },
+    {
+      "name": "Papaya island port",
+      "description": "The Bard's Trousers. Sindra upstairs room.",
+      "campaignId": "2",
+      "id": "F9Wi0Vr"
     }
   ],
   "monsters": [
@@ -80,15 +133,6 @@
       "cr": "1",
       "type": "humanoid",
       "id": 6
-    },
-    {
-      "name": "kjkhkjh",
-      "description": "gjg jh gj g j",
-      "ac": "6",
-      "hp": "678",
-      "cr": "7",
-      "type": "kjhkjhk",
-      "id": 7
     }
   ],
   "campaigns": [
@@ -109,19 +153,9 @@
       "description": "Jakes game with Kepesk @Stuart, Thea @Alex, Glee @Felix and Hazrah @Matt."
     },
     {
-      "id": "3",
-      "name": "Curse of Strahd",
-      "description": ""
-    },
-    {
       "id": "4",
       "name": "Storm Kings Thunder",
       "description": ""
-    },
-    {
-      "name": "sdfsdsdf",
-      "description": "jhkjhkjhkjh",
-      "id": "fwLLA2B"
     }
   ],
   "adventures": [
@@ -148,6 +182,18 @@
       "campaignId": "2",
       "name": "Island - Street Brawl",
       "description": "The party get attacked by some street thugs"
+    },
+    {
+      "name": "The Introduction",
+      "description": "The party members meet and an unusual event occurs.",
+      "campaignId": "4",
+      "id": "yIWfRpT"
+    },
+    {
+      "name": "A long Journey",
+      "description": "The party must make a long journey if they are to find the information they need.",
+      "campaignId": "4",
+      "id": "e_jUn22"
     }
   ],
   "encounters": [

@@ -1,24 +1,22 @@
 import { useState } from "react";
-// import { useHistory } from "react-router";
 
-const FormCampaign = ({ addItem, setWidget }) => {
-    const collection = "campaigns";
-    // const history = useHistory();
+const FormPlayer = ({ campaignId, AdventureId, EncounterId, addItem, setWidget }) => {
+    console.log(`campaignId ${campaignId}`)
+    const collection = "players";
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
-    // const data = { name, description}
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description}
-        // console.log(data);
-        addItem(collection, data);
+        const npc = "true";
+        const data = { name, description, campaignId, npc}
+        addItem(collection, data );
         setWidget({"edit": false});
-        // history.push("/");
     }
 
     return (
         <>
+        <p>Hello</p>
             <form className="form" onSubmit={(e) => handleSubmit(e) }>
                     <label>Name</label>
                     <input
@@ -40,11 +38,11 @@ const FormCampaign = ({ addItem, setWidget }) => {
                     <input
                         className='btn green'
                         type='submit' 
-                        value='Save Campaign' 
+                        value='Save Character' 
                         />
                 </form>
         </>
     );
 }
  
-export default FormCampaign;
+export default FormPlayer;
