@@ -1,3 +1,9 @@
+// react.router.dom router component is in the index.js. To prevent conflicts with useHistory on this page.
+// data json file is in data/tables.json
+// run "json-server --watch data/tables.json --port 8000" before running this app
+// install dependencies with "npm install"
+// run this app with "npm start"
+
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';

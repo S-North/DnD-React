@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import background from '../assets/maxresdefault.jpg'
 
 const Navbar = (props) => {
-    const campaigns = props.campaigns;
     const monsters = props.monsters;
     const config = props.config;
 
