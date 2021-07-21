@@ -12,6 +12,7 @@ Home
     * Dice roller
     * Random tables (loot, injury, encounters, etc)
 * Monsters List
+    * Search feature
     * Add monster
     * View monster
         * Edit monster
@@ -22,12 +23,15 @@ Home
     * View campaign. Shows the list of adventures, notes & campaign NPCs in the campaign.
         * Edit campaign
         * Delete campaign
+        * Add, edit & remove notes and npcs for the campaign 
         * View adventure. Shows the list of encounters, notes & campaign NPCs in the adventure.
             * Edit adventure
             * Delete adventure
+            * Add, edit & remove notes and npcs for the adventure 
             * View encounter. Shows the list of combatants (PC's, NPCs and monsters) in the adventure.
                 * Edit encounter (add remove combatants, notes, treasure, etc)
                 * Delete encounter
+                * Run encounter: lots of functionality. Tracking rounds & turns, hit points, conditions, dice rolling for actions, etc
      
  ## Data
  The state for this app is stored in json https://www.w3schools.com/whatis/whatis_json.asp
