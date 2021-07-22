@@ -19,6 +19,14 @@ const MonsterView = ({ deleteItem }) => {
                 <p>Type: { monster.type }</p>
                 <p>AC: { monster.ac }</p>
                 <p>HP: { monster.hp }</p>
+                <p>CR: { monster.cr }</p>
+
+                <p>STR: { monster.str }</p>
+                <p>DEX: { monster.dex }</p>
+                <p>CON: { monster.con }</p>
+                <p>INT: { monster.int }</p>
+                <p>WIS: { monster.wis }</p>
+                <p>CHA: { monster.cha }</p>
             </div>
         </>
     );

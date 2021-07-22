@@ -164,6 +164,30 @@
       "cr": "1",
       "type": "Humanoid",
       "id": 6
+    },
+    {
+      "name": "Bag of Bones",
+      "description": "How does this thing even move?!",
+      "ac": "8",
+      "hp": "160",
+      "cr": "6",
+      "type": "Undead",
+      "id": 7
+    },
+    {
+      "name": "Celestial Moon",
+      "description": "A gigantic shining orb that blinds and burns.",
+      "type": "Celestial",
+      "ac": "13",
+      "hp": "130",
+      "cr": "6",
+      "str": "10",
+      "dex": "10",
+      "con": "17",
+      "int": "4",
+      "wis": "10",
+      "cha": "16",
+      "id": 8
     }
   ],
   "campaigns": [

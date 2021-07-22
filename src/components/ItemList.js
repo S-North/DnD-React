@@ -9,7 +9,7 @@ import FormNote from "./FormNote";
 
 const ItemList = ({ title, description: formDescription, buttonText, route, items, addItem, campaignId, adventureId, deleteItem }) => {
     const [widget, setWidget] = useState({"edit": false})
-    console.log(`campaign: ${campaignId}, adventure: ${adventureId}`);
+    // console.log(`campaign: ${campaignId}, adventure: ${adventureId}`);
     const truncate = (string) => {
         if (string && string.length > 120) {
             return string.substring(0, 116) + " ..."

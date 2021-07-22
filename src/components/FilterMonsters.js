@@ -7,8 +7,8 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
     const [ minCr, setMinCr ] = useState("0");
     const [ maxCr, setMaxCr ] = useState("21");
     const [ type, setType ] = useState("All");
-    const types = ["All", "Dragon", "Monstrosity", "Aberation", "Humanoid"];
-    const crRange = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"];
+    const types = ["All", "Aberation", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead"];
+    const crRange = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"];
 
     const filtered = (monsters) => {
         let items = monsters.filter((monster) => {
