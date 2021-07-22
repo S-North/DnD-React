@@ -144,7 +144,8 @@
       "ac": "13",
       "hp": "32",
       "cr": "3",
-      "type": "Large monstrosity"
+      "type": "Monstrosity",
+      "size": "Large"
     },
     {
       "id": 5,
@@ -161,7 +162,7 @@
       "ac": "12",
       "hp": "10",
       "cr": "1",
-      "type": "humanoid",
+      "type": "Humanoid",
       "id": 6
     }
   ],

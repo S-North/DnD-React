@@ -13,6 +13,7 @@ import Home from './components/Home';
 import CampaignView from './components/CampaignView';
 import AdventureView from './components/AdventureView';
 import EncounterView from './components/EncounterView';
+import MonsterHome from './components/MonsterHome';
 import MonsterView from './components/MonsterView';
 
 function App() {
@@ -133,7 +134,10 @@ function App() {
               <EncounterView></EncounterView>
             </Route>
             <Route exact path="/monster">
-              <MonsterView deleteItem={ deleteItem }></MonsterView>
+              <MonsterView deleteItem={ deleteItem } addItem={ addItem }></MonsterView>
+            </Route>
+            <Route exact path="/monsters">
+              <MonsterHome monsters={ monsters } deleteItem={ deleteItem } addItem={ addItem }></MonsterHome>
             </Route>
             <Route exact path="/character">
               <h1>Character View Page</h1>
