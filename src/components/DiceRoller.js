@@ -1,6 +1,6 @@
 // https://medium.com/swlh/building-controlled-forms-using-functional-components-in-react-965d033a89bd
 import { useState } from 'react';
-import { diceRoll } from '../Maths';
+import { diceRoll, averageHP } from '../Maths';
 
 
 const DiceRoller = () => {
@@ -8,6 +8,7 @@ const DiceRoller = () => {
     const [sides, setSides] = useState("4");
     const [bonus, setBonus] = useState("0");
     const [result, setResult] = useState();
+    console.log(averageHP(16,12,80));
 
     const handleSubmit= (e) => {
         e.preventDefault();

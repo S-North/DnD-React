@@ -24,4 +24,14 @@ const diceRoll = (number, sides, bonus=0) => {
     return [rolls, bonus, total]
 }
 
-export { randInt, diceRoll }
+// calculate average hitpoints. sides +1, /2 to get average dice roll, multiply by number of dice rolls, + bonus
+const averageHP = (number, sides, bonus=0) => {
+    let n = parseInt(number);
+    let s = parseInt(sides);
+    let b = parseInt(bonus);
+    console.log(n,s,b);
+    let total = (((s + 1)/2)*n)+b;
+    return total     
+}
+
+export { randInt, diceRoll, averageHP }

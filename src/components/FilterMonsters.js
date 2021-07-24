@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FormCrSelect from "./FormCrSelect";
+import FormSelect from "./FormSelect";
 import ItemList from "./ItemList";
 
 const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
@@ -7,14 +7,14 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
     const [ minCr, setMinCr ] = useState("0");
     const [ maxCr, setMaxCr ] = useState("21");
     const [ type, setType ] = useState("All");
-    const types = ["All", "Aberation", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead"];
-    const crRange = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"];
+    const types = ["All", "Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead"];
+    const crRange = ["0","0.125","0.25","0.5","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"];
 
     const filtered = (monsters) => {
         let items = monsters.filter((monster) => {
             return monster.name.toLowerCase().includes(search)})
-            .filter((monster) => { return monster.cr >= parseInt(minCr) })
-            .filter((monster) => { return monster.cr <= parseInt(maxCr) });
+            .filter((monster) => { return monster.cr >= parseFloat(minCr) })
+            .filter((monster) => { return monster.cr <= parseFloat(maxCr) });
         if (type !== "All") {
             items = items.filter((item) => { return item.type === type })}
         return items
@@ -28,9 +28,9 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
             </div>
             <div className="section">
             <div className="flex-row">
-                <FormCrSelect title="Minimum CR" value={ minCr } values={ crRange } setState={ setMinCr }></FormCrSelect>
-                <FormCrSelect title="Maximum CR" value={ maxCr } values={ crRange } setState={ setMaxCr }></FormCrSelect>
-                <FormCrSelect title="Type" values={ types } value={ type } setState={ setType } />
+                <FormSelect title="Minimum CR" value={ minCr } values={ crRange } setState={ setMinCr } />
+                <FormSelect title="Maximum CR" value={ maxCr } values={ crRange } setState={ setMaxCr } />
+                <FormSelect title="Type" values={ types } value={ type } setState={ setType } />
             </div>
             </div>
             <ItemList

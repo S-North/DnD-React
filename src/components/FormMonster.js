@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 const FormMonster = ({ addItem, setWidget }) => {
     const history = useHistory();
     const collection = "monsters";
-    const types = ["Aberation", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead"];
+    const types = ["Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead"];
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
     const [ type, setType] = useState();

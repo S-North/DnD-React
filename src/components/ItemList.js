@@ -35,6 +35,8 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
 
                             <div className="item-preview" style={{ backgroundImage: `url(${background})`, color: "white", imageSize: "cover" }}>
                                 <h3>{ item.name }</h3>
+                                {item.cr && <p>CR: { item.cr }</p>}
+                                {item.type && <p>Type: { item.type }</p>}
                                 <p>{ truncate(item.description) }</p>
                             </div>
 

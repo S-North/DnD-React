@@ -1,4 +1,4 @@
-const FormCrSelect = ({ title, value, setState, values }) => {
+const FormSelect = ({ title, value, setState, values }) => {
 
     return (
         <>
@@ -14,4 +14,4 @@ const FormCrSelect = ({ title, value, setState, values }) => {
     );
 }
  
-export default FormCrSelect;
+export default FormSelect;
