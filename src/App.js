@@ -18,7 +18,7 @@ import MonsterView from './components/MonsterView';
 
 function App() {
   const history = useHistory();
-  const jsonserver = "http://localhost:8000";
+  const jsonserver = "http://192.168.1.200:8000";
   const [ campaigns, setCampaigns ] = useState([]);
   const [ monsters, setMonsters ] = useState([]);
   const [ adventures, setAdventures ] = useState([]);
