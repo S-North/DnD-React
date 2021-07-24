@@ -86,10 +86,12 @@ function App() {
       setNotes(notes.filter((note) => note.adventureId !== id));
       history.goBack();
     }
-    if (collection === "monsters") setMonsters(monsters.filter((monster) => monster.id !== id));
-
-    
+    if (collection === "monsters") {
+      setMonsters(monsters.filter((monster) => monster.id !== id));
+      history.goBack();
     }
+  }
+    
   }
 
   const addItem = (collection, data) => {
