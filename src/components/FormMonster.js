@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
+import { diceRoll, abiilityModifier } from '../Maths';
 
 const FormMonster = ({ addItem, setWidget }) => {
     const history = useHistory();
@@ -9,7 +10,6 @@ const FormMonster = ({ addItem, setWidget }) => {
     const [description, setDescription] = useState(``);
     const [ type, setType] = useState();
     const [ac, setAc] = useState(``);
-    const [hp, setHp] = useState(``);
     const [cr, setCr] = useState(``);
     const [str, setStr] = useState("10");
     const [dex, setDex] = useState("10");
@@ -17,15 +17,26 @@ const FormMonster = ({ addItem, setWidget }) => {
     const [int, setInt] = useState("10");
     const [wis, setWis] = useState("10");
     const [cha, setCha] = useState("10");
+    const [hdNumber, setHdNumber] = useState(`1`);
+    const [hdDice, setHdDice] = useState(`8`);
+    const [hdBonus, setHdBonus] = useState(abiilityModifier(con));
+    const [hp, setHp] = useState(`5`);
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description, type, ac, hp, cr, str, dex, con, int, wis, cha }
+        const hitDice = [hdNumber, hdDice, hdBonus]
+        const data = { name, description, type, ac, hp, cr, str, dex, con, int, wis, cha, hitDice }
         console.log(data);
         addItem(collection, data);
         setWidget({"edit": false});
         history.push("/");
+    }
+
+    const handleHitdice = (e) => {
+        e.preventDefault();
+        console.log(hdNumber, hdDice, hdBonus);
+        setHp(diceRoll(hdNumber, hdDice, hdBonus)[2]);
     }
 
     return (
@@ -58,15 +69,6 @@ const FormMonster = ({ addItem, setWidget }) => {
                     value={ ac }
                     onChange={e => setAc(e.target.value)}
                 />
-                <label>HP</label>
-                <input
-                    className="input-text"
-                    name='Name' 
-                    type='number'
-                    required
-                    value={ hp }
-                    onChange={e => setHp(e.target.value)}
-                />
                 <label>CR</label>
                 <input
                     className="input-text"
@@ -84,7 +86,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                 </select>
                 </div>
                 <div className="flex-row">
-                    <label>STR</label>
+                    <label>STR ({abiilityModifier(str)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -92,7 +94,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         required
                         value={ str }
                         onChange={e => setStr(e.target.value)}/>
-                    <label>DEX</label>
+                    <label>DEX ({abiilityModifier(dex)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -100,7 +102,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         required
                         value={ dex }
                         onChange={e => setDex(e.target.value)} />
-                    <label>CON</label>
+                    <label>CON ({abiilityModifier(con)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -110,7 +112,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         onChange={e => setCon(e.target.value)}/>
                 </div>
                 <div className="flex-row">
-                    <label>INT</label>
+                    <label>INT ({abiilityModifier(int)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -119,7 +121,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         value={ int }
                         onChange={e => setInt(e.target.value)}
                     />
-                    <label>WIS</label>
+                    <label>WIS ({abiilityModifier(wis)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -128,7 +130,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         value={ wis }
                         onChange={e => setWis(e.target.value)}
                     />
-                    <label>CHA</label>
+                    <label>CHA ({abiilityModifier(cha)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -136,6 +138,44 @@ const FormMonster = ({ addItem, setWidget }) => {
                         required
                         value={ cha }
                         onChange={e => setCha(e.target.value)}
+                    />
+                </div>
+                <div className="flex-row">
+                    <input
+                        className="input-text"
+                        name='Name' 
+                        type='number'
+                        required
+                        value={ hdNumber }
+                        onChange={e => setHdNumber(e.target.value)}
+                        />
+                    <label>d</label>
+                    <input
+                        className="input-text"
+                        name='Name' 
+                        type='number'
+                        required
+                        value={ hdDice }
+                        onChange={e => setHdDice(e.target.value)}
+                        />
+                    <label>+</label>
+                    <input
+                        className="input-text"
+                        name='Name' 
+                        type='number'
+                        required
+                        value={ hdBonus }
+                        onChange={e => setHdBonus(e.target.value)}
+                        />
+                    <button className="btn blue" onClick={ (e) => handleHitdice(e) }>Roll</button>
+                    <label>HP</label>
+                    <input
+                        className="input-text"
+                        name='Name' 
+                        type='number'
+                        required
+                        value={ hp }
+                        onChange={e => setHp(e.target.value)}
                     />
                 </div>
                 <input

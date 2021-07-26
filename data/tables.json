@@ -428,6 +428,46 @@
       "wis": "3",
       "cha": "1",
       "id": 24
+    },
+    {
+      "name": "kraken",
+      "description": "asjhdkashd kasjhd  kjas",
+      "type": "Monstrosity",
+      "ac": "18",
+      "hp": 456,
+      "cr": "23",
+      "str": "30",
+      "dex": "11",
+      "con": "25",
+      "int": "22",
+      "wis": "18",
+      "cha": "20",
+      "hitDice": [
+        "27",
+        "20",
+        "189"
+      ],
+      "id": 9
+    },
+    {
+      "name": "Tarrasque",
+      "description": "jkdshjks hdfkjsdh",
+      "type": "Monstrosity",
+      "ac": "25",
+      "hp": 702,
+      "cr": "30",
+      "str": "30",
+      "dex": "11",
+      "con": "30",
+      "int": "3",
+      "wis": "11",
+      "cha": "11",
+      "hitDice": [
+        "33",
+        "20",
+        "330"
+      ],
+      "id": 10
     }
   ],
   "campaigns": [

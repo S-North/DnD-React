@@ -18,6 +18,7 @@ const MonsterView = ({ deleteItem }) => {
             <div className="section">
                 <p>Type: { monster.type }</p>
                 <p>AC: { monster.ac }</p>
+                {monster.hitDice && <p>Dit Dice: {monster.hitDice[0]}d{monster.hitDice[1]}+{monster.hitDice[2]}</p>}
                 <p>HP: { monster.hp }</p>
                 <p>CR: { monster.cr }</p>
 
