@@ -447,7 +447,7 @@
         "20",
         "189"
       ],
-      "id": 9
+      "id": 25
     },
     {
       "name": "Tarrasque",
@@ -467,7 +467,7 @@
         "hdDice": "20",
         "hdBonus": "330"
       },
-      "id": 10,
+      "id": 26,
       "traits": [
         {
           "name": "Legendary Resistance (3/Day)",
