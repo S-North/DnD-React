@@ -92,8 +92,6 @@ function App() {
       history.goBack();
     }
   }
-    
-  }
 
   const addItem = (collection, data) => {
     // collection is the json collection to put the data e.g. monsters, campaigns, adventures, etc
