@@ -116,7 +116,7 @@
       "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
       "ac": "15",
       "hp": "7",
-      "cr": "0.5",
+      "cr": "0.25",
       "type": "Humanoid"
     },
     {
@@ -562,6 +562,46 @@
           "description": "The tarrasque makes one bite attack or uses its Swallow."
         }
       ]
+    },
+    {
+      "name": "Green Hag",
+      "description": "The wretched and hateful green hags dwell in dying forests, lonely swamps, and misty moors, making their homes in caves. Green hags love to manipulate other creatures into doing their bidding, masking their intentions behind layers of deception. They lure victims to them by mimicking voices calling out for help, or drive unwanted visitors away by imitating the cries of fierce beasts.\n\nObsession with Tragedy. Green hags revel in the failings and tragedies of other creatures. They derive joy from bringing people low and seeing hope turn into despair, not just for individuals but also for whole nations.\nCovens. A green hag that is part of a coven (see the “Hag Covens” sidebar) has a challenge rating of 5 (1,800 XP).",
+      "type": "Fey",
+      "ac": "17",
+      "hp": "82",
+      "cr": "3",
+      "str": "18",
+      "dex": "12",
+      "con": "16",
+      "int": "13",
+      "wis": "14",
+      "cha": "14",
+      "hitDice": {
+        "hdNumber": "11",
+        "hdDice": "8",
+        "hdBonus": "33"
+      },
+      "id": 27
+    },
+    {
+      "name": "Ochre Jelly",
+      "description": "An ochre jelly is a yellowish ooze that can slide under doors and through narrow cracks in pursuit of creatures to devour.\n\nOchre jellies are yellowish blobs that can slide under doors and through narrow cracks in pursuit of creatures to devour. They have enough bestial cunning to avoid large groups of enemies.\n\nAn ochre jelly follows at a safe distance as it pursues its meal. Its digestive enzymes dissolve flesh quickly but have no effect on other substances such as bone, wood, and metal.\n\nSlow Death. An ooze kills its prey slowly. Some varieties, such as black puddings and gelatinous cubes, engulf creatures to prevent escape. The only upside of this torturous death is that a victim’s comrades can come to the rescue before it is too late.\n\nSince not every ooze digests every type of substance, some have coins, metal gear, bones, and other debris suspended within their quivering bodies. A slain ooze can be a rich source of treasure for its killers.\n\nUnwitting Servants. Although an ooze lacks the intelligence to ally itself with other creatures, others that understand an ooze’s need to feed might lure it into a location where it can be of use to them. Clever monsters keep oozes around to defend passageways or consume refuse. Likewise, an ooze can be enticed into a pit trap, where its captors feed it often enough to prevent it from coming after them. Crafty creatures place torches and flaming braziers in strategic areas to dissuade an ooze from leaving a particular tunnel or room.\n\nSpawn of Juiblex. According to the Demonomicon of Iggwilv and other sources, oozes are scattered fragments or offspring of the demon lord Juiblex. Whether this is true or not, the Faceless Lord is one of the few beings that can control oozes and imbue them with a modicum of intelligence. Most of the time, oozes have no sense of tactics or self-preservation. They are direct and predictable, attacking and eating without cunning. Under the control of Juiblex, they exhibit glimmers of sentience and malevolent intent.\n\nOoze Nature. An ooze doesn’t require sleep.",
+      "type": "Ooze",
+      "ac": "8",
+      "hp": "45",
+      "cr": "2",
+      "str": "15",
+      "dex": "6",
+      "con": "14",
+      "int": "2",
+      "wis": "6",
+      "cha": "1",
+      "hitDice": {
+        "hdNumber": "6",
+        "hdDice": "10",
+        "hdBonus": "12"
+      },
+      "id": 28
     }
   ],
   "campaigns": [
