@@ -55,9 +55,8 @@ function App() {
     .then(response => response.json())
             .then((notes) => {
                 setNotes(notes);
-                // console.log(`Result of campaigns fetch`, campaigns);
-    
             });
+
     return () => {
     }
   }, [])
@@ -69,6 +68,7 @@ function App() {
     await fetch(url, {
       method: 'DELETE'
     })
+  }
 
     if (collection === "campaigns") {
       setCampaigns(campaigns.filter((campaign) => campaign.id !== id));
@@ -86,6 +86,7 @@ function App() {
       setNotes(notes.filter((note) => note.adventureId !== id));
       history.goBack();
     }
+
     if (collection === "monsters") {
       setMonsters(monsters.filter((monster) => monster.id !== id));
       history.goBack();
@@ -154,6 +155,6 @@ function App() {
 
       </>
     )
-}
-
-export default App;
+  }
+  
+  export default App;

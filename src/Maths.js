@@ -34,4 +34,15 @@ const averageHP = (number, sides, bonus=0) => {
     return total     
 }
 
-export { randInt, diceRoll, averageHP }
+const abiilityModifier = (int) => {
+    // take in an ability score and return a modifier
+    if (int > 9) {
+        // munbers 10 or greater we can just deduct 10, divide my 2 and round down
+        return Math.floor((int -10) / 2)
+    } else {
+        // numbers below 10, deduct 11, divide by 2 and round up
+        return Math.ceil((int - 11) / 2)
+    }
+}
+
+export { randInt, diceRoll, averageHP, abiilityModifier }

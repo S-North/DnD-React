@@ -29,7 +29,7 @@ a {
 }
 
 p {
-    font-size: 1.3ch;
+    font-size: 1.1ch;
 }
 
 h1 {
@@ -119,6 +119,22 @@ main {
     background-color: rgb(245, 245, 245);
     padding: 1ch;
     border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+    .d-md-columns {
+        display: inline-block !important;
+        column-count: 2;
+        -webkit-column-gap: 1ch;
+        -moz-column-gap: 1ch;
+        column-gap: 1ch;
+        /* gap: 1ch; */
+    }
+}
+
+.border-box {
+    border: 1px solid grey;
+    border-radius: 3px;
 }
 
 .flex-row {
