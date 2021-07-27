@@ -25,7 +25,11 @@ const FormMonster = ({ addItem, setWidget }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const hitDice = [hdNumber, hdDice, hdBonus]
+        const hitDice = {
+            "hdNumber": hdNumber,
+            "hdDice": hdDice,
+            "hdBonus": hdBonus
+        }
         const data = { name, description, type, ac, hp, cr, str, dex, con, int, wis, cha, hitDice }
         console.log(data);
         addItem(collection, data);
