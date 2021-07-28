@@ -10,14 +10,14 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
     const types = ["All", "Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead"];
     const crRange = ["0","0.125","0.25","0.5","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21", "30"];
 
-    const filtered = (monsters) => {
+    const filtered = (monsters, filter="name") => {
         let items = monsters.filter((monster) => {
             return monster.name.toLowerCase().includes(search)})
             .filter((monster) => { return monster.cr >= parseFloat(minCr) })
             .filter((monster) => { return monster.cr <= parseFloat(maxCr) });
         if (type !== "All") {
             items = items.filter((item) => { return item.type === type })}
-        return items
+        return items.sort((filter === "name") ? (a, b) => (a.name > b.name) - (a.name < b.name) : (a, b) => (parseFloat(a.cr) > parseFloat(b.cr)) - (parseFloat(a.cr) < parseFloat(b.cr)))
         }
 
     return (
