@@ -121,16 +121,20 @@ main {
     border-radius: 2px;
 }
 
-@media (min-width: 768px) {
+.widget .item {
+    padding-bottom: 1ch;
+}
+
+/* @media (min-width: 768px) {
     .d-md-columns {
-        display: inline-block !important;
-        column-count: 2;
+        display: inline-block;
+        column-count: 3;
         -webkit-column-gap: 1ch;
         -moz-column-gap: 1ch;
         column-gap: 1ch;
-        /* gap: 1ch; */
+        
     }
-}
+} */
 
 .border-box {
     border: 1px solid grey;
