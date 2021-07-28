@@ -10,18 +10,21 @@ const randInt = (start, end) => {
 // takes in 2 mandatory integers, and an optional integer for the bonus
 // returns an array containing an array of all the dice results, followed by the plus, then a single integer of the total
 const diceRoll = (number, sides, bonus=0) => {
+    console.log(number,sides,bonus);
+    let n = parseInt(number);
+    let s = parseInt(sides);
     let b = parseInt(bonus);
     let i;
     let rolls = [];
     let total = 0;
-    for (i = 0; i < number; ++i) {
-        let roll = randInt(1, sides);
-        // console.log(`Roll is ${roll}`) // template literal strings, like f'strings. Uses backticks, not single quotes
+    for (i = 0; i < n; ++i) {
+        let roll = randInt(1, s);
+        console.log(`Roll is ${roll}`) // template literal strings, like f'strings. Uses backticks, not single quotes
         rolls.push((roll));
         total += roll;
     }
     total += b;
-    return [rolls, bonus, total]
+    return [rolls, b, total]
 }
 
 // calculate average hitpoints. sides +1, /2 to get average dice roll, multiply by number of dice rolls, + bonus

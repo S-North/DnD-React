@@ -1,8 +1,13 @@
 import { useState } from "react";
 import FormMonster from "./FormMonster";
+import { abiilityModifier, diceRoll } from "../Maths";
 
 const ActionList = ({ title, description: formDescription, buttonText, route, items, addItem }) => {
     const [widget, setWidget] = useState({"edit": false})
+    const handleClick = (number, sides, bonus) => {
+        const roll = diceRoll(number, sides, bonus);
+        alert(`Roll is ${roll[0]} and the total is ${roll[2]}`);
+    }
 
     return (
         <>
@@ -14,12 +19,12 @@ const ActionList = ({ title, description: formDescription, buttonText, route, it
                 {!widget.edit && <p>{ formDescription }</p>}
                 {!widget.edit && <div className="item-list">
                     {items ? items.map((item) => (    
-                        <>              
-                        <p>{ item.name }</p>
-                        {item.description && <p>{ item.description }</p>}
-                        {item.attack && <p>To Hit: { item.attack }</p>}
-                        {item.damage && <p>Damage: { item.damage.number }d{ item.damage.dice }+{ item.damage.bonus } { item.damage.type }</p>}
-                        </>
+                        <div className="item" key={item.id}>              
+                            <p><strong>{item.name && item.name }:</strong> {item.description && item.description }</p>
+                            
+                            {item.attack && <>To Hit: <button className="btn blue" onClick={() => (handleClick(1, 20, item.attack))}> { item.attack }</button></>}
+                            {item.damage && <>Damage: <button className="btn blue" onClick={() => (handleClick(item.damage.number, item.damage.dice, item.damage.bonus))}> { item.damage.number }d{ item.damage.dice }+{ item.damage.bonus } </button> { item.damage.type }</>}
+                        </div>
                     ))
                 : <p>No items to display</p>}
                 </div>}
