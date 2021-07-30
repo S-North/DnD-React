@@ -15,7 +15,6 @@ const AdventureView = ({ encounters, addItem, deleteItem, campaignId, notes, pla
             <div className="main-header">
             <button className="btn red float-right" onClick={ () => deleteItem(adventure.id, collection) }>Delete Adventure</button>
                 <h1>Adventure: { adventure.name }</h1>
-                <h2>{ adventure.name }</h2>
                 <p>{ adventure.description }</p>
             </div>
             <div className="section">

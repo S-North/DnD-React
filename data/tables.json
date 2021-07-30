@@ -45,6 +45,41 @@
       "campaignId": "2",
       "npc": "true",
       "id": "dsstdRd"
+    },
+    {
+      "name": "sad as",
+      "description": "asd asd as",
+      "campaignId": "1",
+      "adventureId": "3",
+      "npc": "true",
+      "id": "4nBNG17"
+    },
+    {
+      "name": "asdasd",
+      "description": "asd sad asd ",
+      "campaignId": "1",
+      "adventureId": "3",
+      "npc": "true",
+      "id": "5Gt_tLm"
+    },
+    {
+      "name": "lkj lkjlk jl",
+      "description": " jl jlj ljl jl ",
+      "npc": "true",
+      "id": "v7NNh9b"
+    },
+    {
+      "name": "fghf  hfg",
+      "description": "fgh fg hfgh fgh",
+      "npc": "true",
+      "id": "N_Kv-kT"
+    },
+    {
+      "name": "i oiuoi uoiu",
+      "description": " uoi uoi o uuio uio",
+      "encounterId": "ywHQoQP",
+      "npc": "true",
+      "id": "1I3bkYc"
     }
   ],
   "notes": [
@@ -107,6 +142,24 @@
       "name": "nkjkjhkjhj",
       "description": "jhkjhkjhhkjh",
       "id": "cC3bKcf"
+    },
+    {
+      "name": "uoioiu",
+      "description": "uiou oi ouio",
+      "encounterId": "ywHQoQP",
+      "id": "IW5n-Xn"
+    },
+    {
+      "name": "encounter note",
+      "description": "lkajdlasjdlaksjdlkadjs",
+      "encounterId": "ywHQoQP",
+      "id": "B6omtf3"
+    },
+    {
+      "name": "kjhkhkj",
+      "description": "kjhkjh kj hk hk hk ",
+      "encounterId": "ywHQoQP",
+      "id": "2yM6Ymu"
     }
   ],
   "monsters": [
@@ -471,7 +524,7 @@
       "id": 24
     },
     {
-      "name": "kraken",
+      "name": "Kraken",
       "description": "asjhdkashd kasjhd  kjas",
       "type": "Monstrosity",
       "ac": "18",
@@ -737,7 +790,8 @@
       "location": "Phandalin",
       "campaignId": "1",
       "adventureId": "2",
-      "id": "8ZXZ1Ni"
+      "id": "8ZXZ1Ni",
+      "active": "running"
     },
     {
       "name": "An injured deer",
@@ -745,7 +799,8 @@
       "location": "Neverwinter Woods",
       "campaignId": "1",
       "adventureId": "3",
-      "id": "ywHQoQP"
+      "id": "ywHQoQP",
+      "active": "pending"
     },
     {
       "name": "Mosslashes-Katashes",
@@ -753,7 +808,16 @@
       "location": "Neverwinter Woods",
       "campaignId": "1",
       "adventureId": "3",
-      "id": "6A0uWxd"
+      "id": "6A0uWxd",
+      "active": "running"
+    },
+    {
+      "name": "jkhjkh",
+      "description": "kjhkjhkjh",
+      "location": "kjhkjhkj",
+      "campaignId": "1",
+      "adventureId": "3",
+      "id": "finished"
     }
   ]
 }

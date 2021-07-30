@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import background from '../assets/adventure-bg.jpg';
 import FormCampaign from "./FormCampaign";
 import FormMonster from "./FormMonster";
@@ -9,15 +8,9 @@ import FormPlayer from "./FormPlayer";
 import FormNote from "./FormNote";
 import Item from "./Item";
 
-const ItemList = ({ title, description: formDescription, buttonText, route, items, itemStyle, addItem, campaignId, adventureId, deleteItem }) => {
+const ItemList = ({ title, description: formDescription, buttonText, route, items, itemStyle, addItem, campaignId, adventureId, encounterId, deleteItem }) => {
     const [widget, setWidget] = useState({"edit": false})
     // console.log(`campaign: ${campaignId}, adventure: ${adventureId}`);
-    const truncate = (string) => {
-        if (string && string.length > 120) {
-            return string.substring(0, 116) + " ..."
-        }
-        return string
-    }
 
     return (
         <>
@@ -38,8 +31,8 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                 {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
                 {(widget.edit && route === "/encounter") && <FormEncounter addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
                 {(widget.edit && route === "/monster") && <FormMonster addItem={ addItem } setWidget={ setWidget }></FormMonster>}
-                {(widget.edit && route === "/character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
-                {(widget.edit && route === "/note") && <FormNote addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
+                {(widget.edit && route === "/character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } />}
+                {(widget.edit && route === "/note") && <FormNote addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } />}
             </div>
         </>
     );

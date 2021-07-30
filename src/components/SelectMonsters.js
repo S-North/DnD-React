@@ -2,7 +2,7 @@ import { useState } from "react";
 import FormSelect from "./FormSelect";
 import ItemList from "./ItemList";
 
-const FilterMonsters = ({ items: monsters, addItem, deleteItem }) => {
+const SelectMonsters = ({ monsters, addItem, deleteItem, selectMonster }) => {
     const [ search, setSearch ] = useState("");
     const [ minCr, setMinCr ] = useState("0");
     const [ maxCr, setMaxCr ] = useState("30");
@@ -41,9 +41,10 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem }) => {
                 items={ filtered(monsters) }
                 route="/monster"
                 addItem={ addItem }
-                deleteItem={ deleteItem }/>
+                deleteItem={ deleteItem }
+                selectMonster={ selectMonster }/>
         </>
     );
 }
  
-export default FilterMonsters;
+export default SelectMonsters;

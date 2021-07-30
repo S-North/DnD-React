@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-const FormNote = ({ campaignId, adventureId, EncounterId, addItem, setWidget }) => {
+const FormNote = ({ campaignId, adventureId, encounterId, addItem, setWidget }) => {
     const collection = "notes";
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
-    console.log(`campaign: ${campaignId}, adventure: ${adventureId}`)
+    console.log(`campaign: ${campaignId}, adventure: ${adventureId}, encounter: ${encounterId}`)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description, campaignId, adventureId, EncounterId }
+        const data = { name, description, campaignId, adventureId, encounterId }
         console.log(data);
         addItem(collection, data );
         setWidget({"edit": false});
