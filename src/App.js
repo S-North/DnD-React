@@ -32,17 +32,23 @@ function App() {
             .then((campaigns) => {
                 setCampaigns(campaigns);
             });
-
+            
+    fetch(`${jsonserver}/adventures`)
+    .then(response => response.json())
+    .then((adventures) => {
+      setAdventures(adventures);
+    });
+    
+    fetch(`${jsonserver}/encounters`)
+    .then(response => response.json())
+    .then((encounters) => {
+      setEncounters(encounters);
+    });
+    
     fetch(`${jsonserver}/monsters`)
     .then(response => response.json())
             .then((monsters) => {
                 setMonsters(monsters);
-            });
-
-    fetch(`${jsonserver}/adventures`)
-    .then(response => response.json())
-            .then((adventures) => {
-                setAdventures(adventures);
             });
     
     fetch(`${jsonserver}/players`)
@@ -97,7 +103,7 @@ function App() {
     // collection is the json collection to put the data e.g. monsters, campaigns, adventures, etc
     // data is the json object to post to the server
     const url = `${jsonserver}/${collection}`;
-    console.log(data);
+    console.log(collection, data);
 
     fetch(url, {
       method: 'POST',
@@ -111,6 +117,7 @@ function App() {
         if (collection === "campaigns") {setCampaigns([...campaigns, response])}
         if (collection === "monsters") {setMonsters([...monsters, response])}
         if (collection === "adventures") {setAdventures([...adventures, response])}
+        if (collection === "encounters") {setEncounters([...encounters, response])}
         if (collection === "players") {setPlayers([...players, response])}
         if (collection === "notes") {setNotes([...notes, response])}
     })
@@ -129,7 +136,7 @@ function App() {
               <CampaignView adventures={ adventures } players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></CampaignView>
             </Route>
             <Route exact path="/adventure">
-              <AdventureView players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></AdventureView>
+              <AdventureView encounters={encounters} players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></AdventureView>
             </Route>
             <Route exact path="/encounter">
               <EncounterView></EncounterView>

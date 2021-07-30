@@ -4,10 +4,12 @@ import background from '../assets/adventure-bg.jpg';
 import FormCampaign from "./FormCampaign";
 import FormMonster from "./FormMonster";
 import FormAdventure from "./FormAdventure";
+import FormEncounter from "./FormEncounter";
 import FormPlayer from "./FormPlayer";
 import FormNote from "./FormNote";
+import Item from "./Item";
 
-const ItemList = ({ title, description: formDescription, buttonText, route, items, addItem, campaignId, adventureId, deleteItem }) => {
+const ItemList = ({ title, description: formDescription, buttonText, route, items, itemStyle, addItem, campaignId, adventureId, deleteItem }) => {
     const [widget, setWidget] = useState({"edit": false})
     // console.log(`campaign: ${campaignId}, adventure: ${adventureId}`);
     const truncate = (string) => {
@@ -27,30 +29,17 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                 {!widget.edit && <p>{ formDescription }</p>}
                 {!widget.edit && <div className="item-list">
                     {items ? items.map((item) => (
-                        <Link key={ item.id } to={{
-                                pathname: route,
-                                state: { item, campaignId, adventureId }
-                                }} 
-                        >
-
-                            <div className="item-preview" style={{ backgroundImage: `url(${background})`, color: "white", imageSize: "cover" }}>
-                                <h3>{ item.name }</h3>
-                                {item.cr && <p>CR: { item.cr }</p>}
-                                {item.type && <p>Type: { item.type }</p>}
-                                <p>{ truncate(item.description) }</p>
-                            </div>
-
-                        </Link>
+                        <Item item={ item } route={ route } campaignId={ campaignId} adventureId={ adventureId} itemStyle={ itemStyle } background={ background } />
                     ))
                 : <p>No items to display</p>}
                 </div>}
 
-                {(widget.edit && route === "/campaign") && <FormCampaign addItem={ addItem } setWidget={ setWidget }></FormCampaign>}
-                {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId }></FormAdventure>}
-                {(widget.edit && route === "/encounter") && <h1>Encounter Form</h1>}
+                {(widget.edit && route === "/campaign") && <FormCampaign addItem={ addItem } setWidget={ setWidget } />}
+                {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
+                {(widget.edit && route === "/encounter") && <FormEncounter addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
                 {(widget.edit && route === "/monster") && <FormMonster addItem={ addItem } setWidget={ setWidget }></FormMonster>}
-                {(widget.edit && route === "/character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId }></FormPlayer>}
-                {(widget.edit && route === "/note") && <FormNote addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId }></FormNote>}
+                {(widget.edit && route === "/character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
+                {(widget.edit && route === "/note") && <FormNote addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
             </div>
         </>
     );

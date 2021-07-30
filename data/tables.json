@@ -712,21 +712,48 @@
       "campaignId": "1",
       "adventureId": "1",
       "name": "Ambush on the Tribor Trail",
-      "description": "The party are waylaid on the road to Phandalin by a goblin ambush."
+      "description": "The party are waylaid on the road to Phandalin by a goblin ambush.",
+      "location": "Tribor Trail"
     },
     {
       "id": "2",
       "campaignId": "1",
       "adventureId": "1",
       "name": "Cave entrance",
-      "description": "The goblin cave entrance has another ambush."
+      "description": "The goblin cave entrance has another ambush.",
+      "location": "Cragmaw Hideout"
     },
     {
       "id": "3",
       "campaignId": "1",
       "adventureId": "1",
       "name": "Wolf lair",
-      "description": "Wolves are chained up in this cave. They can be pacified or are likely to break free and attack."
+      "description": "Wolves are chained up in this cave. They can be pacified or are likely to break free and attack.",
+      "location": "Cragmaw Hideout"
+    },
+    {
+      "name": "A scuffle in the street",
+      "description": "Some Redbrands harass the party and try to arest them.",
+      "location": "Phandalin",
+      "campaignId": "1",
+      "adventureId": "2",
+      "id": "8ZXZ1Ni"
+    },
+    {
+      "name": "An injured deer",
+      "description": "The party come across an injured deer. What will they do?",
+      "location": "Neverwinter Woods",
+      "campaignId": "1",
+      "adventureId": "3",
+      "id": "ywHQoQP"
+    },
+    {
+      "name": "Mosslashes-Katashes",
+      "description": "A curious tiny person wants to play.",
+      "location": "Neverwinter Woods",
+      "campaignId": "1",
+      "adventureId": "3",
+      "id": "6A0uWxd"
     }
   ]
 }

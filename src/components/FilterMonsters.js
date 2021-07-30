@@ -37,6 +37,7 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
                 title="Monsters"
                 description="Use the search & filters to find the right monster for the right occasion."
                 buttonText="New Monster"
+                itemStyle="item-compact"
                 items={ filtered(monsters) }
                 route="/monster"
                 addItem={ addItem }
