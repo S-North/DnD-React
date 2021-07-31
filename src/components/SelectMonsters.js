@@ -4,8 +4,9 @@ import { useState } from "react";
 import FormSelect from "./FormSelect";
 import FormMonster from "./FormMonster";
 import FormPlayer from "./FormPlayer";
+import { v4 as uuidv4 } from 'uuid'; // generate a UUID for the object id
 
-const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker }) => {
+const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker, setSelected, windows, setWindows }) => {
     const [widget, setWidget] = useState({"edit": false})
     const [ tab, setTab] = useState("monster");
 
@@ -23,16 +24,17 @@ const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker
             .filter((monster) => { return monster.cr <= parseFloat(maxCr) });
         if (type !== "All") {
             items = items.filter((item) => { return item.type === type })}
-        return items.sort((filter === "name") ? (a, b) => (a.name > b.name) - (a.name < b.name) : (a, b) => (parseFloat(a.cr) > parseFloat(b.cr)) - (parseFloat(a.cr) < parseFloat(b.cr)))
+        return items.sort((filter === "name") ? (a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) : (a, b) => (parseFloat(a.cr) > parseFloat(b.cr)) - (parseFloat(a.cr) < parseFloat(b.cr)))
         }
 
     const selectItem = (item) => {
-        selectMonster(item);
-        closePicker({"edit": false})
+        setSelected({...item, "id": uuidv4()});
+        setWindows({...windows, "select": false, "add": true})
     }
 
     return (
         <>
+        <div className="widget">
             <div className="section">
                 <input className="input-text" name='search' type='text' value={ search } onChange={e => setSearch(e.target.value)} placeholder="Search" />
             </div>
@@ -49,7 +51,7 @@ const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker
                 {widget.edit && <button onClick={ () => { setWidget({"edit": false})}} className="btn blue float-right">Exit Edit</button>}
                 {!widget.edit && <div className="item-list">
                     {filtered ? filtered(monsters).map((item) => (
-                        <div onClick={() => {selectItem(item)}} className="item-compact" id="click this" style={{ cursor:"pointer" }}>
+                        <div key={ item.id } onClick={() => {selectItem(item)}} className="item-compact" id="click this" style={{ cursor:"pointer" }}>
                             <h3 style={{ color:"black"}}><strong>{ item.name }.</strong> <em>{item.type} CR: {item.cr}</em></h3>
                         </div>
                     ))
@@ -58,6 +60,7 @@ const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker
 
                 {(widget.edit && tab === "monster") && <FormMonster addItem={ addItem } setWidget={ setWidget } setTab={ setTab }></FormMonster>}
                 {(widget.edit && tab === "character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } setTab={ setTab } />}
+            </div>
             </div>
         </>
     );
