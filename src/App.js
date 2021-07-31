@@ -67,7 +67,6 @@ function App() {
     }
   }, [])
 
-  console.log(monsters);
 
   const deleteItem = async (id, collection) => {
     if (window.confirm(
@@ -101,6 +100,7 @@ function App() {
     }
   }
 
+
   const addItem = (collection, data, id, operation) => {
     // collection is the json collection to put the data e.g. monsters, campaigns, adventures, etc
     // data is the json object to post to the server
@@ -124,6 +124,7 @@ function App() {
         if (collection === "notes") {setNotes([...notes, response])}
     })
   }
+
 
   const updateItem = (collection, data, id, operation) => {
     // collection is the json collection to put the data e.g. monsters, campaigns, adventures, etc
@@ -149,6 +150,7 @@ function App() {
     })
   }
 
+
     return (
       <>
         <Navbar campaigns={campaigns} monsters={monsters}></Navbar>
@@ -156,7 +158,7 @@ function App() {
         <main>
           <Switch>
             <Route exact path="/">
-                <Home title="Home" campaigns={ campaigns } monsters={ monsters } addItem={ addItem }></Home>
+                <Home title="Home" campaigns={ campaigns } monsters={ monsters } addItem={ addItem } updateItem={ updateItem }></Home>
             </Route>
             <Route exact path="/campaign">
               <CampaignView adventures={ adventures } players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></CampaignView>

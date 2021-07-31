@@ -22,7 +22,7 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                 {!widget.edit && <p>{ formDescription }</p>}
                 {!widget.edit && <div className="item-list">
                     {items ? items.map((item) => (
-                        <Item item={ item } route={ route } campaignId={ campaignId} adventureId={ adventureId} itemStyle={ itemStyle } background={ background } />
+                        <Item key={ item.id} item={ item } route={ route } campaignId={ campaignId} adventureId={ adventureId} itemStyle={ itemStyle } background={ background } />
                     ))
                 : <p>No items to display</p>}
                 </div>}

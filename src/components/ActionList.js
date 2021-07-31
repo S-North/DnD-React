@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FormMonster from "./FormMonster";
-import { abiilityModifier, diceRoll } from "../Maths";
+import { diceRoll } from "../Maths";
 
 const ActionList = ({ title, description: formDescription, buttonText, route, items, addItem }) => {
     const [widget, setWidget] = useState({"edit": false})

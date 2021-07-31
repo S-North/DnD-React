@@ -2,9 +2,13 @@
 
 import { useState } from "react";
 import FormSelect from "./FormSelect";
-import ItemList from "./ItemList";
+import FormMonster from "./FormMonster";
+import FormPlayer from "./FormPlayer";
 
-const SelectMonsters = ({ monsters, addItem, deleteItem, selectMonster }) => {
+const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker }) => {
+    const [widget, setWidget] = useState({"edit": false})
+    const [ tab, setTab] = useState("monster");
+
     const [ search, setSearch ] = useState("");
     const [ minCr, setMinCr ] = useState("0");
     const [ maxCr, setMaxCr ] = useState("30");
@@ -22,11 +26,15 @@ const SelectMonsters = ({ monsters, addItem, deleteItem, selectMonster }) => {
         return items.sort((filter === "name") ? (a, b) => (a.name > b.name) - (a.name < b.name) : (a, b) => (parseFloat(a.cr) > parseFloat(b.cr)) - (parseFloat(a.cr) < parseFloat(b.cr)))
         }
 
+    const selectItem = (item) => {
+        selectMonster(item);
+        closePicker({"edit": false})
+    }
+
     return (
         <>
             <div className="section">
-                <label>Search</label>
-                <input className="input-text" name='search' type='text' value={ search } onChange={e => setSearch(e.target.value)} />
+                <input className="input-text" name='search' type='text' value={ search } onChange={e => setSearch(e.target.value)} placeholder="Search" />
             </div>
             <div className="section">
             <div className="flex-row">
@@ -34,17 +42,23 @@ const SelectMonsters = ({ monsters, addItem, deleteItem, selectMonster }) => {
                 <FormSelect title="Maximum CR" value={ maxCr } values={ crRange } setState={ setMaxCr } />
                 <FormSelect title="Type" values={ types } value={ type } setState={ setType } />
             </div>
+
             </div>
-            <ItemList
-                title="Monsters"
-                description="Use the search & filters to find the right monster for the right occasion."
-                buttonText="New Monster"
-                itemStyle="item-compact"
-                items={ filtered(monsters) }
-                route="/monster"
-                addItem={ addItem }
-                deleteItem={ deleteItem }
-                selectMonster={ selectMonster }/>
+            <div className="widget">
+                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWidget({"edit": true})}} className="btn green float-right">Edit</button>}
+                {widget.edit && <button onClick={ () => { setWidget({"edit": false})}} className="btn blue float-right">Exit Edit</button>}
+                {!widget.edit && <div className="item-list">
+                    {filtered ? filtered(monsters).map((item) => (
+                        <div onClick={() => {selectItem(item)}} className="item-compact" id="click this" style={{ cursor:"pointer" }}>
+                            <h3 style={{ color:"black"}}><strong>{ item.name }.</strong> <em>{item.type} CR: {item.cr}</em></h3>
+                        </div>
+                    ))
+                : <p>No items to display</p>}
+                </div>}
+
+                {(widget.edit && tab === "monster") && <FormMonster addItem={ addItem } setWidget={ setWidget } setTab={ setTab }></FormMonster>}
+                {(widget.edit && tab === "character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } setTab={ setTab } />}
+            </div>
         </>
     );
 }

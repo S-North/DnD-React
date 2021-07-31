@@ -7,10 +7,7 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
     const collection = "encounters";
     const location = useLocation();
     const encounter = location.state.item;
-    const config = location.state.config;
     const [ combatList, setCombatList ] = useState([]);
-    if (monsters) {console.log(monsters)};
-    console.log(encounter);
 
     return (
         <>
@@ -21,17 +18,15 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
             </div>
             <div className="section">
                 <CombatantList 
-                    title="Combatants"
-                    description="Use the button above to add combatants"
-                    buttonText="New Combatant"
-                    items={ encounter.combatList }
-                    // monsters={ monsters }
+                    items={ combatList }
                     route="/combatant"
                     addItem={ addItem }
+                    setCombatList={ setCombatList }
                     campaignId={ encounter.campaignId }
                     adventureId={ encounter.adventureId }
                     encounterId={ encounter.id }
                     monsters={ monsters }
+                    players={ players }
                 />
 
                 <ItemList 
