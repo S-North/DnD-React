@@ -2,12 +2,17 @@ import { useLocation } from "react-router";
 import { useState } from "react";
 import ItemList from "./ItemList";
 import CombatantList from "./CombatantList";
+import SelectMonsters from "./SelectMonsters";
+import EncounterAddCombatant from "./EncounterAddCombatant";
 
 const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
     const collection = "encounters";
     const location = useLocation();
-    const encounter = location.state.item;
+    const [ encounter, setEncounter ] = useState(location.state.item);
     const [ combatList, setCombatList ] = useState([]);
+    const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "detail": false, "npcs": true, "notes": true})
+    const [ selected, setSelected ] = useState({})
+
 
     return (
         <>
@@ -17,7 +22,7 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     <p>{ encounter.description }</p>
             </div>
             <div className="section">
-                <CombatantList 
+                {windows.list && <CombatantList 
                     items={ combatList }
                     route="/combatant"
                     addItem={ addItem }
@@ -27,9 +32,12 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     encounterId={ encounter.id }
                     monsters={ monsters }
                     players={ players }
-                />
-
-                <ItemList 
+                    windows={ windows }
+                    setWindows={ setWindows }
+                />}
+                {windows.select && <SelectMonsters monsters={ monsters } setSelected={ setSelected } windows={ windows } setWindows={ setWindows } />}
+                {windows.add && <EncounterAddCombatant selected={ selected } />}
+                {windows.npcs && <ItemList 
                     title="Encounter NPCs"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New NPC"
@@ -37,8 +45,8 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     route="/character"
                     addItem={ addItem }
                     encounterId={ encounter.id }
-                />
-                <ItemList 
+                />}
+                {windows.notes && <ItemList 
                     title="Adventure Notes"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New Note"
@@ -46,7 +54,7 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     route="/note"
                     addItem={ addItem }
                     encounterId={ encounter.id }
-                />
+                />}
             </div>
         </>
     )

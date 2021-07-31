@@ -33,7 +33,7 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem }) => {
                 <FormSelect title="Type" values={ types } value={ type } setState={ setType } />
             </div>
             </div>
-            <ItemList
+            {monsters && <ItemList
                 title="Monsters"
                 description="Use the search & filters to find the right monster for the right occasion."
                 buttonText="New Monster"
@@ -41,7 +41,7 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem }) => {
                 items={ filtered(monsters) }
                 route="/monster"
                 addItem={ addItem }
-                deleteItem={ deleteItem }/>
+                deleteItem={ deleteItem }/>}
         </>
     );
 }
