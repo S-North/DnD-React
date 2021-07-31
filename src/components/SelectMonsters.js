@@ -1,3 +1,5 @@
+// rewrite this to return an object of the monster, NPC or player selected, to the combat list
+
 import { useState } from "react";
 import FormSelect from "./FormSelect";
 import ItemList from "./ItemList";
