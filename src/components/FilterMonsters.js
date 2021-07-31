@@ -2,7 +2,7 @@ import { useState } from "react";
 import FormSelect from "./FormSelect";
 import ItemList from "./ItemList";
 
-const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
+const FilterMonsters = ({ items: monsters, addItem, deleteItem }) => {
     const [ search, setSearch ] = useState("");
     const [ minCr, setMinCr ] = useState("0");
     const [ maxCr, setMaxCr ] = useState("30");
@@ -37,6 +37,7 @@ const FilterMonsters = ({ items: monsters, addItem, deleteItem}) => {
                 title="Monsters"
                 description="Use the search & filters to find the right monster for the right occasion."
                 buttonText="New Monster"
+                itemStyle="item-compact"
                 items={ filtered(monsters) }
                 route="/monster"
                 addItem={ addItem }

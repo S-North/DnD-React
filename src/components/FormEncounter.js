@@ -1,23 +1,21 @@
 import { useState } from "react";
 
-const FormPlayer = ({ campaignId, adventureId, encounterId, addItem, setWidget }) => {
-    console.log(`campaignId ${campaignId}, adventureId ${adventureId}`)
-    const collection = "players";
+const FormEncounter = ({ campaignId, adventureId, addItem, setWidget }) => {
+    const collection = "encounters";
     const [name, setName] = useState(``);
     const [description, setDescription] = useState(``);
+    const [location, setLocation] = useState(``);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const npc = "true";
-        const data = { name, description, campaignId, adventureId, encounterId, npc};
+        const data = { name, description, location, campaignId, adventureId }
         console.log(data);
-        addItem(collection, data );
+        addItem(collection, data);
         setWidget({"edit": false});
     }
 
     return (
         <>
-        <p>Hello</p>
             <form className="form" onSubmit={(e) => handleSubmit(e) }>
                     <label>Name</label>
                     <input
@@ -36,14 +34,23 @@ const FormPlayer = ({ campaignId, adventureId, encounterId, addItem, setWidget }
                         value={ description }
                         onChange={e => setDescription(e.target.value)}
                     />
+                    <label>Location</label>
+                    <input
+                        className="input-text"
+                        name='Location' 
+                        type='text'
+                        required
+                        value={ location }
+                        onChange={e => setLocation(e.target.value)}
+                    />
                     <input
                         className='btn green'
                         type='submit' 
-                        value='Save Character' 
+                        value='Save' 
                         />
                 </form>
         </>
     );
 }
  
-export default FormPlayer;
+export default FormEncounter;

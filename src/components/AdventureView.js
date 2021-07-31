@@ -1,19 +1,20 @@
 import { useLocation } from "react-router";
 import ItemList from './ItemList';
 
-const AdventureView = ({ addItem, deleteItem, campaignId, notes, players }) => {
-    console.log(deleteItem);
+const AdventureView = ({ encounters, addItem, deleteItem, campaignId, notes, players }) => {
+    // console.log(deleteItem);
     const location = useLocation();
     const collection = "adventures";
     const adventure = location.state.item;
     console.log(`campaign: ${location.state.campaignId}, adventure: ${adventure.id}`)
+    console.log(adventure.id);
+    console.log(encounters.filter((encounter) => {return encounter.adventureId === adventure.id}))
 
     return (
         <>
             <div className="main-header">
             <button className="btn red float-right" onClick={ () => deleteItem(adventure.id, collection) }>Delete Adventure</button>
                 <h1>Adventure: { adventure.name }</h1>
-                <h2>{ adventure.name }</h2>
                 <p>{ adventure.description }</p>
             </div>
             <div className="section">
@@ -21,7 +22,7 @@ const AdventureView = ({ addItem, deleteItem, campaignId, notes, players }) => {
                     title="Encounters"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New Encounter"
-                    items={ adventure.encounters }
+                    items={ encounters.filter((encounter) => {return encounter.adventureId === adventure.id}) }
                     route="/encounter"
                     addItem={ addItem }
                     campaignId={ location.state.campaignId }

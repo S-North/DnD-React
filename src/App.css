@@ -238,11 +238,18 @@ input[type="number"] {
     margin: 10px 0px;
 }
 
-.item-preview {
+.item-block {
     margin-bottom: 5px;
     padding: 8px;
     border: 1px solid black;
     border-radius: 3px;
+}
+
+.item-compact {
+    margin-bottom: 5px;
+    padding: 0px;
+    border: 0px solid black;
+    /* border-radius: 3px; */
 }
 
 .item-preview h3 {

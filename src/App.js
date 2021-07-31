@@ -28,38 +28,45 @@ function App() {
   
   useEffect(() => {
     fetch(`${jsonserver}/campaigns`)
-    .then(response => response.json())
-            .then((campaigns) => {
-                setCampaigns(campaigns);
-            });
-
-    fetch(`${jsonserver}/monsters`)
-    .then(response => response.json())
-            .then((monsters) => {
-                setMonsters(monsters);
-            });
-
+      .then(response => response.json())
+      .then((campaigns) => {
+          setCampaigns(campaigns);
+      });
+            
     fetch(`${jsonserver}/adventures`)
-    .then(response => response.json())
-            .then((adventures) => {
-                setAdventures(adventures);
-            });
+      .then(response => response.json())
+      .then((adventures) => {
+        setAdventures(adventures);
+      });
+    
+    fetch(`${jsonserver}/encounters`)
+      .then(response => response.json())
+      .then((encounters) => {
+        setEncounters(encounters);
+      });
+    
+    fetch(`${jsonserver}/monsters`)
+      .then(response => response.json())
+      .then((monsters) => {
+          setMonsters(monsters);
+      });
     
     fetch(`${jsonserver}/players`)
-    .then(response => response.json())
-            .then((players) => {
-                setPlayers(players);    
-            });
+      .then(response => response.json())
+      .then((players) => {
+          setPlayers(players);    
+      });
 
     fetch(`${jsonserver}/notes`)
-    .then(response => response.json())
-            .then((notes) => {
-                setNotes(notes);
-            });
+      .then(response => response.json())
+      .then((notes) => {
+        setNotes(notes);
+      });
 
     return () => {
     }
   }, [])
+
 
   const deleteItem = async (id, collection) => {
     if (window.confirm(
@@ -93,11 +100,12 @@ function App() {
     }
   }
 
-  const addItem = (collection, data) => {
+
+  const addItem = (collection, data, id, operation) => {
     // collection is the json collection to put the data e.g. monsters, campaigns, adventures, etc
     // data is the json object to post to the server
     const url = `${jsonserver}/${collection}`;
-    console.log(data);
+    console.log(collection, data);
 
     fetch(url, {
       method: 'POST',
@@ -111,10 +119,37 @@ function App() {
         if (collection === "campaigns") {setCampaigns([...campaigns, response])}
         if (collection === "monsters") {setMonsters([...monsters, response])}
         if (collection === "adventures") {setAdventures([...adventures, response])}
+        if (collection === "encounters") {setEncounters([...encounters, response])}
         if (collection === "players") {setPlayers([...players, response])}
         if (collection === "notes") {setNotes([...notes, response])}
     })
   }
+
+
+  const updateItem = (collection, data, id, operation) => {
+    // collection is the json collection to put the data e.g. monsters, campaigns, adventures, etc
+    // data is the json object to post to the server
+    const url = `${jsonserver}/${collection}/${id}`;
+    console.log(collection, data);
+
+    fetch(url, {
+      method: 'PUT',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+      })
+
+      // call the correct useState function based on the collection name
+      .then(response => response.json()) 
+      .then((response) => {
+        if (collection === "campaigns") {setCampaigns([...campaigns, response])}
+        if (collection === "monsters") {setMonsters([...monsters, response])}
+        if (collection === "adventures") {setAdventures([...adventures, response])}
+        if (collection === "encounters") {setEncounters([...encounters, response])}
+        if (collection === "players") {setPlayers([...players, response])}
+        if (collection === "notes") {setNotes([...notes, response])}
+    })
+  }
+
 
     return (
       <>
@@ -123,16 +158,16 @@ function App() {
         <main>
           <Switch>
             <Route exact path="/">
-                <Home title="Home" campaigns={ campaigns } monsters={ monsters } addItem={ addItem }></Home>
+                <Home title="Home" campaigns={ campaigns } monsters={ monsters } addItem={ addItem } updateItem={ updateItem }></Home>
             </Route>
             <Route exact path="/campaign">
               <CampaignView adventures={ adventures } players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></CampaignView>
             </Route>
             <Route exact path="/adventure">
-              <AdventureView players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></AdventureView>
+              <AdventureView encounters={encounters} players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></AdventureView>
             </Route>
             <Route exact path="/encounter">
-              <EncounterView></EncounterView>
+              <EncounterView players={ players } monsters={ monsters } notes={ notes } deleteItem={ deleteItem } addItem={ addItem }></EncounterView>
             </Route>
             <Route exact path="/monster">
               <MonsterView deleteItem={ deleteItem } addItem={ addItem }></MonsterView>

@@ -45,6 +45,41 @@
       "campaignId": "2",
       "npc": "true",
       "id": "dsstdRd"
+    },
+    {
+      "name": "sad as",
+      "description": "asd asd as",
+      "campaignId": "1",
+      "adventureId": "3",
+      "npc": "true",
+      "id": "4nBNG17"
+    },
+    {
+      "name": "asdasd",
+      "description": "asd sad asd ",
+      "campaignId": "1",
+      "adventureId": "3",
+      "npc": "true",
+      "id": "5Gt_tLm"
+    },
+    {
+      "name": "lkj lkjlk jl",
+      "description": " jl jlj ljl jl ",
+      "npc": "true",
+      "id": "v7NNh9b"
+    },
+    {
+      "name": "fghf  hfg",
+      "description": "fgh fg hfgh fgh",
+      "npc": "true",
+      "id": "N_Kv-kT"
+    },
+    {
+      "name": "i oiuoi uoiu",
+      "description": " uoi uoi o uuio uio",
+      "encounterId": "ywHQoQP",
+      "npc": "true",
+      "id": "1I3bkYc"
     }
   ],
   "notes": [
@@ -107,6 +142,24 @@
       "name": "nkjkjhkjhj",
       "description": "jhkjhkjhhkjh",
       "id": "cC3bKcf"
+    },
+    {
+      "name": "uoioiu",
+      "description": "uiou oi ouio",
+      "encounterId": "ywHQoQP",
+      "id": "IW5n-Xn"
+    },
+    {
+      "name": "encounter note",
+      "description": "lkajdlasjdlaksjdlkadjs",
+      "encounterId": "ywHQoQP",
+      "id": "B6omtf3"
+    },
+    {
+      "name": "kjhkhkj",
+      "description": "kjhkjh kj hk hk hk ",
+      "encounterId": "ywHQoQP",
+      "id": "2yM6Ymu"
     }
   ],
   "monsters": [
@@ -471,7 +524,7 @@
       "id": 24
     },
     {
-      "name": "kraken",
+      "name": "Kraken",
       "description": "asjhdkashd kasjhd  kjas",
       "type": "Monstrosity",
       "ac": "18",
@@ -712,21 +765,59 @@
       "campaignId": "1",
       "adventureId": "1",
       "name": "Ambush on the Tribor Trail",
-      "description": "The party are waylaid on the road to Phandalin by a goblin ambush."
+      "description": "The party are waylaid on the road to Phandalin by a goblin ambush.",
+      "location": "Tribor Trail"
     },
     {
       "id": "2",
       "campaignId": "1",
       "adventureId": "1",
       "name": "Cave entrance",
-      "description": "The goblin cave entrance has another ambush."
+      "description": "The goblin cave entrance has another ambush.",
+      "location": "Cragmaw Hideout"
     },
     {
       "id": "3",
       "campaignId": "1",
       "adventureId": "1",
       "name": "Wolf lair",
-      "description": "Wolves are chained up in this cave. They can be pacified or are likely to break free and attack."
+      "description": "Wolves are chained up in this cave. They can be pacified or are likely to break free and attack.",
+      "location": "Cragmaw Hideout"
+    },
+    {
+      "name": "A scuffle in the street",
+      "description": "Some Redbrands harass the party and try to arest them.",
+      "location": "Phandalin",
+      "campaignId": "1",
+      "adventureId": "2",
+      "id": "8ZXZ1Ni",
+      "active": "running"
+    },
+    {
+      "name": "An injured deer",
+      "description": "The party come across an injured deer. What will they do?",
+      "location": "Neverwinter Woods",
+      "campaignId": "1",
+      "adventureId": "3",
+      "id": "ywHQoQP",
+      "active": "pending"
+    },
+    {
+      "name": "Mosslashes-Katashes",
+      "description": "A curious tiny person wants to play.",
+      "location": "Neverwinter Woods",
+      "campaignId": "1",
+      "adventureId": "3",
+      "id": "6A0uWxd",
+      "active": "running"
+    },
+    {
+      "name": "jkhjkh",
+      "description": "kjhkjhkjh",
+      "location": "kjhkjhkj",
+      "campaignId": "1",
+      "adventureId": "3",
+      "id": "finished"
     }
   ]
 }
