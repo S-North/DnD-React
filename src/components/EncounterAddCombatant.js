@@ -8,7 +8,7 @@ const EncounterAddCombatant = ({ selected }) => {
         // useState is async. To force completion before calling next function, use the callback function.
         setCombatant({...combatant, "hitDice": {hdBonus: "0", hdDice: "6", hdNumber: "1"}}, () => {
             setHitDice(combatant.hitDice, () => {
-                // another callback function, keep stacking them! :)
+                // another callback function, keep stacking them! :) but not really, could get messy real quick
             });
         })
     }
@@ -116,16 +116,17 @@ const EncounterAddCombatant = ({ selected }) => {
             </div>}
         </div>
 
-        {/* the section for traits */}
+{/* the section for traits */}
         <div className="widget">
-            <h1>Traits</h1>
             
             {/* button to add new trait */}
             {(!windows.traitAdd && !windows.traitEdit) && 
-                <div 
-                    className="btn blue" 
-                    onClick={() => {setWindows({...windows, "traitAdd": true})}}>+
+                <div
+                style={{"float": "right"}}
+                className="btn green" 
+                onClick={() => {setWindows({...windows, "traitAdd": true})}}>+
                 </div>}
+            <h1>Traits</h1>
             
             {/* list of traits. clicking a list item updates the 'selected' state & reveals the edit form. */}
             {/* Clicking the delete button */}
@@ -133,15 +134,15 @@ const EncounterAddCombatant = ({ selected }) => {
                 .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
                 .map((trait) => (
                     <div className="flex-row">
-                        <button style={{"float": "left"}} className="btn red" onClick={() => {
-                            setTraits([...traits.filter((i) => {return i.id !== trait.id})])
-                        }}>Delete</button>
                         
                         <div 
                             key={trait.id} 
                             style={{"cursor": "pointer"}} 
                             onClick={(e) => {setSelection(trait); setWindows({...windows, "traitEdit": true})}}><strong>{trait.name}:</strong> {trait.description}
                             </div>
+                        <button style={{"float": "right"}} className="btn red" onClick={() => {
+                            setTraits([...traits.filter((i) => {return i.id !== trait.id})])
+                        }}>-</button>
                     </div>
             ))}
 
@@ -178,12 +179,16 @@ const EncounterAddCombatant = ({ selected }) => {
             </div>}
             
         </div>
+
+{/* the section for actions */}
         <div className="widget">
             <h1>Actions</h1>
             {actions && actions.map((action) => (
                 <p><strong>{action.name}:</strong> {action.description}</p>
             ))}
         </div>
+
+{/* the section for legendary actions */}
         <div className="widget">
             <h1>Legendary</h1>
             <p>{ combatant.legendary.description }</p>
