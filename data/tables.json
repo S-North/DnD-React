@@ -191,6 +191,7 @@
       ],
       "actions": [
         {
+          "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
           "name": "Scimitar",
           "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
           "attack": "4",
@@ -202,6 +203,7 @@
           }
         },
         {
+          "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
           "name": "Shortbow",
           "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
           "attack": "4",
