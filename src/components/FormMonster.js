@@ -21,6 +21,9 @@ const FormMonster = ({ addItem, setWidget }) => {
     const [hdDice, setHdDice] = useState(`8`);
     const [hdBonus, setHdBonus] = useState(abiilityModifier(con));
     const [hp, setHp] = useState(`5`);
+    const [ traits, setTraits ] = useState([])
+    const [ actions, setActions ] = useState([])
+    const [ legendary, setLegendary ] = useState([])
 
 
     const handleSubmit = (e) => {
