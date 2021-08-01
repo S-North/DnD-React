@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { diceRoll } from '../Maths';
 
 const EncounterAddCombatant = ({ selected }) => {
     const [ combatant, setCombatant ] = useState(selected);
@@ -16,7 +17,7 @@ const EncounterAddCombatant = ({ selected }) => {
     const [ actions, setActions ] = useState(combatant.actions);
     const [ legendary, setLegendary ] = useState(combatant.legendaryActions);
     const [ selection, setSelection ] = useState();
-    const [ windows, setWindows ] = useState({"main": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryEdit": false})
+    const [ windows, setWindows ] = useState({"main": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
 
 
     return (
@@ -95,19 +96,17 @@ const EncounterAddCombatant = ({ selected }) => {
             {combatant.hitDice && <div className="flex-row">
                 <input 
                     type="number" 
-                    placeholder="str" 
                     value={ hitDice.hdNumber } 
                     onChange={(e) => {setHitDice({...hitDice, "hdNumber": e.target.value})}} />d
                 <input 
                     type="number" 
-                    placeholder="str" 
                     value={ hitDice.hdDice } 
                     onChange={(e) => {setHitDice({...hitDice, "hdDice": e.target.value})}} />+
                 <input 
                     type="number" 
-                    placeholder="str" 
                     value={ hitDice.hdBonus } 
-                    onChange={(e) => {setHitDice({...hitDice, "hdBonus": e.target.value})}} />=
+                    onChange={(e) => {setHitDice({...hitDice, "hdBonus": e.target.value})}} />
+                <div className="btn green" onClick={() => {setCombatant({...combatant, "hp": diceRoll(hitDice.hdNumber, hitDice.hdDice, hitDice.hdBonus)[2]})}}>=</div>
                 <input 
                 type="number" 
                 placeholder="str" 
@@ -182,18 +181,99 @@ const EncounterAddCombatant = ({ selected }) => {
 
 {/* the section for actions */}
         <div className="widget">
+
+            {/* button to add new actions */}
+            {(!windows.actionAdd && !windows.actionEdit) && 
+                <div
+                style={{"float": "right"}}
+                className="btn green" 
+                onClick={() => {setWindows({...windows, "actionAdd": true})}}>+
+                </div>}
             <h1>Actions ({actions.length})</h1>
-            {actions && actions.map((action) => (
-                <p><strong>{action.name}:</strong> {action.description}</p>
+
+            {/* list of actions. clicking a list item updates the 'selected' state & reveals the edit form. */}
+            {/* Clicking the delete button */}
+            {(actions && !windows.actionAdd && !windows.actionEdit) && actions
+                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                .map((action) => (
+                    <div className="flex-row">
+                        
+                        <div 
+                            key={action.id} 
+                            style={{"cursor": "pointer"}} 
+                            onClick={(e) => {setSelection(action); setWindows({...windows, "actionEdit": true})}}><strong>{action.name}:</strong> {action.description}
+                            </div>
+                        <button style={{"float": "right"}} className="btn red" onClick={() => {
+                            setActions([...actions.filter((i) => {return i.id !== action.id})])
+                        }}>-</button>
+                    </div>
             ))}
+            
+            {/* edit existing actions, then update the 'actions' state */}
+            {windows.actionEdit && <div>
+                <input 
+                    required 
+                    type="text" 
+                    value={selection.name} 
+                    onChange={(e) => {setSelection({...selection, "name": e.target.value})}} />
+                <textarea 
+                    required 
+                    rows="10" 
+                    type="text" 
+                    value={selection.description} 
+                    onChange={(e) => {setSelection({...selection, "description": e.target.value})}} />
+                <div 
+                    className="btn blue" 
+                    onClick={() => {setActions([...actions.filter((action) => {return action.id !== selection.id}), selection], setWindows({...windows, "actionEdit": false}))}}>Save</div>
+            </div>}
+
+            {/* add new legendary */}
+            {windows.actionAdd && <div>
+                <input 
+                    type="text" 
+                    onChange={(e) => {setSelection({...selection, "name": e.target.value})}} />
+                <textarea 
+                    rows="10" 
+                    type="text" 
+                    onChange={(e) => {setSelection({...selection, "description": e.target.value})}} />
+                <div 
+                    className="btn blue" 
+                    onClick={() => {setSelection({...selection, "id": uuidv4()}, setActions([...actions, selection], setWindows({...windows, "actionAdd": false})))}}>Save</div>
+            </div>}
+
         </div>
 
 {/* the section for legendary actions */}
         <div className="widget">
+
+            {/* button to add new legendary actions */}
+            {(!windows.legendaryAdd && !windows.legendaryEdit) && 
+                <div
+                style={{"float": "right"}}
+                className="btn green" 
+                onClick={() => {setWindows({...windows, "legendaryAdd": true})}}>+
+                </div>}
+
             <h1>Legendary ({legendary ? legendary.length : 0})</h1>
             <p>{ combatant.legendary.description }</p>
-            {legendary && legendary.map((legend) => (
-                <p><strong>{legend.name}:</strong> {legend.description}</p>
+
+            {/* list of actions. clicking a list item updates the 'selected' state & reveals the edit form. */}
+            {/* Clicking the delete button */}
+
+            {/* TODO: all traits, actions & legendary must have a unique id (uuid) for delete and update to work */}
+            {(legendary && !windows.legendaryAdd && !windows.legendaryEdit) && legendary
+                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                .map((legend) => (
+                    <div className="flex-row">
+                        <div 
+                            key={legend.id} 
+                            style={{"cursor": "pointer"}} 
+                            onClick={(e) => {setSelection(legend); setWindows({...windows, "legendaryEdit": true})}}><strong>{legend.name}:</strong> {legend.description}
+                        </div>
+                        <button style={{"float": "right"}} className="btn red" onClick={() => {
+                            setLegendary([...legendary.filter((i) => {return i.id !== legend.id})])
+                        }}>-</button>
+                    </div>
             ))}
         </div>
         </div>
