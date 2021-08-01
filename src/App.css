@@ -29,7 +29,7 @@ a {
 }
 
 p {
-    font-size: 1.1ch;
+    font-size: 0.9rem;
 }
 
 h1 {
@@ -123,6 +123,11 @@ main {
 
 .widget .item {
     padding-bottom: 1ch;
+}
+
+.widget .description {
+    padding-bottom: 1ch;
+    font-size: 0.9rem;
 }
 
 /* @media (min-width: 768px) {

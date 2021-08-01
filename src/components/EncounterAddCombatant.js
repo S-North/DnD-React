@@ -134,7 +134,8 @@ const EncounterAddCombatant = ({ selected }) => {
                 .map((trait) => (
                     <div className="flex-row">
                         
-                        <div 
+                        <div
+                            className="description"
                             key={trait.id} 
                             style={{"cursor": "pointer"}} 
                             onClick={(e) => {setSelection(trait); setWindows({...windows, "traitEdit": true})}}><strong>{trait.name}:</strong> {trait.description}
@@ -198,7 +199,8 @@ const EncounterAddCombatant = ({ selected }) => {
                 .map((action) => (
                     <div className="flex-row">
                         
-                        <div 
+                        <div
+                            className="description"
                             key={action.id} 
                             style={{"cursor": "pointer"}} 
                             onClick={(e) => {setSelection(action); setWindows({...windows, "actionEdit": true})}}><strong>{action.name}:</strong> {action.description}
@@ -265,7 +267,8 @@ const EncounterAddCombatant = ({ selected }) => {
                 .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
                 .map((legend) => (
                     <div className="flex-row">
-                        <div 
+                        <div
+                            className="description"
                             key={legend.id} 
                             style={{"cursor": "pointer"}} 
                             onClick={(e) => {setSelection(legend); setWindows({...windows, "legendaryEdit": true})}}><strong>{legend.name}:</strong> {legend.description}
