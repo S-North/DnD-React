@@ -169,7 +169,7 @@
       "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
       "ac": "15",
       "hitDice": {
-        "hdNumber": "2",
+        "hdNumber": "1",
         "hdDice": "6",
         "hdBonus": "0"
       },
@@ -184,6 +184,7 @@
       "cha": "16",
       "traits": [
         {
+          "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
           "name": "Nimble Escape",
           "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
         }
@@ -211,68 +212,122 @@
             "type": "piercing"
           }
         }
-      ]
+      ],
+      "legendary": []
     },
     {
       "id": 2,
       "name": "Red Dragon Wyrmling",
       "description": "The odor of sulfur and pumice surrounds a red dragon, whose swept-back horns and spinal frill define its silhouette. Its beaked snout vents smoke at all times, and its eyes dance with flame when it is angry.",
       "ac": "17",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "75",
       "cr": "4",
-      "type": "Dragon"
+      "type": "Dragon",
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "id": 3,
       "name": "Cloud Giant",
       "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
       "ac": "14",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "200",
       "cr": "9",
-      "type": "Giant"
+      "type": "Giant",
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "id": 4,
       "name": "Phase Spider",
       "description": "A phase Spider possesses the magical ability to phase in and out of the Ethereal Plane. It seems to appear out of nowhere and quickly vanishes after attacking. Its Movement on the Ethereal Plane before coming back to The Material Plane makes it seem like it can Teleport.",
       "ac": "13",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "32",
       "cr": "3",
       "type": "Monstrosity",
-      "size": "Large"
+      "size": "Large",
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "id": 5,
       "name": "Giggle Pig",
       "description": "A pig that giggles if you are more than 5' from it",
       "ac": "27",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "1",
       "cr": "70",
-      "type": "Beast"
+      "type": "Beast",
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Batman",
       "description": "His ears are batwings and he can hover.",
       "ac": "12",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "10",
       "cr": "1",
       "type": "Humanoid",
-      "id": 6
+      "id": 6,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Bag of Bones",
       "description": "How does this thing even move?!",
       "ac": "8",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "160",
       "cr": "6",
       "type": "Undead",
-      "id": 7
+      "id": 7,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Celestial Moon",
       "description": "A gigantic shining orb that blinds and burns.",
       "type": "Celestial",
       "ac": "13",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "130",
       "cr": "6",
       "str": "10",
@@ -281,13 +336,21 @@
       "int": "4",
       "wis": "10",
       "cha": "16",
-      "id": 8
+      "id": 8,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Awakened shrub",
       "description": "An awakened shrub is an ordinary shrub given sentience and mobility by the awaken spell or similar magic.",
       "type": "Plant",
       "ac": "9",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "10",
       "cr": "0",
       "str": "3",
@@ -296,13 +359,21 @@
       "int": "10",
       "wis": "10",
       "cha": "6",
-      "id": 9
+      "id": 9,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Baboon",
       "description": "A large monkey/ape. Baboons tend to do what they want when they want! They can sleep in the day and look for food at night. They can be active at night and sleep all day long. The groups of Baboons can be very large. The smallest size of them is about 50 members. However, they can have up to 250 members. They have a very complex level of social organisation. ",
       "type": "Beast",
       "ac": "12",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "3",
       "cr": "0",
       "str": "8",
@@ -311,13 +382,21 @@
       "int": "4",
       "wis": "12",
       "cha": "6",
-      "id": 10
+      "id": 10,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Bandit",
       "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
       "type": "Humanoid",
       "ac": "12",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "11",
       "cr": "0.125",
       "str": "11",
@@ -326,13 +405,21 @@
       "int": "10",
       "wis": "10",
       "cha": "10",
-      "id": 11
+      "id": 11,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Diseased Giant Rat",
       "description": "Some giant rats carry vile diseases that they spread with their bites.",
       "type": "Beast",
       "ac": "12",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "7",
       "cr": "0.125",
       "str": "7",
@@ -341,13 +428,21 @@
       "int": "2",
       "wis": "10",
       "cha": "4",
-      "id": 12
+      "id": 12,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Lich",
       "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
       "type": "Undead",
       "ac": "17",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "135",
       "cr": "21",
       "str": "11",
@@ -356,13 +451,21 @@
       "int": "20",
       "wis": "14",
       "cha": "16",
-      "id": 13
+      "id": 13,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Pit Fiend",
       "description": "Pit fiends were the quintessential tyrants and overlords of the baatezu, occupying the top of Hell's hierarchy. Having been cleansed within the Pit of Flame, pit fiends achieved levels of wickedness beyond that of ordinary devils, becoming beings of pure, unimaginable evil.\n\n“Their might is incalculable. Their desires are beyond comprehension. And their appetites defy all understanding. Raised from the shrieking agonies of the Pit of Flame, they understand pain and suffering like no others.”\n— The mortal mage Nomoto Sinh",
       "type": "Fiend",
       "ac": "19",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "300",
       "cr": "20",
       "str": "26",
@@ -371,13 +474,21 @@
       "int": "22",
       "wis": "18",
       "cha": "24",
-      "id": 14
+      "id": 14,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Androsphinx",
       "description": "A Sphinx’s Lair\n\nA sphinx presides over an ancient temple, sepulcher, or vault, within which are hidden divine secrets and treasures beyond the reach of mortals.\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the sphinx can take a lair action to cause one of the following magical effects; the sphinx can’t use an effect again until it finishes a short or long rest:\n\nThe flow of time is altered such that every creature in the lair must reroll initiative. The sphinx can choose not to reroll.\nThe effects of time are altered such that every creature in the lair must succeed on a DC 15 Constitution saving throw or become 1d20 years older or younger (the sphinx’s choice), but never any younger than 1 year old. A greater restoration spell can restore a creature’s age to normal.\nThe flow of time within the lair is altered such that everything within moves up to 10 years forward or backward (sphinx’s choice). Only the sphinx is immediately aware of the time change. A wish spell can return the caster and up to seven other creatures designated by the caster to their normal time.\nThe sphinx shifts itself and up to seven other creatures it can see within in its lair to another plane of existence. Once outside its lair, the sphinx can’t use lair actions, but it can return to its lair as a bonus action on its turn, taking up to seven creatures with it.\n",
       "type": "Monstrosity",
       "ac": "17",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "199",
       "cr": "17",
       "str": "22",
@@ -386,13 +497,21 @@
       "int": "16",
       "wis": "18",
       "cha": "23",
-      "id": 15
+      "id": 15,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Iron Golem",
       "description": "The mightiest of the golems, the iron golem is a massive, towering giant wrought of heavy metal. An iron golem's shape can be worked into any form, though most are fashioned to look like giant suits of armor. Its fist can destroy creatures with a single blow, and its clanging steps shake the earth beneath its feet. Iron golems wield enormous blades to extend their reach, and all can belch clouds of deadly poison.\n\nAn iron golem's body is smelted with rare tinctures and admixtures. Though other golems bear weaknesses inherent in their materials or the power of the elemental spirit bound within them, iron golems were designed to be nearly invulnerable. Their iron bodies imprison the spirits that drive them, and are susceptible only to weapons imbued with magic or the strength of adamantine.",
       "type": "Construct",
       "ac": "20",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "210",
       "cr": "16",
       "str": "24",
@@ -401,13 +520,21 @@
       "int": "3",
       "wis": "11",
       "cha": "1",
-      "id": 16
+      "id": 16,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Aboleth",
       "description": "Aboleths lair in subterranean lakes or the rocky depths of the ocean, often surrounded by the ruins of an ancient, fallen aboleth city. An aboleth spends most of its existence underwater, surfacing occasionally to treat with visitors or deranged worshipers.\n\nLair Actions\n\nWhen fighting inside its lair, an aboleth can invoke the ambient magic to take lair actions. On initiative count 20 (losing initiative ties), the aboleth takes a lair action to cause one of the following effects:\n\nThe aboleth casts phantasmal force (no components required) on any number of creatures it can see within 60 feet of it. While maintaining concentration on this effect, the aboleth can’t take other lair actions. If a target succeeds on the saving throw or if the effect ends for it, the target is immune to the aboleth’s phantasmal force lair action for the next 24 hours, although such a creature can choose to be affected.\nPools of water within 90 feet of the aboleth surge outward in a grasping tide. Any creature on the ground within 20 feet of such a pool must succeed on a DC 14 Strength saving throw or be pulled up to 20 feet into the water and knocked prone. The aboleth can’t use this lair action again until it has used a different one.\nWater in the aboleth’s lair magically becomes a conduit for the creature’s rage. The aboleth can target any number of creatures it can see in such water within 90 feet of it. A target must succeed on a DC 14 Wisdom saving throw or take 7 (2d6) psychic damage. The aboleth can’t use this lair action again until it has used a different one.\n\nRegional Effects\n\nThe region containing an aboleth’s lair is warped by the creature’s presence, which creates one or more of the following effects:\n\nUnderground surfaces within 1 mile of the aboleth’s lair are slimy and wet and are difficult terrain.\nWater sources within 1 mile of the lair are supernaturally fouled. Enemies of the aboleth that drink such water vomit it within minutes.\nAs an action, the aboleth can create an illusory image of itself within 1 mile of the lair. The copy can appear at any location the aboleth has seen before or in any location a creature charmed by the aboleth can currently see. Once created, the image lasts for as long as the aboleth maintains concentration, as if concentrating on a spell. Although the image is intangible, it looks, sounds, and can move like the aboleth. The aboleth can sense, speak, and use telepathy from the image’s position as if present at that position. If the image takes any damage, it disappears.\n\nIf the aboleth dies, the first two effects fade over the course of 3d10 days.",
       "type": "Aberration",
       "ac": "17",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "135",
       "cr": "10",
       "str": "21",
@@ -416,13 +543,21 @@
       "int": "18",
       "wis": "15",
       "cha": "18",
-      "id": 17
+      "id": 17,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Efreeti",
       "description": "Efreet were a type of genie native to the Elemental Plane of Fire. They were unpredictable creatures with fiery forms and spectacular magical powers.\nEfreet were humanoid in appearance. They were very tall, generally reaching heights of 12 feet (3.7 meters), and massive and solid, weighing 2,000 pounds (910 kilograms). They were well-muscled, and had red or black skin that was always burning. For this reason, many resembled devils and were often mistaken for them. Their bodies were supposedly composed of basalt, bronze, and solidified fire.",
       "type": "Elemental",
       "ac": "17",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "200",
       "cr": "11",
       "str": "22",
@@ -431,13 +566,21 @@
       "int": "16",
       "wis": "15",
       "cha": "16",
-      "id": 18
+      "id": 18,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Shambling Mound",
       "description": "A shambling mound was a large, animated plant with predatory tendencies. It was also known as a shambler.\nThey appeared to be moving, vaguely man-shaped mounds of rotting vegetation. Shambling mounds fed off of the flesh and blood of living creatures they had engulfed and crushed within their own bodies.",
       "type": "Plant",
       "ac": "15",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "136",
       "cr": "5",
       "str": "18",
@@ -446,13 +589,21 @@
       "int": "5",
       "wis": "10",
       "cha": "5",
-      "id": 19
+      "id": 19,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Troll",
       "description": "Fearsome green-skinned giants, trolls eat anything they can catch and devour. Only acid and fire can arrest the regenerative properties of a troll’s flesh.\nBorn with horrific appetites, trolls eat anything they can catch and devour. They have no society to speak of, but they do serve as mercenaries to orcs, ogres, ettins, hags, and giants. As payment, trolls demand food and treasure. Trolls are difficult to control, however, doing as they please even when working with more powerful creatures.",
       "type": "Giant",
       "ac": "15",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "84",
       "cr": "5",
       "str": "18",
@@ -461,13 +612,21 @@
       "int": "7",
       "wis": "9",
       "cha": "7",
-      "id": 20
+      "id": 20,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Otyugh",
       "description": "An otyugh is a grotesque, bulbous creature borne along on three sturdy legs, its eyes and nose set along a vine-like stalk that snakes from the top of its bloated body. Two rubbery tentacles end in spiky, leaf-like appendages that the otyugh uses to shovel food into its gaping maw.\n\nAn otyugh buries itself under mounds of offal and carrion, leaving only its sensory stalk exposed. When an edible creature happens by, the otyugh’s tentacles erupt from the filth and grab hold of it.\n\nOtyughs make the most of any opportunity to ambush and devour prey. They use a limited form of telepathy to urge sentient creatures toward their lairs, sometimes by pretending to be something else.\n\nDwellers in Darkness. Otyughs tolerate bright light only when considerable stores of carrion or garbage lie within reach. In the wilderness, they dwell in stagnant swamps, scum-filled ponds, and damp forest dells. The scent of graveyards, city sewers, village middens, and manure-filled animal pens attracts them to civilized areas.\n\nSince otyughs lack concern for anything but food, their nests sometimes accumulate a variety of treasures shed from their victims and mixed among the junk.\n\nSymbiotic Guardians. Sentient subterranean beings can coexist with otyughs, employing them as garbage disposals. With such plentiful sustenance, otyughs grow fat in their wallows, unmoved by any other drive or desire. This sedentary gluttony makes them reliable guardians. As long as it is fed, an otyugh refrains from attacking other creatures. However, would-be otyugh masters can easily underestimate the quantity of waste, carrion, and meat necessary to keep an otyugh from wandering off in search of food. More than one “trained” otyugh has eaten its keeper after devouring all the waste in its wallow.",
       "type": "Aberration",
       "ac": "14",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "114",
       "cr": "5",
       "str": "16",
@@ -476,13 +635,21 @@
       "int": "6",
       "wis": "13",
       "cha": "6",
-      "id": 21
+      "id": 21,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Couatl",
       "description": "Couatls are benevolent serpentine beings of great intellect and insight. Their brilliantly colored wings and gentle manner speak to their celestial origins.\n\nDivine Caretakers. Couatls were created as guardians and caretakers by a benevolent god not worshiped since the dawn of time, and which is forgotten now by all but the couatls themselves. Most of the divine mandates given to these beings are long since fulfilled or failed. However, a number of couatls still watch over ancient power, await fulfillment of prophecy, or safeguard the heirs of creatures they once guided and protected. Regardless of a couatl’s task, it prefers to remain hidden, revealing itself only as a last resort.\n\nTruth Tellers. A couatl can’t lie, but it can withhold information, answer questions vaguely, or allow others to jump to the wrong conclusions if doing so is necessary to protect something, to keep promises, or to hide the secret of its existence.\n\nAncient and Few. A couatl can live for ages without sustenance, even surviving without air, but these creatures can die of disease or the passage of time. A couatl can sense its end up to a century beforehand, but it has no insight into the manner of its demise.\n\nIf a couatl has already accomplished what it set out to do, it accepts its fate. However, if its imminent death endangers the completion of its goals, it actively seeks out another couatl with which to produce offspring.\n\nThe mating ritual of couatls is a beautiful and elaborate dance of magic and light, which results in a gem-like egg from which a new couatl hatches. The parent that sought out the mate raises the newborn couatl and instructs it as to its duties, so that it can complete whatever task the parent leaves unfinished.",
       "type": "Celestial",
       "ac": "19",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "97",
       "cr": "4",
       "str": "16",
@@ -491,13 +658,21 @@
       "int": "18",
       "wis": "20",
       "cha": "18",
-      "id": 22
+      "id": 22,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Giant Scorpion",
       "description": "Giant Scorpion lives in desert environments. Has claws and a large stinger.",
       "type": "Beast",
       "ac": "15",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "52",
       "cr": "3",
       "str": "15",
@@ -506,13 +681,21 @@
       "int": "1",
       "wis": "9",
       "cha": "3",
-      "id": 23
+      "id": 23,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Animated Armor",
       "description": "This suit of magically animated plate armor clamors as it moves, banging and grinding like the vengeful spirit of a fallen knight.\n\nThis empty steel shell clamors as it moves, heavy plates banging and grinding against one another like the vengeful spirit of a fallen knight. Ponderous but persistent, this magical guardian is almost always a suit of plate armor.\n\nTo add to its menace, animated armor is frequently enchanted with scripted speech, so the armor can utter warnings, demand passwords, or deliver riddles. Rare suits of animated armor are able to carry on an actual conversation.",
       "type": "Construct",
       "ac": "18",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": "33",
       "cr": "1",
       "str": "14",
@@ -521,13 +704,21 @@
       "int": "1",
       "wis": "3",
       "cha": "1",
-      "id": 24
+      "id": 24,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Kraken",
       "description": "asjhdkashd kasjhd  kjas",
       "type": "Monstrosity",
       "ac": "18",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "6",
+        "hdBonus": "0"
+      },
       "hp": 456,
       "cr": "23",
       "str": "30",
@@ -536,18 +727,21 @@
       "int": "22",
       "wis": "18",
       "cha": "20",
-      "hitDice": [
-        "27",
-        "20",
-        "189"
-      ],
-      "id": 25
+      "id": 25,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Tarrasque",
       "description": "The legendary tarrasque is possibly the most dreaded monster of the Material Plane. It is widely believed that only one of these creatures exists, though no one can predict where and when it will strike. A scaly biped, the tarrasque is fifty feet tall and seventy feet long, weighing hundreds of tons. It carries itself like a bird of prey, leaning forward and using its powerful lashing tail for balance. Its cavernous maw yawns wide enough to swallow all but the largest creatures, and so great is its hunger that it can devour the populations of whole towns. Legendary Destruction. The destructive potential of the tarrasque is so vast that some cultures incorporate the monster into religious doctrine, weaving its sporadic appearance into stories of divine judgment and wrath. Legends tell how the tarrasque slumbers in its secret lair beneath the earth, remaining in a dormant state for decades or centuries. When it awakens in answer to some inscrutable cosmic call, it rises from the depths to obliterate everything in its path.",
       "type": "Monstrosity",
       "ac": "25",
+      "hitDice": {
+        "hdNumber": "33",
+        "hdDice": "20",
+        "hdBonus": "330"
+      },
       "hp": 702,
       "cr": "30",
       "str": "30",
@@ -556,26 +750,25 @@
       "int": "3",
       "wis": "11",
       "cha": "11",
-      "hitDice": {
-        "hdNumber": "33",
-        "hdDice": "20",
-        "hdBonus": "330"
-      },
       "id": 26,
       "traits": [
         {
+          "id": "64375d48-ef9a-444f-8887-d04c5adef701",
           "name": "Legendary Resistance (3/Day)",
           "description": "If the tarrasque fails a saving throw, it can choose to succeed instead."
         },
         {
+          "id": "d3422c29-2678-4e1d-b26f-bda6ed5107f7",
           "name": "Magic Resistance",
           "description": "The tarrasque has advantage on saving throws against spells and other magical effects."
         },
         {
+          "id": "8228ba6a-ddc9-40c2-baf5-887ae5aef10b",
           "name": "Reflective Carapace",
           "description": "Any time the tarrasque is targeted by a magic missile spell, a line spell, or a spell that requires a ranged attack roll, roll a d6. On a 1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is unaffected, and the effect is reflected back at the caster as though it originated from the tarrasque, turning the caster into the target."
         },
         {
+          "id": "ec96f2a0-ab0b-445c-b8d2-30cc22254172",
           "name": "Siege Monster",
           "description": "The tarrasque deals double damage to objects and structures."
         }
@@ -675,7 +868,10 @@
         "hdDice": "8",
         "hdBonus": "33"
       },
-      "id": 27
+      "id": 27,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     },
     {
       "name": "Ochre Jelly",
@@ -695,7 +891,10 @@
         "hdDice": "10",
         "hdBonus": "12"
       },
-      "id": 28
+      "id": 28,
+      "traits": [],
+      "actions": [],
+      "legendary": []
     }
   ],
   "campaigns": [
