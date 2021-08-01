@@ -126,7 +126,7 @@ const EncounterAddCombatant = ({ selected }) => {
                 className="btn green" 
                 onClick={() => {setWindows({...windows, "traitAdd": true})}}>+
                 </div>}
-            <h1>Traits</h1>
+            <h1>Traits ({traits.length})</h1>
             
             {/* list of traits. clicking a list item updates the 'selected' state & reveals the edit form. */}
             {/* Clicking the delete button */}
@@ -182,7 +182,7 @@ const EncounterAddCombatant = ({ selected }) => {
 
 {/* the section for actions */}
         <div className="widget">
-            <h1>Actions</h1>
+            <h1>Actions ({actions.length})</h1>
             {actions && actions.map((action) => (
                 <p><strong>{action.name}:</strong> {action.description}</p>
             ))}
@@ -190,7 +190,7 @@ const EncounterAddCombatant = ({ selected }) => {
 
 {/* the section for legendary actions */}
         <div className="widget">
-            <h1>Legendary</h1>
+            <h1>Legendary ({legendary ? legendary.length : 0})</h1>
             <p>{ combatant.legendary.description }</p>
             {legendary && legendary.map((legend) => (
                 <p><strong>{legend.name}:</strong> {legend.description}</p>
