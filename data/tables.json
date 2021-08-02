@@ -1027,7 +1027,8 @@
       "adventureId": "1",
       "name": "Ambush on the Tribor Trail",
       "description": "The party are waylaid on the road to Phandalin by a goblin ambush.",
-      "location": "Tribor Trail"
+      "location": "Tribor Trail",
+      "mobList": ["players", "default", "new"]
     },
     {
       "id": "2",
@@ -1035,7 +1036,8 @@
       "adventureId": "1",
       "name": "Cave entrance",
       "description": "The goblin cave entrance has another ambush.",
-      "location": "Cragmaw Hideout"
+      "location": "Cragmaw Hideout",
+      "mobList": ["players", "default", "new"]
     },
     {
       "id": "3",
@@ -1043,7 +1045,8 @@
       "adventureId": "1",
       "name": "Wolf lair",
       "description": "Wolves are chained up in this cave. They can be pacified or are likely to break free and attack.",
-      "location": "Cragmaw Hideout"
+      "location": "Cragmaw Hideout",
+      "mobList": ["players", "default", "new"]
     },
     {
       "name": "A scuffle in the street",
@@ -1052,7 +1055,8 @@
       "campaignId": "1",
       "adventureId": "2",
       "id": "8ZXZ1Ni",
-      "active": "running"
+      "active": "running",
+      "mobList": ["players", "default", "new"]
     },
     {
       "name": "An injured deer",
@@ -1061,7 +1065,8 @@
       "campaignId": "1",
       "adventureId": "3",
       "id": "ywHQoQP",
-      "active": "pending"
+      "active": "pending",
+      "mobList": ["players", "default", "new"]
     },
     {
       "name": "Mosslashes-Katashes",
@@ -1070,7 +1075,8 @@
       "campaignId": "1",
       "adventureId": "3",
       "id": "6A0uWxd",
-      "active": "running"
+      "active": "running",
+      "mobList": ["players", "default", "new"]
     },
     {
       "name": "jkhjkh",
@@ -1078,7 +1084,8 @@
       "location": "kjhkjhkj",
       "campaignId": "1",
       "adventureId": "3",
-      "id": "finished"
+      "id": "finished",
+      "mobList": ["players", "default", "new"]
     }
   ]
 }

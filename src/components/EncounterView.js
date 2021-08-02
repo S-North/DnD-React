@@ -49,6 +49,8 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     setCombatList={ setCombatList }
                     windows={ windows } 
                     setWindows={ setWindows }
+                    encounter={ encounter}
+                    setEncounter={ setEncounter}
                 />}
                 {windows.npcs && <ItemList 
                     title="Encounter NPCs"
