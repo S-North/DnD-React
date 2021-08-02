@@ -10,8 +10,9 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
     const location = useLocation();
     const [ encounter, setEncounter ] = useState(location.state.item);
     const [ combatList, setCombatList ] = useState([]);
-    const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "detail": false, "npcs": true, "notes": true})
+    const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
     const [ selected, setSelected ] = useState({})
+    // console.log(combatList)
 
 
     return (
@@ -21,6 +22,7 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     <h1>Encounter: { encounter.name }</h1>
                     <p>{ encounter.description }</p>
             </div>
+
             <div className="section">
                 {windows.list && <CombatantList 
                     items={ combatList }
@@ -35,8 +37,19 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     windows={ windows }
                     setWindows={ setWindows }
                 />}
-                {windows.select && <SelectMonsters monsters={ monsters } setSelected={ setSelected } windows={ windows } setWindows={ setWindows } />}
-                {windows.add && <EncounterAddCombatant selected={ selected } />}
+                {windows.select && <SelectMonsters
+                    monsters={ monsters } 
+                    setSelected={ setSelected } 
+                    windows={ windows } 
+                    setWindows={ setWindows }
+                />}
+                {windows.add && <EncounterAddCombatant
+                    selected={ selected }
+                    combatList={ combatList }
+                    setCombatList={ setCombatList }
+                    windows={ windows } 
+                    setWindows={ setWindows }
+                />}
                 {windows.npcs && <ItemList 
                     title="Encounter NPCs"
                     description="Please select an encounter below to view and run the encounter."

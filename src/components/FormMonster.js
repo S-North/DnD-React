@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
+import { v4 as uuidv4 } from 'uuid';
 import { diceRoll, abiilityModifier } from '../Maths';
 
 const FormMonster = ({ addItem, setWidget }) => {
@@ -33,7 +34,7 @@ const FormMonster = ({ addItem, setWidget }) => {
             "hdDice": hdDice,
             "hdBonus": hdBonus
         }
-        const data = { name, description, type, ac, hp, cr, str, dex, con, int, wis, cha, hitDice }
+        const data = { name, description, type, ac, hp, cr, str, dex, con, int, wis, cha, hitDice, "id": uuidv4(), "traits": [], "actions": [], "legendary": {}, "legendaryActions": [] }
         console.log(data);
         addItem(collection, data);
         setWidget({"edit": false});

@@ -215,7 +215,8 @@
           }
         }
       ],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "id": 2,
@@ -232,7 +233,8 @@
       "type": "Dragon",
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "id": 3,
@@ -249,7 +251,8 @@
       "type": "Giant",
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "id": 4,
@@ -267,7 +270,8 @@
       "size": "Large",
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "id": 5,
@@ -284,7 +288,8 @@
       "type": "Beast",
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Batman",
@@ -301,7 +306,8 @@
       "id": 6,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Bag of Bones",
@@ -318,7 +324,8 @@
       "id": 7,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Celestial Moon",
@@ -341,7 +348,8 @@
       "id": 8,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Awakened shrub",
@@ -364,7 +372,8 @@
       "id": 9,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Baboon",
@@ -387,7 +396,8 @@
       "id": 10,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Bandit",
@@ -410,7 +420,8 @@
       "id": 11,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Diseased Giant Rat",
@@ -433,7 +444,8 @@
       "id": 12,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Lich",
@@ -456,7 +468,8 @@
       "id": 13,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Pit Fiend",
@@ -479,7 +492,8 @@
       "id": 14,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Androsphinx",
@@ -502,7 +516,8 @@
       "id": 15,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Iron Golem",
@@ -525,7 +540,8 @@
       "id": 16,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Aboleth",
@@ -548,7 +564,8 @@
       "id": 17,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Efreeti",
@@ -571,7 +588,8 @@
       "id": 18,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Shambling Mound",
@@ -594,7 +612,8 @@
       "id": 19,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Troll",
@@ -617,7 +636,8 @@
       "id": 20,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Otyugh",
@@ -640,7 +660,8 @@
       "id": 21,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Couatl",
@@ -663,7 +684,8 @@
       "id": 22,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Giant Scorpion",
@@ -686,7 +708,8 @@
       "id": 23,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Animated Armor",
@@ -709,7 +732,8 @@
       "id": 24,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Kraken",
@@ -732,7 +756,8 @@
       "id": 25,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Tarrasque",
@@ -777,10 +802,12 @@
       ],
       "actions": [
         {
+          "id": "3586c498-c66d-4f85-801b-660c8561906e",
           "name": "Multiattack",
           "description": "The tarrasque can use its Frightful Presence. It then makes five attacks: one with its bite, two with its claws, one with its horns, and one with its tail. It can use its Swallow instead of its bite."
         },
         {
+          "id": "4760b702-ed9d-4913-9219-4916284fa2a8",
           "name": "Bite",
           "description": "Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36 (4d12 + 10) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the tarrasque can't bite another target.",
           "attack": "19",
@@ -792,6 +819,7 @@
           }
         },
         {
+          "id": "04c5d899-c5da-4353-b8e3-4100f0eba1b5",
           "name": "Claw",
           "description": "Melee Weapon Attack: +19 to hit, reach 15ft., one target. Hit: 28 (4d8 + 10) slashing damage.",
           "attack": "19",
@@ -803,6 +831,7 @@
           }
         },
         {
+          "id": "4bb044d8-7a54-409e-b50a-7f8f8499ba46",
           "name": "Horns",
           "description": "Melee Weapon Attack: +19 to hit, reach 10ft., one target. Hit: 32 (4d10 + 10) piercing damage.",
           "attack": "19",
@@ -814,6 +843,7 @@
           }
         },
         {
+          "id": "f9d0e6dd-8e64-49c7-98cf-c9f024f7a24c",
           "name": "Tail",
           "description": "Melee Weapon Attack: +19 to hit, reach 20ft., one target. Hit: 24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be knocked prone.",
           "attack": "19",
@@ -825,6 +855,7 @@
           }
         },
         {
+          "id": "001c4a6c-a825-438a-ad5c-e6fecf83ce38",
           "name": "Frightful Presence",
           "description": "Each creature of the tarrasque's choice within 120 feet of it and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the tarrasque is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the tarrasque's Frightful Presence for the next 24 hours."
         },
@@ -839,14 +870,17 @@
       },
       "legendaryActions": [
         {
+          "id": "e1726737-652f-4481-97f0-ef6839d649d2",
           "name": "Attack",
           "description": "The tarrasque makes one claw attack or tail attack."
         },
         {
+          "id": "e3a4c915-9633-4d13-98c6-b26b38b802f0",
           "name": "Move",
           "description": "The tarrasque moves up to half its speed."
         },
         {
+          "id": "a3848d83-d04f-4c56-8197-9fd3817d2a85",
           "name": "Chomp (Costs 2 Legendary Actions)",
           "description": "The tarrasque makes one bite attack or uses its Swallow."
         }
@@ -873,7 +907,8 @@
       "id": 27,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
     },
     {
       "name": "Ochre Jelly",
@@ -896,7 +931,32 @@
       "id": 28,
       "traits": [],
       "actions": [],
-      "legendary": []
+      "legendary": {},
+      "legendaryActions": []
+    },
+    {
+      "name": "asd asd",
+      "description": "asd as d",
+      "type": "Construct",
+      "ac": "3",
+      "hp": 8,
+      "cr": "34",
+      "str": "10",
+      "dex": "10",
+      "con": "10",
+      "int": "10",
+      "wis": "10",
+      "cha": "10",
+      "hitDice": {
+        "hdNumber": "1",
+        "hdDice": "8",
+        "hdBonus": 0
+      },
+      "id": "bbadbf57-2e79-42b9-a821-98799dab07f7",
+      "traits": [],
+      "actions": [],
+      "legendary": {},
+      "legendaryActions": []
     }
   ],
   "campaigns": [

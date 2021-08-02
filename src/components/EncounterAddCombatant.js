@@ -1,27 +1,51 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { types } from "../Forms";
 import { diceRoll } from '../Maths';
 
-const EncounterAddCombatant = ({ selected }) => {
+const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, setWindows }) => {
+    const [ multiple, setMultiple ] = useState(1)
     const [ combatant, setCombatant ] = useState(selected);
     const [ hitDice, setHitDice ] = useState(combatant.hitDice);
-    if (!combatant.hitDice) {
-        // useState is async. To force completion before calling next function, use the callback function.
-        setCombatant({...combatant, "hitDice": {hdBonus: "0", hdDice: "6", hdNumber: "1"}}, () => {
-            setHitDice(combatant.hitDice, () => {
-                // another callback function, keep stacking them! :) but not really, could get messy real quick
-            });
-        })
-    }
+        if (!combatant.hitDice) {
+            // useState is async. To force completion before calling next function, use the callback function.
+            setCombatant({...combatant, "hitDice": {hdBonus: "0", hdDice: "6", hdNumber: "1"}}, () => {
+                setHitDice(combatant.hitDice, () => {
+                    // another callback function, keep stacking them! :) but not really, could get messy real quick
+                });
+            })
+        }    
     const [ traits, setTraits ] = useState(combatant.traits);
     const [ actions, setActions ] = useState(combatant.actions);
     const [ legendary, setLegendary ] = useState(combatant.legendaryActions);
     const [ selection, setSelection ] = useState();
-    const [ windows, setWindows ] = useState({"main": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
 
+    const handleSubmit = () => {
+        // TODO: the original monster id is not being added into the combatant. Don't know why, all the other adds are :(
+        const newCombatants = []
+        for (let i = 0; i < parseInt(multiple); i++) {
+            let c = {...combatant, "source": selected.id, "id": uuidv4(), "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
+            newCombatants.push(c);
+            console.log(newCombatants);
+            }
+        setCombatList([...combatList, ...newCombatants],
+            setWindows({...windows, "list": true, "add": false, "traits": true, "traitsEdit": false, "traitsAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false}))
+        }
 
     return (
         <>
+        <div className="flex-row">
+            <input
+                type="number"
+                required
+                placeholder="# to add" 
+                value={ multiple } 
+                onChange={(e) => {setMultiple(e.target.value)}} />
+            <div 
+                className="btn green"
+                onClick={() => {handleSubmit()}}
+                >Add</div>
+        </div>
         <div className="section">
         <div className="widget">
             
@@ -41,11 +65,17 @@ const EncounterAddCombatant = ({ selected }) => {
                 onChange={(e) => {setCombatant({...combatant, "description": e.target.value})}} />
             
             <div className="flex-row">
-                <input 
-                    type="text" 
-                    placeholder="type" 
+                <select 
+                    type='number'
+                    placeholder="type"
                     value={ combatant.type } 
-                    onChange={(e) => {setCombatant({...combatant, "type": e.target.value})}} />
+                    onChange={(e) => {setCombatant({...combatant, "type": e.target.value})}}>
+                        {types && types
+                        .filter((type) => {return type !== "All"}) // get rid of the "All" option
+                        .map((type) => (
+                            <option value={ type } key={ type }>{ type } </option>
+                        ))}
+                </select>
                 <input 
                     type="number" 
                     placeholder="ac" 
@@ -132,11 +162,12 @@ const EncounterAddCombatant = ({ selected }) => {
             {(traits && !windows.traitAdd && !windows.traitEdit) && traits
                 .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
                 .map((trait) => (
-                    <div className="flex-row">
+                    <div
+                        key={trait.id}
+                        className="flex-row">
                         
                         <div
-                            className="description"
-                            key={trait.id} 
+                            className="description" 
                             style={{"cursor": "pointer"}} 
                             onClick={(e) => {setSelection(trait); setWindows({...windows, "traitEdit": true})}}><strong>{trait.name}:</strong> {trait.description}
                             </div>
@@ -197,11 +228,12 @@ const EncounterAddCombatant = ({ selected }) => {
             {(actions && !windows.actionAdd && !windows.actionEdit) && actions
                 .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
                 .map((action) => (
-                    <div className="flex-row">
+                    <div
+                        key={action.id}
+                        className="flex-row">
                         
                         <div
                             className="description"
-                            key={action.id} 
                             style={{"cursor": "pointer"}} 
                             onClick={(e) => {setSelection(action); setWindows({...windows, "actionEdit": true})}}><strong>{action.name}:</strong> {action.description}
                             </div>
@@ -229,7 +261,7 @@ const EncounterAddCombatant = ({ selected }) => {
                     onClick={() => {setActions([...actions.filter((action) => {return action.id !== selection.id}), selection], setWindows({...windows, "actionEdit": false}))}}>Save</div>
             </div>}
 
-            {/* add new legendary */}
+            {/* add new action */}
             {windows.actionAdd && <div>
                 <input 
                     type="text" 
@@ -259,17 +291,19 @@ const EncounterAddCombatant = ({ selected }) => {
             <h2>Legendary ({legendary ? legendary.length : 0})</h2>
             <p className="description">{ combatant.legendary.description }</p>
 
-            {/* list of actions. clicking a list item updates the 'selected' state & reveals the edit form. */}
+            {/* list of legendary actions. clicking a list item updates the 'selected' state & reveals the edit form. */}
             {/* Clicking the delete button */}
 
             {/* TODO: all traits, actions & legendary must have a unique id (uuid) for delete and update to work */}
             {(legendary && !windows.legendaryAdd && !windows.legendaryEdit) && legendary
                 .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
                 .map((legend) => (
-                    <div className="flex-row">
+                    <div
+                        key={legend.id}
+                        className="flex-row">
+                            
                         <div
                             className="description"
-                            key={legend.id} 
                             style={{"cursor": "pointer"}} 
                             onClick={(e) => {setSelection(legend); setWindows({...windows, "legendaryEdit": true})}}><strong>{legend.name}:</strong> {legend.description}
                         </div>
@@ -278,6 +312,41 @@ const EncounterAddCombatant = ({ selected }) => {
                         }}>-</button>
                     </div>
             ))}
+
+            {/* edit existing legendary actions, then update the 'actions' state */}
+            {windows.legendaryEdit && <div>
+                <input 
+                    required 
+                    type="text" 
+                    value={selection.name} 
+                    onChange={(e) => {setSelection({...selection, "name": e.target.value})}} />
+                <textarea 
+                    required 
+                    rows="10" 
+                    type="text" 
+                    value={selection.description} 
+                    onChange={(e) => {setSelection({...selection, "description": e.target.value})}} />
+                <div 
+                    className="btn blue" 
+                    onClick={() => {setLegendary([...legendary.filter((legend) => {return legend.id !== selection.id}), selection], setWindows({...windows, "legendaryEdit": false}))}}>Save</div>
+            </div>}
+
+            {/* add new legendary action */}
+            {windows.legendaryAdd && <div>
+                <input 
+                    type="text" 
+                    onChange={(e) => {setSelection({...selection, "name": e.target.value})}} />
+                <textarea 
+                    rows="10" 
+                    type="text" 
+                    onChange={(e) => {setSelection({...selection, "description": e.target.value})}} />
+                <div 
+                    className="btn blue" 
+                    onClick={() => {
+                        setSelection({...selection, "id": uuidv4()}, 
+                        setLegendary([...legendary, selection], 
+                        setWindows({...windows, "legendaryAdd": false})))}}>Save</div>
+            </div>}
         </div>
         </div>
         </>
