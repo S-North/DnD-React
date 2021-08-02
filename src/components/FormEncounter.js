@@ -8,7 +8,7 @@ const FormEncounter = ({ campaignId, adventureId, addItem, setWidget }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description, location, campaignId, adventureId }
+        const data = { name, description, location, campaignId, adventureId, "mobList": ["players", "default"] }
         console.log(data);
         addItem(collection, data);
         setWidget({"edit": false});

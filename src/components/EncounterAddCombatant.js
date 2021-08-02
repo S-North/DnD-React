@@ -3,8 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { types } from "../Forms";
 import { diceRoll } from '../Maths';
 
-const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, setWindows }) => {
-    const [ multiple, setMultiple ] = useState(1)
+const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, setWindows, encounter, setEncounter }) => {
+    const [ multiple, setMultiple ] = useState(1);
+    const [ mobList, setMobList ] = useState(encounter.mobList);
+    const [ mob, setMob ] = useState("default");
+    const [ mobSubmit, setMobSubmit] = useState("default");
     const [ combatant, setCombatant ] = useState(selected);
     const [ hitDice, setHitDice ] = useState(combatant.hitDice);
         if (!combatant.hitDice) {
@@ -21,16 +24,28 @@ const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, s
     const [ selection, setSelection ] = useState();
 
     const handleSubmit = () => {
-        // TODO: the original monster id is not being added into the combatant. Don't know why, all the other adds are :(
-        const newCombatants = []
+        if (mob === "new" & !mobSubmit) { window.confirm("no mob name"); return } // exit the function if new mob specified but no value provided
+
+        const newCombatants = [] // store multible submited monsters here before submitting them
+        let group = "default";
+        if (mob !== "new") {
+            group = mob.toLowerCase()
+        } else {
+            group = mobSubmit.toLowerCase()
+        }
         for (let i = 0; i < parseInt(multiple); i++) {
-            let c = {...combatant, "source": selected.id, "id": uuidv4(), "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
+            let c = {...combatant, "source": selected.id, "id": uuidv4(), "mob": group, "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
             newCombatants.push(c);
             console.log(newCombatants);
             }
+        
+        if (mob === "new" & !mobList.includes(mobSubmit.toLowerCase()) ) {
+            setEncounter({...encounter, "mobList": [...mobList, mobSubmit.toLowerCase()]})
+        }
+
         setCombatList([...combatList, ...newCombatants],
             setWindows({...windows, "list": true, "add": false, "traits": true, "traitsEdit": false, "traitsAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false}))
-        }
+    }
 
     return (
         <>
@@ -41,6 +56,17 @@ const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, s
                 placeholder="# to add" 
                 value={ multiple } 
                 onChange={(e) => {setMultiple(e.target.value)}} />
+            <select value={mob} onChange={(e) => {setMob(e.target.value)}}>
+                {mobList
+                    .filter((mob) => {return mob !== "players"})
+                    .map(mob => (
+                        <option value={mob}>{mob}</option>
+                ))}
+            </select>
+            {mob === "new" && <input 
+                type="text" 
+                placeholder="new mob" 
+                onChange={(e) => {setMobSubmit(e.target.value)}} />}
             <div 
                 className="btn green"
                 onClick={() => {handleSubmit()}}
