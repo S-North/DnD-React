@@ -3,6 +3,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { types } from "../Forms";
 import { diceRoll } from '../Maths';
 
+// Initiative: map monsters, add monster to new array named after initiative bonus.
+// For each new array, roll initiative and set each monsters initiative to that value.
+// Then do manual input of player initiative values
+
 const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, setWindows, encounter, setEncounter }) => {
     const [ multiple, setMultiple ] = useState(1);
     const [ mobList, setMobList ] = useState(encounter.mobList);
