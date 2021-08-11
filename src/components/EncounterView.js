@@ -1,34 +1,52 @@
 import { useLocation } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import CombatantList from "./CombatantList";
 import SelectMonsters from "./SelectMonsters";
 import EncounterAddCombatant from "./EncounterAddCombatant";
 
-const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
+const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addItem, dbUpdate }) => {
     const collection = "encounters";
     const location = useLocation();
-    const [ encounter, setEncounter ] = useState(location.state.item);
-    const [ combatList, setCombatList ] = useState([]);
     const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
     const [ selected, setSelected ] = useState({})
-    // console.log(combatList)
+    const [ encounter, setEncounter] = useState();
+    const updateEncounter = (update) => {
+        console.log("updateEncounter()", update); 
+    }
+    useEffect(() => {
+        console.log("useEffect(encounters)", encounters.filter((item) => {return item.id === location.state.item.id})[0]);
+        setEncounter(encounters.filter((item) => {return item.id === location.state.item.id})[0]
+        );
+        return () => {}
+    }, [encounters, location])
 
+    useEffect(() => {
+        console.log("useEffect(windows)")
+        return () => {
+        }
+    }, [windows])
+
+    useEffect(() => {
+        console.log("useEffect(encounter)", encounter)
+        return () => {
+        }
+    }, [encounter])
 
     return (
         <>
-            <div className="main-header">
+            {encounter && <div className="main-header">
                 <button className="btn red float-right" onClick={ () => deleteItem(encounter.id, collection) }>-</button>
                     <h1>Encounter: { encounter.name }</h1>
                     <p>{ encounter.description }</p>
-            </div>
+            </div>}
 
             <div className="section">
-                {windows.list && <CombatantList 
-                    items={ combatList }
+                {(windows.list && encounter) && <CombatantList 
+                    items={ encounter.CombatantList }
                     route="/combatant"
                     addItem={ addItem }
-                    setCombatList={ setCombatList }
+                    // setCombatList={ setCombatList }
                     campaignId={ encounter.campaignId }
                     adventureId={ encounter.adventureId }
                     encounterId={ encounter.id }
@@ -36,6 +54,7 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     players={ players }
                     windows={ windows }
                     setWindows={ setWindows }
+                    dbUpdate={ dbUpdate }
                 />}
                 {windows.select && <SelectMonsters
                     monsters={ monsters } 
@@ -45,14 +64,14 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                 />}
                 {windows.add && <EncounterAddCombatant
                     selected={ selected }
-                    combatList={ combatList }
-                    setCombatList={ setCombatList }
                     windows={ windows } 
                     setWindows={ setWindows }
                     encounter={ encounter}
-                    setEncounter={ setEncounter}
+                    dbUpdate={ dbUpdate }
+                    updateEncounter={ updateEncounter }
+                    setEncounter={ setEncounter }
                 />}
-                {windows.npcs && <ItemList 
+                {(windows.npcs && encounter) && <ItemList 
                     title="Encounter NPCs"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New NPC"
@@ -61,7 +80,7 @@ const EncounterView = ({ monsters, players, notes, deleteItem, addItem }) => {
                     addItem={ addItem }
                     encounterId={ encounter.id }
                 />}
-                {windows.notes && <ItemList 
+                {(windows.notes && encounter) && <ItemList 
                     title="Adventure Notes"
                     description="Please select an encounter below to view and run the encounter."
                     buttonText="New Note"
