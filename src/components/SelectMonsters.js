@@ -45,8 +45,8 @@ const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker
             </div>
 
             </div>
-            <div className="widget">
-                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWidget({"edit": true})}} className="btn green float-right">Edit</button>}
+            <div>
+                
                 {widget.edit && <button onClick={ () => { setWidget({"edit": false})}} className="btn blue float-right">Exit Edit</button>}
                 {!widget.edit && <div className="item-list">
                     {filtered ? filtered(monsters).map((item) => (

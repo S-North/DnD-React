@@ -20,8 +20,8 @@
       "id": "1I3bkYc"
     },
     {
-      "name": "sdsd",
-      "description": "asdasd",
+      "name": "Wallpole",
+      "description": "Post-punk burnout who can't stop talking about his glory days.",
       "chRace": "Dwarf",
       "chClass": "Bard",
       "chLevel": "1",
@@ -36,9 +36,7 @@
       "xp": "12",
       "level": 20,
       "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
-      "player": {
-        "pc": true
-      },
+      "player": true,
       "id": "a7ZKxTT"
     },
     {

@@ -3,13 +3,15 @@ import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import CombatantList from "./CombatantList";
 import SelectMonsters from "./SelectMonsters";
+import SelectPlayers from "./SelectPlayers";
 import EncounterAddCombatant from "./EncounterAddCombatant";
 
 const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addItem, dbUpdate }) => {
     const collection = "encounters";
     const location = useLocation();
-    const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
+    const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "player": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
     const [ selected, setSelected ] = useState({})
+    const [ characters, setCharacters ] = useState([]);
     const [ encounter, setEncounter] = useState();
 
     useEffect(() => {
@@ -17,6 +19,11 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
         );
         return () => {}
     }, [encounters, location])
+
+    useEffect(() => {
+        console.log("characters changed")
+        return () => {}
+    }, [characters])
 
     return (
         <>
@@ -45,6 +52,14 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
                 {windows.select && <SelectMonsters
                     monsters={ monsters } 
                     setSelected={ setSelected } 
+                    windows={ windows } 
+                    setWindows={ setWindows }
+                />}
+                {windows.player && <SelectPlayers
+                    players={ players.filter(player => {return player.campaignId === location.state.item.campaignId}) }
+                    characters={ characters }
+                    setCharacters={ setCharacters }
+                    setSelected={ setSelected }
                     windows={ windows } 
                     setWindows={ setWindows }
                 />}
