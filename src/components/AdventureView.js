@@ -6,9 +6,6 @@ const AdventureView = ({ encounters, addItem, deleteItem, campaignId, notes, pla
     const location = useLocation();
     const collection = "adventures";
     const adventure = location.state.item;
-    console.log(`campaign: ${location.state.campaignId}, adventure: ${adventure.id}`)
-    console.log(adventure.id);
-    console.log(encounters.filter((encounter) => {return encounter.adventureId === adventure.id}))
 
     return (
         <>

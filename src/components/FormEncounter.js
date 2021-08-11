@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const FormEncounter = ({ campaignId, adventureId, addItem, setWidget }) => {
     const collection = "encounters";
@@ -8,7 +9,15 @@ const FormEncounter = ({ campaignId, adventureId, addItem, setWidget }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description, location, campaignId, adventureId, "mobList": ["players", "default"] }
+        const data = {  name, 
+                        description, 
+                        location, 
+                        campaignId, 
+                        adventureId,
+                        "id": uuidv4(),
+                        "mobList": ["players", "default", "new"], 
+                        "CombatantList": [], 
+                        "mode": "editing" }
         console.log(data);
         addItem(collection, data);
         setWidget({"edit": false});

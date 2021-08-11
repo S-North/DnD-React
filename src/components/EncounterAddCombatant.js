@@ -3,9 +3,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { types } from "../Forms";
 import { diceRoll } from '../Maths';
 
-const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, setWindows, encounter, setEncounter }) => {
+// Initiative: map monsters, add monster to new array named after initiative bonus.
+// For each new array, roll initiative and set each monsters initiative to that value.
+// Then do manual input of player initiative values
+
+const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpdate }) => {
     const [ multiple, setMultiple ] = useState(1);
-    const [ mobList, setMobList ] = useState(encounter.mobList);
+    const mobList = encounter.mobList;
     const [ mob, setMob ] = useState("default");
     const [ mobSubmit, setMobSubmit] = useState("default");
     const [ combatant, setCombatant ] = useState(selected);
@@ -27,6 +31,7 @@ const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, s
         if (mob === "new" & !mobSubmit) { window.confirm("no mob name"); return } // exit the function if new mob specified but no value provided
 
         const newCombatants = [] // store multible submited monsters here before submitting them
+        let updatedEncounter = encounter;
         let group = "default";
         if (mob !== "new") {
             group = mob.toLowerCase()
@@ -38,13 +43,15 @@ const EncounterAddCombatant = ({ selected, combatList, setCombatList, windows, s
             newCombatants.push(c);
             console.log(newCombatants);
             }
-        
-        if (mob === "new" & !mobList.includes(mobSubmit.toLowerCase()) ) {
-            setEncounter({...encounter, "mobList": [...mobList, mobSubmit.toLowerCase()]})
-        }
 
-        setCombatList([...combatList, ...newCombatants],
-            setWindows({...windows, "list": true, "add": false, "traits": true, "traitsEdit": false, "traitsAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false}))
+        if (mob === "new" & !mobList.includes(mobSubmit.toLowerCase()) ) {
+            updatedEncounter = {...encounter, "mobList": [...mobList, mobSubmit.toLowerCase()], "CombatantList": [...encounter.CombatantList, ...newCombatants]}
+        } else {
+            updatedEncounter = {...encounter, "CombatantList": [...encounter.CombatantList, ...newCombatants]}
+        }
+        
+        dbUpdate("encounters", updatedEncounter, encounter.id, "PUT");
+        setWindows({...windows, "list": true, "npcs": true, "notes": true, "add": false, "traits": false, "actions": false, "legendary": false})
     }
 
     return (

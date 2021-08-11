@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 // import { useHistory } from "react-router";
 
 const FormCampaign = ({ addItem, setWidget }) => {
@@ -10,7 +11,7 @@ const FormCampaign = ({ addItem, setWidget }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description}
+        const data = { name, description, "id": uuidv4()}
         // console.log(data);
         addItem(collection, data);
         setWidget({"edit": false});

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const FormAdventure = ({ campaignId, addItem, setWidget }) => {
     const collection = "adventures";
@@ -7,9 +8,9 @@ const FormAdventure = ({ campaignId, addItem, setWidget }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, description, campaignId }
+        const data = { name, description, campaignId, "id": uuidv4() }
         // console.log(data);
-        addItem(collection, data, collection);
+        addItem(collection, data);
         setWidget({"edit": false});
         // history.push("/");
     }
