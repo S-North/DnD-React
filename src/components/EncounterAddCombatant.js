@@ -39,7 +39,7 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpd
             group = mobSubmit.toLowerCase()
         }
         for (let i = 0; i < parseInt(multiple); i++) {
-            let c = {...combatant, "source": selected.id, "id": uuidv4(), "mob": group, "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
+            let c = {...combatant, "enemy": true, "source": selected.id, "id": uuidv4(), "mob": group, "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
             newCombatants.push(c);
             console.log(newCombatants);
             }
@@ -67,7 +67,7 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpd
                 {mobList
                     .filter((mob) => {return mob !== "players"})
                     .map(mob => (
-                        <option value={mob}>{mob}</option>
+                        <option key={mob} value={mob}>{mob}</option>
                 ))}
             </select>
             {mob === "new" && <input 

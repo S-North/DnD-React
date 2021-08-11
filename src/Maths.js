@@ -48,4 +48,32 @@ const abiilityModifier = (int) => {
     }
 }
 
-export { randInt, diceRoll, averageHP, abiilityModifier }
+const xpToLevel = (xp) => {
+    console.log(typeof xp)
+    xp = parseInt(xp)
+    console.log(typeof xp)
+    switch(true) {
+        case xp < 301: return 1;
+        case xp < 901: return 2;
+        case xp < 2701: return 3;
+        case xp < 6501: return 4;
+        case xp < 14001: return 5;
+        case xp < 23001: return 6;
+        case xp < 34001: return 7;
+        case xp < 48001: return 8;
+        case xp < 64001: return 9;
+        case xp < 85001: return 10;
+        case xp < 100001: return 11;
+        case xp < 120001: return 12;
+        case xp < 140001: return 13;
+        case xp < 165001: return 14;
+        case xp < 195001: return 15;
+        case xp < 225001: return 16;
+        case xp < 265000: return 17;
+        case xp < 305001: return 18;
+        case xp < 355001: return 19;
+        default: return 20
+    }
+}
+
+export { randInt, diceRoll, averageHP, abiilityModifier, xpToLevel }

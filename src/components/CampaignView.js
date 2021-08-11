@@ -16,6 +16,16 @@ const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
             </div>
             <div className="section">
                 <ItemList 
+                    title="Characters"
+                    description="Player characters for this campaign"
+                    buttonText="New Character"
+                    items={ players.filter((character) => {return character.campaignId === campaign.id  && character.player === true})  }
+                    route="/player"
+                    addItem={ addItem }
+                    deleteItem={ deleteItem }
+                    campaignId={ campaign.id }
+                />
+                <ItemList 
                     title="Adventures"
                     description="Please select an adventure below to access adventure notes, npcs and encounters."
                     buttonText="New Adventure"
@@ -31,7 +41,7 @@ const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
                     description="Please select an NPC below to view their details"
                     buttonText="New NPC"
                     items={ players.filter((npc) => {return npc.campaignId === campaign.id && npc.npc === "true"})  }
-                    route="/character"
+                    route="/npc"
                     addItem={ addItem }
                     deleteItem={ deleteItem }
                     campaignId={ campaign.id }
