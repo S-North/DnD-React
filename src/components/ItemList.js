@@ -31,7 +31,8 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                 {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
                 {(widget.edit && route === "/encounter") && <FormEncounter addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
                 {(widget.edit && route === "/monster") && <FormMonster addItem={ addItem } setWidget={ setWidget }></FormMonster>}
-                {(widget.edit && route === "/character") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } />}
+                {(widget.edit && route === "/npc") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } pc={false} />}
+                {(widget.edit && route === "/player") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } pc={true} />}
                 {(widget.edit && route === "/note") && <FormNote addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } />}
             </div>
         </>

@@ -18,6 +18,142 @@
       "encounterId": "ywHQoQP",
       "npc": "true",
       "id": "1I3bkYc"
+    },
+    {
+      "name": "sdsd",
+      "description": "asdasd",
+      "chRace": "Dwarf",
+      "chClass": "Bard",
+      "chLevel": "1",
+      "str": "1",
+      "dex": "1",
+      "con": "1",
+      "int": "1",
+      "wis": "1",
+      "cha": "1",
+      "hp": "1",
+      "ac": "1",
+      "xp": "12",
+      "level": 20,
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "player": {
+        "pc": true
+      },
+      "id": "a7ZKxTT"
+    },
+    {
+      "id": "2da38b02-9a13-415b-839f-d99389fa994e",
+      "name": "Aski the Furtive",
+      "description": "Aski was lost from his litter when he was a kitten and has been a stray ever since.",
+      "chRace": "Tabaxi",
+      "chClass": "Rogue",
+      "chLevel": "1",
+      "str": "12",
+      "dex": "16",
+      "con": "14",
+      "int": "12",
+      "wis": "10",
+      "cha": "14",
+      "hp": "10",
+      "ac": "16",
+      "xp": "0",
+      "level": 20,
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "player": true
+    },
+    {
+      "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
+      "name": "Wilma Forest",
+      "description": "Wilma was part of an experimental anarco-communist community growing up. As the age of 16 she left the commune whe she heard that a nearby city was planning to destroy a sacred woodland for timber.",
+      "chRace": "Bugbear",
+      "chClass": "Druid",
+      "chLevel": "1",
+      "str": "8",
+      "dex": "14",
+      "con": "14",
+      "int": "10",
+      "wis": "16",
+      "cha": "12",
+      "hp": "10",
+      "ac": "14",
+      "xp": "0",
+      "level": 20,
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "player": true
+    },
+    {
+      "id": "c2af9bc5-b331-4b1e-b052-c51df86be609",
+      "name": "sdf sf",
+      "description": "sada  ",
+      "chLevel": "1",
+      "str": "45",
+      "dex": "5",
+      "con": "4",
+      "int": "32",
+      "wis": "2",
+      "cha": "4",
+      "hp": "45",
+      "ac": "3",
+      "xp": "67000",
+      "level": 20,
+      "campaignId": "202a0314-fd93-416b-9afb-3b305a400b6f",
+      "player": true
+    },
+    {
+      "id": "fa0b3b4e-4784-4ba8-b988-13b13dce787c",
+      "name": "sf sdfsdf ",
+      "description": "asd asdasda",
+      "chLevel": "1",
+      "str": "56",
+      "dex": "6",
+      "con": "7",
+      "int": "76",
+      "wis": "6",
+      "cha": "6",
+      "hp": "5",
+      "ac": "5",
+      "xp": "17000",
+      "level": 20,
+      "campaignId": "202a0314-fd93-416b-9afb-3b305a400b6f",
+      "player": true
+    },
+    {
+      "id": "35f91fac-92e4-476d-8f1e-1659ea4d2127",
+      "name": "dsfsdf",
+      "description": "fgdf",
+      "chLevel": "1",
+      "str": "4",
+      "dex": "5",
+      "con": "6",
+      "int": "7",
+      "wis": "8",
+      "cha": "9",
+      "hp": "3",
+      "ac": "4",
+      "xp": "5",
+      "level": 1,
+      "campaignId": "202a0314-fd93-416b-9afb-3b305a400b6f",
+      "player": true
+    },
+    {
+      "id": "2921a694-4eb4-4514-b3b5-5405bab2c6e0",
+      "name": "Hornath the Ugly",
+      "description": "skdlakdj",
+      "chRace": "Orc of Exandria",
+      "chClass": "Monk",
+      "chLevel": "1",
+      "str": "12",
+      "dex": "16",
+      "con": "14",
+      "int": "10",
+      "wis": "8",
+      "cha": "16",
+      "hp": "12",
+      "ac": "16",
+      "xp": "45000",
+      "level": 8,
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "player": true
     }
   ],
   "notes": [
@@ -872,6 +1008,11 @@
       "name": "New Campaign",
       "description": "Test campaign",
       "id": "0e5f2139-c5dd-4146-8fcd-05571bc96040"
+    },
+    {
+      "name": "fsdsf",
+      "description": "sdfsd  sd",
+      "id": "202a0314-fd93-416b-9afb-3b305a400b6f"
     }
   ],
   "adventures": [
@@ -896,55 +1037,30 @@
       ],
       "CombatantList": [
         {
-          "name": "Bandit",
-          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
-          "type": "Humanoid",
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
           "ac": "12",
           "hitDice": {
             "hdNumber": "1",
             "hdDice": "6",
             "hdBonus": "0"
           },
-          "hp": "11",
+          "hp": "7",
           "cr": "0.125",
-          "str": "11",
-          "dex": "12",
-          "con": "12",
-          "int": "10",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
           "wis": "10",
-          "cha": "10",
-          "id": "5fa67c42-2066-45c0-a327-9b6f6c79c81a",
+          "cha": "4",
+          "id": "57ef28b3-52a0-4028-9bf3-38b76f38fc9e",
           "traits": [],
           "actions": [],
           "legendary": {},
           "legendaryActions": [],
-          "source": "016c4d6c-29ee-47dd-ad05-06b015caa444",
-          "mob": "default"
-        },
-        {
-          "name": "Bandit",
-          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
-          "type": "Humanoid",
-          "ac": "12",
-          "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
-            "hdBonus": "0"
-          },
-          "hp": "11",
-          "cr": "0.125",
-          "str": "11",
-          "dex": "12",
-          "con": "12",
-          "int": "10",
-          "wis": "10",
-          "cha": "10",
-          "id": "9c9072f9-6845-4ceb-8aa2-07a53f7d5ad0",
-          "traits": [],
-          "actions": [],
-          "legendary": {},
-          "legendaryActions": [],
-          "source": "f1694b45-9113-40f4-83b7-25903c62cb7e",
+          "enemy": true,
+          "source": "4b92996c-addf-4fc0-8e93-50f262fcd10a",
           "mob": "default"
         },
         {
@@ -965,16 +1081,17 @@
           "int": "2",
           "wis": "10",
           "cha": "4",
-          "id": "04b12d82-a301-4086-81f8-e726dab5e56c",
+          "id": "700b102f-1c79-49a8-af37-ef833336a87f",
           "traits": [],
           "actions": [],
           "legendary": {},
           "legendaryActions": [],
-          "source": "a248b179-26fc-4f09-bb39-90d995a85b84",
+          "enemy": true,
+          "source": "4b92996c-addf-4fc0-8e93-50f262fcd10a",
           "mob": "default"
         },
         {
-          "id": "301350f8-311c-49d5-a606-94bd984c9a5c",
+          "id": "c9c5d094-2652-4749-b49e-76c332045891",
           "name": "Goblin",
           "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
           "ac": "15",
@@ -1027,224 +1144,419 @@
           ],
           "legendary": {},
           "legendaryActions": [],
-          "source": "67731f5b-05ab-4151-a4e7-44750a07d146",
+          "enemy": true,
+          "source": "8c56ee3c-714c-4c0d-a37d-905e9d1949d3",
           "mob": "default"
         },
         {
-          "name": "Bag of Bones",
-          "description": "How does this thing even move?!",
-          "ac": "8",
+          "id": "939d67b1-d374-453b-b52f-bffaeec6923b",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
           "hitDice": {
             "hdNumber": "1",
             "hdDice": "6",
             "hdBonus": "0"
           },
-          "hp": "160",
-          "cr": "6",
-          "type": "Undead",
-          "id": "9cba3c56-37ca-404e-abfc-e5c11ae4a5f7",
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "8c56ee3c-714c-4c0d-a37d-905e9d1949d3",
+          "mob": "default"
+        },
+        {
+          "id": "bda8ed42-df32-4a1a-888c-97bb65c55cb0",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "8c56ee3c-714c-4c0d-a37d-905e9d1949d3",
+          "mob": "default"
+        },
+        {
+          "id": "40a296d7-66c9-4ddb-a90d-b4f81103f3dc",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "8c56ee3c-714c-4c0d-a37d-905e9d1949d3",
+          "mob": "default"
+        },
+        {
+          "id": "8176c297-10ef-4495-900b-cb1c7de7f888",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
           "traits": [],
           "actions": [],
           "legendary": {},
           "legendaryActions": [],
-          "source": "e03173c7-628d-4c87-a5cc-9911f0b92f18",
+          "enemy": true,
+          "source": "17aa9c70-3762-4b5f-89c2-fbb35a8fc190",
           "mob": "default"
         },
         {
-          "id": "9322a97b-5d60-4452-9aca-cf2e829dc556",
-          "name": "Goblin",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
+          "id": "a39ce66e-8690-44de-a0df-fc0e032e35f8",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
           "hitDice": {
             "hdNumber": "1",
             "hdDice": "6",
             "hdBonus": "0"
           },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "10",
-          "dex": "10",
-          "con": "17",
-          "int": "4",
-          "wis": "10",
-          "cha": "16",
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": {},
-          "legendaryActions": [],
-          "source": "945b198a-7558-4236-8e29-587c567d9010",
-          "mob": "default"
-        },
-        {
-          "id": "c9ccec17-c3e6-413c-9047-3dbd846d26d0",
-          "name": "Goblin",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "10",
-          "dex": "10",
-          "con": "17",
-          "int": "4",
-          "wis": "10",
-          "cha": "16",
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": {},
-          "legendaryActions": [],
-          "source": "945b198a-7558-4236-8e29-587c567d9010",
-          "mob": "default"
-        },
-        {
-          "id": "dc518676-0123-4769-9c95-d2351e7c97a9",
-          "name": "Goblin",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "10",
-          "dex": "10",
-          "con": "17",
-          "int": "4",
-          "wis": "10",
-          "cha": "16",
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": {},
-          "legendaryActions": [],
-          "source": "945b198a-7558-4236-8e29-587c567d9010",
-          "mob": "default"
-        },
-        {
-          "name": "Lich",
-          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
-          "type": "Undead",
-          "ac": "17",
-          "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
-            "hdBonus": "0"
-          },
-          "hp": "135",
-          "cr": "21",
-          "str": "11",
-          "dex": "16",
-          "con": "16",
-          "int": "20",
-          "wis": "14",
-          "cha": "16",
-          "id": "1400edf8-96ae-4a03-87ff-2c893f28549c",
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
           "traits": [],
           "actions": [],
           "legendary": {},
           "legendaryActions": [],
-          "source": "6fa52a21-7a42-4780-b238-8d8620813062",
+          "enemy": true,
+          "source": "17aa9c70-3762-4b5f-89c2-fbb35a8fc190",
+          "mob": "default"
+        },
+        {
+          "id": "4953528b-7e58-4122-9019-ee6d6adc79c8",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "17aa9c70-3762-4b5f-89c2-fbb35a8fc190",
+          "mob": "default"
+        },
+        {
+          "id": "7607fb80-9a92-44ca-b965-11919acebd6d",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "17aa9c70-3762-4b5f-89c2-fbb35a8fc190",
+          "mob": "default"
+        },
+        {
+          "id": "7346945a-1d12-4e5a-ae14-14f61cb703b2",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "17aa9c70-3762-4b5f-89c2-fbb35a8fc190",
+          "mob": "default"
+        },
+        {
+          "name": "Baboon",
+          "description": "A large monkey/ape. Baboons tend to do what they want when they want! They can sleep in the day and look for food at night. They can be active at night and sleep all day long. The groups of Baboons can be very large. The smallest size of them is about 50 members. However, they can have up to 250 members. They have a very complex level of social organisation. ",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "3",
+          "cr": "0",
+          "str": "8",
+          "dex": "14",
+          "con": "11",
+          "int": "4",
+          "wis": "12",
+          "cha": "6",
+          "id": "c44a726a-94a9-44e3-bc0d-e8875a741d75",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "0082b55f-67b5-4781-a9a4-001b39b7e7af",
+          "mob": "default"
+        },
+        {
+          "id": "118ff854-0602-49b3-af0c-443dfe2cee38",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "5e5e2465-10a2-43bf-9bce-bd93d7aa114b",
+          "mob": "default"
+        },
+        {
+          "id": "4378199a-b991-4c86-9719-be56d4db3666",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "5e5e2465-10a2-43bf-9bce-bd93d7aa114b",
+          "mob": "default"
+        },
+        {
+          "id": "682528eb-d754-4480-b820-e5f0e600b9cb",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "5e5e2465-10a2-43bf-9bce-bd93d7aa114b",
+          "mob": "default"
+        },
+        {
+          "id": "abe27f2b-7099-4ef3-a6c0-d017839e62fb",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "5e5e2465-10a2-43bf-9bce-bd93d7aa114b",
+          "mob": "default"
+        },
+        {
+          "id": "06272465-5fc0-4718-a1e3-0bcf2f16e48d",
+          "name": "Cloud Giant",
+          "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
+          "ac": "14",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "200",
+          "cr": "9",
+          "type": "Giant",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "5e5e2465-10a2-43bf-9bce-bd93d7aa114b",
           "mob": "default"
         }
       ],
@@ -1265,102 +1577,139 @@
       ],
       "CombatantList": [
         {
-          "name": "Batman",
-          "description": "His ears are batwings and he can hover.",
-          "ac": "12",
+          "name": "Awakened shrub",
+          "description": "An awakened shrub is an ordinary shrub given sentience and mobility by the awaken spell or similar magic.",
+          "type": "Plant",
+          "ac": "9",
           "hitDice": {
             "hdNumber": "1",
             "hdDice": "6",
             "hdBonus": "0"
           },
           "hp": "10",
-          "cr": "1",
-          "type": "Humanoid",
-          "id": "6c2db035-83b6-47fe-8abe-7cc7bf267f30",
+          "cr": "0",
+          "str": "3",
+          "dex": "8",
+          "con": "11",
+          "int": "10",
+          "wis": "10",
+          "cha": "6",
+          "id": "f8b4dbf9-8214-4a40-b35c-f678568bda8d",
           "traits": [],
           "actions": [],
           "legendary": {},
           "legendaryActions": [],
-          "source": "aab35115-10eb-4bd5-b3e6-a845f0483416",
-          "mob": "dark avengers"
+          "enemy": true,
+          "source": "ff74d774-097b-4acf-ac2d-b109d02c3421",
+          "mob": "default"
         },
         {
-          "name": "Lich",
-          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
-          "type": "Undead",
-          "ac": "17",
-          "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
-            "hdBonus": "0"
-          },
-          "hp": "135",
-          "cr": "21",
-          "str": "11",
-          "dex": "16",
-          "con": "16",
-          "int": "20",
-          "wis": "14",
-          "cha": "16",
-          "id": "b87e2c95-fa9e-4643-9a1b-0c593145ab73",
-          "traits": [],
-          "actions": [],
-          "legendary": {},
-          "legendaryActions": [],
-          "source": "0c87f82b-2b63-4b1c-b5ac-ff59de8c0d24",
-          "mob": "dark avengers"
-        },
-        {
-          "name": "Bandit",
-          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
-          "type": "Humanoid",
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
           "ac": "12",
           "hitDice": {
             "hdNumber": "1",
             "hdDice": "6",
             "hdBonus": "0"
           },
-          "hp": "11",
+          "hp": "7",
           "cr": "0.125",
-          "str": "11",
-          "dex": "12",
-          "con": "12",
-          "int": "10",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
           "wis": "10",
-          "cha": "10",
-          "id": "d86fc9ad-e841-43bd-ac4b-7c5cc6745926",
+          "cha": "4",
+          "id": "580d1f65-8372-4dd2-aafc-15df44547c01",
           "traits": [],
           "actions": [],
           "legendary": {},
           "legendaryActions": [],
-          "source": "bcc9e267-f131-4390-8af5-8cfb7c990d79",
+          "enemy": true,
+          "source": "382fa2ed-1e9c-47b3-889e-6351e7ddc2ce",
           "mob": "default"
         },
         {
-          "name": "Green Hag",
-          "description": "The wretched and hateful green hags dwell in dying forests, lonely swamps, and misty moors, making their homes in caves. Green hags love to manipulate other creatures into doing their bidding, masking their intentions behind layers of deception. They lure victims to them by mimicking voices calling out for help, or drive unwanted visitors away by imitating the cries of fierce beasts.\n\nObsession with Tragedy. Green hags revel in the failings and tragedies of other creatures. They derive joy from bringing people low and seeing hope turn into despair, not just for individuals but also for whole nations.\nCovens. A green hag that is part of a coven (see the “Hag Covens” sidebar) has a challenge rating of 5 (1,800 XP).",
-          "type": "Fey",
-          "ac": "17",
-          "hp": "82",
-          "cr": "3",
-          "str": "18",
-          "dex": "12",
-          "con": "16",
-          "int": "13",
-          "wis": "14",
-          "cha": "14",
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
           "hitDice": {
-            "hdNumber": "11",
-            "hdDice": "8",
-            "hdBonus": "33"
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
           },
-          "id": "1cec9622-f553-4ded-9a6b-49cbb8854834",
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "e7928098-cc97-4b1f-ba43-20e126630700",
           "traits": [],
           "actions": [],
           "legendary": {},
           "legendaryActions": [],
-          "source": "64eb1fc2-93ef-46d5-8aab-81bbe3866cd6",
-          "mob": "dark avengers"
+          "enemy": true,
+          "source": "382fa2ed-1e9c-47b3-889e-6351e7ddc2ce",
+          "mob": "default"
+        },
+        {
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "5f13d8b6-43ab-4369-94ce-f4bbf96987b8",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "382fa2ed-1e9c-47b3-889e-6351e7ddc2ce",
+          "mob": "default"
+        },
+        {
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "49c69c90-1c90-4b2e-82f5-6e59d3334195",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "382fa2ed-1e9c-47b3-889e-6351e7ddc2ce",
+          "mob": "default"
         }
       ],
       "mode": "editing"
