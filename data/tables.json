@@ -13,13 +13,6 @@
       "id": "N_Kv-kT"
     },
     {
-      "name": "i oiuoi uoiu",
-      "description": " uoi uoi o uuio uio",
-      "encounterId": "ywHQoQP",
-      "npc": "true",
-      "id": "1I3bkYc"
-    },
-    {
       "name": "sdsd",
       "description": "asdasd",
       "chRace": "Dwarf",
@@ -82,60 +75,6 @@
       "player": true
     },
     {
-      "id": "c2af9bc5-b331-4b1e-b052-c51df86be609",
-      "name": "sdf sf",
-      "description": "sada  ",
-      "chLevel": "1",
-      "str": "45",
-      "dex": "5",
-      "con": "4",
-      "int": "32",
-      "wis": "2",
-      "cha": "4",
-      "hp": "45",
-      "ac": "3",
-      "xp": "67000",
-      "level": 20,
-      "campaignId": "202a0314-fd93-416b-9afb-3b305a400b6f",
-      "player": true
-    },
-    {
-      "id": "fa0b3b4e-4784-4ba8-b988-13b13dce787c",
-      "name": "sf sdfsdf ",
-      "description": "asd asdasda",
-      "chLevel": "1",
-      "str": "56",
-      "dex": "6",
-      "con": "7",
-      "int": "76",
-      "wis": "6",
-      "cha": "6",
-      "hp": "5",
-      "ac": "5",
-      "xp": "17000",
-      "level": 20,
-      "campaignId": "202a0314-fd93-416b-9afb-3b305a400b6f",
-      "player": true
-    },
-    {
-      "id": "35f91fac-92e4-476d-8f1e-1659ea4d2127",
-      "name": "dsfsdf",
-      "description": "fgdf",
-      "chLevel": "1",
-      "str": "4",
-      "dex": "5",
-      "con": "6",
-      "int": "7",
-      "wis": "8",
-      "cha": "9",
-      "hp": "3",
-      "ac": "4",
-      "xp": "5",
-      "level": 1,
-      "campaignId": "202a0314-fd93-416b-9afb-3b305a400b6f",
-      "player": true
-    },
-    {
       "id": "2921a694-4eb4-4514-b3b5-5405bab2c6e0",
       "name": "Hornath the Ugly",
       "description": "skdlakdj",
@@ -186,24 +125,6 @@
       "name": "nkjkjhkjhj",
       "description": "jhkjhkjhhkjh",
       "id": "cC3bKcf"
-    },
-    {
-      "name": "uoioiu",
-      "description": "uiou oi ouio",
-      "encounterId": "ywHQoQP",
-      "id": "IW5n-Xn"
-    },
-    {
-      "name": "encounter note",
-      "description": "lkajdlasjdlaksjdlkadjs",
-      "encounterId": "ywHQoQP",
-      "id": "B6omtf3"
-    },
-    {
-      "name": "kjhkhkj",
-      "description": "kjhkjh kj hk hk hk ",
-      "encounterId": "ywHQoQP",
-      "id": "2yM6Ymu"
     }
   ],
   "monsters": [
@@ -1008,11 +929,6 @@
       "name": "New Campaign",
       "description": "Test campaign",
       "id": "0e5f2139-c5dd-4146-8fcd-05571bc96040"
-    },
-    {
-      "name": "fsdsf",
-      "description": "sdfsd  sd",
-      "id": "202a0314-fd93-416b-9afb-3b305a400b6f"
     }
   ],
   "adventures": [
@@ -1557,6 +1473,38 @@
           "legendaryActions": [],
           "enemy": true,
           "source": "5e5e2465-10a2-43bf-9bce-bd93d7aa114b",
+          "mob": "default"
+        },
+        {
+          "name": "Green Hag",
+          "description": "The wretched and hateful green hags dwell in dying forests, lonely swamps, and misty moors, making their homes in caves. Green hags love to manipulate other creatures into doing their bidding, masking their intentions behind layers of deception. They lure victims to them by mimicking voices calling out for help, or drive unwanted visitors away by imitating the cries of fierce beasts.\n\nObsession with Tragedy. Green hags revel in the failings and tragedies of other creatures. They derive joy from bringing people low and seeing hope turn into despair, not just for individuals but also for whole nations.\nCovens. A green hag that is part of a coven (see the “Hag Covens” sidebar) has a challenge rating of 5 (1,800 XP).",
+          "type": "Fey",
+          "ac": "17",
+          "hp": "82",
+          "cr": "3",
+          "str": "18",
+          "dex": "12",
+          "con": "16",
+          "int": "13",
+          "wis": "14",
+          "cha": "14",
+          "hitDice": {
+            "hdNumber": "11",
+            "hdDice": "8",
+            "hdBonus": "33"
+          },
+          "id": "400b2d51-f9da-4510-8b16-56fc636b6019",
+          "traits": [
+            {
+              "name": "Dutch",
+              "description": "Go for do"
+            }
+          ],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "fb20ba3a-000d-409d-a396-b510d314ef78",
           "mob": "default"
         }
       ],
