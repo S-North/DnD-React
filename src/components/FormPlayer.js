@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { abiilityModifier, xpToLevel } from "../Maths";
+import { xpToLevel } from "../Maths";
 import { classes, races } from '../Forms';
 
 const FormPlayer = ({ campaignId, adventureId, encounterId, addItem, setWidget, pc }) => {
@@ -12,23 +12,19 @@ const FormPlayer = ({ campaignId, adventureId, encounterId, addItem, setWidget, 
     const [description, setDescription] = useState(``);
     const [ chRace, setChRace ] = useState();
     const [ chClass, setChClass ] = useState();
-    const [ chLevel, setChLevel ] = useState("1");
     const [str, setStr] = useState("10");
     const [dex, setDex] = useState("10");
     const [con, setCon] = useState("10");
     const [int, setInt] = useState("10");
     const [wis, setWis] = useState("10");
     const [cha, setCha] = useState("10");
-    const [hdNumber, setHdNumber] = useState(`1`);
-    const [hdDice, setHdDice] = useState(`8`);
-    const [hdBonus, setHdBonus] = useState(abiilityModifier(con));
     const [hp, setHp] = useState(`5`);
     const [ac, setAc] = useState(``);
     const [xp, setXp] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { "id": uuidv4(), name, description, chRace, chClass, chLevel, str, dex, con, int, wis, cha, hp, ac, xp, "level": xpToLevel(xp), campaignId, adventureId, encounterId, "player": pc};
+        const data = { "id": uuidv4(), name, description, chRace, chClass, str, dex, con, int, wis, cha, hp, ac, xp, "level": xpToLevel(xp), campaignId, adventureId, encounterId, "player": pc};
         console.log(data);
         addItem(collection, data );
         setWidget({"edit": false});

@@ -11,7 +11,6 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
     const location = useLocation();
     const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "player": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
     const [ selected, setSelected ] = useState({})
-    const [ characters, setCharacters ] = useState([]);
     const [ encounter, setEncounter] = useState();
 
     useEffect(() => {
@@ -20,10 +19,6 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
         return () => {}
     }, [encounters, location])
 
-    useEffect(() => {
-        console.log("characters changed")
-        return () => {}
-    }, [characters])
 
     return (
         <>
@@ -57,11 +52,12 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
                 />}
                 {windows.player && <SelectPlayers
                     players={ players.filter(player => {return player.campaignId === location.state.item.campaignId}) }
-                    characters={ characters }
-                    setCharacters={ setCharacters }
                     setSelected={ setSelected }
                     windows={ windows } 
                     setWindows={ setWindows }
+                    encounter={ encounter }
+                    setEncounter={ setEncounter }
+                    dbUpdate={ dbUpdate }
                 />}
                 {windows.add && <EncounterAddCombatant
                     selected={ selected }
