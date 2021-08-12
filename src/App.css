@@ -151,7 +151,6 @@ main {
     display: flex;
     gap: 1ch;
     align-items: center;
-    
     min-height: 2ch;
 }
 

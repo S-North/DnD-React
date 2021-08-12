@@ -58,9 +58,9 @@ const DiceRoller = () => {
                                 <br/>
                             </div>
                         </div>
-                        <div className="flexrow">
+                        <div className="flex-row">
                             <input
-                            className='btn submitButton, green'
+                            className='btn submitButton green'
                             type='submit' 
                             value='Roll them dice!' 
                             />
