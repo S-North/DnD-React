@@ -5,6 +5,7 @@ import CombatantList from "./CombatantList";
 import SelectMonsters from "./SelectMonsters";
 import SelectPlayers from "./SelectPlayers";
 import EncounterAddCombatant from "./EncounterAddCombatant";
+import Initiative from "./Initiative";
 
 const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addItem, dbUpdate }) => {
     const collection = "encounters";
@@ -61,6 +62,12 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
                 />}
                 {windows.add && <EncounterAddCombatant
                     selected={ selected }
+                    windows={ windows } 
+                    setWindows={ setWindows }
+                    encounter={ encounter}
+                    dbUpdate={ dbUpdate }
+                />}
+                {windows.initiative && <Initiative
                     windows={ windows } 
                     setWindows={ setWindows }
                     encounter={ encounter}

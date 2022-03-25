@@ -40,6 +40,7 @@ const SelectPlayers = ({ players, encounter, setEncounter, windows, setWindows, 
                     </div>
                 ))}
                 <div className="flex-row">
+                    <input type="button" className="btn submitButton grey" value="cancel" onClick={() => {setWindows({...windows, "player": false, "list": true, "npcs": true, "notes": true})}}></input>
                     <input type="button" className="btn submitButton green" value="save" onClick={(e) => {handleSubmit(e)}}></input>
                 </div>
             </form>
