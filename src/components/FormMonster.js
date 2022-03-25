@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 import { v4 as uuidv4 } from 'uuid';
-import { diceRoll, abiilityModifier } from '../Maths';
+import { diceRoll, abilityModifier } from '../Maths';
 
 const FormMonster = ({ addItem, setWidget }) => {
     const history = useHistory();
@@ -20,7 +20,7 @@ const FormMonster = ({ addItem, setWidget }) => {
     const [cha, setCha] = useState("10");
     const [hdNumber, setHdNumber] = useState(`1`);
     const [hdDice, setHdDice] = useState(`8`);
-    const [hdBonus, setHdBonus] = useState(abiilityModifier(con));
+    const [hdBonus, setHdBonus] = useState(abilityModifier(con));
     const [hp, setHp] = useState(`5`);
     // const [ traits, setTraits ] = useState([])
     // const [ actions, setActions ] = useState([])
@@ -94,7 +94,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                 </select>
                 </div>
                 <div className="flex-row">
-                    <label>STR ({abiilityModifier(str)})</label>
+                    <label>STR ({abilityModifier(str)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -102,7 +102,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         required
                         value={ str }
                         onChange={e => setStr(e.target.value)}/>
-                    <label>DEX ({abiilityModifier(dex)})</label>
+                    <label>DEX ({abilityModifier(dex)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -110,7 +110,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         required
                         value={ dex }
                         onChange={e => setDex(e.target.value)} />
-                    <label>CON ({abiilityModifier(con)})</label>
+                    <label>CON ({abilityModifier(con)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -120,7 +120,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         onChange={e => setCon(e.target.value)}/>
                 </div>
                 <div className="flex-row">
-                    <label>INT ({abiilityModifier(int)})</label>
+                    <label>INT ({abilityModifier(int)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -129,7 +129,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         value={ int }
                         onChange={e => setInt(e.target.value)}
                     />
-                    <label>WIS ({abiilityModifier(wis)})</label>
+                    <label>WIS ({abilityModifier(wis)})</label>
                     <input
                         className="input-text"
                         name='Name' 
@@ -138,7 +138,7 @@ const FormMonster = ({ addItem, setWidget }) => {
                         value={ wis }
                         onChange={e => setWis(e.target.value)}
                     />
-                    <label>CHA ({abiilityModifier(cha)})</label>
+                    <label>CHA ({abilityModifier(cha)})</label>
                     <input
                         className="input-text"
                         name='Name' 

@@ -512,9 +512,9 @@
       "type": "Aberration",
       "ac": "17",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
-        "hdBonus": "0"
+        "hdNumber": "18",
+        "hdDice": "10",
+        "hdBonus": "36"
       },
       "hp": "135",
       "cr": "10",
@@ -1166,6 +1166,251 @@
           "level": 8,
           "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
           "player": true
+        },
+        {
+          "name": "Awakened shrub",
+          "description": "An awakened shrub is an ordinary shrub given sentience and mobility by the awaken spell or similar magic.",
+          "type": "Plant",
+          "ac": "9",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "10",
+          "cr": "0",
+          "str": "3",
+          "dex": "8",
+          "con": "11",
+          "int": "10",
+          "wis": "10",
+          "cha": "6",
+          "id": "1f0097ea-6507-44e6-9cea-699f0b3ff01f",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "40111dd6-3d7e-4cbf-b50c-566a2c0df6ea",
+          "mob": "default"
+        },
+        {
+          "name": "Bag of Bones",
+          "description": "How does this thing even move?!",
+          "ac": "8",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "160",
+          "cr": "6",
+          "type": "Undead",
+          "id": "863bbbe5-2c28-4a51-9ce2-fd875e570c36",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "c30fe0a4-503c-4f5f-bc49-d20ea2cc7a31",
+          "mob": "default"
+        },
+        {
+          "name": "Celestial Moon",
+          "description": "A gigantic shining orb that blinds and burns.",
+          "type": "Celestial",
+          "ac": "13",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "130",
+          "cr": "6",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "id": "a07ec80f-e637-413c-81e3-f6aaef545575",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "825bcf19-e54e-4e39-bdf4-0472331e8948",
+          "mob": "default"
+        },
+        {
+          "id": "0a3c212d-ea15-483e-98c4-3a97052889fb",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "e847d8d8-a10b-4ef8-8280-b4612f6ecdb4",
+          "mob": "default"
+        },
+        {
+          "id": "6deaa32b-a87c-4ae8-8932-98b82f4ccd6b",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "e847d8d8-a10b-4ef8-8280-b4612f6ecdb4",
+          "mob": "default"
+        },
+        {
+          "name": "Bandit",
+          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
+          "type": "Humanoid",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "11",
+          "cr": "0.125",
+          "str": "11",
+          "dex": "12",
+          "con": "12",
+          "int": "10",
+          "wis": "10",
+          "cha": "10",
+          "id": "c9a1afbc-cc1b-4a52-8252-37ace527e64f",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "645e17cc-e1d0-451b-9644-1c81e1039bd4",
+          "mob": "default"
+        },
+        {
+          "name": "Bandit",
+          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
+          "type": "Humanoid",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "11",
+          "cr": "0.125",
+          "str": "11",
+          "dex": "12",
+          "con": "12",
+          "int": "10",
+          "wis": "10",
+          "cha": "10",
+          "id": "34324219-0c30-4a88-927d-2cf4d4f57704",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "enemy": true,
+          "source": "645e17cc-e1d0-451b-9644-1c81e1039bd4",
+          "mob": "default"
         }
       ],
       "mode": "editing"
@@ -1424,6 +1669,429 @@
           "level": 8,
           "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
           "player": true
+        }
+      ],
+      "mode": "editing"
+    },
+    {
+      "name": "fgh",
+      "description": "fgh",
+      "location": "fgh",
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "adventureId": "56689a26-e16d-465e-989d-e92ed7c6f943",
+      "id": "82530bb9-3a1f-4a9d-8b84-ea1ba8c7b3ae",
+      "mobList": [
+        "players",
+        "default",
+        "new"
+      ],
+      "CombatantList": [
+        {
+          "id": "e069f757-7c54-4c0f-994e-7d37d847f6a8",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "id": "3b34d03f-84bc-4093-8793-a0e412d5e1f6",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "id": "c6697dc7-1e35-40e0-bf9e-80a21d3df219",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "id": "841f0946-8685-4bcf-bf26-8ff8d9cae0e2",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "b22c74e9-6e0f-4a5b-a39d-461df4eb23e4",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 12,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "f03efc1b-a056-4275-bda1-90a76ba9b788",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 12,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "11970dc0-ddd5-49bc-a4f2-fcd13f83c0f9",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 12,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "id": "2921a694-4eb4-4514-b3b5-5405bab2c6e0",
+          "name": "Hornath the Ugly",
+          "description": "skdlakdj",
+          "chRace": "Orc of Exandria",
+          "chClass": "Monk",
+          "chLevel": "1",
+          "str": "12",
+          "dex": "16",
+          "con": "14",
+          "int": "10",
+          "wis": "8",
+          "cha": "16",
+          "hp": "12",
+          "ac": "16",
+          "xp": "45000",
+          "level": 8,
+          "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+          "player": true
+        },
+        {
+          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
+          "name": "Wilma Forest",
+          "description": "Wilma was part of an experimental anarco-communist community growing up. As the age of 16 she left the commune whe she heard that a nearby city was planning to destroy a sacred woodland for timber.",
+          "chRace": "Bugbear",
+          "chClass": "Druid",
+          "chLevel": "1",
+          "str": "8",
+          "dex": "14",
+          "con": "14",
+          "int": "10",
+          "wis": "16",
+          "cha": "12",
+          "hp": "10",
+          "ac": "14",
+          "xp": "0",
+          "level": 20,
+          "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+          "player": true
+        },
+        {
+          "name": "Celestial Moon",
+          "description": "A gigantic shining orb that blinds and burns.",
+          "type": "Celestial",
+          "ac": "13",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "130",
+          "cr": "6",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "id": "58f3530b-f236-4abc-849b-105fdee4837e",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 8,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Celestial Moon",
+          "description": "A gigantic shining orb that blinds and burns.",
+          "type": "Celestial",
+          "ac": "13",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "130",
+          "cr": "6",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "id": "0aef3567-a6c5-4dde-8403-16a2593490ac",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 8,
+          "enemy": true,
+          "mob": "default"
         }
       ],
       "mode": "editing"

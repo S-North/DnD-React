@@ -234,6 +234,11 @@ input[type="number"] {
     color: ghostwhite;
 }
 
+.grey {
+    background-color: rgb(177, 177, 177);
+    color: rgb(20, 20, 20);
+}
+
 
 .item-list {
     /* padding: 4px; */

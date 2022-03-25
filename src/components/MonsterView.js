@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
 import ActionList from "./ActionList";
-import { abiilityModifier, diceRoll } from "../Maths";
+import { abilityModifier, diceRoll } from "../Maths";
 
 const MonsterView = ({ deleteItem, addItem, config, setConfig }) => {
     const location = useLocation();
@@ -37,12 +37,12 @@ const MonsterView = ({ deleteItem, addItem, config, setConfig }) => {
                     </div>
 
                     <div className="flex-row">
-                        <p>STR: { monster.str } <button onClick={ () => (handleClick(abiilityModifier(monster.str))) } className="btn blue">({abiilityModifier(monster.str)})</button></p>
-                        <p>DEX: { monster.dex } <button onClick={ () => (handleClick(abiilityModifier(monster.dex))) } className="btn blue">({abiilityModifier(monster.dex)})</button></p>
-                        <p>CON: { monster.con } <button onClick={ () => (handleClick(abiilityModifier(monster.con))) } className="btn blue">({abiilityModifier(monster.con)})</button></p>
-                        <p>INT: { monster.int } <button onClick={ () => (handleClick(abiilityModifier(monster.int))) } className="btn blue">({abiilityModifier(monster.int)})</button></p>
-                        <p>WIS: { monster.wis } <button onClick={ () => (handleClick(abiilityModifier(monster.wis))) } className="btn blue">({abiilityModifier(monster.wis)})</button></p>
-                        <p>CHA: { monster.cha } <button onClick={ () => (handleClick(abiilityModifier(monster.cha))) } className="btn blue">({abiilityModifier(monster.cha)})</button></p>
+                        <p>STR: { monster.str } <button onClick={ () => (handleClick(abilityModifier(monster.str))) } className="btn blue">({abilityModifier(monster.str)})</button></p>
+                        <p>DEX: { monster.dex } <button onClick={ () => (handleClick(abilityModifier(monster.dex))) } className="btn blue">({abilityModifier(monster.dex)})</button></p>
+                        <p>CON: { monster.con } <button onClick={ () => (handleClick(abilityModifier(monster.con))) } className="btn blue">({abilityModifier(monster.con)})</button></p>
+                        <p>INT: { monster.int } <button onClick={ () => (handleClick(abilityModifier(monster.int))) } className="btn blue">({abilityModifier(monster.int)})</button></p>
+                        <p>WIS: { monster.wis } <button onClick={ () => (handleClick(abilityModifier(monster.wis))) } className="btn blue">({abilityModifier(monster.wis)})</button></p>
+                        <p>CHA: { monster.cha } <button onClick={ () => (handleClick(abilityModifier(monster.cha))) } className="btn blue">({abilityModifier(monster.cha)})</button></p>
                     </div>
                 </div>
 

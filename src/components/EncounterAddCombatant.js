@@ -7,7 +7,7 @@ import { diceRoll } from '../Maths';
 // For each new array, roll initiative and set each monsters initiative to that value.
 // Then do manual input of player initiative values
 
-const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpdate }) => {
+const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initiative, setInitiative, dbUpdate }) => {
     const [ multiple, setMultiple ] = useState(1);
     const mobList = encounter.mobList;
     const [ mob, setMob ] = useState("default");
@@ -30,19 +30,29 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpd
     const handleSubmit = () => {
         if (mob === "new" & !mobSubmit) { window.confirm("no mob name"); return } // exit the function if new mob specified but no value provided
 
-        const newCombatants = [] // store multible submited monsters here before submitting them
-        let updatedEncounter = encounter;
+        const newCombatants = [] // store multible submited monsters here before submitting them to the encounter monsters
+        const newInitiative = [] // store the entities for the initiative
+        let updatedEncounter = encounter; // temporary var to store the monsters in
+
+        // Handle mob logic
         let group = "default";
         if (mob !== "new") {
             group = mob.toLowerCase()
         } else {
             group = mobSubmit.toLowerCase()
         }
+
+        // Create the updated data for monsters in [newCombatants]
         for (let i = 0; i < parseInt(multiple); i++) {
-            let c = {...combatant, "enemy": true, "source": selected.id, "id": uuidv4(), "mob": group, "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
+            let c = {...combatant, "enemy": true, "id": uuidv4(), "source": combatant.id, "mob": group, "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
             newCombatants.push(c);
             console.log(newCombatants);
             }
+
+        // Create the updated initiative data {id, source, enemy} in newInitiative
+        newCombatants.map(c => (
+            newInitiative.push({"id": c.id, "source": c.source, "enemy": "monster"})
+        ))
 
         if (mob === "new" & !mobList.includes(mobSubmit.toLowerCase()) ) {
             updatedEncounter = {...encounter, "mobList": [...mobList, mobSubmit.toLowerCase()], "CombatantList": [...encounter.CombatantList, ...newCombatants]}
@@ -50,7 +60,8 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpd
             updatedEncounter = {...encounter, "CombatantList": [...encounter.CombatantList, ...newCombatants]}
         }
         
-        dbUpdate("encounters", updatedEncounter, encounter.id, "PUT");
+        dbUpdate("encounters", updatedEncounter, encounter.id, "PUT"); // Update the monsteris in the encounter
+        // TODO update the initiative list
         setWindows({...windows, "list": true, "npcs": true, "notes": true, "add": false, "traits": false, "actions": false, "legendary": false})
     }
 
@@ -63,12 +74,14 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpd
                 placeholder="# to add" 
                 value={ multiple } 
                 onChange={(e) => {setMultiple(e.target.value)}} />
+
             <select value={mob} onChange={(e) => {setMob(e.target.value)}}>
                 {mobList
                     .filter((mob) => {return mob !== "players"})
                     .map(mob => (
                         <option key={mob} value={mob}>{mob}</option>
                 ))}
+
             </select>
             {mob === "new" && <input 
                 type="text" 
@@ -80,8 +93,7 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, dbUpd
                 >Add</div>
         </div>
         <div className="section">
-        <div className="widget">
-            
+            <div className="widget">
             <p>Name</p>
             <input 
                 type="text" 
