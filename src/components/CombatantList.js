@@ -9,14 +9,37 @@ const CombatantList = ({ windows, setWindows, title, monsters, players, route, i
     const selectMonster = ({selection}) => {
         setWindows({...windows, "select": true, "npcs": false, "notes": false})
     }
+    console.log(items)
 
     return (
         <>
             <div className="widget">
-                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({...windows, "initiative": true, "list": false, "npcs": false, "notes": false})}} className="btn green float-right">Run</button>}
-                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({...windows, "select": true, "list": false, "npcs": false, "notes": false})}} className="btn green float-right">+Enemy</button>}
-                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({...windows, "player": true, "list": false, "npcs": false, "notes": false})}} className="btn green float-right">+PC</button>}
+                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({
+                    ...windows, 
+                    "initiative": true, 
+                    "list": false, 
+                    "npcs": false, 
+                    "notes": false}
+                    )}} className="btn green float-right">Run</button>}
+
+                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({
+                    ...windows, 
+                    "select": true, 
+                    "list": false, 
+                    "npcs": false, 
+                    "notes": false}
+                    )}} className="btn green float-right">+Enemy</button>}
+
+                {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({
+                    ...windows, 
+                    "player": true, 
+                    "list": false, 
+                    "npcs": false, 
+                    "notes": false}
+                    )}} className="btn green float-right">+PC</button>}
+
                 {widget.edit && <button onClick={ () => { setWidget({"edit": false})}} className="btn blue float-right">Exit Edit</button>}
+                
                 <h3>Combatants</h3>
                 <br />
                 {!widget.edit && <p>Add new combatants to the list and run the encounter when ready.</p>}
