@@ -27,26 +27,28 @@ const SelectMonsters = ({ monsters, players, addItem, selectMonster, closePicker
         }
 
     const selectItem = (item) => {
-        setSelected({...item, "id": uuidv4()});
+        setSelected({...item, "source": item.id});
         setWindows({...windows, "select": false, "add": true})
     }
 
     return (
         <>
         <div className="widget">
+        
+        {/* Search bar and filters */}
             <div className="section">
                 <input className="input-text" name='search' type='text' value={ search } onChange={e => setSearch(e.target.value)} placeholder="Search" />
-            </div>
+            </div> 
             <div className="section">
-            <div className="flex-row">
-                <FormSelect title="Minimum CR" value={ minCr } values={ crRange } setState={ setMinCr } />
-                <FormSelect title="Maximum CR" value={ maxCr } values={ crRange } setState={ setMaxCr } />
-                <FormSelect title="Type" values={ types } value={ type } setState={ setType } />
+                <div className="flex-row">
+                    <FormSelect title="Minimum CR" value={ minCr } values={ crRange } setState={ setMinCr } />
+                    <FormSelect title="Maximum CR" value={ maxCr } values={ crRange } setState={ setMaxCr } />
+                    <FormSelect title="Type" values={ types } value={ type } setState={ setType } />
+                </div>
             </div>
 
-            </div>
+            {/* Item list */}
             <div>
-                
                 {widget.edit && <button onClick={ () => { setWidget({"edit": false})}} className="btn blue float-right">Exit Edit</button>}
                 {!widget.edit && <div className="item-list">
                     {filtered ? filtered(monsters).map((item) => (

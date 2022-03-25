@@ -13,6 +13,7 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
     const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "player": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
     const [ selected, setSelected ] = useState({})
     const [ encounter, setEncounter] = useState();
+    const [ initiativeList, setInitiativeList ] = useState({});
 
     useEffect(() => {
         setEncounter(encounters.filter((item) => {return item.id === location.state.item.id})[0]
@@ -23,13 +24,15 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
 
     return (
         <>
+            {/* Title and delete button */}
             {encounter && <div className="main-header">
-                <button className="btn red float-right" onClick={ () => deleteItem(encounter.id, collection) }>-</button>
+                <button className="btn red float-right" onClick={ () => deleteItem(encounter.id, collection) }>Delete Encounter</button>
                 <h1>Encounter: { encounter.name }</h1>
                 <p>{ encounter.description }</p>
             </div>}
 
             <div className="section">
+                {/* Div displaying all current combatants */}
                 {(windows.list && encounter) && <CombatantList 
                     items={ encounter.CombatantList }
                     route="/combatant"
@@ -45,12 +48,16 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
                     dbUpdate={ dbUpdate }
                     itemStyle = "item-compact"
                 />}
+
+                {/* Div to select monsters to add */}
                 {windows.select && <SelectMonsters
                     monsters={ monsters } 
                     setSelected={ setSelected } 
                     windows={ windows } 
                     setWindows={ setWindows }
                 />}
+
+                {/* Div to select PCs to add */}
                 {windows.player && <SelectPlayers
                     players={ players.filter(player => {return player.campaignId === location.state.item.campaignId}) }
                     setSelected={ setSelected }
@@ -60,12 +67,16 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
                     setEncounter={ setEncounter }
                     dbUpdate={ dbUpdate }
                 />}
+
+                {/* Div to select monsters to add */}
                 {windows.add && <EncounterAddCombatant
                     selected={ selected }
-                    windows={ windows } 
+                    windows={ windows }
                     setWindows={ setWindows }
                     encounter={ encounter}
                     dbUpdate={ dbUpdate }
+                    initiative={initiativeList}
+                    setInitiative={setInitiativeList}
                 />}
                 {windows.initiative && <Initiative
                     windows={ windows } 
