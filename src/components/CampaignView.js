@@ -6,6 +6,7 @@ const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
     const collection = "campaigns";
     const campaign = location.state.item;
     console.log(`campaignView page: ${campaign.id}`)
+    console.log(campaign)
 
     return (
         <>
@@ -24,6 +25,7 @@ const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
                     addItem={ addItem }
                     deleteItem={ deleteItem }
                     campaignId={ campaign.id }
+                    campaign={ campaign }
 
                 />
                 <ItemList 

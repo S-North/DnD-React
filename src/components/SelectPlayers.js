@@ -1,12 +1,16 @@
 import { useState } from "react";
-const SelectPlayers = ({ players, encounter, setEncounter, windows, setWindows, dbUpdate }) => {
+const SelectPlayers = ({ campaignId, adventureId, players, encounter, setEncounter, windows, setWindows, dbUpdate }) => {
+    console.log(campaignId)
+    console.log(adventureId)
 
     // Who is already in the encounter?
-    const inEncounter = encounter.CombatantList
-        .filter(c => { return c.player === true })
+    const inEncounter = encounter.initiative
+        .filter(c => { return c.enemy === "pc" })
         .map(c => c.id)
+    console.log(inEncounter)
 
     const [ characters, setCharacters ] = useState([]);
+    console.log(characters)
 
     const handleSelect = (e, player) => {
         if (e.target.checked) {setCharacters([...characters, player])} 
@@ -16,21 +20,21 @@ const SelectPlayers = ({ players, encounter, setEncounter, windows, setWindows, 
     // Add dem players!
     const handleSubmit = (e) => {
         e.preventDefault();
-        const combatList = [...encounter.CombatantList];
-        console.log(characters);
+        const combatList = [...encounter.initiative];
+        console.log(combatList);
         characters.map((character) => {
             let found = false;
-            encounter.CombatantList.map((listItem) => {
+            encounter.initiative.map((listItem) => {
                 if (listItem.id === character.id) {console.log(`${character.name} already in list as ${listItem.name}`);
                 found = true}; return null 
             })
             if (found === false) {
                 console.log(`charachter ${character.name} not found in combat list. Adding them`);
-                combatList.push(character)
+                combatList.push({"name": character.name, "id": character.id, "enemy": "pc"})
             }; return null
         })
-
-        dbUpdate("encounters", {...encounter, "CombatantList": combatList}, encounter.id, "PUT")
+        console.log(combatList)
+        dbUpdate("encounters", {...encounter, "initiative": [...combatList]}, encounter.id, "PUT")
         setWindows({...windows, "player": false, "list": true, "npcs": true, "notes": true})
     }
 

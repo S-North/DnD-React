@@ -31,7 +31,7 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
         if (mob === "new" & !mobSubmit) { window.confirm("no mob name"); return } // exit the function if new mob specified but no value provided
 
         const newCombatants = [] // store multible submited monsters here before submitting them to the encounter monsters
-        const newInitiative = [] // store the entities for the initiative
+        const newInitiative = [...encounter.initiative] // store the entities for the initiative
         let updatedEncounter = encounter; // temporary var to store the monsters in
 
         // Handle mob logic
@@ -42,22 +42,24 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
             group = mobSubmit.toLowerCase()
         }
 
+        
         // Create the updated data for monsters in [newCombatants]
         for (let i = 0; i < parseInt(multiple); i++) {
             let c = {...combatant, "enemy": true, "id": uuidv4(), "source": combatant.id, "mob": group, "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
             newCombatants.push(c);
             console.log(newCombatants);
-            }
-
+        }
+        
         // Create the updated initiative data {id, source, enemy} in newInitiative
         newCombatants.map(c => (
             newInitiative.push({"id": c.id, "source": c.source, "enemy": "monster"})
-        ))
+            ))
+        console.log(newInitiative)
 
         if (mob === "new" & !mobList.includes(mobSubmit.toLowerCase()) ) {
-            updatedEncounter = {...encounter, "mobList": [...mobList, mobSubmit.toLowerCase()], "CombatantList": [...encounter.CombatantList, ...newCombatants]}
+            updatedEncounter = {...encounter, "initiative": newInitiative, "mobList": [...mobList, mobSubmit.toLowerCase()], "monsters": [...encounter.monsters, ...newCombatants]}
         } else {
-            updatedEncounter = {...encounter, "CombatantList": [...encounter.CombatantList, ...newCombatants]}
+            updatedEncounter = {...encounter, "initiative": newInitiative, "monsters": [...encounter.monsters, ...newCombatants]}
         }
         
         dbUpdate("encounters", updatedEncounter, encounter.id, "PUT"); // Update the monsteris in the encounter
