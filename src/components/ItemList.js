@@ -8,7 +8,7 @@ import FormPlayer from "./FormPlayer";
 import FormNote from "./FormNote";
 import Item from "./Item";
 
-const ItemList = ({ title, description: formDescription, buttonText, route, items, itemStyle, addItem, campaignId, adventureId, encounterId, deleteItem }) => {
+const ItemList = ({ title, description: formDescription, buttonText, route, items, itemStyle, addItem, campaign, campaignId, adventure, adventureId, encounterId, deleteItem }) => {
     const [widget, setWidget] = useState({"edit": false})
     // console.log(`campaign: ${campaignId}, adventure: ${adventureId}`);
 
@@ -28,8 +28,8 @@ const ItemList = ({ title, description: formDescription, buttonText, route, item
                 </div>}
 
                 {(widget.edit && route === "/campaign") && <FormCampaign addItem={ addItem } setWidget={ setWidget } />}
-                {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
-                {(widget.edit && route === "/encounter") && <FormEncounter addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } />}
+                {(widget.edit && route === "/adventure") && <FormAdventure addItem={ addItem } setWidget={ setWidget } campaign={ campaign } campaignId={ campaignId } adventure={ adventure } adventureId={ adventureId } />}
+                {(widget.edit && route === "/encounter") && <FormEncounter addItem={ addItem } setWidget={ setWidget } campaign={ campaign } campaignId={ campaignId } adventure={ adventure } adventureId={ adventureId } />}
                 {(widget.edit && route === "/monster") && <FormMonster addItem={ addItem } setWidget={ setWidget }></FormMonster>}
                 {(widget.edit && route === "/npc") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } pc={false} />}
                 {(widget.edit && route === "/player") && <FormPlayer addItem={ addItem } setWidget={ setWidget } campaignId={ campaignId } adventureId={ adventureId } encounterId={ encounterId } pc={true} />}

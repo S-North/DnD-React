@@ -7,13 +7,14 @@ import SelectPlayers from "./SelectPlayers";
 import EncounterAddCombatant from "./EncounterAddCombatant";
 import Initiative from "./Initiative";
 
-const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addItem, dbUpdate }) => {
+const EncounterView = ({ campaign, adventure, encounters, monsters, players, notes, deleteItem, addItem, dbUpdate }) => {
     const collection = "encounters";
     const location = useLocation();
     const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "player": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
     const [ selected, setSelected ] = useState({})
     const [ encounter, setEncounter] = useState();
     const [ initiativeList, setInitiativeList ] = useState({});
+    // console.log(location.state.campaignId)
 
     useEffect(() => {
         setEncounter(encounters.filter((item) => {return item.id === location.state.item.id})[0]
@@ -34,13 +35,13 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
             <div className="section">
                 {/* Div displaying all current combatants */}
                 {(windows.list && encounter) && <CombatantList 
-                    items={ encounter.CombatantList }
+                    items={ encounter.initiative }
                     route="/combatant"
                     addItem={ addItem }
-                    // setCombatList={ setCombatList }
                     campaignId={ encounter.campaignId }
                     adventureId={ encounter.adventureId }
                     encounterId={ encounter.id }
+                    encounter={ encounter }
                     monsters={ monsters }
                     players={ players }
                     windows={ windows }
@@ -66,6 +67,8 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
                     encounter={ encounter }
                     setEncounter={ setEncounter }
                     dbUpdate={ dbUpdate }
+                    campaignId={ location.state.campaignId }
+                    adventureId={ location.state.adventureId }
                 />}
 
                 {/* Div to select monsters to add */}
@@ -83,6 +86,7 @@ const EncounterView = ({ encounters, monsters, players, notes, deleteItem, addIt
                     setWindows={ setWindows }
                     encounter={ encounter}
                     dbUpdate={ dbUpdate }
+                    players={ players }
                 />}
                 {(windows.npcs && encounter) && <ItemList 
                     title="Encounter NPCs"

@@ -1,8 +1,8 @@
 import { useLocation } from "react-router";
 import ItemList from './ItemList';
 
-const AdventureView = ({ encounters, addItem, deleteItem, campaignId, notes, players }) => {
-    // console.log(deleteItem);
+const AdventureView = ({ campaign, encounters, addItem, deleteItem, campaignId, notes, players }) => {
+    console.log(campaign);
     const location = useLocation();
     const collection = "adventures";
     const adventure = location.state.item;
@@ -24,6 +24,8 @@ const AdventureView = ({ encounters, addItem, deleteItem, campaignId, notes, pla
                     addItem={ addItem }
                     campaignId={ location.state.campaignId }
                     adventureId={ adventure.id }
+                    campaign={ campaign }
+                    adventure={ adventure }
                 />
                 <ItemList 
                     title="Adventure NPCs"

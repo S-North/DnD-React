@@ -16,7 +16,9 @@ const FormEncounter = ({ campaignId, adventureId, addItem, setWidget }) => {
                         adventureId,
                         "id": uuidv4(),
                         "mobList": ["players", "default", "new"], 
-                        "CombatantList": [], 
+                        "CombatantList": [],
+                        "initiative": [],
+                        "monsters": [],
                         "mode": "editing" }
         console.log(data);
         addItem(collection, data);

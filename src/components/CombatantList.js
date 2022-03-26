@@ -1,15 +1,16 @@
 import { useState } from "react";
 import background from '../assets/adventure-bg.jpg';
+import CombatListItem from "./CombatListItem";
 import Item from "./Item";
 import SelectMonsters from "./SelectMonsters";
 
 
-const CombatantList = ({ windows, setWindows, title, monsters, players, route, items, setCombatList, itemStyle, addItem, campaignId, adventureId, encounterId, deleteItem }) => {
+const CombatantList = ({ windows, setWindows, title, monsters, players, route, items, setCombatList, itemStyle, addItem, encounter, campaignId, adventureId, encounterId, deleteItem }) => {
     const [widget, setWidget] = useState({"edit": false})
     const selectMonster = ({selection}) => {
         setWindows({...windows, "select": true, "npcs": false, "notes": false})
     }
-    console.log(items)
+    // console.log(items)
 
     return (
         <>
@@ -45,7 +46,7 @@ const CombatantList = ({ windows, setWindows, title, monsters, players, route, i
                 {!widget.edit && <p>Add new combatants to the list and run the encounter when ready.</p>}
                 {!widget.edit && <div className="item-list">
                     {items ? items.map((item) => (
-                        <Item key={ item.id } item={ item } route={ route } campaignId={ campaignId} adventureId={ adventureId} itemStyle={ itemStyle } background={ background } />
+                        <CombatListItem key={ item.id } encounter={encounter} players={ players } item={ item } route={ route } campaignId={ campaignId} adventureId={ adventureId} itemStyle={ itemStyle } background={ background } />
                     ))
                 : <p>No items to display</p>}
                 </div>}
