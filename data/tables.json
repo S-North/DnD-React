@@ -946,6 +946,7 @@
   ],
   "encounters": [
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       "name": "initiative test",
       "description": ".",
@@ -961,6 +962,14 @@
       "adventureId": "56689a26-e16d-465e-989d-e92ed7c6f943",
       "id": "eafe1822-8d03-4122-8440-54783afb955e",
 >>>>>>> develop
+=======
+      "name": "asdasd",
+      "description": "asdasd",
+      "location": "asd",
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "adventureId": "56689a26-e16d-465e-989d-e92ed7c6f943",
+      "id": "eafe1822-8d03-4122-8440-54783afb955e",
+>>>>>>> Stashed changes
       "mobList": [
         "players",
         "default",
@@ -968,6 +977,7 @@
       ],
       "CombatantList": [],
       "initiative": [
+<<<<<<< Updated upstream
         {
 <<<<<<< HEAD
           "id": "03d84784-3cf4-47a1-99fd-da29916188a1",
@@ -1007,61 +1017,262 @@
       ],
       "monsters": [
         {
+=======
+        {
+          "id": "8f8a22d2-5b19-4647-83cd-3137309c0495",
+          "source": 27,
+          "enemy": "monster"
+        },
+        {
+          "id": "f95776d8-dbf3-49dd-b085-c95b929ff4c5",
+          "source": 27,
+          "enemy": "monster"
+        },
+        {
+          "id": "2e3fc9e3-4ca1-4adf-ad1a-981ec31b0c3c",
+          "source": 11,
+          "enemy": "monster"
+        },
+        {
+          "id": "ba40ff72-68b1-4691-9a61-21a3c398c124",
+          "source": 11,
+          "enemy": "monster"
+        },
+        {
+          "name": "Hornath the Ugly",
+          "id": "2921a694-4eb4-4514-b3b5-5405bab2c6e0",
+          "enemy": "pc"
+        },
+        {
+          "name": "Wilma Forest",
+          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
+          "enemy": "pc"
+        }
+      ],
+      "monsters": [
+        {
           "name": "Diseased Giant Rat",
           "description": "Some giant rats carry vile diseases that they spread with their bites.",
           "type": "Beast",
           "ac": "12",
->>>>>>> develop
           "hitDice": {
             "hdNumber": "1",
             "hdDice": "6",
             "hdBonus": "0"
           },
           "hp": "7",
-<<<<<<< HEAD
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "10",
-          "dex": "10",
-          "con": "17",
-          "int": "4",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
           "wis": "10",
-          "cha": "16",
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
+          "cha": "4",
+          "id": "ed000cdb-95e5-4fdc-9bc6-76934ccbf97b",
+          "traits": [],
+          "actions": [],
           "legendary": {},
           "legendaryActions": [],
+          "source": 12,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "42604a36-08d6-4942-8631-4440f2a9e91f",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 12,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+>>>>>>> Stashed changes
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+<<<<<<< Updated upstream
+>>>>>>> develop
+=======
+>>>>>>> Stashed changes
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+          "cr": "0.25",
+=======
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "4e985bc9-847b-48f6-977f-2eb4cc86b886",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 12,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Diseased Giant Rat",
+          "description": "Some giant rats carry vile diseases that they spread with their bites.",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.125",
+          "str": "7",
+          "dex": "15",
+          "con": "11",
+          "int": "2",
+          "wis": "10",
+          "cha": "4",
+          "id": "6bc333dd-c90a-4f51-94c2-b9b6101246b8",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 12,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Green Hag",
+          "description": "The wretched and hateful green hags dwell in dying forests, lonely swamps, and misty moors, making their homes in caves. Green hags love to manipulate other creatures into doing their bidding, masking their intentions behind layers of deception. They lure victims to them by mimicking voices calling out for help, or drive unwanted visitors away by imitating the cries of fierce beasts.\n\nObsession with Tragedy. Green hags revel in the failings and tragedies of other creatures. They derive joy from bringing people low and seeing hope turn into despair, not just for individuals but also for whole nations.\nCovens. A green hag that is part of a coven (see the “Hag Covens” sidebar) has a challenge rating of 5 (1,800 XP).",
+          "type": "Fey",
+          "ac": "17",
+          "hp": "82",
+          "cr": "3",
+          "str": "18",
+          "dex": "18",
+          "con": "16",
+          "int": "13",
+          "wis": "14",
+          "cha": "14",
+          "hitDice": {
+            "hdNumber": "11",
+            "hdDice": "8",
+            "hdBonus": "33"
+          },
+          "id": "8f8a22d2-5b19-4647-83cd-3137309c0495",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 27,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Green Hag",
+          "description": "The wretched and hateful green hags dwell in dying forests, lonely swamps, and misty moors, making their homes in caves. Green hags love to manipulate other creatures into doing their bidding, masking their intentions behind layers of deception. They lure victims to them by mimicking voices calling out for help, or drive unwanted visitors away by imitating the cries of fierce beasts.\n\nObsession with Tragedy. Green hags revel in the failings and tragedies of other creatures. They derive joy from bringing people low and seeing hope turn into despair, not just for individuals but also for whole nations.\nCovens. A green hag that is part of a coven (see the “Hag Covens” sidebar) has a challenge rating of 5 (1,800 XP).",
+          "type": "Fey",
+          "ac": "17",
+          "hp": "82",
+          "cr": "3",
+          "str": "18",
+          "dex": "18",
+          "con": "16",
+          "int": "13",
+          "wis": "14",
+          "cha": "14",
+          "hitDice": {
+            "hdNumber": "11",
+            "hdDice": "8",
+            "hdBonus": "33"
+          },
+          "id": "f95776d8-dbf3-49dd-b085-c95b929ff4c5",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 27,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Bandit",
+          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
+>>>>>>> Stashed changes
+          "type": "Humanoid",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "11",
+          "cr": "0.125",
+          "str": "11",
+          "dex": "12",
+          "con": "12",
+          "int": "10",
+          "wis": "10",
+          "cha": "10",
+          "id": "2e3fc9e3-4ca1-4adf-ad1a-981ec31b0c3c",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 11,
+          "enemy": true,
+          "mob": "default"
+        },
+        {
+          "name": "Bandit",
+          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
+          "type": "Humanoid",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "11",
+          "cr": "0.125",
+          "str": "11",
+          "dex": "12",
+          "con": "12",
+          "int": "10",
+          "wis": "10",
+          "cha": "10",
+          "id": "ba40ff72-68b1-4691-9a61-21a3c398c124",
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+<<<<<<< Updated upstream
           "source": 1,
 =======
           "cr": "0.125",
@@ -1267,6 +1478,9 @@
           "legendaryActions": [],
           "source": 11,
 >>>>>>> develop
+=======
+          "source": 11,
+>>>>>>> Stashed changes
           "enemy": true,
           "mob": "default"
         }
