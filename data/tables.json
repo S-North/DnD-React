@@ -985,6 +985,11 @@
           "name": "Wilma Forest",
           "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
           "enemy": "pc"
+        },
+        {
+          "name": "Aski the Furtive",
+          "id": "2da38b02-9a13-415b-839f-d99389fa994e",
+          "enemy": "pc"
         }
       ],
       "monsters": [
