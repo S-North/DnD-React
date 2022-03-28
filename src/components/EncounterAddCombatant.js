@@ -52,7 +52,7 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
         
         // Create the updated initiative data {id, source, enemy} in newInitiative
         newCombatants.map(c => (
-            newInitiative.push({"id": c.id, "source": c.source, "enemy": "monster"})
+            newInitiative.push({"id": c.id, "source": c.source, "enemy": "monster", "init": 0})
             ))
         console.log(newInitiative)
 

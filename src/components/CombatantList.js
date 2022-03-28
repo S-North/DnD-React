@@ -1,16 +1,13 @@
 import { useState } from "react";
 import background from '../assets/adventure-bg.jpg';
 import CombatListItem from "./CombatListItem";
-import Item from "./Item";
 import SelectMonsters from "./SelectMonsters";
-
 
 const CombatantList = ({ windows, setWindows, title, monsters, players, route, items, setCombatList, itemStyle, addItem, encounter, campaignId, adventureId, encounterId, deleteItem }) => {
     const [widget, setWidget] = useState({"edit": false})
     const selectMonster = ({selection}) => {
         setWindows({...windows, "select": true, "npcs": false, "notes": false})
     }
-    // console.log(items)
 
     return (
         <>
