@@ -21,7 +21,13 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
                     // another callback function, keep stacking them! :) but not really, could get messy real quick
                 });
             })
-        }    
+        }
+    const [ senses, setSenses ] = useState(combatant.senses);
+    const [ languages, setLanguages ] = useState(combatant.languages);
+    const [ vulnerabilities, setVulnerabilities ] = useState(combatant.vulnerabilities);
+    const [ resistances, setResistances ] = useState(combatant.resistances);
+    const [ damageImmunity, setDamageImmunity ] = useState(combatant.damageImmunity);
+    const [ conditionImmunity, setConditionImmunity ] = useState(combatant.conditionImmunity);
     const [ traits, setTraits ] = useState(combatant.traits);
     const [ actions, setActions ] = useState(combatant.actions);
     const [ legendary, setLegendary ] = useState(combatant.legendaryActions);
@@ -45,14 +51,28 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
         
         // Create the updated data for monsters in [newCombatants]
         for (let i = 0; i < parseInt(multiple); i++) {
-            let c = {...combatant, "enemy": true, "id": uuidv4(), "source": combatant.id, "mob": group, "traits": [...traits], "actions": [...actions], "legendaryActions": [...legendary]};
+            let c = {
+                ...combatant, 
+                "enemy": "monster", 
+                "id": uuidv4(), 
+                "source": combatant.id, 
+                "mob": group,
+                "senses": [...senses],
+                "languages": [...languages],
+                "vulnerabilities": [...vulnerabilities],
+                "resistances": [...resistances],
+                "damageImmunity": [...damageImmunity],
+                "conditionImmunity": [...conditionImmunity],
+                "traits": [...traits], 
+                "actions": [...actions], 
+                "legendaryActions": [...legendary]};
             newCombatants.push(c);
             console.log(newCombatants);
         }
         
         // Create the updated initiative data {id, source, enemy} in newInitiative
         newCombatants.map(c => (
-            newInitiative.push({"id": c.id, "source": c.source, "enemy": "monster", "init": 0})
+            newInitiative.push({"id": c.id, "source": c.source, "enemy": c.enemy, "init": 0})
             ))
         console.log(newInitiative)
 

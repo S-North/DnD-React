@@ -17,9 +17,10 @@ const TurnOrder = ({ windows, setWindows, title, monsters, players, route, items
         }
     }
 
-    const clickMe = (value) => {
-        const roll = diceRoll(1,20,value)
-        window.alert(`${roll[0]} + ${roll[1]} = ${roll[2]}`)
+    const clickMe = (e, value) => {
+        e.preventDefault();
+        const roll = diceRoll(1,20,value);
+        window.alert(`${roll[0]} + ${roll[1]} = ${roll[2]}`);
     }
 
     return (
@@ -95,7 +96,7 @@ const TurnOrder = ({ windows, setWindows, title, monsters, players, route, items
                             <>
                                 <p>{r.name}</p>
                                 <p>{r.description}</p>
-                                <button onClick={e => {clickMe(r.attack)}}>To Hit: {r.attack}</button>
+                                <button onClick={e => {clickMe(e, r.attack)}}>To Hit: {r.attack}</button>
                             </>
                         ))}
                     </>

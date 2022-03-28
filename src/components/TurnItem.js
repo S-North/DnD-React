@@ -47,11 +47,10 @@ const TurnItem = ({ itemStyle="item-block", item, players, route, encounter, cam
             <div className={itemStyle}>
                 <h3 style={{ color:"black"}}>
                     Init: {item.init}
-                    <strong> { data.name }</strong> 
-                    <em>{data.type} {data.cr && <p>CR: {data.cr}</p>}</em>
+                    <strong> { data.name }</strong> <span> {data.type}</span> {data.cr && <span>CR: {data.cr}</span>}
                 </h3>
-                <p>HP: {data.hp}</p>
-                <p>AC: {data.ac}</p>
+                <span>AC: {data.ac}</span>
+                <span>HP: <button>{data.hp}</button></span>
             </div>
             }
         </>
