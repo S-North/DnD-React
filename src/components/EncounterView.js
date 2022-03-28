@@ -6,11 +6,12 @@ import SelectMonsters from "./SelectMonsters";
 import SelectPlayers from "./SelectPlayers";
 import EncounterAddCombatant from "./EncounterAddCombatant";
 import Initiative from "./Initiative";
+import TurnOrder from "./TurnOrder"
 
 const EncounterView = ({ campaign, adventure, encounters, monsters, players, notes, deleteItem, addItem, dbUpdate }) => {
     const collection = "encounters";
     const location = useLocation();
-    const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "player": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false})
+    const [ windows, setWindows ] = useState({"list": true, "select": false, "add": false, "player": false, "detail": false, "npcs": true, "notes": true, "traits": true, "traitEdit": false, "traitAdd": false, "actions": true, "actionEdit": false, "legendary": true, "legendaryAdd": false, "legendaryEdit": false, "turn": false})
     const [ selected, setSelected ] = useState({})
     const [ encounter, setEncounter] = useState();
     const [ initiativeList, setInitiativeList ] = useState({});
@@ -35,6 +36,23 @@ const EncounterView = ({ campaign, adventure, encounters, monsters, players, not
             <div className="section">
                 {/* Div displaying all current combatants */}
                 {(windows.list && encounter) && <CombatantList 
+                    items={ encounter.initiative }
+                    route="/combatant"
+                    addItem={ addItem }
+                    campaignId={ encounter.campaignId }
+                    adventureId={ encounter.adventureId }
+                    encounterId={ encounter.id }
+                    encounter={ encounter }
+                    monsters={ monsters }
+                    players={ players }
+                    windows={ windows }
+                    setWindows={ setWindows }
+                    dbUpdate={ dbUpdate }
+                    itemStyle = "item-compact"
+                />}
+
+                {/* Div displaying turn order */}
+                {(windows.turn && encounter) && <TurnOrder 
                     items={ encounter.initiative }
                     route="/combatant"
                     addItem={ addItem }
@@ -85,8 +103,10 @@ const EncounterView = ({ campaign, adventure, encounters, monsters, players, not
                     windows={ windows } 
                     setWindows={ setWindows }
                     encounter={ encounter}
+                    setEncounter={ setEncounter }
                     dbUpdate={ dbUpdate }
                     players={ players }
+                    campaignId={ encounter.campaignId }
                 />}
                 {(windows.npcs && encounter) && <ItemList 
                     title="Encounter NPCs"

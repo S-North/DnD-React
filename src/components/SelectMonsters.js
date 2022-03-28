@@ -1,7 +1,6 @@
 // rewrite this to return an object of the monster, NPC or player selected, to the combat list
 
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid'; // generate a UUID for the object id
 import { types, crRange} from '../Forms'
 import FormSelect from "./FormSelect";
 import FormMonster from "./FormMonster";
