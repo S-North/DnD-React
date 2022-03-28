@@ -2,6 +2,10 @@
  2.0 of my DnD React app. 
  I'm a novice programmer and this project is a learn-as-you-go effort, so please concider it alpha-as-f$%k.
 
+## License
+![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)
+This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+
 ## App layout
 The app will make use of several pages, using React Router functionality. https://www.freecodecamp.org/news/a-complete-beginners-guide-to-react-router-include-router-hooks/
 
