@@ -1108,36 +1108,6 @@
       "CombatantList": [],
       "initiative": [
         {
-          "id": "41088def-a2cb-4ea2-ae8b-98940e600acd",
-          "source": 1,
-          "enemy": "monster",
-          "init": 11
-        },
-        {
-          "id": "5bf28ada-23c7-4bee-9f1b-ac7776767b07",
-          "source": 1,
-          "enemy": "monster",
-          "init": 7
-        },
-        {
-          "id": "db600619-8826-4805-a2f6-55c208a4108e",
-          "source": 1,
-          "enemy": "monster",
-          "init": 7
-        },
-        {
-          "id": "19875aa0-2ad0-4556-a709-98c453944630",
-          "source": 1,
-          "enemy": "monster",
-          "init": 7
-        },
-        {
-          "id": "9ca5eeda-e02b-47ae-80f4-cbd65065966c",
-          "source": 13,
-          "enemy": "monster",
-          "init": 4
-        },
-        {
           "name": "Aski the Furtive",
           "id": "2da38b02-9a13-415b-839f-d99389fa994e",
           "enemy": "pc",
@@ -1147,7 +1117,43 @@
           "name": "Wilma Forest",
           "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
           "enemy": "pc",
-          "init": "22"
+          "init": "13"
+        },
+        {
+          "id": "41088def-a2cb-4ea2-ae8b-98940e600acd",
+          "source": 1,
+          "enemy": "monster",
+          "init": 20
+        },
+        {
+          "id": "5bf28ada-23c7-4bee-9f1b-ac7776767b07",
+          "source": 1,
+          "enemy": "monster",
+          "init": 16
+        },
+        {
+          "id": "db600619-8826-4805-a2f6-55c208a4108e",
+          "source": 1,
+          "enemy": "monster",
+          "init": 16
+        },
+        {
+          "id": "19875aa0-2ad0-4556-a709-98c453944630",
+          "source": 1,
+          "enemy": "monster",
+          "init": 16
+        },
+        {
+          "id": "a3fcec92-b610-4894-989c-e29e164a8dd4",
+          "source": 1,
+          "enemy": "monster",
+          "init": 16
+        },
+        {
+          "id": "9ca5eeda-e02b-47ae-80f4-cbd65065966c",
+          "source": 13,
+          "enemy": "monster",
+          "init": 17
         }
       ],
       "monsters": [
@@ -1475,6 +1481,75 @@
           "legendary": {},
           "legendaryActions": [],
           "source": 13,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "id": "a3fcec92-b610-4894-989c-e29e164a8dd4",
+          "name": "Goblin talking",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
           "enemy": "monster",
           "mob": "default"
         }
