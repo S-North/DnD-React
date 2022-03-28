@@ -78,7 +78,6 @@ const Initiative = ({ encounter, players, setEncounter, windows, setWindows, cam
     return (
         <div className="widget">
             <p>Run initiative</p>
-            <input type="button" value="Save" onClick={e => {save()}} />
             {/* Group for player characters */}
             {initiative
                 .filter((p) => { return p.enemy === "pc" })
@@ -103,9 +102,10 @@ const Initiative = ({ encounter, players, setEncounter, windows, setWindows, cam
             <hr />
 
             {/* Group monsters into sections with a group roll button */}
-            <input type="button" value="roll monsters" onClick={e => {rollMonsters()}} />
+            <input type="button" className="btn green" value="roll monsters" onClick={e => {rollMonsters()}} />
             {sources.map(g => (
                 <div key={g}>
+                    <hr />
                     {initiative
                         .filter((c) => { return c.source === g })
                         .sort((a, b) => a.id > b.id ? 1 : -1) // sorting on strings from here https://stackoverflow.com/a/43572944
@@ -122,11 +122,13 @@ const Initiative = ({ encounter, players, setEncounter, windows, setWindows, cam
                             </div>
                         ))
                     }
-                    <div className="flex-row">
+                    {/* <div className="flex-row">
                         <input className="btn green" type="button" value="Roll Group" onClick={() => {rollG(g)}}></input>
-                    </div>
+                    </div> */}
                 </div>
             ))}
+        <hr />
+        <input type="button" className="btn green" value="Save" onClick={e => {save()}} />
         </div>
     );
 }
