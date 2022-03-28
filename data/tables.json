@@ -79,6 +79,57 @@
       "level": 8,
       "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
       "enemy": "pc"
+    },
+    {
+      "id": "b5d4feb6-5198-4714-bdd2-62b591e916b9",
+      "name": "dsvdvs",
+      "description": "up;olyikutjyrhtegrwfedcsvrgbsdtyhnfujmiktytjyrhtegrfvdsbdhnfjmguiktyrhetgrwfedcvgsbdhnfyujmtiky7rh6teg5rfvsbthdnyjfuthtg56rfecdvgtebhygrfedcgthyu6rj7yhtgrfvtgwehyruj758iyhtgrvfwyherujyhtgrvfyeh",
+      "str": "2",
+      "dex": "3",
+      "con": "4",
+      "int": "4",
+      "wis": "4",
+      "cha": "3",
+      "hp": "3",
+      "ac": "4",
+      "xp": "5",
+      "level": 1,
+      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
+      "player": true
+    },
+    {
+      "id": "7b0e67e2-b8ac-4c41-a1fb-02ea6c863094",
+      "name": "HJSDFHS",
+      "description": "dsf sdfs fs",
+      "str": "10",
+      "dex": "10",
+      "con": "10",
+      "int": "10",
+      "wis": "10",
+      "cha": "10",
+      "hp": "12",
+      "ac": "15",
+      "xp": "0",
+      "level": 1,
+      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
+      "player": true
+    },
+    {
+      "id": "ee5f555e-ef23-442c-9281-04216ffd3aea",
+      "name": "jkhkjh",
+      "description": "kjhk",
+      "str": "1",
+      "dex": "1",
+      "con": "1",
+      "int": "1",
+      "wis": "1",
+      "cha": "1",
+      "hp": "1",
+      "ac": "1",
+      "xp": "1",
+      "level": 1,
+      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
+      "player": false
     }
   ],
   "notes": [
@@ -111,6 +162,31 @@
       "name": "nkjkjhkjhj",
       "description": "jhkjhkjhhkjh",
       "id": "cC3bKcf"
+    },
+    {
+      "name": "A note",
+      "description": "skdhkksj dfhkshf ksdhfksdh fkjhs dkfsh fjsdh kjf\ndf hskjdfhk kjhfsdk hfsh fkjhs dfdsgfjkhsh oi.\njsdh fkj.\nkjsdhf jhsd kfjhk sjhfjskdh fkjshd fkj",
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "id": "N5Q6Nef"
+    },
+    {
+      "name": "uugjhgjh",
+      "description": "jgj gj jhgj gjg j gjhj",
+      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
+      "id": "6BAfRCC"
+    },
+    {
+      "name": "bjbjkjkb",
+      "description": "k",
+      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
+      "adventureId": "3986f0dd-6d81-4cb9-b8ce-266becc1faf8",
+      "id": "vnQ8YUH"
+    },
+    {
+      "name": "vfff",
+      "description": "fg",
+      "encounterId": "b4db7c9e-7c56-4c24-8ecf-cda931ffe94b",
+      "id": "xzP0H1n"
     }
   ],
   "monsters": [
@@ -1082,83 +1158,133 @@
       "name": "New Campaign",
       "description": "Some description",
       "id": "0e5f2139-c5dd-4146-8fcd-05571bc96040"
+    },
+    {
+      "name": "jake",
+      "description": "de\\th",
+      "id": "d1aa5934-f2c5-40ff-9a32-86d738aacb22"
     }
   ],
   "adventures": [
     {
-      "name": "The party set out",
-      "description": "The party meet and there is an instigating event",
+      "name": "fdv",
+      "description": "uejjythfbgdvtu6kuyjyngbfdvcoliunhbgvf",
+      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
+      "id": "3986f0dd-6d81-4cb9-b8ce-266becc1faf8"
+    },
+    {
+      "name": "Initiative Test",
+      "description": ".",
       "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
-      "id": "e8823001-9a25-430a-b234-06ed10ab1f4e"
+      "id": "16606c16-2b4c-4e2a-9b95-56f6d37b1153"
     }
   ],
   "encounters": [
     {
-      "name": "Test Initiative",
-      "description": "fdas dfa sdfasf asdf sad",
-      "location": "ertr ",
-      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
-      "adventureId": "e8823001-9a25-430a-b234-06ed10ab1f4e",
-      "id": "3895a927-2a09-45f0-8abf-b3864abca3dc",
+      "name": "yes",
+      "description": "mm",
+      "location": "yo",
+      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
+      "adventureId": "3986f0dd-6d81-4cb9-b8ce-266becc1faf8",
+      "id": "b4db7c9e-7c56-4c24-8ecf-cda931ffe94b",
       "mobList": [
         "players",
         "default",
-        "new"
+        "new",
+        "hjgjhgjh"
       ],
       "CombatantList": [],
       "initiative": [
         {
-          "id": "41088def-a2cb-4ea2-ae8b-98940e600acd",
+          "id": "88c70fb1-af34-433d-a206-e3d98b2e8d23",
           "source": 1,
+          "enemy": "monster",
+          "init": 9
+        },
+        {
+          "id": "2fb9ad72-e978-41c9-b789-c98ed56ee556",
+          "source": 1,
+          "enemy": "monster",
+          "init": 9
+        },
+        {
+          "id": "09bf5e09-1c1d-4087-b340-0a10fc90fa51",
+          "source": 1,
+          "enemy": "monster",
+          "init": 12
+        },
+        {
+          "id": "50b36f5d-d56a-41a6-af87-0a4c62a4be33",
+          "source": 13,
           "enemy": "monster",
           "init": 20
         },
         {
-          "id": "9ca5eeda-e02b-47ae-80f4-cbd65065966c",
-          "source": 13,
+          "id": "7d772a1c-8611-43f8-a73e-b35098ef95d0",
+          "source": 11,
           "enemy": "monster",
-          "init": 17
+          "init": 13
         },
         {
-          "id": "5bf28ada-23c7-4bee-9f1b-ac7776767b07",
-          "source": 1,
-          "enemy": "monster",
-          "init": 16
-        },
-        {
-          "id": "db600619-8826-4805-a2f6-55c208a4108e",
-          "source": 1,
-          "enemy": "monster",
-          "init": 16
-        },
-        {
-          "id": "19875aa0-2ad0-4556-a709-98c453944630",
-          "source": 1,
-          "enemy": "monster",
-          "init": 16
-        },
-        {
-          "id": "a3fcec92-b610-4894-989c-e29e164a8dd4",
-          "source": 1,
-          "enemy": "monster",
-          "init": 16
-        },
-        {
-          "name": "Aski the Furtive",
-          "id": "2da38b02-9a13-415b-839f-d99389fa994e",
+          "name": "HJSDFHS",
+          "id": "7b0e67e2-b8ac-4c41-a1fb-02ea6c863094",
           "enemy": "pc",
-          "init": "3"
+          "init": "7"
         },
         {
-          "name": "Wilma Forest",
-          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
+          "name": "dsvdvs",
+          "id": "b5d4feb6-5198-4714-bdd2-62b591e916b9",
           "enemy": "pc",
-          "init": "12"
+          "init": "9"
+        },
+        {
+          "name": "jkhkjh",
+          "id": "ee5f555e-ef23-442c-9281-04216ffd3aea",
+          "enemy": "pc",
+          "init": "13"
         }
       ],
       "monsters": [
         {
-          "id": "5bf28ada-23c7-4bee-9f1b-ac7776767b07",
+          "name": "Bandit",
+          "description": "Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
+          "type": "Humanoid",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": 3,
+          "cr": "0.125",
+          "str": "11",
+          "dex": "12",
+          "con": "12",
+          "int": "10",
+          "wis": "10",
+          "cha": "10",
+          "id": "7d772a1c-8611-43f8-a73e-b35098ef95d0",
+          "senses": [],
+          "languages": [],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [],
+          "actions": [
+            {
+              "name": "kjh kjhjk",
+              "description": "yuuiu uiyiu y"
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 11,
+          "enemy": "monster",
+          "mob": "hjgjhgjh"
+        },
+        {
+          "id": "88c70fb1-af34-433d-a206-e3d98b2e8d23",
           "name": "Goblin",
           "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
           "ac": "15",
@@ -1171,7 +1297,7 @@
           "cr": "0.25",
           "type": "Humanoid",
           "str": "10",
-          "dex": "10",
+          "dex": "12",
           "con": "17",
           "int": "4",
           "wis": "10",
@@ -1227,7 +1353,7 @@
           "mob": "default"
         },
         {
-          "id": "db600619-8826-4805-a2f6-55c208a4108e",
+          "id": "2fb9ad72-e978-41c9-b789-c98ed56ee556",
           "name": "Goblin",
           "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
           "ac": "15",
@@ -1240,145 +1366,7 @@
           "cr": "0.25",
           "type": "Humanoid",
           "str": "10",
-          "dex": "10",
-          "con": "17",
-          "int": "4",
-          "wis": "10",
-          "cha": "16",
-          "senses": [
-            "darkvision 60"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": {},
-          "legendaryActions": [],
-          "source": 1,
-          "enemy": "monster",
-          "mob": "default"
-        },
-        {
-          "id": "19875aa0-2ad0-4556-a709-98c453944630",
-          "name": "Goblin",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "10",
-          "dex": "10",
-          "con": "17",
-          "int": "4",
-          "wis": "10",
-          "cha": "16",
-          "senses": [
-            "darkvision 60"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "number": "1",
-                "dice": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": {},
-          "legendaryActions": [],
-          "source": 1,
-          "enemy": "monster",
-          "mob": "default"
-        },
-        {
-          "id": "41088def-a2cb-4ea2-ae8b-98940e600acd",
-          "name": "Goblin",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "10",
-          "dex": "18",
+          "dex": "12",
           "con": "17",
           "int": "4",
           "wis": "10",
@@ -1451,7 +1439,7 @@
           "int": "20",
           "wis": "14",
           "cha": "16",
-          "id": "9ca5eeda-e02b-47ae-80f4-cbd65065966c",
+          "id": "50b36f5d-d56a-41a6-af87-0a4c62a4be33",
           "senses": [],
           "languages": [],
           "vulnerabilities": [
@@ -1485,8 +1473,138 @@
           "mob": "default"
         },
         {
-          "id": "a3fcec92-b610-4894-989c-e29e164a8dd4",
-          "name": "Goblin talking",
+          "id": "09bf5e09-1c1d-4087-b340-0a10fc90fa51",
+          "name": "Fast Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "18",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": "monster",
+          "mob": "default"
+        }
+      ],
+      "mode": "editing"
+    },
+    {
+      "name": "new",
+      "description": "k",
+      "location": "k",
+      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
+      "adventureId": "16606c16-2b4c-4e2a-9b95-56f6d37b1153",
+      "id": "1ca86acd-650e-4db9-8b1f-b9ba4e8c8aee",
+      "mobList": [
+        "players",
+        "default",
+        "new"
+      ],
+      "CombatantList": [],
+      "initiative": [
+        {
+          "id": "e6ccec5e-15d0-4778-b4b9-cf0789a042e7",
+          "source": 1,
+          "enemy": "monster",
+          "init": 20
+        },
+        {
+          "id": "8342cb32-86fd-49fa-b59d-aa239ccb2aa5",
+          "source": 13,
+          "enemy": "monster",
+          "init": 17
+        },
+        {
+          "id": "33c57aa8-edab-4cad-ae49-39d64730836a",
+          "source": 1,
+          "enemy": "monster",
+          "init": 14
+        },
+        {
+          "id": "680d307b-a490-4138-9bb2-60f8b127ede6",
+          "source": 1,
+          "enemy": "monster",
+          "init": 14
+        },
+        {
+          "id": "d97e6eb7-1a11-4afd-92fe-124f6a6fd1d4",
+          "source": 1,
+          "enemy": "monster",
+          "init": 14
+        },
+        {
+          "name": "Hornath the Ugly",
+          "id": "2921a694-4eb4-4514-b3b5-5405bab2c6e0",
+          "enemy": "pc",
+          "init": "5"
+        },
+        {
+          "name": "Wilma Forest",
+          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
+          "enemy": "pc",
+          "init": "6"
+        }
+      ],
+      "monsters": [
+        {
+          "id": "33c57aa8-edab-4cad-ae49-39d64730836a",
+          "name": "Goblin",
           "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
           "ac": "15",
           "hitDice": {
@@ -1499,6 +1617,264 @@
           "type": "Humanoid",
           "str": "10",
           "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "id": "680d307b-a490-4138-9bb2-60f8b127ede6",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "id": "d97e6eb7-1a11-4afd-92fe-124f6a6fd1d4",
+          "name": "Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "10",
+          "con": "17",
+          "int": "4",
+          "wis": "10",
+          "cha": "16",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "number": "1",
+                "dice": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 1,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "name": "Bob",
+          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
+          "type": "Undead",
+          "ac": "17",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "135",
+          "cr": "21",
+          "str": "11",
+          "dex": "18",
+          "con": "16",
+          "int": "20",
+          "wis": "14",
+          "cha": "16",
+          "id": "8342cb32-86fd-49fa-b59d-aa239ccb2aa5",
+          "senses": [],
+          "languages": [],
+          "vulnerabilities": [
+            "cold",
+            "lightning",
+            "necrotic"
+          ],
+          "resistances": [
+            "cold",
+            "lightning",
+            "necrotic"
+          ],
+          "damageImmunity": [
+            "cold",
+            "lightning",
+            "necrotic"
+          ],
+          "conditionImmunity": [
+            "charmed",
+            "exhaustion",
+            "frightened",
+            "paralised",
+            "poisoned"
+          ],
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 13,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "id": "e6ccec5e-15d0-4778-b4b9-cf0789a042e7",
+          "name": "Fast Goblin",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "10",
+          "dex": "22",
           "con": "17",
           "int": "4",
           "wis": "10",
