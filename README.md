@@ -3,8 +3,10 @@
  I'm a novice programmer and this project is a learn-as-you-go effort, so please concider it alpha-as-f$%k.
 
 ## License
-![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)
-This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+The intent of this project is to create a usable app for non-commercial use. If you are interested in contributing to this effort on that basis, I'll be happy to concider pull requests to help improve features or fix bugs..
 
 ## App layout
 The app will make use of several pages, using React Router functionality. https://www.freecodecamp.org/news/a-complete-beginners-guide-to-react-router-include-router-hooks/
@@ -40,21 +42,25 @@ Home
  ## Completed
 
  ## To Do
- ### Short term
- * create editable list of senses, languages, damage types, etc. Make this a fairly generic campaign management feature. 
- * Refactor the add new monster to compendium form into a more general monster edit form. To be used for adding & editing monsters in the compendium & in encounters. Add all attributes in the current data model (senses, languages, resistances, etc currently missiong from form).
- * Fix the initiative order in the running encounter. PCs appear grouped & in alphabetical order, regardless of their actual init.
- * Implement basic combat
-    * attack actions > target player > roll damage > check for resistances > apply damage to HP.
-    * area attack actions, like above but targeting multiple people.
-    * Turn tracker. Move turn forward/backwards. Highlight current turn (css). Track rounds.
-* NPCs. Create, add to encounters, etc.
- ### Medium Term
- * Copy encounters
- * Move monsters to another encounter e.g. if a baddie flees, copy them to later encounter with the same HP/conditions etc. 
-
- ## Data
- The state for this app is stored in json https://www.w3schools.com/whatis/whatis_json.asp
+ * Short term
+    * create editable list of senses, languages, damage types, etc. Make this a fairly generic campaign management feature. 
+    * Refactor the add new monster to compendium form into a more general monster edit form. To be used for adding & editing monsters in the compendium & in encounters. Add all attributes in the current data model (senses, languages, resistances, etc currently missiong from form).
+    * Fix the initiative order in the running encounter. PCs appear grouped & in alphabetical order, regardless of their actual init.
+    * Implement basic combat
+        * attack actions > target player > roll damage > check for resistances > apply damage to HP.
+        * area attack actions, like above but targeting multiple people.
+        * Turn tracker. Move turn forward/backwards. Highlight current turn (css). Track rounds.
+    * NPCs. Create, add to encounters, etc.
+ * Medium Term
+    * update design. Make it nice and compact but ledgeable. Consistent design language. Icons.
+    * import/export monsters, pc/npc, campaigns, adventures, encounters, etc
+    * Copy encounters
+    * Move monsters to another encounter e.g. if a baddie flees, copy them to later encounter with the same HP/conditions etc. 
+* Long Term
+    * Keyboard controls/shortcuts
+ 
+## Data
+The state for this app is stored in json https://www.w3schools.com/whatis/whatis_json.asp
 
 The state will be served by json-server using Javascript fetch requests. https://www.npmjs.com/package/json-server
 
