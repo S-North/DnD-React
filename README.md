@@ -33,6 +33,12 @@ Home
                 * Delete encounter
                 * Run encounter: lots of functionality. Tracking rounds & turns, hit points, conditions, dice rolling for actions, etc
      
+ ## Completed
+ 
+ ## To Do
+ * Refactor the add new monster to compendium form into a more general monster edit form. To be used for adding & editing monsters in the compendium & in encounters. Add all attributes in the current data model (senses, languages, resistances, etc currently missiong from form).
+ * Fix the initiative order in the running encounter. PCs appear grouped & in alphabetical order, regardless of their actual init.
+
  ## Data
  The state for this app is stored in json https://www.w3schools.com/whatis/whatis_json.asp
 
