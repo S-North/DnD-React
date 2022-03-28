@@ -1108,22 +1108,16 @@
       "CombatantList": [],
       "initiative": [
         {
-          "name": "Aski the Furtive",
-          "id": "2da38b02-9a13-415b-839f-d99389fa994e",
-          "enemy": "pc",
-          "init": "5"
-        },
-        {
-          "name": "Wilma Forest",
-          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
-          "enemy": "pc",
-          "init": "13"
-        },
-        {
           "id": "41088def-a2cb-4ea2-ae8b-98940e600acd",
           "source": 1,
           "enemy": "monster",
           "init": 20
+        },
+        {
+          "id": "9ca5eeda-e02b-47ae-80f4-cbd65065966c",
+          "source": 13,
+          "enemy": "monster",
+          "init": 17
         },
         {
           "id": "5bf28ada-23c7-4bee-9f1b-ac7776767b07",
@@ -1150,10 +1144,16 @@
           "init": 16
         },
         {
-          "id": "9ca5eeda-e02b-47ae-80f4-cbd65065966c",
-          "source": 13,
-          "enemy": "monster",
-          "init": 17
+          "name": "Aski the Furtive",
+          "id": "2da38b02-9a13-415b-839f-d99389fa994e",
+          "enemy": "pc",
+          "init": "1"
+        },
+        {
+          "name": "Wilma Forest",
+          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
+          "enemy": "pc",
+          "init": "1"
         }
       ],
       "monsters": [
