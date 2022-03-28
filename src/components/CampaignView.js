@@ -32,7 +32,7 @@ const CampaignView = ({ adventures, players, notes, deleteItem, addItem }) => {
                     title="Characters"
                     description="Player characters for this campaign"
                     buttonText="New Character"
-                    items={ players.filter((character) => {return character.campaignId === campaign.id  && character.player === true})  }
+                    items={ players.filter((character) => {return character.campaignId === campaign.id  && character.enemy === "pc"})  }
                     route="/player"
                     addItem={ addItem }
                     deleteItem={ deleteItem }
