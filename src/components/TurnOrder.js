@@ -76,12 +76,12 @@ const TurnOrder = ({ windows, setWindows, title, monsters, players, route, items
                         <p>Cha: {selected.cha}</p>
                         <hr />
                         {selected.skills && <p>Skills: {selected.skills.map(r => (<span>{r} </span>))}</p>}
-                        {selected.vulnerabilities && <p>Vulnerabilities: {selected.vulnerabilities.map(r => (<span>{r} </span>))}</p>}
-                        {selected.resistances && <p>Resistances: {selected.resistances.map(r => (<span>{r} </span>))}</p>}
-                        {selected.damageImmunity && <p>Damage Immunities: {selected.damageImmunity.map(r => (<span>{r} </span>))}</p>}
-                        {selected.conditionImmunity && <p>Condition Immunities: {selected.conditionImmunity.map(r => (<span>{r} </span>))}</p>}
-                        {selected.senses && <p>Senses: {selected.senses.map(r => (<span>{r} </span>))}</p>}
-                        {selected.languages && <p>Languages: {selected.languages.map(r => (<span>{r} </span>))}</p>}
+                        {selected.vulnerabilities && <p>Vulnerable To: {selected.vulnerabilities.map(r => (<button>{r} </button>))}</p>}
+                        {selected.resistances && <p>Resistant To: {selected.resistances.map(r => (<button>{r} </button>))}</p>}
+                        {selected.damageImmunity && <p>Immune To Damage: {selected.damageImmunity.map(r => (<button>{r} </button>))}</p>}
+                        {selected.conditionImmunity && <p>Immune To Conditions: {selected.conditionImmunity.map(r => (<button>{r} </button>))}</p>}
+                        {selected.senses && <p>Senses: {selected.senses.map(r => (<button>{r} </button>))}</p>}
+                        {selected.languages && <p>Languages: {selected.languages.map(r => (<button>{r} </button>))}</p>}
                         <hr />
                         {selected.traits && <p>Traits</p>}
                         {selected.traits && selected.traits.map(r => (
