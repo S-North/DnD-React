@@ -39,25 +39,8 @@ Home
                 * Delete encounter
                 * Run encounter: lots of functionality. Tracking rounds & turns, hit points, conditions, dice rolling for actions, etc
      
- ## Completed
-
- ## To Do
- * Short term
-    * create editable list of senses, languages, damage types, etc. Make this a fairly generic campaign management feature. 
-    * Refactor the add new monster to compendium form into a more general monster edit form. To be used for adding & editing monsters in the compendium & in encounters. Add all attributes in the current data model (senses, languages, resistances, etc currently missiong from form).
-    * Fix the initiative order in the running encounter. PCs appear grouped & in alphabetical order, regardless of their actual init.
-    * Implement basic combat
-        * attack actions > target player > roll damage > check for resistances > apply damage to HP.
-        * area attack actions, like above but targeting multiple people.
-        * Turn tracker. Move turn forward/backwards. Highlight current turn (css). Track rounds.
-    * NPCs. Create, add to encounters, etc.
- * Medium Term
-    * update design. Make it nice and compact but ledgeable. Consistent design language. Icons.
-    * import/export monsters, pc/npc, campaigns, adventures, encounters, etc
-    * Copy encounters
-    * Move monsters to another encounter e.g. if a baddie flees, copy them to later encounter with the same HP/conditions etc. 
-* Long Term
-    * Keyboard controls/shortcuts
+ ## Roadmap
+View what I'm planning and currently working on [here](https://trello.com/b/Gks4VriW/development).
  
 ## Data
 The state for this app is stored in json https://www.w3schools.com/whatis/whatis_json.asp
