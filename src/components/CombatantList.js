@@ -3,7 +3,7 @@ import background from '../assets/adventure-bg.jpg';
 import CombatListItem from "./CombatListItem";
 import SelectMonsters from "./SelectMonsters";
 
-const CombatantList = ({ windows, setWindows, title, monsters, players, route, items, setCombatList, itemStyle, addItem, encounter, campaignId, adventureId, encounterId, deleteItem }) => {
+const CombatantList = ({ windows, setWindows, title, monsters, players, route, items, setCombatList, itemStyle, addItem, encounter, campaignId, adventureId, encounterId, deleteItem, dbUpdate }) => {
     const [widget, setWidget] = useState({"edit": false})
     const selectMonster = ({selection}) => {
         setWindows({...windows, "select": true, "npcs": false, "notes": false})
@@ -18,7 +18,7 @@ const CombatantList = ({ windows, setWindows, title, monsters, players, route, i
                     "list": false, 
                     "npcs": false, 
                     "notes": false}
-                    )}} className="btn green float-right">Run</button>}
+                    )}} className="btn green float-right">Roll Initiative</button>}
 
                 {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({
                     ...windows, 
@@ -26,7 +26,7 @@ const CombatantList = ({ windows, setWindows, title, monsters, players, route, i
                     "list": false, 
                     "npcs": false, 
                     "notes": false}
-                    )}} className="btn green float-right">+Enemy</button>}
+                    )}} className="btn blue float-right">+Enemy</button>}
 
                 {!widget.edit && <button onClick={ (e) => { e.preventDefault(); setWindows({
                     ...windows, 
@@ -34,7 +34,7 @@ const CombatantList = ({ windows, setWindows, title, monsters, players, route, i
                     "list": false, 
                     "npcs": false, 
                     "notes": false}
-                    )}} className="btn green float-right">+PC</button>}
+                    )}} className="btn blue float-right">+PC</button>}
 
                 {widget.edit && <button onClick={ () => { setWidget({"edit": false})}} className="btn blue float-right">Exit Edit</button>}
                 
@@ -43,7 +43,7 @@ const CombatantList = ({ windows, setWindows, title, monsters, players, route, i
                 {!widget.edit && <p>Add new combatants to the list and run the encounter when ready.</p>}
                 {!widget.edit && <div className="item-list">
                     {items ? items.map((item) => (
-                        <CombatListItem key={ item.id } encounter={encounter} players={ players } item={ item } route={ route } campaignId={ campaignId} adventureId={ adventureId} itemStyle={ itemStyle } background={ background } />
+                        <CombatListItem key={ item.id } encounter={encounter} dbUpdate={dbUpdate} players={ players } item={ item } route={ route } campaignId={ campaignId} adventureId={ adventureId} itemStyle={ itemStyle } background={ background } />
                     ))
                 : <p>No items to display</p>}
                 </div>}
