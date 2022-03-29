@@ -1,14 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const CombatListItem = ({ itemStyle="item-block", item, players, route, encounter, campaignId, adventureId, background }) => {
+const CombatListItem = ({ itemStyle="item-block", item, players, route, encounter, dbUpdate, campaignId, adventureId, background }) => {
     const campaignPlayers = players.filter((p) => { return p.campaignId === campaignId})
-    const truncate = (string) => {
-        if (string && string.length > 120) {
-            return string.substring(0, 116) + " ..."
-        }
-        return string
-    }
 
     if (itemStyle === "item-compact") {
         background = "";
@@ -21,9 +15,9 @@ const CombatListItem = ({ itemStyle="item-block", item, players, route, encounte
     useEffect(() => {
         // set stat block location
         if (item.enemy === "monster") {
-            setdata({"name": monster.name, "cr": monster.cr, "type": monster.type})
+            setdata({"id": item.id, "name": monster.name, "cr": monster.cr, "type": monster.type})
         } else if (item.enemy === "pc") {
-            setdata({"name": pc.name, "cr": pc.cr, "type": pc.type})
+            setdata({"id": item.id, "name": pc.name, "cr": pc.cr, "type": pc.type})
         } else if (item.enemy === "npc") {
             setdata({"name": npc.name, "cr": npc.cr, "type": npc.type})
         }
@@ -31,31 +25,20 @@ const CombatListItem = ({ itemStyle="item-block", item, players, route, encounte
       }
     }, [])
 
-    // useEffect(() => {
-    //   console.log(data)
-    //   return () => {
-    //   }
-    // }, [data])
+    const deleteItem = (data) => {
+
+        const initiative = encounter.initiative.filter(f => { return f.id !== data.id})
+        const monsters = encounter.monsters.filter(f => { return f.id !== data.id})
+        dbUpdate("encounters", {...encounter, initiative, monsters}, encounter.id, "PUT"); // Delete the monsters/initiative in in the encounter
+    }
     
     return (
         <>         
-            <Link key={ item.id } to={{
-                pathname: route,
-                state: { item, campaignId, adventureId }
-                }} >
-                {(itemStyle === "item-block") ?
-                <div className={itemStyle} style={{ backgroundImage: `url(${background})`, color: "white", imageSize: "cover" }}>
-                    <h3>{ data.name }</h3>
-                    {data.cr && <p>CR: { data.cr }</p>}
-                    {data.type && <p>Type: { data.type }</p>}
-                    {(itemStyle === "item-block") && <p>{ truncate(data.description) }</p>}
-                </div>
-                :
                 <div className={itemStyle}>
-                    <h3 style={{ color:"black"}}><strong>{ data.name }</strong> <em>{data.type} {data.cr && <p>CR: {data.cr}</p>}</em></h3>
+                    <h3 style={{ color:"black"}}><strong>{ data.name }</strong></h3> 
+                    <em>
+                        {data.type} {data.cr && <p>CR: {data.cr}</p>}<input type="button" className="red" value="delete" onClick={(e) => {deleteItem(data)}}></input></em>
                 </div>
-                }
-            </Link>
         </>
     );
 }

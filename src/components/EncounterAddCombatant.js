@@ -48,7 +48,6 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
             group = mobSubmit.toLowerCase()
         }
 
-        
         // Create the updated data for monsters in [newCombatants]
         for (let i = 0; i < parseInt(multiple); i++) {
             let c = {
@@ -97,18 +96,19 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
                 value={ multiple } 
                 onChange={(e) => {setMultiple(e.target.value)}} />
 
-            <select value={mob} onChange={(e) => {setMob(e.target.value)}}>
+            {/* Mob functionallity to be removed? */}
+            {/* <select value={mob} onChange={(e) => {setMob(e.target.value)}}>
                 {mobList
                     .filter((mob) => {return mob !== "players"})
                     .map(mob => (
                         <option key={mob} value={mob}>{mob}</option>
                 ))}
 
-            </select>
-            {mob === "new" && <input 
+            </select> */}
+            {/* {mob === "new" && <input 
                 type="text" 
                 placeholder="new mob" 
-                onChange={(e) => {setMobSubmit(e.target.value)}} />}
+                onChange={(e) => {setMobSubmit(e.target.value)}} />} */}
             <div 
                 className="btn green"
                 onClick={() => {handleSubmit()}}
