@@ -1592,13 +1592,13 @@
           "name": "Hornath the Ugly",
           "id": "2921a694-4eb4-4514-b3b5-5405bab2c6e0",
           "enemy": "pc",
-          "init": "5"
+          "init": "1"
         },
         {
           "name": "Wilma Forest",
           "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
           "enemy": "pc",
-          "init": "6"
+          "init": "15"
         }
       ],
       "monsters": [
