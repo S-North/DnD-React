@@ -81,7 +81,7 @@ const EncounterAddCombatant = ({ selected, windows, setWindows, encounter, initi
             updatedEncounter = {...encounter, "initiative": newInitiative, "monsters": [...encounter.monsters, ...newCombatants]}
         }
         
-        dbUpdate("encounters", updatedEncounter, encounter.id, "PUT"); // Update the monsteris in the encounter
+        dbUpdate("encounters", updatedEncounter, encounter.id, "PUT"); // Update the monster in the encounter
         // TODO update the initiative list
         setWindows({...windows, "list": true, "npcs": true, "notes": true, "add": false, "traits": false, "actions": false, "legendary": false})
     }

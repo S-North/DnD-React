@@ -2,7 +2,7 @@ import DiceRoller from './DiceRoller';
 import ItemList from './ItemList';
 import FormMonsterNew from './FormMonsterNew';
 
-const Home = ({ title, config, campaigns, monsters, setConfig, addItem }) => {
+const Home = ({ title, config, campaigns, monsters, setConfig, addItem, dbUpdate }) => {
     // console.log(addItem);
     return (
         <>
@@ -20,7 +20,7 @@ const Home = ({ title, config, campaigns, monsters, setConfig, addItem }) => {
                     setConfig={ setConfig }
                     addItem={ addItem }/>
 
-                <FormMonsterNew monster={monsters[0]} /> 
+                <FormMonsterNew monsters={monsters} monster={monsters[12]} dbUpdate={dbUpdate} /> 
 
 
                 {/* <ItemList 

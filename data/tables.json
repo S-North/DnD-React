@@ -518,6 +518,7 @@
         "paralised",
         "poisoned"
       ],
+      "conditions": [],
       "traits": [],
       "actions": [],
       "legendary": {},
