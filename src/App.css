@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+:root {
+    /* colours */
+    --paper: rgb(245, 245, 245);
+    --green: rgb(37, 177, 37);
+    --blue: rgb(134, 156, 254);
+    --red: rgb(249, 29, 69);
+    --blue-grey: rgb(86, 84, 116);
+    --box-shadow: 1px 1px 5px rgb(162, 162, 162);
+  }
+
 html {scrollbar-width: none;  /* Firefox */}
 
 body {
@@ -21,12 +32,11 @@ body::-webkit-scrollbar {
 /* -------------------- */
 p, h1, h2, h3 {
     margin: 0;
-    
 }
 
 a {
     text-decoration: none;
-    color: ghostwhite;
+    color: var(--paper);
 }
 
 p {
@@ -51,7 +61,7 @@ h3 {
 /* ------ layout ------ */
 /* -------------------- */
 
-.navbar {
+header {
     min-height: 15vh;
     display: flex;
     align-items: center;
@@ -63,16 +73,63 @@ h3 {
     background-size: cover;
 }
 
-.navbar > div {
+header > div {
     max-width: 160ch;
     margin: auto;
 }
 
-.navbar a {
+header a {
     text-decoration: none;
     padding: 4px;
     color: ghostwhite;
     overflow: hidden;
+}
+
+
+#details {
+    flex-grow: 1;
+    max-width: 80%;
+    background-color: var(--paper);
+    border-radius: 2px;
+}
+
+#details div.columns {
+    display: flex;
+}
+#details article {
+    margin: 1ch;
+    min-width: 50ch;
+}
+
+#details article div.description {
+    padding: 1ch;
+}
+
+#details .title {
+    background-color: var(--paper);
+}
+
+#details article {
+    max-width: 40ch;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+#details label, input {
+    margin: 0ch;
+
+}
+#details summary {
+    font-size: small;
+    list-style: none;
+    color: white;
+    background-color: var(--blue-grey); 
+    padding: 0ch 0.5ch;
+}
+summary::-webkit-details-marker {display: none; }
+#details summary::before {
+    background-color: rgb(145, 145, 145);
+    color: blue;
 }
 
 .footer-container {
@@ -116,7 +173,9 @@ main {
 }
 
 .widget {
-    flex-basis: 41ch;
+    flex-grow: 1;
+    max-width: 20%;
+    min-width: 40ch;
     background-color: rgb(245, 245, 245);
     padding: 1ch;
     border-radius: 2px;
@@ -149,6 +208,7 @@ main {
 
 .flex-row {
     display: flex;
+    justify-content: space-between;
     gap: 1ch;
     align-items: center;
     min-height: 2ch;
@@ -206,6 +266,38 @@ input[type="number"] {
 /* ---- components ---- */
 /* -------------------- */
 
+.tag-array {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tag {
+    border-radius: 5px;
+    padding: 0.5ch;
+    display: flex;
+    gap: 1ch;
+    box-shadow: var(--box-shadow);
+    margin: 1ch;
+    font-size: small;
+    /* justify-content: space-between; */
+}
+.tag div.delete {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.tag-array div.add {
+    border-radius: 5px;
+    padding: 0.5ch;
+    display: flex;
+    gap: 1ch;
+    box-shadow: var(--box-shadow);
+    margin: 1ch;
+    font-size: small;
+    background-color: var(--red);
+    cursor: pointer;
+}
 .link-button {
     border: 0px;
     display: inline-block;
@@ -219,19 +311,35 @@ input[type="number"] {
     border-radius: 8px;
 }
 
-.green {
-    background-color: darkgreen;
-    color: ghostwhite;
+.green-button {
+    background-color: var(--green);
+    color: rgb(23, 23, 24);
+    padding: 0.5ch;
+    font-size: 1.15ch;
+    min-width: 10ch;
+    text-align: center;
+    cursor: pointer;
 }
 
-.red {
-    background-color: rgb(175, 29, 29);
-    color: ghostwhite;
+.red-button {
+    background-color: var(--red);
+    color: rgb(23, 23, 24);
+    padding: 0.5ch;
+    font-size: 1.15ch;
+    min-width: 10ch;
+    text-align: center;
+    cursor: pointer;
+    margin: 1ch;
 }
 
-.blue {
-    background-color: rgb(52, 52, 151);
-    color: ghostwhite;
+.blue-button {
+    background-color: var(--blue);
+    color: rgb(23, 23, 24);
+    padding: 0.5ch;
+    font-size: 1.15ch;
+    min-width: 10ch;
+    text-align: center;
+    cursor: pointer;
 }
 
 .grey {

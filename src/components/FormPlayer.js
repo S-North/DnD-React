@@ -24,7 +24,7 @@ const FormPlayer = ({ campaignId, adventureId, encounterId, addItem, setWidget, 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { "id": uuidv4(), name, description, chRace, chClass, str, dex, con, int, wis, cha, hp, ac, xp, "level": xpToLevel(xp), campaignId, adventureId, encounterId, "player": pc};
+        const data = { "id": uuidv4(), name, description, chRace, chClass, str, dex, con, int, wis, cha, hp, ac, xp, "level": xpToLevel(xp), campaignId, adventureId, encounterId, "enemy": "pc"};
         console.log(data);
         addItem(collection, data );
         setWidget({"edit": false});
