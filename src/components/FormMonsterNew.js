@@ -93,8 +93,7 @@ const CheckboxArray = ({ array, setMonster, selection, monster, listName }) => {
         {data && array.map((c) => (
             <div key={c}>
                 <div className="flex-row">
-                    <p>{c}</p>
-                    <label htmlFor={c}></label>
+                    <label style={{"minWidth": "12ch"}} htmlFor={c}>{c}</label>
                     <input
                         type="checkbox" 
                         name={c} 
