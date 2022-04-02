@@ -131,6 +131,7 @@ function App() {
     // data is the json object to post to the server
     const url = `${jsonserver}/${collection}/${id}`;
     console.log("dbUpdate");
+    console.log(data);
     // console.log(collection, data);
 
     fetch(url, {
@@ -159,7 +160,7 @@ function App() {
         <main>
           <Switch>
             <Route exact path="/">
-                <Home title="Home" campaigns={ campaigns } monsters={ monsters } addItem={ addItem }></Home>
+                <Home title="Home" campaigns={ campaigns } monsters={ monsters } addItem={ addItem } dbUpdate={ dbUpdate}></Home>
             </Route>
             <Route exact path="/campaign">
               <CampaignView adventures={ adventures } players={ players } notes={ notes } deleteItem={ deleteItem } addItem={ addItem } dbUpdate={ dbUpdate }></CampaignView>
