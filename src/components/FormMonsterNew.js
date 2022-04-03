@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { types, damageTypes, conditions } from "../Forms";
+import { types, damageTypes, conditions, crRange, sizes } from "../Forms";
 import { diceRoll } from '../Maths';
 
 const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) => {
@@ -17,7 +17,7 @@ const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) =>
                     <textarea required rows="10" type="text" 
                         value={update.description} 
                         onChange={(e) => {setUpdate({...update, "description": e.target.value})}} />
-                    <div className="btn blue" 
+                    <div className="green-button" 
                         onClick={() => {updateItem("edit", "trait", selected, setSelected, [...selected.traits.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div></>}
             
             {type === "action" &&
@@ -42,8 +42,20 @@ const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) =>
                             value={update.damage.bonus} 
                             onChange={(e) => {setUpdate({...update, "damage": {...update.damage, "bonus": e.target.value}})}} />
                     </div>
-                    <div className="btn blue" 
+                    <div className="green-button" 
                         onClick={() => {updateItem("edit", "action", selected, setSelected, [...selected.actions.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div></>}
+            
+            {type === "legendary" &&
+                <>
+                    <input required type="text" 
+                        value={update.name} 
+                        onChange={(e) => {setUpdate({...update, "name": e.target.value})}} />
+                    <textarea required rows="10" type="text" 
+                        value={update.description} 
+                        onChange={(e) => {setUpdate({...update, "description": e.target.value})}} />
+                    <div className="green-button" 
+                        onClick={() => {updateItem("edit", "legendary", selected, setSelected, [...selected.legendary.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div></>}
+            {console.log(type)}
         </>
     );
 }
@@ -85,7 +97,6 @@ const CheckboxArray = ({ array, setMonster, selection, monster, listName }) => {
                     setMonster({...monster, "conditionImmunity": [...data.filter(f => { return f !== e.target.value})]})
                     : setMonster({...monster, "conditionImmunity": [...data, e.target.value]})
                 break
-
         }
     }
     return (
@@ -143,11 +154,15 @@ const updateItem = (action, target, selected, setSelected, update, panes, setPan
         console.log({...selected, "actions": update})
         setSelected({...selected, "actions": update})
         setPanes({...panes, "editAction": false, "addAction": false})
+    } else if (target ==="legendary") {
+        console.log({...selected, "legendary": update})
+        setSelected({...selected, "legendary": update})
+        setPanes({...panes, "editLegendary": false, "addLegendary": false})
     }
 }
 
 const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
-    console.log(conditions)
+    console.log(crRange.sort(function(a,b) {return a-b}))
     const [ selected, setSelected ]                     = useState()
     const [ senses, setSenses ]                         = useState();
     const [ languages, setLanguages ]                   = useState();
@@ -197,258 +212,334 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
     return (
         <>
             {selected && <div id="details">
-        <div className="columns">
-            <div className="column">
-{/* Title section */}
-                <article id="basic-details">
-                    <details open>
-                        <summary>Basic Details</summary>
-                        <div>
-                        <label htmlFor="name">Name:</label>
-                        <input id="name"
-                            type="text" 
-                            placeholder="name"
-                            value={ selected.name } 
-                            onChange={(e) =>                {setSelected({...selected, "name": e.target.value})}} />
-                        
-                        <label htmlFor="descr">Description: </label>
-                        <textarea id="descr"
-                            rows="10" 
-                            type="text" 
-                            placeholder="description" 
-                            value={ selected.description } 
-                            onChange={(e) =>                {setSelected({...selected, "description": e.target.value})}} />
-
-                        <div className="flex-row">
-                            <label htmlFor="cr">CR:</label>
-                            <input id="cr"
-                                type="number" 
-                                placeholder="cr"
-                                value={ selected.cr } 
-                                onChange={(e) =>            {setSelected({...selected, "cr": e.target.value})}} />
-                            
-                            <label htmlFor="ac">AC:</label>
-                            <input id="ac"
-                                type="number" 
-                                placeholder="ac"
-                                value={ selected.ac } 
-                                onChange={(e) =>            {setSelected({...selected, "ac": e.target.value})}} />
-        
-                            <label htmlFor="hp">HP:</label>
-                            <input id="hp" type="number" placeholder="hp" value={ selected.hp }
-                                onChange={(e) =>            {setSelected({...selected, "hp": e.target.value})}} />
-                        
-                            <label htmlFor="speed">Speed:</label>
-                            <input id="speed" type="number" placeholder="speed" value={ selected.speed }
-                                onChange={(e) =>            {setSelected({...selected, "speed": e.target.value})}} />
-                        </div>
-                        </div>
-                    </details>
-                </article>
-            
-                <article>
-                    <details>
-                        <summary>Stats & Skills</summary>
-                        <div className="flex-row">
-                        <input  placeholder="str" type="number" value={ selected.str }                            
-                            onChange={(e) =>            {setSelected({...selected, "str": e.target.value})}} />
-                        <input  placeholder="dex" type="number" value={ selected.dex }
-                            onChange={(e) =>            {setSelected({...selected, "dex": e.target.value})}} />
-                        <input placeholder="con" type="number" value={ selected.con }
-                            onChange={(e) =>            {setSelected({...selected, "con": e.target.value})}} />
-                        <input placeholder="int" type="number" value={ selected.int }
-                            onChange={(e) =>            {setSelected({...selected, "int": e.target.value})}} />
-                        <input placeholder="wis" type="number" value={ selected.wis } 
-                            onChange={(e) =>            {setSelected({...selected, "wis": e.target.value})}} />
-                        <input placeholder="cha" type="number" value={ selected.cha } 
-                           onChange={(e) =>             {setSelected({...selected, "cha": e.target.value})}} />
-                    </div>
-                    </details>
-                </article>
-
-                <article>
-                    <details>
-                        <summary>Languages & Proficiencies</summary>
-                        <p>Languages</p>
-                        <TagItemArray array={languages}></TagItemArray>
-                        <p>Proficiencies</p>
-                        <TagItemArray array={skills}></TagItemArray>
-                    </details>
-                </article>
-                <article>
-                    <details>
-                        <summary>Resistances ({resistances && resistances.length})</summary>
-                        <CheckboxArray array={damageTypes} monster={selected} selection={selected.resistances} listName="resistances" setMonster={setSelected}></CheckboxArray>
-                    </details>
-                </article>
-
-                <article>
-                    <details>
-                        <summary>Damage Immunity ({damageImmunity && damageImmunity.length})</summary>
-                        <CheckboxArray array={damageTypes} monster={selected} selection={selected.damageImmunity} listName="damageImmunity" setMonster={setSelected}></CheckboxArray>
-                    </details>
-                </article>
-
-                <article>
-                    <details>
-                        <summary>Condition Immunity ({conditionImmunity && conditionImmunity.length})</summary>
-                        <CheckboxArray array={conditions} monster={selected} selection={selected.conditionImmunity} listName="conditionImmunity" setMonster={setSelected}></CheckboxArray>
-                    </details>
-                </article>
-                
-                <article>
-                    <details>
-                        <summary>Vulnerabilities ({vulnerabilities && vulnerabilities.length})</summary>
-                        <CheckboxArray array={damageTypes} monster={selected} selection={selected.vulnerabilities} listName="vulnerabilities" setMonster={setSelected}></CheckboxArray>                    
-                    </details>
-                </article>
-                <article>
-                    <details>
-                        <summary>Conditions ({conditions && selected.conditions.length})</summary>
-                        <CheckboxArray array={conditions} monster={selected} selection={selected.conditions} listName="conditions" setMonster={setSelected}></CheckboxArray>
-                    </details>
-                </article>
-
-                {senses && <p>{senses}</p>}
-                </div>
-                <div className="column"> 
-                <article>
-                    <details id="traits">
-                        <summary>Traits ({traits && traits.length})
-                            {(panes.addTrait === false && panes.editTrait === false) ?
-                            <div
-                                style={{"float": "right", "cursor": "pointer"}}
-                                className="green-button"
-                                onClick={() => {
-                                    setItem({"id": uuidv4()}, 
-                                    setPanes({...panes, "addTrait": true})); 
-                                    document.getElementById("traits").open = ""}}>Add New</div>
-                            : <div
-                                style={{"float": "right", "cursor": "pointer"}}
-                                className="blue-button"
-                                onClick={() => {
-                                    setItem({"id": uuidv4()}, 
-                                    setPanes({...panes, "addTrait": false, "editTrait":false})); 
-                                    document.getElementById("traits").open = ""}}>Cancel</div>}
-                        </summary>
-                        {panes.addTrait === true && 
-                        <EditListItem 
-                            item={{"id": uuidv4(), "name": "", "description":""}} 
-                            type="trait"
-                            selected={selected}
-                            setSelected={setSelected} 
-                            panes={panes} 
-                            setPanes={setPanes}>
-                        </EditListItem>}
-
-                        {panes.editTrait === true && 
-                        <EditListItem 
-                            item={item}
-                            type="trait"
-                            selected={selected} 
-                            setSelected={setSelected} 
-                            panes={panes} 
-                            setPanes={setPanes}>
-                        </EditListItem>}
-
-                        {traits && (panes.addTrait === false && panes.editTrait === false) && traits
-                        .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
-                        .map((trait) => (
-                            <div
-                                key={trait.id}
-                                className="flex-row">
+                <div className="columns">
+                    <div className="column">
+                        <article data="basic-details">
+                            <details open>
+                                <summary>Basic Details</summary>
+                                <div>
+                                <label htmlFor="name">Name:</label>
+                                <input id="name"
+                                    type="text" 
+                                    placeholder="name"
+                                    value={ selected.name } 
+                                    onChange={(e) =>                {setSelected({...selected, "name": e.target.value})}} />
                                 
-                                <div
-                                    className="description" 
-                                    style={{"cursor": "pointer"}} 
-                                            onClick={() => {setItem(trait); setPanes({...panes, "editTrait": true, })}}>
-                                            
-                                            
-                                        <strong>{trait.name}:</strong> {trait.description}
+                                <div className="flex-row">
+                                    <label htmlFor="type">Size:</label>
+                                    <select name="size" id="" value={selected.size} onChange={e => {console.log(e.target.value); setSelected({...selected, "size": e.target.value})}}>
+                                        {sizes.map(o => (
+                                            <option value={o}>{o}</option>
+                                        ))}
+                                    </select> 
+                                    <label htmlFor="type">Type:</label>
+                                    <select name="type" id="" defaultValue="medium" value={selected.type} onChange={e => {console.log(e.target.value); setSelected({...selected, "type": e.target.value})}}>
+                                        {types.map(o => (
+                                            <option value={o}>{o}</option>
+                                        ))}
+                                    </select>
                                 </div>
+                                <label htmlFor="descr">Description: </label>
+                                <textarea id="descr"
+                                    rows="10" 
+                                    type="text" 
+                                    placeholder="description" 
+                                    value={ selected.description } 
+                                    onChange={(e) =>                {setSelected({...selected, "description": e.target.value})}} />
 
-                                {/* Delete button */}
-                                <button style={{"float": "right"}} className="btn red" onClick={() => {
-                                    setTraits([...traits.filter((i) => {return i.id !== trait.id})])
-                                }}>
-                                    Delete</button>
+                                <div className="flex-row">                                    
+                                    <label htmlFor="ac">AC:</label>
+                                    <input id="ac"
+                                        type="number" 
+                                        placeholder="ac"
+                                        value={ selected.ac } 
+                                        onChange={(e) =>            {setSelected({...selected, "ac": e.target.value})}} />
+                
+                                    <label htmlFor="hp">HP:</label>
+                                    <input id="hp" type="number" placeholder="hp" value={ selected.hp }
+                                        onChange={(e) =>            {setSelected({...selected, "hp": e.target.value})}} />
+                                    <label htmlFor="hp">Hit Dice:</label>
+                                    <input id="hp" type="number" placeholder="hp" value={ selected.hp }
+                                        onChange={(e) =>            {setSelected({...selected, "hp": e.target.value})}} />
+
+                                    <label htmlFor="speed">Speed:</label>
+                                    <input id="speed" type="number" placeholder="speed" value={ selected.speed }
+                                        onChange={(e) =>            {setSelected({...selected, "speed": e.target.value})}} />
+                                    <label htmlFor="cr">Challenge:</label>
+                                    <select name="cr" id="" value={selected.cr} onChange={e => {console.log(e.target.value); setSelected({...selected, "cr": e.target.value})}}>
+                                        {crRange.map(o => (
+                                            <option value={o}>{o}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                </div>
+                            </details>
+                        </article>
+            
+                        <article data="stats">
+                            <details>
+                                <summary>Stats & Skills</summary>
+                                <div className="flex-row">
+                                <input  placeholder="str" type="number" value={ selected.str }                            
+                                    onChange={(e) =>            {setSelected({...selected, "str": e.target.value})}} />
+                                <input  placeholder="dex" type="number" value={ selected.dex }
+                                    onChange={(e) =>            {setSelected({...selected, "dex": e.target.value})}} />
+                                <input placeholder="con" type="number" value={ selected.con }
+                                    onChange={(e) =>            {setSelected({...selected, "con": e.target.value})}} />
+                                <input placeholder="int" type="number" value={ selected.int }
+                                    onChange={(e) =>            {setSelected({...selected, "int": e.target.value})}} />
+                                <input placeholder="wis" type="number" value={ selected.wis } 
+                                    onChange={(e) =>            {setSelected({...selected, "wis": e.target.value})}} />
+                                <input placeholder="cha" type="number" value={ selected.cha } 
+                                onChange={(e) =>             {setSelected({...selected, "cha": e.target.value})}} />
                             </div>
-                        ))
-                    }
-                    </details>
-                </article>
+                            </details>
+                        </article>
 
-                   
+                        <article data="languages">
+                            <details>
+                                <summary>Languages & Proficiencies</summary>
+                                <p>Languages</p>
+                                <TagItemArray array={languages}></TagItemArray>
+                                <p>Proficiencies</p>
+                                <TagItemArray array={skills}></TagItemArray>
+                            </details>
+                        </article>
 
-                    
-{/* Actions */}
-                    <article>
-                        <details id="actions">
-                            <summary>Actions ({actions && actions.length})
-                            {(panes.addAction === false && panes.editAction === false) ?
-                            <div
-                                style={{"float": "right", "cursor": "pointer"}}
-                                className="green-button"
-                                onClick={() => {
-                                    setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}, 
-                                    setPanes({...panes, "addAction": true})); 
-                                    document.getElementById("actions").open = ""}}>Add New</div>
-                            : <div
-                                style={{"float": "right", "cursor": "pointer"}}
-                                className="blue-button"
-                                onClick={() => {
-                                    setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}, 
-                                    setPanes({...panes, "addAction": false, "editTrait":false}))}}>Cancel</div>}
-                            </summary>
+                        <article data="vulnerability">
+                            <details>
+                                <summary>Vulnerabilities ({vulnerabilities && vulnerabilities.length})</summary>
+                                <CheckboxArray array={damageTypes} monster={selected} selection={selected.vulnerabilities} listName="vulnerabilities" setMonster={setSelected}></CheckboxArray>                    
+                            </details>
+                        </article>
 
-                            {panes.addAction === true && 
-                            <EditListItem 
-                                item={{"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}}
-                                type="action"
-                                selected={selected} 
-                                setSelected={setSelected} 
-                                panes={panes} 
-                                setPanes={setPanes}>
-                            </EditListItem>}
+                        <article data="resistances">
+                            <details>
+                                <summary>Resistances ({resistances && resistances.length})</summary>
+                                <CheckboxArray array={damageTypes} monster={selected} selection={selected.resistances} listName="resistances" setMonster={setSelected}></CheckboxArray>
+                            </details>
+                        </article>
 
-                            {panes.editAction === true && 
-                            <EditListItem 
-                                item={item}
-                                type="action"
-                                selected={selected} 
-                                setSelected={setSelected} 
-                                panes={panes} 
-                                setPanes={setPanes}>
-                            </EditListItem>}
+                        <article data="damage-immunity">
+                            <details>
+                                <summary>Damage Immunity ({damageImmunity && damageImmunity.length})</summary>
+                                <CheckboxArray array={damageTypes} monster={selected} selection={selected.damageImmunity} listName="damageImmunity" setMonster={setSelected}></CheckboxArray>
+                            </details>
+                        </article>
 
-                            {traits && (panes.addAction === false && panes.editAction === false) && actions
-                            .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
-                            .map((action) => (
-                                <div
-                                    key={action.id}
-                                    className="flex-row">
-                                    
-                                    <div
-                                        className="description" 
-                                        style={{"cursor": "pointer"}} 
-                                        onClick={(e) => {setItem(action); setPanes({...panes, "editAction": true, })}}>
-                                            <strong>{action.name}:</strong> {action.description}
-                                    </div>
+                        <article data="condition-immunity">
+                            <details>
+                                <summary>Condition Immunity ({conditionImmunity && conditionImmunity.length})</summary>
+                                <CheckboxArray array={conditions} monster={selected} selection={selected.conditionImmunity} listName="conditionImmunity" setMonster={setSelected}></CheckboxArray>
+                            </details>
+                        </article>
+                        
+                        <article id="conditions">
+                            <details>
+                                <summary>Conditions ({conditions && selected.conditions.length})</summary>
+                                <CheckboxArray array={conditions} monster={selected} selection={selected.conditions} listName="conditions" setMonster={setSelected}></CheckboxArray>
+                            </details>
+                        </article>
 
-                                    {/* Delete button */}
-                                    <div style={{"float": "right"}} className="red-button" onClick={() => {
-                                        setActions([...actions.filter((i) => {return i.id !== action.id})])
-                                    }}>
-                                        Delete</div>
-                                </div>
-                            ))
-                            }
-                        </details>
-                    </article>
+                        {senses && <p>{senses}</p>}
                     </div>
-            </div>
-            </div>}
+                    <div className="column"> 
+                        <article data="traits">
+                            <details id="traits">
+                                <summary>Traits ({traits && traits.length})
+                                    {(panes.addTrait === false && panes.editTrait === false) ?
+                                    <div
+                                        style={{"float": "right", "cursor": "pointer"}}
+                                        className="green-button"
+                                        onClick={() => {
+                                            setItem({"id": uuidv4()}, 
+                                            setPanes({...panes, "addTrait": true})); 
+                                            document.getElementById("traits").open = ""}}>Add New</div>
+                                    : <div
+                                        style={{"float": "right", "cursor": "pointer"}}
+                                        className="blue-button"
+                                        onClick={() => {
+                                            setItem({"id": uuidv4()}, 
+                                            setPanes({...panes, "addTrait": false, "editTrait":false})); 
+                                            document.getElementById("traits").open = ""}}>Cancel</div>}
+                                </summary>
+                                {panes.addTrait === true && 
+                                <EditListItem 
+                                    item={{"id": uuidv4(), "name": "", "description":""}} 
+                                    type="trait"
+                                    selected={selected}
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
 
+                                {panes.editTrait === true && 
+                                <EditListItem 
+                                    item={item}
+                                    type="trait"
+                                    selected={selected} 
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
+
+                                {traits && (panes.addTrait === false && panes.editTrait === false) && selected.traits
+                                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                                .map((t) => (
+                                    <div
+                                        key={t.id}
+                                        className="flex-row">
+                                        
+                                        <div
+                                            className="description" 
+                                            style={{"cursor": "pointer"}} 
+                                                    onClick={() => {setItem(t); setPanes({...panes, "editTrait": true, })}}>
+                                                    
+                                                    
+                                                <strong>{t.name}:</strong> {t.description}
+                                        </div>
+
+                                        {/* Delete button */}
+                                        <button style={{"float": "right"}} className="btn red" onClick={() => {
+                                            setSelected({...selected, "traits": [...traits.filter((i) => { return i.id !== t.id })]})
+                                        }}>
+                                            Delete</button>
+                                    </div>
+                                ))
+                            }
+                            </details>
+                        </article>
+
+                        <article>
+                            <details id="actions">
+                                <summary>Actions ({actions && actions.length})
+                                {(panes.addAction === false && panes.editAction === false) ?
+                                <div
+                                    style={{"float": "right", "cursor": "pointer"}}
+                                    className="green-button"
+                                    onClick={() => {
+                                        setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}, 
+                                        setPanes({...panes, "addAction": true})); 
+                                        document.getElementById("actions").open = ""}}>Add New</div>
+                                : <div
+                                    style={{"float": "right", "cursor": "pointer"}}
+                                    className="blue-button"
+                                    onClick={() => {
+                                        setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}, 
+                                        setPanes({...panes, "addAction": false, "editTrait":false}))}}>Cancel</div>}
+                                </summary>
+
+                                {panes.addAction === true && 
+                                <EditListItem 
+                                    item={{"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}}
+                                    type="action"
+                                    selected={selected} 
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
+
+                                {panes.editAction === true && 
+                                <EditListItem 
+                                    item={item}
+                                    type="action"
+                                    selected={selected} 
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
+
+                                {actions && (panes.addAction === false && panes.editAction === false) && selected.actions
+                                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                                .map((a) => (
+                                    <div
+                                        key={a.id}
+                                        className="flex-row">
+                                        
+                                        <div
+                                            className="description" 
+                                            style={{"cursor": "pointer"}} 
+                                            onClick={(e) => {setItem(a); setPanes({...panes, "editAction": true, })}}>
+                                                <strong>{a.name}:</strong> {a.description}
+                                        </div>
+
+                                        {/* Delete button */}
+                                        <div style={{"float": "right"}} className="red-button" onClick={() => {
+                                            setSelected({...selected, "actions": [...actions.filter((i) => { return i.id !== a.id })]})
+                                        }}>
+                                            Delete</div>
+                                    </div>
+                                ))
+                                }
+                            </details>
+                        </article>
+                        
+                        <article>
+                            <details id="legendary">
+                                <summary>Legendary ({legendary && legendary.length})
+                                {(panes.addLegendary === false && panes.editLegendary === false) ?
+                                <div
+                                    style={{"float": "right", "cursor": "pointer"}}
+                                    className="green-button"
+                                    onClick={() => {
+                                        setItem({"id": uuidv4(),"name": "", "description": ""}, 
+                                        setPanes({...panes, "addLegendary": true})); 
+                                        document.getElementById("legendary").open = ""}}>Add New</div>
+                                : <div
+                                    style={{"float": "right", "cursor": "pointer"}}
+                                    className="blue-button"
+                                    onClick={() => {
+                                        setItem({}, 
+                                        setPanes({...panes, "addLegendary": false, "editLegendary":false}))}}>Cancel</div>}
+                                </summary>
+
+                                {panes.addLegendary === true && 
+                                <EditListItem 
+                                    item={{"id": uuidv4(),"name": "", "description": ""}}
+                                    type="legendary"
+                                    selected={selected} 
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
+
+                                {panes.editLegendary === true && 
+                                <EditListItem 
+                                    item={item}
+                                    type="legendary"
+                                    selected={selected} 
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
+
+                                {legendary && (panes.addLegendary === false && panes.editLegendary === false) && selected.legendary
+                                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                                .map((l) => (
+                                    <div
+                                        key={l.id}
+                                        className="flex-row">
+                                        
+                                        <div
+                                            className="description" 
+                                            style={{"cursor": "pointer"}} 
+                                            onClick={(e) => {setItem(l); setPanes({...panes, "editLegendary": true, })}}>
+                                                <strong>{l.name}:</strong> {l.description}
+                                        </div>
+
+                                        {/* Delete button */}
+                                        <div style={{"float": "right"}} className="red-button" onClick={() => {console.log(legendary);
+                                            setSelected({...selected, "legendary": [...legendary.filter((i) => {return i.id !== l.id})]})
+                                        }}>
+                                            Delete</div>
+                                    </div>
+                                ))
+                                }
+                            </details>
+                        </article>
+                    </div>
+                </div>
+            </div>}
         </>
     );
 }
