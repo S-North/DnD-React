@@ -124,7 +124,11 @@ header a {
     list-style: none;
     color: white;
     background-color: var(--blue-grey); 
-    padding: 0ch 0.5ch;
+    padding: 0.5ch 1ch;
+}
+
+#details div.ability-box {
+    text-align: center;
 }
 summary::-webkit-details-marker {display: none; }
 #details summary::before {

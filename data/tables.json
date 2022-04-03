@@ -516,9 +516,9 @@
       "ac": "17",
       "size": "large",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
-        "hdBonus": "0"
+        "hdNumber": "18",
+        "hdDice": "8",
+        "hdBonus": "54"
       },
       "hp": "135",
       "cr": "21",
@@ -530,8 +530,12 @@
       "cha": "16",
       "id": 13,
       "senses": [],
-      "languages": ["common", "goblin"],
-      "skills": ["perception"],
+      "languages": [
+        "common",
+        "goblin"
+      ],
+      "saves": [],
+      "skills": [],
       "vulnerabilities": [
         "cold",
         "lightning",
@@ -1145,22 +1149,188 @@
       "CombatantList": [],
       "initiative": [
         {
-          "name": "Wilma Forest",
-          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
-          "enemy": "pc"
+          "id": "4a12a58a-9dc9-4a87-9645-50efea4a1dca",
+          "source": 10,
+          "enemy": "monster",
+          "init": 9
+        },
+        {
+          "id": "ce52f7cd-994f-4aa9-ae70-195c67da2f2c",
+          "source": 10,
+          "enemy": "monster",
+          "init": 9
+        },
+        {
+          "id": "0bfff4a7-92ec-4a90-b779-5357a5c8d777",
+          "source": 10,
+          "enemy": "monster",
+          "init": 9
+        },
+        {
+          "id": "d3d51718-3e3c-4aee-9e5a-99b7ecf96cd9",
+          "source": 10,
+          "enemy": "monster",
+          "init": 9
+        },
+        {
+          "name": "dasd ",
+          "id": "238a18fc-4110-47de-9010-f89c26fefca4",
+          "enemy": "pc",
+          "init": "14"
         },
         {
           "name": "Aski the Furtive",
           "id": "2da38b02-9a13-415b-839f-d99389fa994e",
-          "enemy": "pc"
+          "enemy": "pc",
+          "init": "22"
         },
         {
           "name": "Wallpole",
           "id": "a7ZKxTT",
-          "enemy": "pc"
+          "enemy": "pc",
+          "init": "13"
+        },
+        {
+          "name": "Wilma Forest",
+          "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
+          "enemy": "pc",
+          "init": "16"
         }
       ],
-      "monsters": [],
+      "monsters": [
+        {
+          "name": "Baboon",
+          "description": "A large monkey/ape. Baboons tend to do what they want when they want! They can sleep in the day and look for food at night. They can be active at night and sleep all day long. The groups of Baboons can be very large. The smallest size of them is about 50 members. However, they can have up to 250 members. They have a very complex level of social organisation. ",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "3",
+          "cr": "0",
+          "str": "8",
+          "dex": "14",
+          "con": "11",
+          "int": "4",
+          "wis": "12",
+          "cha": "6",
+          "id": "4a12a58a-9dc9-4a87-9645-50efea4a1dca",
+          "senses": [],
+          "languages": [],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 10,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "name": "Baboon",
+          "description": "A large monkey/ape. Baboons tend to do what they want when they want! They can sleep in the day and look for food at night. They can be active at night and sleep all day long. The groups of Baboons can be very large. The smallest size of them is about 50 members. However, they can have up to 250 members. They have a very complex level of social organisation. ",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "3",
+          "cr": "0",
+          "str": "8",
+          "dex": "14",
+          "con": "11",
+          "int": "4",
+          "wis": "12",
+          "cha": "6",
+          "id": "ce52f7cd-994f-4aa9-ae70-195c67da2f2c",
+          "senses": [],
+          "languages": [],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 10,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "name": "Baboon",
+          "description": "A large monkey/ape. Baboons tend to do what they want when they want! They can sleep in the day and look for food at night. They can be active at night and sleep all day long. The groups of Baboons can be very large. The smallest size of them is about 50 members. However, they can have up to 250 members. They have a very complex level of social organisation. ",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "3",
+          "cr": "0",
+          "str": "8",
+          "dex": "14",
+          "con": "11",
+          "int": "4",
+          "wis": "12",
+          "cha": "6",
+          "id": "0bfff4a7-92ec-4a90-b779-5357a5c8d777",
+          "senses": [],
+          "languages": [],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 10,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "name": "Baboon",
+          "description": "A large monkey/ape. Baboons tend to do what they want when they want! They can sleep in the day and look for food at night. They can be active at night and sleep all day long. The groups of Baboons can be very large. The smallest size of them is about 50 members. However, they can have up to 250 members. They have a very complex level of social organisation. ",
+          "type": "Beast",
+          "ac": "12",
+          "hitDice": {
+            "hdNumber": "1",
+            "hdDice": "6",
+            "hdBonus": "0"
+          },
+          "hp": "3",
+          "cr": "0",
+          "str": "8",
+          "dex": "14",
+          "con": "11",
+          "int": "4",
+          "wis": "12",
+          "cha": "6",
+          "id": "d3d51718-3e3c-4aee-9e5a-99b7ecf96cd9",
+          "senses": [],
+          "languages": [],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 10,
+          "enemy": "monster",
+          "mob": "default"
+        }
+      ],
       "mode": "editing"
     }
   ]

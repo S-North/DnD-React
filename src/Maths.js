@@ -121,4 +121,25 @@ const crToXp = (cr) => {
     }
 }
 
-export { randInt, diceRoll, averageHP, abilityModifier, xpToLevel, crToXp }
+const calculateProficiencyBonus = (cr) => {
+    switch (true) {
+        default:
+            return 9
+        case cr < 5:
+            return 2
+        case cr < 9:
+            return 3
+        case cr < 13:
+            return 4
+        case cr < 17:
+            return 5
+        case cr < 21:
+            return 6
+        case cr < 25:
+            return 7
+        case cr < 29:
+            return 8      
+    }
+}
+
+export { randInt, diceRoll, averageHP, abilityModifier, xpToLevel, crToXp, calculateProficiencyBonus }

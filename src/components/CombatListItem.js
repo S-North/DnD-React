@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const CombatListItem = ({ itemStyle="item-block", item, players, route, encounter, dbUpdate, campaignId, adventureId, background }) => {
@@ -16,9 +15,11 @@ const CombatListItem = ({ itemStyle="item-block", item, players, route, encounte
         // set stat block location
         if (item.enemy === "monster") {
             setdata({"id": item.id, "name": monster.name, "cr": monster.cr, "type": monster.type})
-        } else if (item.enemy === "pc") {
+        } 
+        else if (item.enemy === "pc") {
             setdata({"id": item.id, "name": pc.name, "cr": pc.cr, "type": pc.type})
-        } else if (item.enemy === "npc") {
+        } 
+        else if (item.enemy === "npc") {
             setdata({"name": npc.name, "cr": npc.cr, "type": npc.type})
         }
       return () => {

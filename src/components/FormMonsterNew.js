@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { MdRemoveCircle, MdOutlineNoteAdd, MdOutlineChevronLeft } from "react-icons/md";
+import { FaDiceSix } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
-import { types, damageTypes, conditions, crRange, sizes } from "../Forms";
-import { diceRoll } from '../Maths';
+import { types, damageTypes, conditions, crRange, sizes, sensesList, abilityList, skillList, skillToAbility } from "../Forms";
+import { abilityModifier, diceRoll, calculateProficiencyBonus } from '../Maths';
 
 const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) => {
     // item is the object being edited, selected in the current monster object, type e.g. trait, action, language, etc
@@ -10,7 +12,7 @@ const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) =>
     return (
         <>
             {type === "trait" &&
-                <>
+                <form>
                     <input required type="text" 
                         value={update.name} 
                         onChange={(e) => {setUpdate({...update, "name": e.target.value})}} />
@@ -18,7 +20,8 @@ const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) =>
                         value={update.description} 
                         onChange={(e) => {setUpdate({...update, "description": e.target.value})}} />
                     <div className="green-button" 
-                        onClick={() => {updateItem("edit", "trait", selected, setSelected, [...selected.traits.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div></>}
+                        onClick={() => {updateItem("edit", "trait", selected, setSelected, [...selected.traits.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div>
+                </form>}
             
             {type === "action" &&
                 <>
@@ -97,6 +100,21 @@ const CheckboxArray = ({ array, setMonster, selection, monster, listName }) => {
                     setMonster({...monster, "conditionImmunity": [...data.filter(f => { return f !== e.target.value})]})
                     : setMonster({...monster, "conditionImmunity": [...data, e.target.value]})
                 break
+            case "senses":
+                data.includes(e.target.value) ?
+                    setMonster({...monster, "senses": [...data.filter(f => { return f !== e.target.value})]})
+                    : setMonster({...monster, "senses": [...data, e.target.value]})
+                break
+            case "skills":
+                data.includes(e.target.value) ?
+                    setMonster({...monster, "skills": [...data.filter(f => { return f !== e.target.value})]})
+                    : setMonster({...monster, "skills": [...data, e.target.value]})
+                break
+            case "saves":
+                data.includes(e.target.value) ?
+                    setMonster({...monster, "saves": [...data.filter(f => { return f !== e.target.value})]})
+                    : setMonster({...monster, "saves": [...data, e.target.value]})
+                break
         }
     }
     return (
@@ -106,6 +124,8 @@ const CheckboxArray = ({ array, setMonster, selection, monster, listName }) => {
                 <div className="flex-row">
                     <label style={{"minWidth": "12ch"}} htmlFor={c}>{c}</label>
                     <input
+                        title={c}
+                        style={{"cursor": "pointer"}}
                         type="checkbox" 
                         name={c} 
                         checked={data.includes(c)} 
@@ -118,31 +138,29 @@ const CheckboxArray = ({ array, setMonster, selection, monster, listName }) => {
     );
 }
 
-    const TagItemArray = ({ array }) => {
+const TagItemArray = ({ array }) => {
 
-        return (
-            <>
-            <div className="tag-array">
-            {array && array.map((l) => (
-                <div className="tag">
-                    <div className="language">{l}</div>
-                    <div className="delete">
-                        <img 
-                            src="https://cdn.onlinewebfonts.com/svg/img_304350.png" 
-                            alt="delete" 
-                            width="15px" 
-                            className="close"
-                            onClick={() => {window.alert(`deleted ${l}`)}} />
-                    </div>
-                </div>
-            ))}
-            <div className="add" onClick={() => {window.alert(`add new item`)}}>
-Add
+    return (
+        <>
+        <div className="tag-array">
+        {array && array.map((l) => (
+            <div className="tag">
+                <div className="language">{l}</div>
+                <div className="delete">
+                    <img 
+                        src="https://cdn.onlinewebfonts.com/svg/img_304350.png" 
+                        alt="delete" 
+                        width="15px" 
+                        className="close"
+                        onClick={() => {window.alert(`deleted ${l}`)}} />
                 </div>
             </div>
-            </>
-        );
-    }
+        ))}
+        <div className="add" onClick={() => {window.alert(`add new item`)}}>Add</div>
+        </div>
+        </>
+    );
+}
 
 const updateItem = (action, target, selected, setSelected, update, panes, setPanes) => {
     console.log(update);
@@ -162,7 +180,6 @@ const updateItem = (action, target, selected, setSelected, update, panes, setPan
 }
 
 const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
-    console.log(crRange.sort(function(a,b) {return a-b}))
     const [ selected, setSelected ]                     = useState()
     const [ senses, setSenses ]                         = useState();
     const [ languages, setLanguages ]                   = useState();
@@ -185,7 +202,6 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
     const [ item, setItem ]                             = useState() // temporary state for miscelaneous item beingediting
 
     useEffect(() => {
-        console.log("monster updated")
         if (monster && monster.id) {
             setSelected(monster)
         }
@@ -193,7 +209,7 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
     }, [monster])
 
     useEffect(() => {
-        if (selected && selected.senses)                {setSenses(selected.senses)}
+        // if (selected && selected.senses)                {setSenses(selected.senses)}
         if (selected && selected.languages)             {setLanguages(selected.languages)}
         if (selected && selected.skills)                {setSkills(selected.skills)}
         if (selected && selected.vulnerabilities)       {setVulnerabilities(selected.vulnerabilities)}
@@ -207,8 +223,6 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
       return () => {}
     }, [selected])
     
-
-
     return (
         <>
             {selected && <div id="details">
@@ -254,55 +268,107 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                         placeholder="ac"
                                         value={ selected.ac } 
                                         onChange={(e) =>            {setSelected({...selected, "ac": e.target.value})}} />
-                
+                                    <label htmlFor="profbonus">Proficiency Bonus: {calculateProficiencyBonus(selected.cr)}</label>
+
+                                    
+                                </div>
+                                <div className="flex-row">
+                                    <label htmlFor="number">Hit Dice:</label>
+                                    <input id="number" type="number" placeholder="hp" value={ selected.hitDice.hdNumber }
+                                        onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdNumber": e.target.value}})}} />
+
+                                    <label htmlFor="hp"> d </label>
+                                    <input id="hp" type="number" placeholder="hp" value={ selected.hitDice.hdDice }
+                                        onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdDice": e.target.value}})}} />
+                                    
+                                    <label htmlFor="hp"> + </label>
+                                    <input id="hp" type="number" placeholder="hp" value={ selected.hitDice.hdBonus }
+                                        onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdBonus": e.target.value}})}} />
+                                    <FaDiceSix color="green" style={{"width": "20ch", "height": "30px"}} 
+                                        onClick={() => {setSelected({...selected, "hp": diceRoll(selected.hitDice.hdNumber, selected.hitDice.hdDice, selected.hitDice.hdBonus)[2]})}}></FaDiceSix>
                                     <label htmlFor="hp">HP:</label>
                                     <input id="hp" type="number" placeholder="hp" value={ selected.hp }
                                         onChange={(e) =>            {setSelected({...selected, "hp": e.target.value})}} />
-                                    <label htmlFor="hp">Hit Dice:</label>
-                                    <input id="hp" type="number" placeholder="hp" value={ selected.hp }
-                                        onChange={(e) =>            {setSelected({...selected, "hp": e.target.value})}} />
 
+                                </div>
+                                <div className="flex-row">
                                     <label htmlFor="speed">Speed:</label>
                                     <input id="speed" type="number" placeholder="speed" value={ selected.speed }
                                         onChange={(e) =>            {setSelected({...selected, "speed": e.target.value})}} />
+
                                     <label htmlFor="cr">Challenge:</label>
                                     <select name="cr" id="" value={selected.cr} onChange={e => {console.log(e.target.value); setSelected({...selected, "cr": e.target.value})}}>
                                         {crRange.map(o => (
                                             <option value={o}>{o}</option>
                                         ))}
                                     </select>
+                                    <label htmlFor="xp">XP:</label>
+                                    <input id="xp" type="number" placeholder="xp" value={ selected.xp }
+                                        onChange={(e) =>            {setSelected({...selected, "xp": e.target.value})}} />
                                 </div>
+                                <CheckboxArray array={sensesList} monster={selected} selection={selected.senses} listName="senses" setMonster={setSelected}></CheckboxArray>                    
+
                                 </div>
                             </details>
                         </article>
             
                         <article data="stats">
                             <details>
-                                <summary>Stats & Skills</summary>
-                                <div className="flex-row">
-                                <input  placeholder="str" type="number" value={ selected.str }                            
-                                    onChange={(e) =>            {setSelected({...selected, "str": e.target.value})}} />
-                                <input  placeholder="dex" type="number" value={ selected.dex }
-                                    onChange={(e) =>            {setSelected({...selected, "dex": e.target.value})}} />
-                                <input placeholder="con" type="number" value={ selected.con }
-                                    onChange={(e) =>            {setSelected({...selected, "con": e.target.value})}} />
-                                <input placeholder="int" type="number" value={ selected.int }
-                                    onChange={(e) =>            {setSelected({...selected, "int": e.target.value})}} />
-                                <input placeholder="wis" type="number" value={ selected.wis } 
-                                    onChange={(e) =>            {setSelected({...selected, "wis": e.target.value})}} />
-                                <input placeholder="cha" type="number" value={ selected.cha } 
-                                onChange={(e) =>             {setSelected({...selected, "cha": e.target.value})}} />
-                            </div>
+                                <summary>Abilities</summary>
+                                <form className="flex-row">
+                                <div className="ability-box">
+                                    <h3>Str</h3>                                                                   
+                                    <input placeholder="str" type="number" value={ selected.str }                            
+                                        onChange={(e) =>            {setSelected({...selected, "str": e.target.value})}} />
+                                    <p>{selected.str > 11 ? `+ ${abilityModifier(selected.str)}` : abilityModifier(selected.str)}</p>
+                                </div>
+                                <div className="ability-box">
+                                    <h3>Dex</h3>                                                                   
+                                    <input placeholder="dex" type="number" value={ selected.dex }
+                                        onChange={(e) =>            {setSelected({...selected, "dex": e.target.value})}} />
+                                    <p>{selected.dex > 11 ? `+ ${abilityModifier(selected.dex)}` : abilityModifier(selected.dex)}</p>
+
+                                </div>
+                                <div className="ability-box">
+                                    <h3>Con</h3>                                                                   
+                                    <input placeholder="con" type="number" value={ selected.con }                            
+                                        onChange={(e) =>            {setSelected({...selected, "con": e.target.value})}} />
+                                    <p>{selected.con > 11 ? `+ ${abilityModifier(selected.con)}` : abilityModifier(selected.con)}</p>
+                                </div>
+                                <div className="ability-box">
+                                    <h3>Int</h3>                                                                   
+                                    <input placeholder="int" type="number" value={ selected.int }                            
+                                        onChange={(e) =>            {setSelected({...selected, "int": e.target.value})}} />
+                                    <p>{selected.int > 11 ? `+ ${abilityModifier(selected.int)}` : abilityModifier(selected.int)}</p>
+                                </div>
+                                <div className="ability-box">
+                                    <h3>Wis</h3>                                                                   
+                                    <input placeholder="wis" type="number" value={ selected.wis }                            
+                                        onChange={(e) =>            {setSelected({...selected, "wis": e.target.value})}} />
+                                    <p>{selected.wis > 11 ? `+ ${abilityModifier(selected.wis)}` : abilityModifier(selected.wis)}</p>
+                                </div>
+                                <div className="ability-box">
+                                    <h3>Char</h3>                                                                   
+                                    <input placeholder="cha" type="number" value={ selected.cha }                            
+                                        onChange={(e) =>            {setSelected({...selected, "cha": e.target.value})}} />
+                                    <p>{selected.cha > 11 ? `+ ${abilityModifier(selected.cha)}` : abilityModifier(selected.cha)}</p>
+                                </div>
+                            </form>
                             </details>
                         </article>
 
                         <article data="languages">
                             <details>
-                                <summary>Languages & Proficiencies</summary>
+                                <summary>Languages, Skills & Saves</summary>
                                 <p>Languages</p>
                                 <TagItemArray array={languages}></TagItemArray>
-                                <p>Proficiencies</p>
-                                <TagItemArray array={skills}></TagItemArray>
+                                <hr/>
+                                <p>Skills</p>
+                                <CheckboxArray array={skillList} monster={selected} selection={selected.skills} listName="skills" setMonster={setSelected}></CheckboxArray>
+                                <hr/>
+                                <p>Saves</p>
+                                <CheckboxArray array={abilityList} monster={selected} selection={selected.saves} listName="saves" setMonster={setSelected}></CheckboxArray>
+                                {/* <TagItemArray array={skills}></TagItemArray> */}
                             </details>
                         </article>
 
@@ -348,20 +414,22 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                             <details id="traits">
                                 <summary>Traits ({traits && traits.length})
                                     {(panes.addTrait === false && panes.editTrait === false) ?
-                                    <div
-                                        style={{"float": "right", "cursor": "pointer"}}
-                                        className="green-button"
+                                    <MdOutlineNoteAdd 
+                                        color="white"
+                                        size="2ch"
+                                        style={{"float": "right", "cursor": "pointer", "width": "5ch"}}                                        
                                         onClick={() => {
                                             setItem({"id": uuidv4()}, 
                                             setPanes({...panes, "addTrait": true})); 
-                                            document.getElementById("traits").open = ""}}>Add New</div>
-                                    : <div
+                                            document.getElementById("traits").open = ""}}>Add New</MdOutlineNoteAdd>
+                                    : <MdOutlineChevronLeft
+                                        color="white"
+                                        size="2ch"
                                         style={{"float": "right", "cursor": "pointer"}}
-                                        className="blue-button"
                                         onClick={() => {
                                             setItem({"id": uuidv4()}, 
                                             setPanes({...panes, "addTrait": false, "editTrait":false})); 
-                                            document.getElementById("traits").open = ""}}>Cancel</div>}
+                                            document.getElementById("traits").open = ""}}>Cancel</MdOutlineChevronLeft>}
                                 </summary>
                                 {panes.addTrait === true && 
                                 <EditListItem 
@@ -400,17 +468,17 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                         </div>
 
                                         {/* Delete button */}
-                                        <button style={{"float": "right"}} className="btn red" onClick={() => {
+                                        <MdRemoveCircle title="remove" color="red" style={{"float": "right", "cursor": "pointer"}} onClick={() => {
                                             setSelected({...selected, "traits": [...traits.filter((i) => { return i.id !== t.id })]})
                                         }}>
-                                            Delete</button>
+                                            Delete</MdRemoveCircle>
                                     </div>
                                 ))
                             }
                             </details>
                         </article>
 
-                        <article>
+                        <article data="actions">
                             <details id="actions">
                                 <summary>Actions ({actions && actions.length})
                                 {(panes.addAction === false && panes.editAction === false) ?
@@ -464,10 +532,10 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                         </div>
 
                                         {/* Delete button */}
-                                        <div style={{"float": "right"}} className="red-button" onClick={() => {
+                                        <MdRemoveCircle title="remove" color="red" style={{"float": "right", "cursor": "pointer"}} onClick={() => {
                                             setSelected({...selected, "actions": [...actions.filter((i) => { return i.id !== a.id })]})
                                         }}>
-                                            Delete</div>
+                                            Delete</MdRemoveCircle>
                                     </div>
                                 ))
                                 }
@@ -528,10 +596,10 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                         </div>
 
                                         {/* Delete button */}
-                                        <div style={{"float": "right"}} className="red-button" onClick={() => {console.log(legendary);
+                                        <MdRemoveCircle title="remove" color="red" style={{"float": "right", "cursor": "pointer"}} onClick={() => {console.log(legendary);
                                             setSelected({...selected, "legendary": [...legendary.filter((i) => {return i.id !== l.id})]})
                                         }}>
-                                            Delete</div>
+                                            Delete</MdRemoveCircle>
                                     </div>
                                 ))
                                 }
