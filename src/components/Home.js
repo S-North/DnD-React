@@ -9,7 +9,7 @@ const Home = ({ title, config, campaigns, monsters, setConfig, addItem, dbUpdate
             <div className="main-header">
                 <h1>{ title }</h1>
             </div>
-            <div className="section">
+            <section id="main-section">
                 <ItemList 
                     title="Active Campaigns"
                     description="Please select a campaign below to access campaign notes, npcs, adventures and encounters."
@@ -33,7 +33,7 @@ const Home = ({ title, config, campaigns, monsters, setConfig, addItem, dbUpdate
                     setConfig={ setConfig }
                     addItem={ addItem }/>
                 <DiceRoller /> */}
-            </div>
+            </section>
         </>
     );
 }

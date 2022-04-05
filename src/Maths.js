@@ -9,9 +9,9 @@ const randInt = (start, end) => {
 // roll any numer of dice, with any number of sides, then add an optional bonus integer
 // takes in 2 mandatory integers, and an optional integer for the bonus
 // returns an array containing an array of all the dice results, followed by the plus, then a single integer of the total
-const diceRoll = (number, sides, bonus=0) => {
-    console.log(number,sides,bonus);
-    let n = parseInt(number);
+const diceRoll = (dice, sides, bonus=0) => {
+    console.log(dice,sides,bonus);
+    let n = parseInt(dice);
     let s = parseInt(sides);
     let b = parseInt(bonus);
     let i;

@@ -36,14 +36,21 @@ const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) =>
                         onChange={(e) => {setUpdate({...update, "attack": e.target.value})}} />
                     <div className="flex-row">
                         <input required type="number" 
-                            value={update.damage.number} 
-                            onChange={(e) => {setUpdate({...update, "damage": {...update.damage, "number": e.target.value}})}} />
-                        <input required type="number"
                             value={update.damage.dice} 
                             onChange={(e) => {setUpdate({...update, "damage": {...update.damage, "dice": e.target.value}})}} />
+                        <input required type="number"
+                            value={update.damage.sides} 
+                            onChange={(e) => {setUpdate({...update, "damage": {...update.damage, "sides": e.target.value}})}} />
                         <input required type="number" 
                             value={update.damage.bonus} 
                             onChange={(e) => {setUpdate({...update, "damage": {...update.damage, "bonus": e.target.value}})}} />
+                        <select name="type" id="" 
+                            value={update.damage.type} 
+                            onChange={e => {setUpdate({...update, "damage": {...update.damage, "type": e.target.value}})}}>
+                            {damageTypes.map(o => (
+                                <option key={o} value={o}>{o}</option>
+                            ))}
+                        </select>
                     </div>
                     <div className="green-button" 
                         onClick={() => {updateItem("edit", "action", selected, setSelected, [...selected.actions.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div></>}
@@ -58,6 +65,21 @@ const EditListItem = ({ selected, setSelected, item, type, panes, setPanes }) =>
                         onChange={(e) => {setUpdate({...update, "description": e.target.value})}} />
                     <div className="green-button" 
                         onClick={() => {updateItem("edit", "legendary", selected, setSelected, [...selected.legendary.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div></>}
+            {type === "legendaryActions" &&
+                <>
+                    <input required type="text" 
+                        value={update.name} 
+                        onChange={(e) => {setUpdate({...update, "name": e.target.value})}} />
+                    <textarea required rows="10" type="text" 
+                        value={update.description} 
+                        onChange={(e) => {setUpdate({...update, "description": e.target.value})}} />
+                    <label htmlFor="actions">Actions</label>
+                    <input name="actions" reqired type="number"
+                        value={update.actions} 
+                        onChange={(e) => {setUpdate({...update, "actions": e.target.value})}} ></input>
+                    <div className="green-button" 
+                        onClick={() => {updateItem("edit", "legendaryActions", selected, setSelected, [...selected.legendaryActions.filter(f => { return f.id !== update.id}), {...update}], panes, setPanes)}}>Save</div></>}
+            
             {console.log(type)}
         </>
     );
@@ -67,8 +89,6 @@ const CheckboxArray = ({ array, setMonster, selection, monster, listName }) => {
     const [ data, setData ] = useState()
     useEffect(() => {
         setData(selection)
-        console.log(selection)
-        console.log(listName)
       return () => {}
     }, [monster])
     
@@ -119,21 +139,23 @@ const CheckboxArray = ({ array, setMonster, selection, monster, listName }) => {
     }
     return (
         <>
-        {data && array.map((c) => (
-            <div key={c}>
-                <div className="flex-row">
-                    <label style={{"minWidth": "12ch"}} htmlFor={c}>{c}</label>
-                    <input
-                        title={c}
-                        style={{"cursor": "pointer"}}
-                        type="checkbox" 
-                        name={c} 
-                        checked={data.includes(c)} 
-                        value={c} 
-                        onChange={(e) => checkHandler(e)} />
+            <div className="flex-checkboxes">
+                {data && array.map((c) => (
+                <div key={c}>
+                    <div>
+                        <input
+                            title={c}
+                            style={{"cursor": "pointer"}}
+                            type="checkbox" 
+                            name={c} 
+                            checked={data.includes(c)} 
+                            value={c} 
+                            onChange={(e) => checkHandler(e)} />
+                        <label style={{"minWidth": "12ch", "display": "inline-block"}} htmlFor={c}>{c}</label>
+                    </div>
                 </div>
+                ))}    
             </div>
-        ))}    
         </>
     );
 }
@@ -144,7 +166,7 @@ const TagItemArray = ({ array }) => {
         <>
         <div className="tag-array">
         {array && array.map((l) => (
-            <div className="tag">
+            <div key={l} className="tag">
                 <div className="language">{l}</div>
                 <div className="delete">
                     <img 
@@ -197,7 +219,11 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                                             "addTrait": false, 
                                                             "editTrait": false,
                                                             "addAction": false,
-                                                            "editAction": false
+                                                            "editAction": false,
+                                                            "addLegendary": false,
+                                                            "editLegendary": false,
+                                                            "addLegendaryActions": false,
+                                                            "editLegendaryActions": false
                                                         })
     const [ item, setItem ]                             = useState() // temporary state for miscelaneous item beingediting
 
@@ -231,7 +257,7 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                         <article data="basic-details">
                             <details open>
                                 <summary>Basic Details</summary>
-                                <div>
+                                <form>
                                 <label htmlFor="name">Name:</label>
                                 <input id="name"
                                     type="text" 
@@ -243,13 +269,13 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                     <label htmlFor="type">Size:</label>
                                     <select name="size" id="" value={selected.size} onChange={e => {console.log(e.target.value); setSelected({...selected, "size": e.target.value})}}>
                                         {sizes.map(o => (
-                                            <option value={o}>{o}</option>
+                                            <option key={o} value={o}>{o}</option>
                                         ))}
                                     </select> 
                                     <label htmlFor="type">Type:</label>
-                                    <select name="type" id="" defaultValue="medium" value={selected.type} onChange={e => {console.log(e.target.value); setSelected({...selected, "type": e.target.value})}}>
+                                    <select name="type" id="" value={selected.type} onChange={e => {console.log(e.target.value); setSelected({...selected, "type": e.target.value})}}>
                                         {types.map(o => (
-                                            <option value={o}>{o}</option>
+                                            <option key={o} value={o}>{o}</option>
                                         ))}
                                     </select>
                                 </div>
@@ -273,19 +299,19 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                     
                                 </div>
                                 <div className="flex-row">
-                                    <label htmlFor="number">Hit Dice:</label>
-                                    <input id="number" type="number" placeholder="hp" value={ selected.hitDice.hdNumber }
-                                        onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdNumber": e.target.value}})}} />
+                                    <label htmlFor="dice">Hit Dice:</label>
+                                    <input id="dice" type="number" placeholder="hp" value={ selected.hitDice.hdDice }
+                                        onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdDice": e.target.value}})}} />
 
                                     <label htmlFor="hp"> d </label>
-                                    <input id="hp" type="number" placeholder="hp" value={ selected.hitDice.hdDice }
-                                        onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdDice": e.target.value}})}} />
+                                    <input id="hp" type="number" placeholder="hp" value={ selected.hitDice.hdSides }
+                                        onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdSides": e.target.value}})}} />
                                     
                                     <label htmlFor="hp"> + </label>
                                     <input id="hp" type="number" placeholder="hp" value={ selected.hitDice.hdBonus }
                                         onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdBonus": e.target.value}})}} />
                                     <FaDiceSix color="green" style={{"width": "20ch", "height": "30px"}} 
-                                        onClick={() => {setSelected({...selected, "hp": diceRoll(selected.hitDice.hdNumber, selected.hitDice.hdDice, selected.hitDice.hdBonus)[2]})}}></FaDiceSix>
+                                        onClick={() => {setSelected({...selected, "hp": diceRoll(selected.hitDice.hdDice, selected.hitDice.hdSides, selected.hitDice.hdBonus)[2]})}}></FaDiceSix>
                                     <label htmlFor="hp">HP:</label>
                                     <input id="hp" type="number" placeholder="hp" value={ selected.hp }
                                         onChange={(e) =>            {setSelected({...selected, "hp": e.target.value})}} />
@@ -299,7 +325,7 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                     <label htmlFor="cr">Challenge:</label>
                                     <select name="cr" id="" value={selected.cr} onChange={e => {console.log(e.target.value); setSelected({...selected, "cr": e.target.value})}}>
                                         {crRange.map(o => (
-                                            <option value={o}>{o}</option>
+                                            <option key={o} value={o}>{o}</option>
                                         ))}
                                     </select>
                                     <label htmlFor="xp">XP:</label>
@@ -308,7 +334,7 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                 </div>
                                 <CheckboxArray array={sensesList} monster={selected} selection={selected.senses} listName="senses" setMonster={setSelected}></CheckboxArray>                    
 
-                                </div>
+                                </form>
                             </details>
                         </article>
             
@@ -361,13 +387,13 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                             <details>
                                 <summary>Languages, Skills & Saves</summary>
                                 <p>Languages</p>
-                                <TagItemArray array={languages}></TagItemArray>
+                                <form><TagItemArray array={languages}></TagItemArray></form>
                                 <hr/>
                                 <p>Skills</p>
-                                <CheckboxArray array={skillList} monster={selected} selection={selected.skills} listName="skills" setMonster={setSelected}></CheckboxArray>
+                                <form><CheckboxArray array={skillList} monster={selected} selection={selected.skills} listName="skills" setMonster={setSelected}></CheckboxArray></form>
                                 <hr/>
                                 <p>Saves</p>
-                                <CheckboxArray array={abilityList} monster={selected} selection={selected.saves} listName="saves" setMonster={setSelected}></CheckboxArray>
+                                <form><CheckboxArray array={abilityList} monster={selected} selection={selected.saves} listName="saves" setMonster={setSelected}></CheckboxArray></form>
                                 {/* <TagItemArray array={skills}></TagItemArray> */}
                             </details>
                         </article>
@@ -375,35 +401,35 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                         <article data="vulnerability">
                             <details>
                                 <summary>Vulnerabilities ({vulnerabilities && vulnerabilities.length})</summary>
-                                <CheckboxArray array={damageTypes} monster={selected} selection={selected.vulnerabilities} listName="vulnerabilities" setMonster={setSelected}></CheckboxArray>                    
+                                <form><CheckboxArray array={damageTypes} monster={selected} selection={selected.vulnerabilities} listName="vulnerabilities" setMonster={setSelected}></CheckboxArray></form>                 
                             </details>
                         </article>
 
                         <article data="resistances">
                             <details>
                                 <summary>Resistances ({resistances && resistances.length})</summary>
-                                <CheckboxArray array={damageTypes} monster={selected} selection={selected.resistances} listName="resistances" setMonster={setSelected}></CheckboxArray>
+                                <form><CheckboxArray array={damageTypes} monster={selected} selection={selected.resistances} listName="resistances" setMonster={setSelected}></CheckboxArray></form>
                             </details>
                         </article>
 
                         <article data="damage-immunity">
                             <details>
                                 <summary>Damage Immunity ({damageImmunity && damageImmunity.length})</summary>
-                                <CheckboxArray array={damageTypes} monster={selected} selection={selected.damageImmunity} listName="damageImmunity" setMonster={setSelected}></CheckboxArray>
+                                <form><CheckboxArray array={damageTypes} monster={selected} selection={selected.damageImmunity} listName="damageImmunity" setMonster={setSelected}></CheckboxArray></form>
                             </details>
                         </article>
 
                         <article data="condition-immunity">
                             <details>
                                 <summary>Condition Immunity ({conditionImmunity && conditionImmunity.length})</summary>
-                                <CheckboxArray array={conditions} monster={selected} selection={selected.conditionImmunity} listName="conditionImmunity" setMonster={setSelected}></CheckboxArray>
+                                <form><CheckboxArray array={conditions} monster={selected} selection={selected.conditionImmunity} listName="conditionImmunity" setMonster={setSelected}></CheckboxArray></form>
                             </details>
                         </article>
                         
                         <article id="conditions">
                             <details>
                                 <summary>Conditions ({conditions && selected.conditions.length})</summary>
-                                <CheckboxArray array={conditions} monster={selected} selection={selected.conditions} listName="conditions" setMonster={setSelected}></CheckboxArray>
+                                <form><CheckboxArray array={conditions} monster={selected} selection={selected.conditions} listName="conditions" setMonster={setSelected}></CheckboxArray></form>
                             </details>
                         </article>
 
@@ -475,6 +501,7 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                     </div>
                                 ))
                             }
+                            {selected.traits.length === 0 && <em>Nothing here. Use the button in the header to add a trait.</em>}
                             </details>
                         </article>
 
@@ -486,20 +513,21 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                     style={{"float": "right", "cursor": "pointer"}}
                                     className="green-button"
                                     onClick={() => {
-                                        setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}, 
+                                        setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", sides: "", dice: "", type: ""}}, 
                                         setPanes({...panes, "addAction": true})); 
-                                        document.getElementById("actions").open = ""}}>Add New</div>
+                                        document.getElementById("actions").open = false}}>Add New</div>
                                 : <div
                                     style={{"float": "right", "cursor": "pointer"}}
                                     className="blue-button"
                                     onClick={() => {
-                                        setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}, 
-                                        setPanes({...panes, "addAction": false, "editTrait":false}))}}>Cancel</div>}
+                                        document.getElementById("actions").open = false; // this keeps the details open. Why open = false does this, I don't know!
+                                        setItem({"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", sides: "", dice: "", type: ""}}, 
+                                        setPanes({...panes, "addAction": false, "editAction":false}))}}>Cancel</div>}
                                 </summary>
 
                                 {panes.addAction === true && 
                                 <EditListItem 
-                                    item={{"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", dice: "", number: "", type: ""}}}
+                                    item={{"id": uuidv4(),"name": "", "description": "", "attack": "", "damage": {bonus: "", sides: "", dice: "", type: ""}}}
                                     type="action"
                                     selected={selected} 
                                     setSelected={setSelected} 
@@ -539,6 +567,7 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                     </div>
                                 ))
                                 }
+                            {selected.actions.length === 0 && <em>Nothing here. Use the button in the header to add an action.</em>}
                             </details>
                         </article>
                         
@@ -603,6 +632,72 @@ const FormMonsterNew = ({ monsters, monster, dbUpdate }) => {
                                     </div>
                                 ))
                                 }
+                            {selected.legendary.length === 0 && <em>Nothing here. Use the button in the header to add legendary details.</em>}
+                            </details>
+                        </article>
+
+                        <article>
+                            <details id="legendaryActions">
+                                <summary>Legendary ({legendaryActions && legendaryActions.length})
+                                {(panes.addLegendaryActions === false && panes.editLegendaryActions === false) ?
+                                <div
+                                    style={{"float": "right", "cursor": "pointer"}}
+                                    className="green-button"
+                                    onClick={() => {
+                                        setItem({"id": uuidv4(),"name": "", "description": ""}, 
+                                        setPanes({...panes, "addLegendaryActions": true})); 
+                                        document.getElementById("legendary").open = ""}}>Add New</div>
+                                : <div
+                                    style={{"float": "right", "cursor": "pointer"}}
+                                    className="blue-button"
+                                    onClick={() => {
+                                        setItem({}, 
+                                        setPanes({...panes, "addLegendaryActions": false, "editLegendaryActions":false}))}}>Cancel</div>}
+                                </summary>
+
+                                {panes.addLegendaryActions === true && 
+                                <EditListItem 
+                                    item={{"id": uuidv4(),"name": "", "description": ""}}
+                                    type="legendaryActions"
+                                    selected={selected} 
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
+
+                                {panes.editLegendary === true && 
+                                <EditListItem 
+                                    item={item}
+                                    type="legendaryActions"
+                                    selected={selected} 
+                                    setSelected={setSelected} 
+                                    panes={panes} 
+                                    setPanes={setPanes}>
+                                </EditListItem>}
+
+                                {legendaryActions && (panes.addLegendaryActions === false && panes.editLegendaryActions === false) && selected.legendaryActions
+                                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                                .map((l) => (
+                                    <div
+                                        key={l.id}
+                                        className="flex-row">
+                                        
+                                        <div
+                                            className="description" 
+                                            style={{"cursor": "pointer"}} 
+                                            onClick={(e) => {setItem(l); setPanes({...panes, "editLegendaryActions": true, })}}>
+                                                <strong>{l.name}:</strong> {l.description}
+                                        </div>
+
+                                        {/* Delete button */}
+                                        <MdRemoveCircle title="remove" color="red" style={{"float": "right", "cursor": "pointer"}} onClick={() => {console.log(legendary);
+                                            setSelected({...selected, "legendaryActions": [...legendaryActions.filter((i) => {return i.id !== l.id})]})
+                                        }}>
+                                            Delete</MdRemoveCircle>
+                                    </div>
+                                ))
+                                }
+                            {selected.legendaryActions.length === 0 && <em>Nothing here. Use the button in the header to add legendary actions.</em>}
                             </details>
                         </article>
                     </div>

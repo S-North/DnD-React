@@ -154,8 +154,8 @@
       "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
       "ac": "15",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "7",
@@ -174,10 +174,13 @@
         "common",
         "goblin"
       ],
+      "saves": [],
+      "skills": [],
       "vulnerabilities": [],
       "resistances": [],
       "damageImmunity": [],
       "conditionImmunity": [],
+      "conditions": [],
       "traits": [
         {
           "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
@@ -192,8 +195,8 @@
           "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
           "attack": "4",
           "damage": {
-            "number": "1",
-            "dice": "6",
+            "dice": "1",
+            "sides": "6",
             "bonus": "2",
             "type": "slashing"
           }
@@ -204,14 +207,14 @@
           "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
           "attack": "4",
           "damage": {
-            "number": "1",
-            "dice": "6",
+            "dice": "1",
+            "sides": "6",
             "bonus": "2",
             "type": "piercing"
           }
         }
       ],
-      "legendary": {},
+      "legendary": [],
       "legendaryActions": []
     },
     {
@@ -220,8 +223,8 @@
       "description": "The odor of sulfur and pumice surrounds a red dragon, whose swept-back horns and spinal frill define its silhouette. Its beaked snout vents smoke at all times, and its eyes dance with flame when it is angry.",
       "ac": "17",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "75",
@@ -244,8 +247,8 @@
       "description": "Cloud giants live extravagant lives high above the world, showing little concern for the plights of other races except as amusement. They are muscular with light skin and have hair of silver or blue.",
       "ac": "14",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "200",
@@ -268,8 +271,8 @@
       "description": "A phase Spider possesses the magical ability to phase in and out of the Ethereal Plane. It seems to appear out of nowhere and quickly vanishes after attacking. Its Movement on the Ethereal Plane before coming back to The Material Plane makes it seem like it can Teleport.",
       "ac": "13",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "32",
@@ -293,8 +296,8 @@
       "description": "A pig that giggles if you are more than 5' from it",
       "ac": "27",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "1",
@@ -316,8 +319,8 @@
       "description": "His ears are batwings and he can hover.",
       "ac": "12",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "10",
@@ -340,8 +343,8 @@
       "description": "How does this thing even move?!",
       "ac": "8",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "160",
@@ -365,8 +368,8 @@
       "type": "Celestial",
       "ac": "13",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "130",
@@ -395,8 +398,8 @@
       "type": "Plant",
       "ac": "9",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "10",
@@ -425,8 +428,8 @@
       "type": "Beast",
       "ac": "12",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "3",
@@ -455,8 +458,8 @@
       "type": "Humanoid",
       "ac": "12",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "11",
@@ -485,8 +488,8 @@
       "type": "Beast",
       "ac": "12",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "7",
@@ -516,8 +519,8 @@
       "ac": "17",
       "size": "large",
       "hitDice": {
-        "hdNumber": "18",
-        "hdDice": "8",
+        "hdDice": "18",
+        "hdSides": "8",
         "hdBonus": "54"
       },
       "hp": "135",
@@ -561,7 +564,18 @@
       "conditions": [],
       "traits": [],
       "actions": [],
-      "legendary": [],
+      "legendary": [
+        {
+          "id": "f04ef083-b08b-4fb7-8067-48807a7abc2d",
+          "name": "Actions",
+          "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+        },
+        {
+          "id": "15e53097-8858-4663-b2ed-60de43b67e8e",
+          "name": "Actions",
+          "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+        }
+      ],
       "legendaryActions": []
     },
     {
@@ -570,8 +584,8 @@
       "type": "Fiend",
       "ac": "19",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "300",
@@ -600,8 +614,8 @@
       "type": "Monstrosity",
       "ac": "17",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "199",
@@ -630,8 +644,8 @@
       "type": "Construct",
       "ac": "20",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "210",
@@ -660,8 +674,8 @@
       "type": "Aberration",
       "ac": "17",
       "hitDice": {
-        "hdNumber": "18",
-        "hdDice": "10",
+        "hdDice": "18",
+        "hdSides": "10",
         "hdBonus": "36"
       },
       "hp": "135",
@@ -690,8 +704,8 @@
       "type": "Elemental",
       "ac": "17",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "200",
@@ -720,8 +734,8 @@
       "type": "Plant",
       "ac": "15",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "136",
@@ -750,8 +764,8 @@
       "type": "Giant",
       "ac": "15",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "84",
@@ -780,8 +794,8 @@
       "type": "Aberration",
       "ac": "14",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "114",
@@ -810,8 +824,8 @@
       "type": "Celestial",
       "ac": "19",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "97",
@@ -840,8 +854,8 @@
       "type": "Beast",
       "ac": "15",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "52",
@@ -870,8 +884,8 @@
       "type": "Construct",
       "ac": "18",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": "33",
@@ -900,8 +914,8 @@
       "type": "Monstrosity",
       "ac": "18",
       "hitDice": {
-        "hdNumber": "1",
-        "hdDice": "6",
+        "hdDice": "1",
+        "hdSides": "6",
         "hdBonus": "0"
       },
       "hp": 456,
@@ -930,8 +944,8 @@
       "type": "Monstrosity",
       "ac": "25",
       "hitDice": {
-        "hdNumber": "33",
-        "hdDice": "20",
+        "hdDice": "33",
+        "hdSides": "20",
         "hdBonus": "330"
       },
       "hp": 702,
@@ -945,6 +959,8 @@
       "id": 26,
       "senses": [],
       "languages": [],
+      "skills": [],
+      "saves": [],
       "vulnerabilities": [],
       "resistances": [],
       "damageImmunity": [],
@@ -983,8 +999,8 @@
           "description": "Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36 (4d12 + 10) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the tarrasque can't bite another target.",
           "attack": "19",
           "damage": {
-            "number": "4",
-            "dice": "12",
+            "dice": "4",
+            "sides": "12",
             "bonus": "10",
             "type": "piercing"
           }
@@ -995,8 +1011,8 @@
           "description": "Melee Weapon Attack: +19 to hit, reach 15ft., one target. Hit: 28 (4d8 + 10) slashing damage.",
           "attack": "19",
           "damage": {
-            "number": "4",
-            "dice": "8",
+            "dice": "4",
+            "sides": "8",
             "bonus": "10",
             "type": "slashing"
           }
@@ -1007,8 +1023,8 @@
           "description": "Melee Weapon Attack: +19 to hit, reach 10ft., one target. Hit: 32 (4d10 + 10) piercing damage.",
           "attack": "19",
           "damage": {
-            "number": "4",
-            "dice": "10",
+            "dice": "4",
+            "sides": "10",
             "bonus": "10",
             "type": "piercing"
           }
@@ -1019,8 +1035,8 @@
           "description": "Melee Weapon Attack: +19 to hit, reach 20ft., one target. Hit: 24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be knocked prone.",
           "attack": "19",
           "damage": {
-            "number": "4",
             "dice": "4",
+            "sides": "4",
             "bonus": "10",
             "type": "bludgeoning"
           }
@@ -1071,8 +1087,8 @@
       "wis": "14",
       "cha": "14",
       "hitDice": {
-        "hdNumber": "11",
-        "hdDice": "8",
+        "hdDice": "11",
+        "hdSides": "8",
         "hdBonus": "33"
       },
       "id": 27,
@@ -1101,8 +1117,8 @@
       "wis": "6",
       "cha": "1",
       "hitDice": {
-        "hdNumber": "6",
-        "hdDice": "10",
+        "hdDice": "6",
+        "hdSides": "10",
         "hdBonus": "12"
       },
       "id": 28,
@@ -1152,49 +1168,55 @@
           "id": "4a12a58a-9dc9-4a87-9645-50efea4a1dca",
           "source": 10,
           "enemy": "monster",
-          "init": 9
+          "init": 4
         },
         {
           "id": "ce52f7cd-994f-4aa9-ae70-195c67da2f2c",
           "source": 10,
           "enemy": "monster",
-          "init": 9
+          "init": 4
         },
         {
           "id": "0bfff4a7-92ec-4a90-b779-5357a5c8d777",
           "source": 10,
           "enemy": "monster",
-          "init": 9
+          "init": 4
         },
         {
           "id": "d3d51718-3e3c-4aee-9e5a-99b7ecf96cd9",
           "source": 10,
           "enemy": "monster",
-          "init": 9
+          "init": 4
+        },
+        {
+          "id": "53e75224-98a7-4599-9fd4-cb4ef7a4dc7f",
+          "source": 17,
+          "enemy": "monster",
+          "init": 2
         },
         {
           "name": "dasd ",
           "id": "238a18fc-4110-47de-9010-f89c26fefca4",
           "enemy": "pc",
-          "init": "14"
+          "init": "3"
         },
         {
           "name": "Aski the Furtive",
           "id": "2da38b02-9a13-415b-839f-d99389fa994e",
           "enemy": "pc",
-          "init": "22"
+          "init": "3"
         },
         {
           "name": "Wallpole",
           "id": "a7ZKxTT",
           "enemy": "pc",
-          "init": "13"
+          "init": "3"
         },
         {
           "name": "Wilma Forest",
           "id": "c1c1fe14-92f5-46d5-b9e5-8a44be37fa61",
           "enemy": "pc",
-          "init": "16"
+          "init": "3"
         }
       ],
       "monsters": [
@@ -1204,8 +1226,8 @@
           "type": "Beast",
           "ac": "12",
           "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
+            "hdDice": "1",
+            "hdSides": "6",
             "hdBonus": "0"
           },
           "hp": "3",
@@ -1237,8 +1259,8 @@
           "type": "Beast",
           "ac": "12",
           "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
+            "hdDice": "1",
+            "hdSides": "6",
             "hdBonus": "0"
           },
           "hp": "3",
@@ -1270,8 +1292,8 @@
           "type": "Beast",
           "ac": "12",
           "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
+            "hdDice": "1",
+            "hdSides": "6",
             "hdBonus": "0"
           },
           "hp": "3",
@@ -1303,8 +1325,8 @@
           "type": "Beast",
           "ac": "12",
           "hitDice": {
-            "hdNumber": "1",
-            "hdDice": "6",
+            "hdDice": "1",
+            "hdSides": "6",
             "hdBonus": "0"
           },
           "hp": "3",
@@ -1327,6 +1349,39 @@
           "legendary": {},
           "legendaryActions": [],
           "source": 10,
+          "enemy": "monster",
+          "mob": "default"
+        },
+        {
+          "name": "Aboleth",
+          "description": "Aboleths lair in subterranean lakes or the rocky depths of the ocean, often surrounded by the ruins of an ancient, fallen aboleth city. An aboleth spends most of its existence underwater, surfacing occasionally to treat with visitors or deranged worshipers.\n\nLair Actions\n\nWhen fighting inside its lair, an aboleth can invoke the ambient magic to take lair actions. On initiative count 20 (losing initiative ties), the aboleth takes a lair action to cause one of the following effects:\n\nThe aboleth casts phantasmal force (no components required) on any number of creatures it can see within 60 feet of it. While maintaining concentration on this effect, the aboleth can’t take other lair actions. If a target succeeds on the saving throw or if the effect ends for it, the target is immune to the aboleth’s phantasmal force lair action for the next 24 hours, although such a creature can choose to be affected.\nPools of water within 90 feet of the aboleth surge outward in a grasping tide. Any creature on the ground within 20 feet of such a pool must succeed on a DC 14 Strength saving throw or be pulled up to 20 feet into the water and knocked prone. The aboleth can’t use this lair action again until it has used a different one.\nWater in the aboleth’s lair magically becomes a conduit for the creature’s rage. The aboleth can target any number of creatures it can see in such water within 90 feet of it. A target must succeed on a DC 14 Wisdom saving throw or take 7 (2d6) psychic damage. The aboleth can’t use this lair action again until it has used a different one.\n\nRegional Effects\n\nThe region containing an aboleth’s lair is warped by the creature’s presence, which creates one or more of the following effects:\n\nUnderground surfaces within 1 mile of the aboleth’s lair are slimy and wet and are difficult terrain.\nWater sources within 1 mile of the lair are supernaturally fouled. Enemies of the aboleth that drink such water vomit it within minutes.\nAs an action, the aboleth can create an illusory image of itself within 1 mile of the lair. The copy can appear at any location the aboleth has seen before or in any location a creature charmed by the aboleth can currently see. Once created, the image lasts for as long as the aboleth maintains concentration, as if concentrating on a spell. Although the image is intangible, it looks, sounds, and can move like the aboleth. The aboleth can sense, speak, and use telepathy from the image’s position as if present at that position. If the image takes any damage, it disappears.\n\nIf the aboleth dies, the first two effects fade over the course of 3d10 days.",
+          "type": "Aberration",
+          "ac": "17",
+          "hitDice": {
+            "hdDice": "18",
+            "hdSides": "10",
+            "hdBonus": "36"
+          },
+          "hp": "135",
+          "cr": "10",
+          "str": "21",
+          "dex": "9",
+          "con": "15",
+          "int": "18",
+          "wis": "15",
+          "cha": "18",
+          "id": "53e75224-98a7-4599-9fd4-cb4ef7a4dc7f",
+          "senses": [],
+          "languages": [],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "traits": [],
+          "actions": [],
+          "legendary": {},
+          "legendaryActions": [],
+          "source": 17,
           "enemy": "monster",
           "mob": "default"
         }
