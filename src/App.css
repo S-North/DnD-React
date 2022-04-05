@@ -56,7 +56,11 @@ h3 {
     font-weight: normal;
 }
 
-
+em {
+    font-size: smaller;
+    font-style: italic;
+    color: var(--blue-grey);
+}
 
 /* ------ layout ------ */
 /* -------------------- */
@@ -85,20 +89,30 @@ header a {
     overflow: hidden;
 }
 
-
+section {
+    display: flex;
+}
 #details {
     flex-grow: 1;
-    max-width: 80%;
+    width: 100%;
     background-color: var(--paper);
     border-radius: 2px;
+    margin-left: 1ch;
 }
 
 #details div.columns {
     display: flex;
 }
+
+#details div.column {
+    width: 50%;
+}
 #details article {
     margin: 1ch;
     min-width: 50ch;
+    /* max-width: 40ch; */
+    background-color: white;
+    box-shadow: var(--box-shadow);
 }
 
 #details article div.description {
@@ -109,12 +123,6 @@ header a {
     background-color: var(--paper);
 }
 
-#details article {
-    max-width: 40ch;
-    background-color: white;
-    box-shadow: var(--box-shadow);
-}
-
 #details label, input {
     margin: 0ch;
 
@@ -123,8 +131,13 @@ header a {
     font-size: small;
     list-style: none;
     color: white;
-    background-color: var(--blue-grey); 
-    padding: 0ch 0.5ch;
+    background-image: url('assets/circle-blues.png');
+    /* background-color: var(--blue-grey);  */
+    padding: 0.5ch 1ch;
+}
+
+#details div.ability-box {
+    text-align: center;
 }
 summary::-webkit-details-marker {display: none; }
 #details summary::before {
@@ -170,6 +183,7 @@ main {
     flex-wrap: wrap;
     flex-grow: 1;
     gap: 1ch;
+    opacity: 0%;
 }
 
 .widget {
@@ -214,6 +228,13 @@ main {
     min-height: 2ch;
 }
 
+.flex-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0ch;
+}
+
 .float-right {
     float: right;
 }
@@ -221,12 +242,14 @@ main {
 /* ---- forms/input --- */
 /* -------------------- */
 
-.form {
-    box-sizing: inherit;
+form {
+    margin: 1ch;
+    box-sizing: border-box;
 }
 
 form label {
     text-align: left;
+    font-size: small;
 }
 
 input, textarea, select {
@@ -242,9 +265,14 @@ input, textarea, select {
 }
 
 input[type=number] {
-    text-align: center;
+    /* text-align: center; */
+    /* min-width: 5ch; */
+    max-width: 5ch;
   }
 
+  input[type=checkbox] {
+      width:auto;
+  }
 form textarea {
     height: 12ch;
 }

@@ -9,9 +9,9 @@ const randInt = (start, end) => {
 // roll any numer of dice, with any number of sides, then add an optional bonus integer
 // takes in 2 mandatory integers, and an optional integer for the bonus
 // returns an array containing an array of all the dice results, followed by the plus, then a single integer of the total
-const diceRoll = (number, sides, bonus=0) => {
-    console.log(number,sides,bonus);
-    let n = parseInt(number);
+const diceRoll = (dice, sides, bonus=0) => {
+    console.log(dice,sides,bonus);
+    let n = parseInt(dice);
     let s = parseInt(sides);
     let b = parseInt(bonus);
     let i;
@@ -121,4 +121,25 @@ const crToXp = (cr) => {
     }
 }
 
-export { randInt, diceRoll, averageHP, abilityModifier, xpToLevel, crToXp }
+const calculateProficiencyBonus = (cr) => {
+    switch (true) {
+        default:
+            return 9
+        case cr < 5:
+            return 2
+        case cr < 9:
+            return 3
+        case cr < 13:
+            return 4
+        case cr < 17:
+            return 5
+        case cr < 21:
+            return 6
+        case cr < 25:
+            return 7
+        case cr < 29:
+            return 8      
+    }
+}
+
+export { randInt, diceRoll, averageHP, abilityModifier, xpToLevel, crToXp, calculateProficiencyBonus }
