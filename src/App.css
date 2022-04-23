@@ -12,6 +12,8 @@
   --transparent-dark: rgba(255, 255, 255, 0.5);
   --transparent-darker: rgba(0, 0, 0, 0.547);
 }
+
+
   
 html {
   height: 100vh;
@@ -63,6 +65,12 @@ body {
   background-size: 100% auto;
   background-repeat: repeat;
   -ms-overflow-style: none;  /*IE and Edge */
+}
+
+@media (max-width: 500px) {
+  body {
+    background-size: auto 100%;
+  }
 }
 
 /* body::-webkit-scrollbar {

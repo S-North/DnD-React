@@ -85,7 +85,7 @@ export const AppProvider = (props) => {
             }
           }
 
-const jsonserver = "http://localhost:8000";
+const jsonserver = "http://192.168.1.200:8000";
     useEffect(() => {
         console.log("fetching campaigns from jsonserver")    
         fetch(`${jsonserver}/campaigns`)
