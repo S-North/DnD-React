@@ -246,6 +246,44 @@
       "campaignId": "3b11cabb-d74d-475a-994c-d25d5b7b0e71",
       "modified": "2022:04:22:12:07:54",
       "enemy": "pc"
+    },
+    {
+      "name": "Wilson",
+      "description": "hello",
+      "race": "Bugbear",
+      "class": "Sorcerer",
+      "str": "12",
+      "dex": "16",
+      "con": "12",
+      "int": "10",
+      "wis": "12",
+      "cha": "18",
+      "maxHP": "10",
+      "ac": "14",
+      "xp": "0",
+      "id": "de1c535e-c303-47c2-9047-8b0ff0460cea",
+      "campaignId": "5665a52d-d2ec-4a8f-ad71-dc0f3d070a6a",
+      "modified": "2022:04:25:18:44:17",
+      "enemy": "pc"
+    },
+    {
+      "name": "Arizona",
+      "description": "Horny women don't like witches ",
+      "race": "Teifling",
+      "class": "Warlock",
+      "str": "99",
+      "dex": "9",
+      "con": "99",
+      "int": "999",
+      "wis": "999",
+      "cha": "999",
+      "maxHP": "10000",
+      "ac": "120",
+      "xp": "3439919",
+      "id": "34fd4f72-5e96-4962-b5a9-6b117e723a63",
+      "campaignId": "45363499-3227-47fb-bcda-d5525ecd17fc",
+      "modified": "2022:04:25:20:59:53",
+      "enemy": "pc"
     }
   ],
   "notes": [
@@ -278,31 +316,6 @@
       "name": "nkjkjhkjhj",
       "description": "jhkjhkjhhkjh",
       "id": "cC3bKcf"
-    },
-    {
-      "name": "A note",
-      "description": "skdhkksj dfhkshf ksdhfksdh fkjhs dkfsh fjsdh kjf\ndf hskjdfhk kjhfsdk hfsh fkjhs dfdsgfjkhsh oi.\njsdh fkj.\nkjsdhf jhsd kfjhk sjhfjskdh fkjshd fkj",
-      "campaignId": "0e5f2139-c5dd-4146-8fcd-05571bc96040",
-      "id": "N5Q6Nef"
-    },
-    {
-      "name": "uugjhgjh",
-      "description": "jgj gj jhgj gjg j gjhj",
-      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
-      "id": "6BAfRCC"
-    },
-    {
-      "name": "bjbjkjkb",
-      "description": "k",
-      "campaignId": "d1aa5934-f2c5-40ff-9a32-86d738aacb22",
-      "adventureId": "3986f0dd-6d81-4cb9-b8ce-266becc1faf8",
-      "id": "vnQ8YUH"
-    },
-    {
-      "name": "vfff",
-      "description": "fg",
-      "encounterId": "b4db7c9e-7c56-4c24-8ecf-cda931ffe94b",
-      "id": "xzP0H1n"
     }
   ],
   "monsters": [
@@ -794,9 +807,15 @@
       "id": "633705f0-da3a-40f6-989d-d58ee755f202"
     },
     {
-      "name": "jhjhgjh",
-      "description": "jhgjhg",
-      "id": "5665a52d-d2ec-4a8f-ad71-dc0f3d070a6a"
+      "name": "The Kraken Tank",
+      "description": "Can the party start a business in the old port?",
+      "id": "5665a52d-d2ec-4a8f-ad71-dc0f3d070a6a",
+      "modified": "2022:04:23:12:40:53"
+    },
+    {
+      "name": "Too many mazes ",
+      "description": "Yiu guys have have gone ik to many mazes ",
+      "id": "45363499-3227-47fb-bcda-d5525ecd17fc"
     }
   ],
   "adventures": [
@@ -806,13 +825,6 @@
       "campaignId": "b68e1d95-4805-44b7-8bda-69b55ba2cfa1",
       "id": "e8823001-9a25-430a-b234-06ed10ab1f4e",
       "modified": "2022:04:11:14:38:35"
-    },
-    {
-      "name": "kjh jkj ",
-      "description": "hkjh ",
-      "id": "26259ec3-b5e6-4890-aec6-3394d4be70e9",
-      "campaignId": "b68e1d95-4805-44b7-8bda-69b55ba2cfa1",
-      "modified": "2022:04:11:14:37:04"
     },
     {
       "name": "Barovia Village",
@@ -848,1132 +860,32 @@
       "id": "15e0830a-0c54-4353-9e47-3aabbbabb566",
       "campaignId": "3b11cabb-d74d-475a-994c-d25d5b7b0e71",
       "modified": "2022:04:22:10:14:58"
+    },
+    {
+      "name": "Business Model",
+      "description": "",
+      "id": "c3ebbdbb-6579-4543-bb37-6e9fd4ff9fb1",
+      "campaignId": "5665a52d-d2ec-4a8f-ad71-dc0f3d070a6a",
+      "modified": "2022:04:23:12:41:08"
+    },
+    {
+      "name": "The modron maze",
+      "description": "Old eye ball guy a bit angry",
+      "id": "3ab5cea2-18b7-4721-be3b-29689d306cc4",
+      "campaignId": "45363499-3227-47fb-bcda-d5525ecd17fc",
+      "modified": "2022:04:25:20:57:24"
     }
   ],
   "encounters": [
-    {
-      "name": "Test Initiative",
-      "description": "fdas dfa sdfasf asdf sad",
-      "location": "ertr ",
-      "campaignId": "b68e1d95-4805-44b7-8bda-69b55ba2cfa1",
-      "adventureId": "e8823001-9a25-430a-b234-06ed10ab1f4e",
-      "id": "3895a927-2a09-45f0-8abf-b3864abca3dc",
-      "mobList": [
-        "players",
-        "default",
-        "new",
-        "hjgjhgjh"
-      ],
-      "CombatantList": [],
-      "initiative": [
-        {
-          "name": "Raskas",
-          "id": "fba98b07-7055-4284-8ced-86bae0919365",
-          "enemy": "pc",
-          "init": "22"
-        },
-        {
-          "id": "b8958277-4ec1-4848-b726-87f8a12e7f51",
-          "source": 26,
-          "name": "Tarrasque 1",
-          "enemy": "monster",
-          "init": 20
-        },
-        {
-          "id": "e5e441f4-c674-4f8b-8ab1-da8923211f2d",
-          "source": 26,
-          "name": "Tarrasque Flamecrown",
-          "enemy": "monster",
-          "init": 20
-        },
-        {
-          "name": "Purple assasin 7",
-          "id": "efd04926-ecca-495a-82e5-5ce3f7e2419f",
-          "enemy": "pc",
-          "init": "19"
-        },
-        {
-          "id": "47f7845c-d4da-4481-a39f-d0bc99ac58b8",
-          "source": "fc60bf92-27e1-40dd-b6bf-bf313fa9d6bd",
-          "name": "Quarklet 1",
-          "enemy": "monster",
-          "init": 17
-        },
-        {
-          "name": "Polydeuces",
-          "id": "9d42789a-8c25-4e62-9694-3aac4a992de2",
-          "enemy": "pc",
-          "init": "14"
-        },
-        {
-          "name": "Boggart 2",
-          "id": "6872048a-d1c2-4e05-8cf2-807ed2b197ec",
-          "source": "924fcc2d-39ef-4c40-8ecc-319f0381eb1f",
-          "init": 14,
-          "enemy": "monster"
-        },
-        {
-          "id": "063b8aa1-3f08-4415-a609-7d277cf3848c",
-          "source": "924fcc2d-39ef-4c40-8ecc-319f0381eb1f",
-          "name": "Boggart 6",
-          "enemy": "monster",
-          "init": 14
-        },
-        {
-          "id": "b1532ae8-0396-4fa2-a332-85f74fbf06e2",
-          "source": "924fcc2d-39ef-4c40-8ecc-319f0381eb1f",
-          "name": "Boggart with teal hat",
-          "enemy": "monster",
-          "init": 14
-        },
-        {
-          "name": "Sherlock",
-          "id": "c57ff14c-06db-47c6-bd4a-4ac6bd160f40",
-          "enemy": "pc",
-          "init": "13"
-        },
-        {
-          "name": "Beholder 1",
-          "id": "34d83acd-a54c-4cf6-b797-546ee548d087",
-          "source": "e03e089a-cbb3-4e38-a8b9-215f82c1a0c4",
-          "init": 11,
-          "enemy": "monster"
-        }
-      ],
-      "monsters": [
-        {
-          "id": "6872048a-d1c2-4e05-8cf2-807ed2b197ec",
-          "name": "Boggart 2",
-          "description": "",
-          "ac": "",
-          "hitDice": {
-            "hdDice": 0,
-            "hdSides": 0,
-            "hdBonus": 0
-          },
-          "hp": 0,
-          "cr": null,
-          "type": "",
-          "str": 10,
-          "dex": 10,
-          "con": 10,
-          "int": 10,
-          "wis": 10,
-          "cha": 10,
-          "speed": "",
-          "xp": 0,
-          "senses": [],
-          "languages": [],
-          "saves": [],
-          "skills": [],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [],
-          "actions": [],
-          "legendary": [],
-          "legendaryActions": [],
-          "enemy": "monster",
-          "source": "924fcc2d-39ef-4c40-8ecc-319f0381eb1f"
-        },
-        {
-          "id": "34d83acd-a54c-4cf6-b797-546ee548d087",
-          "name": "Beholder 1",
-          "description": "kjhsdkjhaskjdh sajdhashj ",
-          "ac": "15",
-          "hitDice": {
-            "hdDice": "10",
-            "hdSides": "8",
-            "hdBonus": "20"
-          },
-          "hp": 59,
-          "cr": "9",
-          "type": "Monstrosity",
-          "str": "8",
-          "dex": "16",
-          "con": "16",
-          "int": "18",
-          "wis": "15",
-          "cha": "6",
-          "speed": "30",
-          "xp": "5000",
-          "senses": [
-            "darkvision 60"
-          ],
-          "languages": [],
-          "saves": [
-            "dex",
-            "wis"
-          ],
-          "skills": [
-            "history",
-            "nature"
-          ],
-          "vulnerabilities": [
-            "bludgeoning"
-          ],
-          "resistances": [
-            "psychic"
-          ],
-          "damageImmunity": [
-            "psychic"
-          ],
-          "conditionImmunity": [
-            "charmed",
-            "incapacitated",
-            "stunned"
-          ],
-          "conditions": [],
-          "traits": [],
-          "actions": [],
-          "legendary": [],
-          "legendaryActions": [],
-          "size": "large",
-          "enemy": "monster",
-          "source": "e03e089a-cbb3-4e38-a8b9-215f82c1a0c4"
-        },
-        {
-          "name": "Tarrasque 1",
-          "description": "The legendary tarrasque is possibly the most dreaded monster of the Material Plane. It is widely believed that only one of these creatures exists, though no one can predict where and when it will strike. A scaly biped, the tarrasque is fifty feet tall and seventy feet long, weighing hundreds of tons. It carries itself like a bird of prey, leaning forward and using its powerful lashing tail for balance. Its cavernous maw yawns wide enough to swallow all but the largest creatures, and so great is its hunger that it can devour the populations of whole towns. Legendary Destruction. The destructive potential of the tarrasque is so vast that some cultures incorporate the monster into religious doctrine, weaving its sporadic appearance into stories of divine judgment and wrath. Legends tell how the tarrasque slumbers in its secret lair beneath the earth, remaining in a dormant state for decades or centuries. When it awakens in answer to some inscrutable cosmic call, it rises from the depths to obliterate everything in its path.",
-          "type": "Monstrosity",
-          "ac": "25",
-          "hitDice": {
-            "hdDice": "33",
-            "hdSides": "20",
-            "hdBonus": "330"
-          },
-          "hp": 702,
-          "cr": "30",
-          "str": "30",
-          "dex": "11",
-          "con": "30",
-          "int": "3",
-          "wis": "11",
-          "cha": "11",
-          "id": "b8958277-4ec1-4848-b726-87f8a12e7f51",
-          "senses": [],
-          "languages": [],
-          "skills": [],
-          "saves": [],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [
-            {
-              "id": "64375d48-ef9a-444f-8887-d04c5adef701",
-              "name": "Legendary Resistance (3/Day)",
-              "description": "If the tarrasque fails a saving throw, it can choose to succeed instead."
-            },
-            {
-              "id": "d3422c29-2678-4e1d-b26f-bda6ed5107f7",
-              "name": "Magic Resistance",
-              "description": "The tarrasque has advantage on saving throws against spells and other magical effects."
-            },
-            {
-              "id": "8228ba6a-ddc9-40c2-baf5-887ae5aef10b",
-              "name": "Reflective Carapace",
-              "description": "Any time the tarrasque is targeted by a magic missile spell, a line spell, or a spell that requires a ranged attack roll, roll a d6. On a 1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is unaffected, and the effect is reflected back at the caster as though it originated from the tarrasque, turning the caster into the target."
-            },
-            {
-              "id": "ec96f2a0-ab0b-445c-b8d2-30cc22254172",
-              "name": "Siege Monster",
-              "description": "The tarrasque deals double damage to objects and structures."
-            }
-          ],
-          "actions": [
-            {
-              "id": "4760b702-ed9d-4913-9219-4916284fa2a8",
-              "name": "Bite",
-              "description": "Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36 (4d12 + 10) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the tarrasque can't bite another target.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "12",
-                "bonus": "10",
-                "type": "piercing"
-              }
-            },
-            {
-              "id": "04c5d899-c5da-4353-b8e3-4100f0eba1b5",
-              "name": "Claw",
-              "description": "Melee Weapon Attack: +19 to hit, reach 15ft., one target. Hit: 28 (4d8 + 10) slashing damage.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "8",
-                "bonus": "10",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "001c4a6c-a825-438a-ad5c-e6fecf83ce38",
-              "name": "Frightful Presence",
-              "description": "Each creature of the tarrasque's choice within 120 feet of it and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the tarrasque is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the tarrasque's Frightful Presence for the next 24 hours."
-            },
-            {
-              "id": "4bb044d8-7a54-409e-b50a-7f8f8499ba46",
-              "name": "Horns",
-              "description": "Melee Weapon Attack: +19 to hit, reach 10ft., one target. Hit: 32 (4d10 + 10) piercing damage.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "10",
-                "bonus": "10",
-                "type": "piercing"
-              }
-            },
-            {
-              "id": "3586c498-c66d-4f85-801b-660c8561906e",
-              "name": "Multiattack",
-              "description": "The tarrasque can use its Frightful Presence. It then makes five attacks: one with its bite, two with its claws, one with its horns, and one with its tail. It can use its Swallow instead of its bite."
-            },
-            {
-              "name": "Swallow",
-              "description": "The tarrasque makes one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the tarrasque, and it takes 56 (16d6) acid damage at the start of each of the tarrasque's turns. If the tarrasque takes 60 damage or more on a single turn from a creature inside it, the tarrasque must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the tarrasque. If the tarrasque dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 30 feet of movement, exiting prone."
-            },
-            {
-              "id": "f9d0e6dd-8e64-49c7-98cf-c9f024f7a24c",
-              "name": "Tail",
-              "description": "Melee Weapon Attack: +19 to hit, reach 20ft., one target. Hit: 24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be knocked prone.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "4",
-                "bonus": "10",
-                "type": "bludgeoning"
-              }
-            }
-          ],
-          "legendary": [
-            {
-              "description": "The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The tarrasque regains spent legendary actions at the start of its turn.",
-              "actions": "3"
-            }
-          ],
-          "legendaryActions": [
-            {
-              "id": "e1726737-652f-4481-97f0-ef6839d649d2",
-              "name": "Attack",
-              "description": "The tarrasque makes one claw attack or tail attack."
-            },
-            {
-              "id": "a3848d83-d04f-4c56-8197-9fd3817d2a85",
-              "name": "Chomp (Costs 2 Legendary Actions)",
-              "description": "The tarrasque makes one bite attack or uses its Swallow."
-            },
-            {
-              "id": "e3a4c915-9633-4d13-98c6-b26b38b802f0",
-              "name": "Move",
-              "description": "The tarrasque moves up to half its speed."
-            }
-          ],
-          "enemy": "monster",
-          "source": 26
-        },
-        {
-          "id": "47f7845c-d4da-4481-a39f-d0bc99ac58b8",
-          "name": "Quarklet 1",
-          "description": "",
-          "ac": "",
-          "hitDice": {
-            "hdDice": 0,
-            "hdSides": 0,
-            "hdBonus": 0
-          },
-          "hp": 0,
-          "cr": null,
-          "type": "",
-          "str": 10,
-          "dex": 10,
-          "con": 10,
-          "int": 10,
-          "wis": 10,
-          "cha": 10,
-          "speed": "",
-          "xp": 0,
-          "senses": [],
-          "languages": [],
-          "saves": [],
-          "skills": [],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [],
-          "actions": [],
-          "legendary": [],
-          "legendaryActions": [],
-          "enemy": "monster",
-          "source": "fc60bf92-27e1-40dd-b6bf-bf313fa9d6bd"
-        },
-        {
-          "id": "063b8aa1-3f08-4415-a609-7d277cf3848c",
-          "name": "Boggart 6",
-          "description": "",
-          "ac": "",
-          "hitDice": {
-            "hdDice": 0,
-            "hdSides": 0,
-            "hdBonus": 0
-          },
-          "hp": 0,
-          "cr": null,
-          "type": "",
-          "str": 10,
-          "dex": 10,
-          "con": 10,
-          "int": 10,
-          "wis": 10,
-          "cha": 10,
-          "speed": "",
-          "xp": 0,
-          "senses": [],
-          "languages": [],
-          "saves": [],
-          "skills": [],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [],
-          "actions": [],
-          "legendary": [],
-          "legendaryActions": [],
-          "enemy": "monster",
-          "source": "924fcc2d-39ef-4c40-8ecc-319f0381eb1f"
-        },
-        {
-          "id": "b1532ae8-0396-4fa2-a332-85f74fbf06e2",
-          "name": "Boggart with teal hat",
-          "description": "",
-          "ac": "",
-          "hitDice": {
-            "hdDice": 0,
-            "hdSides": 0,
-            "hdBonus": 0
-          },
-          "hp": 0,
-          "cr": null,
-          "type": "",
-          "str": 10,
-          "dex": 10,
-          "con": 10,
-          "int": 10,
-          "wis": 10,
-          "cha": 10,
-          "speed": "",
-          "xp": 0,
-          "senses": [],
-          "languages": [],
-          "saves": [],
-          "skills": [],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [],
-          "actions": [],
-          "legendary": [],
-          "legendaryActions": [],
-          "enemy": "monster",
-          "source": "924fcc2d-39ef-4c40-8ecc-319f0381eb1f"
-        },
-        {
-          "name": "Tarrasque Flamecrown",
-          "description": "The legendary tarrasque is possibly the most dreaded monster of the Material Plane. It is widely believed that only one of these creatures exists, though no one can predict where and when it will strike. A scaly biped, the tarrasque is fifty feet tall and seventy feet long, weighing hundreds of tons. It carries itself like a bird of prey, leaning forward and using its powerful lashing tail for balance. Its cavernous maw yawns wide enough to swallow all but the largest creatures, and so great is its hunger that it can devour the populations of whole towns. Legendary Destruction. The destructive potential of the tarrasque is so vast that some cultures incorporate the monster into religious doctrine, weaving its sporadic appearance into stories of divine judgment and wrath. Legends tell how the tarrasque slumbers in its secret lair beneath the earth, remaining in a dormant state for decades or centuries. When it awakens in answer to some inscrutable cosmic call, it rises from the depths to obliterate everything in its path.",
-          "type": "Monstrosity",
-          "ac": "25",
-          "hitDice": {
-            "hdDice": "33",
-            "hdSides": "20",
-            "hdBonus": "330"
-          },
-          "hp": 702,
-          "cr": "30",
-          "str": "30",
-          "dex": "11",
-          "con": "30",
-          "int": "3",
-          "wis": "11",
-          "cha": "11",
-          "id": "e5e441f4-c674-4f8b-8ab1-da8923211f2d",
-          "senses": [],
-          "languages": [],
-          "skills": [],
-          "saves": [],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [
-            {
-              "id": "64375d48-ef9a-444f-8887-d04c5adef701",
-              "name": "Legendary Resistance (3/Day)",
-              "description": "If the tarrasque fails a saving throw, it can choose to succeed instead."
-            },
-            {
-              "id": "d3422c29-2678-4e1d-b26f-bda6ed5107f7",
-              "name": "Magic Resistance",
-              "description": "The tarrasque has advantage on saving throws against spells and other magical effects."
-            },
-            {
-              "id": "8228ba6a-ddc9-40c2-baf5-887ae5aef10b",
-              "name": "Reflective Carapace",
-              "description": "Any time the tarrasque is targeted by a magic missile spell, a line spell, or a spell that requires a ranged attack roll, roll a d6. On a 1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is unaffected, and the effect is reflected back at the caster as though it originated from the tarrasque, turning the caster into the target."
-            },
-            {
-              "id": "ec96f2a0-ab0b-445c-b8d2-30cc22254172",
-              "name": "Siege Monster",
-              "description": "The tarrasque deals double damage to objects and structures."
-            }
-          ],
-          "actions": [
-            {
-              "id": "4760b702-ed9d-4913-9219-4916284fa2a8",
-              "name": "Bite",
-              "description": "Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36 (4d12 + 10) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the tarrasque can't bite another target.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "12",
-                "bonus": "10",
-                "type": "piercing"
-              }
-            },
-            {
-              "id": "04c5d899-c5da-4353-b8e3-4100f0eba1b5",
-              "name": "Claw",
-              "description": "Melee Weapon Attack: +19 to hit, reach 15ft., one target. Hit: 28 (4d8 + 10) slashing damage.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "8",
-                "bonus": "10",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "001c4a6c-a825-438a-ad5c-e6fecf83ce38",
-              "name": "Frightful Presence",
-              "description": "Each creature of the tarrasque's choice within 120 feet of it and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the tarrasque is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the tarrasque's Frightful Presence for the next 24 hours."
-            },
-            {
-              "id": "4bb044d8-7a54-409e-b50a-7f8f8499ba46",
-              "name": "Horns",
-              "description": "Melee Weapon Attack: +19 to hit, reach 10ft., one target. Hit: 32 (4d10 + 10) piercing damage.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "10",
-                "bonus": "10",
-                "type": "piercing"
-              }
-            },
-            {
-              "id": "3586c498-c66d-4f85-801b-660c8561906e",
-              "name": "Multiattack",
-              "description": "The tarrasque can use its Frightful Presence. It then makes five attacks: one with its bite, two with its claws, one with its horns, and one with its tail. It can use its Swallow instead of its bite."
-            },
-            {
-              "name": "Swallow",
-              "description": "The tarrasque makes one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the tarrasque, and it takes 56 (16d6) acid damage at the start of each of the tarrasque's turns. If the tarrasque takes 60 damage or more on a single turn from a creature inside it, the tarrasque must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the tarrasque. If the tarrasque dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 30 feet of movement, exiting prone."
-            },
-            {
-              "id": "f9d0e6dd-8e64-49c7-98cf-c9f024f7a24c",
-              "name": "Tail",
-              "description": "Melee Weapon Attack: +19 to hit, reach 20ft., one target. Hit: 24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be knocked prone.",
-              "attack": "19",
-              "damage": {
-                "dice": "4",
-                "sides": "4",
-                "bonus": "10",
-                "type": "bludgeoning"
-              }
-            }
-          ],
-          "legendary": [
-            {
-              "description": "The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The tarrasque regains spent legendary actions at the start of its turn.",
-              "actions": "3"
-            }
-          ],
-          "legendaryActions": [
-            {
-              "id": "e1726737-652f-4481-97f0-ef6839d649d2",
-              "name": "Attack",
-              "description": "The tarrasque makes one claw attack or tail attack."
-            },
-            {
-              "id": "a3848d83-d04f-4c56-8197-9fd3817d2a85",
-              "name": "Chomp (Costs 2 Legendary Actions)",
-              "description": "The tarrasque makes one bite attack or uses its Swallow."
-            },
-            {
-              "id": "e3a4c915-9633-4d13-98c6-b26b38b802f0",
-              "name": "Move",
-              "description": "The tarrasque moves up to half its speed."
-            }
-          ],
-          "enemy": "monster",
-          "source": 26
-        }
-      ],
-      "mode": "running"
-    },
     {
       "name": "Cave bandits",
       "description": "",
       "id": "0406a57c-9ec8-484f-986d-7ac62d174883",
       "adventureId": "ea0f23f9-f5d6-45bd-a358-eaaf4c82011e",
       "campaignId": "633705f0-da3a-40f6-989d-d58ee755f202",
-      "modified": "2022:04:11:19:23:40"
-    },
-    {
-      "name": "New encounter",
-      "description": "khkjhk",
-      "id": "0cd8a78d-8d3b-4bd5-a024-4aedd768e405",
-      "adventureId": "e8823001-9a25-430a-b234-06ed10ab1f4e",
-      "campaignId": "b68e1d95-4805-44b7-8bda-69b55ba2cfa1",
-      "modified": "2022:04:11:20:59:03",
-      "initiative": [
-        {
-          "name": "Polydeuces",
-          "id": "9d42789a-8c25-4e62-9694-3aac4a992de2",
-          "enemy": "pc",
-          "init": 0
-        }
-      ],
-      "monsters": [],
-      "mode": "editing"
-    },
-    {
-      "name": "data encounter",
-      "description": "khkjhk",
-      "id": "6cd8a78d-8d3b-4bd5-a024-4aedd768e405",
-      "adventureId": "e8823001-9a25-430a-b234-06ed10ab1f4e",
-      "campaignId": "b68e1d95-4805-44b7-8bda-69b55ba2cfa1",
-      "modified": "2022:04:11:20:59:03",
-      "initiative": [
-        {
-          "name": "Polydeuces",
-          "id": "9d42789a-8c25-4e62-9694-3aac4a992de2",
-          "enemy": "pc",
-          "init": 0
-        },
-        {
-          "name": "Lich 1",
-          "id": "1254a034-ac6e-4c06-b0e6-aa09c05aa915",
-          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1",
-          "init": 0,
-          "enemy": "monster"
-        },
-        {
-          "name": "Lich 2",
-          "id": "c457e71e-7bab-4c68-87d3-c68b66c3c9c1",
-          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1",
-          "init": 0,
-          "enemy": "monster"
-        },
-        {
-          "name": "Goblin 1",
-          "id": "c5de5a5c-f340-4a13-a59d-05e108fd10a1",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
-          "init": 0,
-          "enemy": "monster"
-        },
-        {
-          "name": "Goblin 2",
-          "id": "02fd0d0c-80c3-4fb6-ad16-f7571e220111",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
-          "init": 0,
-          "enemy": "monster"
-        },
-        {
-          "id": "6dcb23b6-c703-4294-8289-3749692dff31",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
-          "name": "Goblin with funny hat",
-          "enemy": "monster"
-        },
-        {
-          "id": "ddd10c9b-1469-4daf-b981-c0e63dd9d6d8",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
-          "name": "Grumpy Goblin",
-          "enemy": "monster"
-        }
-      ],
-      "monsters": [
-        {
-          "name": "Lich 1",
-          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
-          "type": "Undead",
-          "ac": "17",
-          "size": "medium",
-          "hitDice": {
-            "hdDice": "18",
-            "hdSides": "8",
-            "hdBonus": "54"
-          },
-          "hp": "135",
-          "cr": "21",
-          "str": "11",
-          "dex": "16",
-          "con": "16",
-          "int": "20",
-          "wis": "14",
-          "cha": "16",
-          "id": "1254a034-ac6e-4c06-b0e6-aa09c05aa915",
-          "senses": [
-            "truevision"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "saves": [
-            "con",
-            "int",
-            "wis"
-          ],
-          "skills": [
-            "arcana",
-            "history",
-            "insight",
-            "perception"
-          ],
-          "vulnerabilities": [],
-          "resistances": [
-            "cold",
-            "lightning",
-            "necrotic"
-          ],
-          "damageImmunity": [
-            "poison",
-            "bludgeoning",
-            "piercing",
-            "slashing"
-          ],
-          "conditionImmunity": [
-            "charmed",
-            "exhaustion",
-            "paralised",
-            "poisoned",
-            "frightened",
-            "paralysed"
-          ],
-          "conditions": [],
-          "traits": [],
-          "actions": [],
-          "legendary": [
-            {
-              "id": "f04ef083-b08b-4fb7-8067-48807a7abc2d",
-              "name": "Actions",
-              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
-            },
-            {
-              "id": "15e53097-8858-4663-b2ed-60de43b67e8e",
-              "name": "Actions",
-              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
-            }
-          ],
-          "legendaryActions": [],
-          "speed": "30",
-          "xp": "33000",
-          "enemy": "monster",
-          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1"
-        },
-        {
-          "name": "Lich 2",
-          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
-          "type": "Undead",
-          "ac": "17",
-          "size": "medium",
-          "hitDice": {
-            "hdDice": "18",
-            "hdSides": "8",
-            "hdBonus": "54"
-          },
-          "hp": "135",
-          "cr": "21",
-          "str": "11",
-          "dex": "16",
-          "con": "16",
-          "int": "20",
-          "wis": "14",
-          "cha": "16",
-          "id": "c457e71e-7bab-4c68-87d3-c68b66c3c9c1",
-          "senses": [
-            "truevision"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "saves": [
-            "con",
-            "int",
-            "wis"
-          ],
-          "skills": [
-            "arcana",
-            "history",
-            "insight",
-            "perception"
-          ],
-          "vulnerabilities": [],
-          "resistances": [
-            "cold",
-            "lightning",
-            "necrotic"
-          ],
-          "damageImmunity": [
-            "poison",
-            "bludgeoning",
-            "piercing",
-            "slashing"
-          ],
-          "conditionImmunity": [
-            "charmed",
-            "exhaustion",
-            "paralised",
-            "poisoned",
-            "frightened",
-            "paralysed"
-          ],
-          "conditions": [],
-          "traits": [],
-          "actions": [],
-          "legendary": [
-            {
-              "id": "f04ef083-b08b-4fb7-8067-48807a7abc2d",
-              "name": "Actions",
-              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
-            },
-            {
-              "id": "15e53097-8858-4663-b2ed-60de43b67e8e",
-              "name": "Actions",
-              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
-            }
-          ],
-          "legendaryActions": [],
-          "speed": "30",
-          "xp": "33000",
-          "enemy": "monster",
-          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1"
-        },
-        {
-          "id": "c5de5a5c-f340-4a13-a59d-05e108fd10a1",
-          "name": "Goblin 1",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdDice": "2",
-            "hdSides": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "8",
-          "dex": "14",
-          "con": "10",
-          "int": "10",
-          "wis": "8",
-          "cha": "8",
-          "senses": [
-            "darkvision 60"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "saves": [],
-          "skills": [
-            "stealth",
-            "perception"
-          ],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": [],
-          "legendaryActions": [],
-          "size": "small",
-          "xp": "50",
-          "enemy": "monster",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
-        },
-        {
-          "id": "02fd0d0c-80c3-4fb6-ad16-f7571e220111",
-          "name": "Goblin 2",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdDice": "2",
-            "hdSides": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "8",
-          "dex": "14",
-          "con": "10",
-          "int": "10",
-          "wis": "8",
-          "cha": "8",
-          "senses": [
-            "darkvision 60"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "saves": [],
-          "skills": [
-            "stealth",
-            "perception"
-          ],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": [],
-          "legendaryActions": [],
-          "size": "small",
-          "xp": "50",
-          "enemy": "monster",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
-        },
-        {
-          "id": "6dcb23b6-c703-4294-8289-3749692dff31",
-          "name": "Goblin with funny hat",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdDice": "2",
-            "hdSides": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "8",
-          "dex": "14",
-          "con": "10",
-          "int": "10",
-          "wis": "8",
-          "cha": "8",
-          "senses": [
-            "darkvision 60"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "saves": [],
-          "skills": [
-            "stealth",
-            "perception"
-          ],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": [],
-          "legendaryActions": [],
-          "size": "small",
-          "xp": "50",
-          "enemy": "monster",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
-        },
-        {
-          "id": "ddd10c9b-1469-4daf-b981-c0e63dd9d6d8",
-          "name": "Grumpy Goblin",
-          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
-          "ac": "15",
-          "hitDice": {
-            "hdDice": "2",
-            "hdSides": "6",
-            "hdBonus": "0"
-          },
-          "hp": "7",
-          "cr": "0.25",
-          "type": "Humanoid",
-          "str": "8",
-          "dex": "14",
-          "con": "10",
-          "int": "10",
-          "wis": "8",
-          "cha": "8",
-          "senses": [
-            "darkvision 60"
-          ],
-          "languages": [
-            "common",
-            "goblin"
-          ],
-          "saves": [],
-          "skills": [
-            "stealth",
-            "perception"
-          ],
-          "vulnerabilities": [],
-          "resistances": [],
-          "damageImmunity": [],
-          "conditionImmunity": [],
-          "conditions": [],
-          "traits": [
-            {
-              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
-              "name": "Nimble Escape",
-              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
-            }
-          ],
-          "actions": [
-            {
-              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
-              "name": "Scimitar",
-              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "slashing"
-              }
-            },
-            {
-              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
-              "name": "Shortbow",
-              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-              "attack": "4",
-              "damage": {
-                "dice": "1",
-                "sides": "6",
-                "bonus": "2",
-                "type": "piercing"
-              }
-            }
-          ],
-          "legendary": [],
-          "legendaryActions": [],
-          "size": "small",
-          "xp": "50",
-          "enemy": "monster",
-          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
-        }
-      ],
-      "mode": "editing"
+      "modified": "2022:04:11:19:23:40",
+      "round": 0,
+      "turn": 0
     },
     {
       "name": "Blood Bath",
@@ -1984,6 +896,12 @@
       "modified": "2022:04:21:12:11:31",
       "initiative": [
         {
+          "name": "Sherlock 4",
+          "id": "c57ff14c-06db-47c6-bd4a-4ac6bd160f40",
+          "enemy": "pc",
+          "init": 0
+        },
+        {
           "name": "Purple assasin",
           "id": "efd04926-ecca-495a-82e5-5ce3f7e2419f",
           "enemy": "pc",
@@ -1991,7 +909,9 @@
         }
       ],
       "monsters": [],
-      "mode": "editing"
+      "mode": "editing",
+      "round": 0,
+      "turn": 0
     },
     {
       "name": "Crazy Ghouls want brains",
@@ -2445,7 +1365,9 @@
           "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1"
         }
       ],
-      "mode": "running"
+      "mode": "editing",
+      "round": 0,
+      "turn": 6
     },
     {
       "name": "A shadowy figure ascapes across the rooftops",
@@ -2547,7 +1469,1678 @@
           "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
         }
       ],
-      "mode": "running"
+      "mode": "running",
+      "round": 0,
+      "turn": 0
+    },
+    {
+      "name": "Heads will roll",
+      "description": "",
+      "id": "e56ea4a6-ec92-476c-9dd8-738376618891",
+      "adventureId": "c3ebbdbb-6579-4543-bb37-6e9fd4ff9fb1",
+      "campaignId": "5665a52d-d2ec-4a8f-ad71-dc0f3d070a6a",
+      "modified": "2022:04:23:12:38:27",
+      "initiative": [
+        {
+          "name": "Wilson",
+          "id": "de1c535e-c303-47c2-9047-8b0ff0460cea",
+          "enemy": "pc",
+          "init": "14"
+        },
+        {
+          "id": "5d52476a-39b0-4668-a22d-f93cd505de3d",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "name": "Goblin with head in a basket",
+          "enemy": "monster",
+          "init": 9
+        },
+        {
+          "id": "f45c879a-cfa8-4462-b20e-cb7dd783d41d",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "name": "Goblin with handfull of bank notes",
+          "enemy": "monster",
+          "init": 9
+        }
+      ],
+      "monsters": [
+        {
+          "id": "5d52476a-39b0-4668-a22d-f93cd505de3d",
+          "name": "Goblin with head in a basket",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "f45c879a-cfa8-4462-b20e-cb7dd783d41d",
+          "name": "Goblin with handfull of bank notes",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        }
+      ],
+      "mode": "running",
+      "round": 0,
+      "turn": 0
+    },
+    {
+      "name": "ISBN",
+      "description": "",
+      "id": "bdfada6b-b99a-4a35-938a-ef63b0420462",
+      "adventureId": "c3ebbdbb-6579-4543-bb37-6e9fd4ff9fb1",
+      "campaignId": "5665a52d-d2ec-4a8f-ad71-dc0f3d070a6a",
+      "modified": "2022:04:25:18:40:27",
+      "initiative": [
+        {
+          "name": "Wilson",
+          "id": "de1c535e-c303-47c2-9047-8b0ff0460cea",
+          "enemy": "pc",
+          "init": "15"
+        },
+        {
+          "name": "Lich 1",
+          "id": "c5d6b09f-942d-44a5-ab34-9653fce12ae9",
+          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1",
+          "init": 12,
+          "enemy": "monster"
+        },
+        {
+          "name": "Lich 2",
+          "id": "913d2373-9d59-4c6a-bd70-a9dbc1428498",
+          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1",
+          "init": 12,
+          "enemy": "monster"
+        },
+        {
+          "name": "Goblin 1",
+          "id": "d8a6a8b6-4043-41ed-bfc2-771184922178",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 3,
+          "enemy": "monster"
+        },
+        {
+          "name": "Goblin 2",
+          "id": "e6520346-5e73-4998-924a-3b8b6d0af59f",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 3,
+          "enemy": "monster"
+        },
+        {
+          "name": "Goblin 3",
+          "id": "71a6ccd8-9175-469f-abea-134e35f3b8d9",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 3,
+          "enemy": "monster"
+        },
+        {
+          "name": "Goblin 4",
+          "id": "bd512474-826e-4f5d-a689-e8537cf844f2",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 3,
+          "enemy": "monster"
+        },
+        {
+          "name": "Goblin 5",
+          "id": "d0bcc51e-fff0-4a60-85fc-bfb37dd32e7e",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 3,
+          "enemy": "monster"
+        }
+      ],
+      "monsters": [
+        {
+          "id": "d8a6a8b6-4043-41ed-bfc2-771184922178",
+          "name": "Goblin 1",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "e6520346-5e73-4998-924a-3b8b6d0af59f",
+          "name": "Goblin 2",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "71a6ccd8-9175-469f-abea-134e35f3b8d9",
+          "name": "Goblin 3",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "bd512474-826e-4f5d-a689-e8537cf844f2",
+          "name": "Goblin 4",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "d0bcc51e-fff0-4a60-85fc-bfb37dd32e7e",
+          "name": "Goblin 5",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "name": "Lich 1",
+          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
+          "type": "Undead",
+          "ac": "17",
+          "size": "medium",
+          "hitDice": {
+            "hdDice": "18",
+            "hdSides": "8",
+            "hdBonus": "54"
+          },
+          "hp": "135",
+          "cr": "21",
+          "str": "11",
+          "dex": "16",
+          "con": "16",
+          "int": "20",
+          "wis": "14",
+          "cha": "16",
+          "id": "c5d6b09f-942d-44a5-ab34-9653fce12ae9",
+          "senses": [
+            "truevision"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [
+            "con",
+            "int",
+            "wis"
+          ],
+          "skills": [
+            "arcana",
+            "history",
+            "insight",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [
+            "cold",
+            "lightning",
+            "necrotic"
+          ],
+          "damageImmunity": [
+            "poison",
+            "bludgeoning",
+            "piercing",
+            "slashing"
+          ],
+          "conditionImmunity": [
+            "charmed",
+            "exhaustion",
+            "paralised",
+            "poisoned",
+            "frightened",
+            "paralysed"
+          ],
+          "conditions": [],
+          "traits": [],
+          "actions": [],
+          "legendary": [
+            {
+              "id": "f04ef083-b08b-4fb7-8067-48807a7abc2d",
+              "name": "Actions",
+              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+            },
+            {
+              "id": "15e53097-8858-4663-b2ed-60de43b67e8e",
+              "name": "Actions",
+              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+            }
+          ],
+          "legendaryActions": [],
+          "speed": "30",
+          "xp": "33000",
+          "enemy": "monster",
+          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1"
+        },
+        {
+          "name": "Lich 2",
+          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
+          "type": "Undead",
+          "ac": "17",
+          "size": "medium",
+          "hitDice": {
+            "hdDice": "18",
+            "hdSides": "8",
+            "hdBonus": "54"
+          },
+          "hp": "135",
+          "cr": "21",
+          "str": "11",
+          "dex": "16",
+          "con": "16",
+          "int": "20",
+          "wis": "14",
+          "cha": "16",
+          "id": "913d2373-9d59-4c6a-bd70-a9dbc1428498",
+          "senses": [
+            "truevision"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [
+            "con",
+            "int",
+            "wis"
+          ],
+          "skills": [
+            "arcana",
+            "history",
+            "insight",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [
+            "cold",
+            "lightning",
+            "necrotic"
+          ],
+          "damageImmunity": [
+            "poison",
+            "bludgeoning",
+            "piercing",
+            "slashing"
+          ],
+          "conditionImmunity": [
+            "charmed",
+            "exhaustion",
+            "paralised",
+            "poisoned",
+            "frightened",
+            "paralysed"
+          ],
+          "conditions": [],
+          "traits": [],
+          "actions": [],
+          "legendary": [
+            {
+              "id": "f04ef083-b08b-4fb7-8067-48807a7abc2d",
+              "name": "Actions",
+              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+            },
+            {
+              "id": "15e53097-8858-4663-b2ed-60de43b67e8e",
+              "name": "Actions",
+              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+            }
+          ],
+          "legendaryActions": [],
+          "speed": "30",
+          "xp": "33000",
+          "enemy": "monster",
+          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1"
+        }
+      ],
+      "mode": "running",
+      "round": 0,
+      "turn": 0
+    },
+    {
+      "name": "When Hats Attack",
+      "description": "",
+      "id": "4bec8a80-cdcc-4ee2-8365-f64428bd63d3",
+      "adventureId": "e8823001-9a25-430a-b234-06ed10ab1f4e",
+      "campaignId": "b68e1d95-4805-44b7-8bda-69b55ba2cfa1",
+      "modified": "2022:04:25:19:00:49",
+      "initiative": [
+        {
+          "name": "Goblin 1",
+          "id": "18fdb018-dc81-48de-853d-527b66ce7ec6",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 22,
+          "enemy": "monster"
+        },
+        {
+          "name": "Lich 1",
+          "id": "3675e61a-27a8-4283-a529-a8b97c831cd8",
+          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1",
+          "init": 18,
+          "enemy": "monster"
+        },
+        {
+          "name": "Raskas",
+          "id": "fba98b07-7055-4284-8ced-86bae0919365",
+          "enemy": "pc",
+          "init": "18"
+        },
+        {
+          "name": "Polydeuces",
+          "id": "9d42789a-8c25-4e62-9694-3aac4a992de2",
+          "enemy": "pc",
+          "init": "14"
+        },
+        {
+          "name": "Sherlock 4",
+          "id": "c57ff14c-06db-47c6-bd4a-4ac6bd160f40",
+          "enemy": "pc",
+          "init": "12"
+        },
+        {
+          "name": "Purple assasin",
+          "id": "efd04926-ecca-495a-82e5-5ce3f7e2419f",
+          "enemy": "pc",
+          "init": "11"
+        },
+        {
+          "name": "Tarrasque 1",
+          "id": "4a4b79c1-5322-468c-88ad-dff8deadf119",
+          "source": 26,
+          "init": 7,
+          "enemy": "monster"
+        }
+      ],
+      "monsters": [
+        {
+          "name": "Tarrasque 1",
+          "description": "The legendary tarrasque is possibly the most dreaded monster of the Material Plane. It is widely believed that only one of these creatures exists, though no one can predict where and when it will strike. A scaly biped, the tarrasque is fifty feet tall and seventy feet long, weighing hundreds of tons. It carries itself like a bird of prey, leaning forward and using its powerful lashing tail for balance. Its cavernous maw yawns wide enough to swallow all but the largest creatures, and so great is its hunger that it can devour the populations of whole towns. Legendary Destruction. The destructive potential of the tarrasque is so vast that some cultures incorporate the monster into religious doctrine, weaving its sporadic appearance into stories of divine judgment and wrath. Legends tell how the tarrasque slumbers in its secret lair beneath the earth, remaining in a dormant state for decades or centuries. When it awakens in answer to some inscrutable cosmic call, it rises from the depths to obliterate everything in its path.",
+          "type": "Monstrosity",
+          "ac": "25",
+          "hitDice": {
+            "hdDice": "33",
+            "hdSides": "20",
+            "hdBonus": "330"
+          },
+          "hp": 702,
+          "cr": "30",
+          "str": "30",
+          "dex": "11",
+          "con": "30",
+          "int": "3",
+          "wis": "11",
+          "cha": "11",
+          "id": "4a4b79c1-5322-468c-88ad-dff8deadf119",
+          "senses": [],
+          "languages": [],
+          "skills": [],
+          "saves": [],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "64375d48-ef9a-444f-8887-d04c5adef701",
+              "name": "Legendary Resistance (3/Day)",
+              "description": "If the tarrasque fails a saving throw, it can choose to succeed instead."
+            },
+            {
+              "id": "d3422c29-2678-4e1d-b26f-bda6ed5107f7",
+              "name": "Magic Resistance",
+              "description": "The tarrasque has advantage on saving throws against spells and other magical effects."
+            },
+            {
+              "id": "8228ba6a-ddc9-40c2-baf5-887ae5aef10b",
+              "name": "Reflective Carapace",
+              "description": "Any time the tarrasque is targeted by a magic missile spell, a line spell, or a spell that requires a ranged attack roll, roll a d6. On a 1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is unaffected, and the effect is reflected back at the caster as though it originated from the tarrasque, turning the caster into the target."
+            },
+            {
+              "id": "ec96f2a0-ab0b-445c-b8d2-30cc22254172",
+              "name": "Siege Monster",
+              "description": "The tarrasque deals double damage to objects and structures."
+            }
+          ],
+          "actions": [
+            {
+              "id": "4760b702-ed9d-4913-9219-4916284fa2a8",
+              "name": "Bite",
+              "description": "Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36 (4d12 + 10) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the tarrasque can't bite another target.",
+              "attack": "19",
+              "damage": {
+                "dice": "4",
+                "sides": "12",
+                "bonus": "10",
+                "type": "piercing"
+              }
+            },
+            {
+              "id": "04c5d899-c5da-4353-b8e3-4100f0eba1b5",
+              "name": "Claw",
+              "description": "Melee Weapon Attack: +19 to hit, reach 15ft., one target. Hit: 28 (4d8 + 10) slashing damage.",
+              "attack": "19",
+              "damage": {
+                "dice": "4",
+                "sides": "8",
+                "bonus": "10",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "001c4a6c-a825-438a-ad5c-e6fecf83ce38",
+              "name": "Frightful Presence",
+              "description": "Each creature of the tarrasque's choice within 120 feet of it and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the tarrasque is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the tarrasque's Frightful Presence for the next 24 hours."
+            },
+            {
+              "id": "4bb044d8-7a54-409e-b50a-7f8f8499ba46",
+              "name": "Horns",
+              "description": "Melee Weapon Attack: +19 to hit, reach 10ft., one target. Hit: 32 (4d10 + 10) piercing damage.",
+              "attack": "19",
+              "damage": {
+                "dice": "4",
+                "sides": "10",
+                "bonus": "10",
+                "type": "piercing"
+              }
+            },
+            {
+              "id": "3586c498-c66d-4f85-801b-660c8561906e",
+              "name": "Multiattack",
+              "description": "The tarrasque can use its Frightful Presence. It then makes five attacks: one with its bite, two with its claws, one with its horns, and one with its tail. It can use its Swallow instead of its bite."
+            },
+            {
+              "name": "Swallow",
+              "description": "The tarrasque makes one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the tarrasque, and it takes 56 (16d6) acid damage at the start of each of the tarrasque's turns. If the tarrasque takes 60 damage or more on a single turn from a creature inside it, the tarrasque must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the tarrasque. If the tarrasque dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 30 feet of movement, exiting prone."
+            },
+            {
+              "id": "f9d0e6dd-8e64-49c7-98cf-c9f024f7a24c",
+              "name": "Tail",
+              "description": "Melee Weapon Attack: +19 to hit, reach 20ft., one target. Hit: 24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be knocked prone.",
+              "attack": "19",
+              "damage": {
+                "dice": "4",
+                "sides": "4",
+                "bonus": "10",
+                "type": "bludgeoning"
+              }
+            }
+          ],
+          "legendary": [
+            {
+              "description": "The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The tarrasque regains spent legendary actions at the start of its turn.",
+              "actions": "3"
+            }
+          ],
+          "legendaryActions": [
+            {
+              "id": "e1726737-652f-4481-97f0-ef6839d649d2",
+              "name": "Attack",
+              "description": "The tarrasque makes one claw attack or tail attack."
+            },
+            {
+              "id": "a3848d83-d04f-4c56-8197-9fd3817d2a85",
+              "name": "Chomp (Costs 2 Legendary Actions)",
+              "description": "The tarrasque makes one bite attack or uses its Swallow."
+            },
+            {
+              "id": "e3a4c915-9633-4d13-98c6-b26b38b802f0",
+              "name": "Move",
+              "description": "The tarrasque moves up to half its speed."
+            }
+          ],
+          "enemy": "monster",
+          "source": 26
+        },
+        {
+          "name": "Lich 1",
+          "description": "A lich often haunts the abode it favored in life, such as a lonely tower, a haunted ruin, or an academy of black magic. Alternatively, some liches construct secret tombs filled with powerful guardians and traps.\n\nEverything about a lich’s lair reflects its keen mind and wicked cunning, including the magic and mundane traps that secure it. Undead, constructs, and bound demons lurk in shadowy recesses, emerging to destroy those who dare to disturb the lich’s work.\n\nA lich encountered in its lair has a challenge rating of 22 (41,000 XP).\n\nLair Actions\n\nOn initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can’t use the same effect two rounds in a row:\nThe lich rolls a d8 and regains a spell slot of that level or lower. If it has no spent spell slots of that level or lower, nothing happens.\nThe lich targets one creature it can see within 30 feet of it. A crackling cord of negative energy tethers the lich to the target. Whenever the lich takes damage, the target must make a DC 18 Constitution saving throw. On a failed save, the lich takes half the damage (rounded down), and the target takes the remaining damage. This tether lasts until initiative count 20 on the next round or until the lich or the target is no longer in the lich’s lair.\n    The lich calls forth the spirits of creatures that died in its lair. These apparitions materialize and attack one creature that the lich can see within 60 feet of it. The target must succeed on a DC 18 Constitution saving throw, taking 52 (15d6) necrotic damage on a failed save, or half as much damage on a success. The apparitions then disappear.",
+          "type": "Undead",
+          "ac": "17",
+          "size": "medium",
+          "hitDice": {
+            "hdDice": "18",
+            "hdSides": "8",
+            "hdBonus": "54"
+          },
+          "hp": "135",
+          "cr": "21",
+          "str": "11",
+          "dex": "16",
+          "con": "16",
+          "int": "20",
+          "wis": "14",
+          "cha": "16",
+          "id": "3675e61a-27a8-4283-a529-a8b97c831cd8",
+          "senses": [
+            "truevision"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [
+            "con",
+            "int",
+            "wis"
+          ],
+          "skills": [
+            "arcana",
+            "history",
+            "insight",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [
+            "cold",
+            "lightning",
+            "necrotic"
+          ],
+          "damageImmunity": [
+            "poison",
+            "bludgeoning",
+            "piercing",
+            "slashing"
+          ],
+          "conditionImmunity": [
+            "charmed",
+            "exhaustion",
+            "paralised",
+            "poisoned",
+            "frightened",
+            "paralysed"
+          ],
+          "conditions": [],
+          "traits": [],
+          "actions": [],
+          "legendary": [
+            {
+              "id": "f04ef083-b08b-4fb7-8067-48807a7abc2d",
+              "name": "Actions",
+              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+            },
+            {
+              "id": "15e53097-8858-4663-b2ed-60de43b67e8e",
+              "name": "Actions",
+              "description": "The litch can make 3 legendary actions, chosing from the options below. Only 1 option can be used at a time and only at the end of another creatures turn. The litch regains spent actions at the start of its own turn."
+            }
+          ],
+          "legendaryActions": [],
+          "speed": "30",
+          "xp": "33000",
+          "enemy": "monster",
+          "source": "2e2707f5-a55d-4266-bf43-5199d3c171a1"
+        },
+        {
+          "id": "18fdb018-dc81-48de-853d-527b66ce7ec6",
+          "name": "Goblin 1",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        }
+      ],
+      "mode": "editing",
+      "round": 0,
+      "turn": 0
+    },
+    {
+      "name": "Big angry ball",
+      "description": "Big angry ball trying to attack innocent gullable adventurers ",
+      "id": "76b94d42-72da-4056-8a42-b55aeaf47bf5",
+      "adventureId": "3ab5cea2-18b7-4721-be3b-29689d306cc4",
+      "campaignId": "45363499-3227-47fb-bcda-d5525ecd17fc",
+      "modified": "2022:04:25:21:00:35",
+      "initiative": [
+        {
+          "name": "Goblin 4",
+          "id": "bf9d2235-90fa-42cf-b134-37ae346522c4",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 22,
+          "enemy": "monster"
+        },
+        {
+          "name": "Goblin 3",
+          "id": "ea93d58f-6cf1-4e7c-9a7c-c203a30d26b5",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 19,
+          "enemy": "monster"
+        },
+        {
+          "name": "Arizona",
+          "id": "34fd4f72-5e96-4962-b5a9-6b117e723a63",
+          "enemy": "pc",
+          "init": "17"
+        },
+        {
+          "name": "Goblin 2",
+          "id": "567b7dc9-e279-4c57-b924-597e26f8db26",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 12,
+          "enemy": "monster"
+        },
+        {
+          "id": "e3a2234e-484c-4996-a041-297ff860febe",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "name": "Goblin 6",
+          "enemy": "monster",
+          "init": 12
+        },
+        {
+          "name": "Goblin 1",
+          "id": "ffa6be82-215c-4a90-8042-81ee40eaa9a8",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 10,
+          "enemy": "monster"
+        },
+        {
+          "name": "Goblin 5",
+          "id": "37bb38a4-4a86-4c04-84cd-afb2562c0022",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8",
+          "init": 5,
+          "enemy": "monster"
+        }
+      ],
+      "monsters": [
+        {
+          "id": "ffa6be82-215c-4a90-8042-81ee40eaa9a8",
+          "name": "Goblin 1",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "567b7dc9-e279-4c57-b924-597e26f8db26",
+          "name": "Goblin 2",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "ea93d58f-6cf1-4e7c-9a7c-c203a30d26b5",
+          "name": "Goblin 3",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "bf9d2235-90fa-42cf-b134-37ae346522c4",
+          "name": "Goblin 4",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "37bb38a4-4a86-4c04-84cd-afb2562c0022",
+          "name": "Goblin 5",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        },
+        {
+          "id": "e3a2234e-484c-4996-a041-297ff860febe",
+          "name": "Goblin 6",
+          "description": "Goblins are small, black-hearted humanoids that lair in despoiled dungeons and other dismal settings. Individually weak, they gather in large numbers to torment other creatures.",
+          "ac": "15",
+          "hitDice": {
+            "hdDice": "2",
+            "hdSides": "6",
+            "hdBonus": "0"
+          },
+          "hp": "7",
+          "cr": "0.25",
+          "type": "Humanoid",
+          "str": "8",
+          "dex": "14",
+          "con": "10",
+          "int": "10",
+          "wis": "8",
+          "cha": "8",
+          "senses": [
+            "darkvision 60"
+          ],
+          "languages": [
+            "common",
+            "goblin"
+          ],
+          "saves": [],
+          "skills": [
+            "stealth",
+            "perception"
+          ],
+          "vulnerabilities": [],
+          "resistances": [],
+          "damageImmunity": [],
+          "conditionImmunity": [],
+          "conditions": [],
+          "traits": [
+            {
+              "id": "d7391660-b072-42c8-8f97-4e58ec38e46e",
+              "name": "Nimble Escape",
+              "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            }
+          ],
+          "actions": [
+            {
+              "id": "630e4bd8-48f5-4b6f-8ddd-84ebc2cf23c5",
+              "name": "Scimitar",
+              "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "slashing"
+              }
+            },
+            {
+              "id": "2b38950a-7c9a-4e47-8d8f-aa9b5d3f1785",
+              "name": "Shortbow",
+              "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack": "4",
+              "damage": {
+                "dice": "1",
+                "sides": "6",
+                "bonus": "2",
+                "type": "piercing"
+              }
+            }
+          ],
+          "legendary": [],
+          "legendaryActions": [],
+          "size": "small",
+          "xp": "50",
+          "enemy": "monster",
+          "source": "e0abd072-4f92-4175-8da9-c75ad71bd6d8"
+        }
+      ],
+      "mode": "running",
+      "round": 0,
+      "turn": 3
     }
   ],
   "equipment": [
