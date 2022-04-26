@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../AppContext";
 import { useParams, Link } from 'react-router-dom';
 
-import { FaEdit, FaWindowClose } from 'react-icons/fa'
+import { FaEdit, FaWindowClose, FaBackward, FaForward } from 'react-icons/fa'
 import { v4 as uuidv4 } from 'uuid';
 import { abilityModifier, diceRoll } from "../Maths";
 
@@ -44,7 +44,7 @@ const Encounter = () => {
             setPcs(characters.list.filter(f => f.campaignId === encounter.campaignId));
             setInitiative([...encounter.initiative]);
         }
-    
+        
       return () => {
       }
     }, [encounter])
@@ -131,6 +131,48 @@ const Encounter = () => {
         setModal({on: false, type: ""})
     }
 
+    const incrementInitiative = (direction) => {
+        console.log(`current turn: ${encounter.turn}`)
+        switch (direction) {
+            default:
+                if (encounter.turn < encounter.initiative.length -1) {
+                    setEncounter({...encounter, turn: encounter.turn + 1})
+                    displayCombatant(
+                        encounter.initiative[encounter.turn + 1])
+                    console.log(`encounter length: ${encounter.initiative.length}, current turn: ${encounter.turn}`)
+                } else {
+                    setEncounter({...encounter, turn: 0, round: encounter.round + 1})
+                    displayCombatant(encounter.initiative[0])
+                } 
+                break
+                case "back":
+                    if (encounter.turn > 0) {
+                        setEncounter({...encounter, turn: encounter.turn - 1})
+                        displayCombatant(encounter.initiative[encounter.turn -1])
+                    } else if (encounter.round > 0) {
+                        setEncounter({...encounter, turn: encounter.initiative.length -1, round: encounter.round -1})
+                        displayCombatant(encounter.initiative[encounter.initiative.length -1])
+                }
+                break
+        }
+        console.log(encounter.turn)
+    }
+
+    const displayCombatant = (combatant) => {
+        switch (true) {
+            default:
+                // monsters
+                console.log(encounter.monsters.filter(m => m.id === combatant.id)[0])
+                setSelected(encounter.monsters.filter(m => m.id === combatant.id)[0])
+                break
+            case combatant.enemy === "pc":
+                console.log(characters.list.filter(c => c.id === combatant.id)[0])
+                setSelected(characters.list.filter(c => c.id === combatant.id)[0])
+                break
+        }
+        // console.log(combatant)
+    }
+
     return (
         <>
             {settings.list.toolbarOpen && <Toolbar></Toolbar>}
@@ -212,16 +254,23 @@ const Encounter = () => {
                     {/* running initiative list */}
                     {encounter && encounter.mode === "running" &&
                     <div className="one-column">
-                        <button onClick={() => {editItem("encounters", {...encounter, mode: "editing"}, encounter.id)}}>Edit</button>
-                        <p>initiative list</p>
-                        <Combatant encounter={encounter}></Combatant>
+                        <div className="flex-row">
+                        <h3>{`Round: ${encounter.round + 1} Turn: ${encounter.turn + 1}`}</h3>
+                            <button onClick={() => {incrementInitiative("back")}}><FaBackward /></button>
+                            <button onClick={() => {editItem("encounters", {...encounter, mode: "editing"}, encounter.id)}}>Edit</button>
+                            <button onClick={() => {incrementInitiative("forward")}}><FaForward /></button>
+                        </div>
+                        {/* <p>initiative list</p> */}
+                        <CombatantList encounter={encounter} characters={characters} displayCombatant={displayCombatant} setSelected={setSelected}></CombatantList>
                     </div>
                     }
 
                 {/* the display pane for selected items */}
                 <div className="column-wide">
-                    {selected && selected.enemy === "monster" && <FormMonster monster={selected} dbUpdate={editCombatant}></FormMonster>}
-                    {selected && selected.enemy === "pc" && <CharacterForm data={selected} updateFnc={editCharacter}></CharacterForm>}
+                    {encounter && encounter.mode === "editing" && selected && selected.enemy === "monster" && <FormMonster monster={selected} dbUpdate={editCombatant}></FormMonster>}
+                    {encounter && encounter.mode === "editing" && selected && selected.enemy === "pc" && <CharacterForm data={selected} updateFnc={editCharacter}></CharacterForm>}
+                    {/* {encounter && encounter.mode === "running" && selected && selected.enemy === "monster" &&<h1>{selected.name}</h1>} */}
+                    {encounter && encounter.mode === "running" && selected &&<CombatantDetails combatant={selected}></CombatantDetails>}
                 </div>
                 </section>
             </main>
@@ -487,14 +536,89 @@ const RollInitiative = ({encounter, setModal, saveInitiative}) => {
     );
 }
 
-const Combatant = ({ encounter }) => {
+const CombatantList = ({ encounter, characters, displayCombatant, setSelected }) => {
+    useEffect(() => {
+        console.log("Combatant loadedS")
+      setSelected(encounter.initiative[encounter.turn])
+    
+      return () => {}
+    }, [])
+    
     return (
-        encounter.initiative.sort((a,b) => b.init - a.init).map(combatant => (
-            <div key={combatant.id} className="list-item">
-                <div style={{backgroundColor: "green", color: "white", width: "40px"}}>{combatant.init}</div>
-                <p>{combatant.name}</p>
+        <>
+        {/* sort the initiative list, highest init to lowest */}
+        {encounter.initiative.sort((a,b) => b.init - a.init).map((combatant, index) => (
+            <div key={combatant.id}>
+            <Combatant combatant={combatant} index={index} encounter={encounter} characters={characters} displayCombatant={displayCombatant}></Combatant>
             </div>
-        ))
+        ))}
+        </>
+    );
+}
+
+const Combatant = ({combatant, index, characters, displayCombatant, encounter}) => {
+    const [ details, setDetails ] = useState();
+
+    useEffect(() => {
+      if (combatant && combatant.enemy === "pc") {
+          setDetails(characters.list.filter(c => c.id === combatant.id)[0])
+      } else if (combatant && combatant.enemy === "monster")
+        setDetails(encounter.monsters.filter(m => m.id === combatant.id)[0])
+      return () => {}
+    }, [combatant])
+    
+    return (
+        <>
+        {details && <div 
+                key={details.id} 
+                className="combatant-item" style={encounter.turn === index ? {backgroundColor: "lightgreen"} : {backgroundColor: "white"}}>
+
+                <div className="initiative" style={{backgroundColor: "green", color: "white", width: "40px"}}>{combatant.init}</div>
+                <div className="details"
+                onClick={
+                    () => {
+                        combatant.enemy === "monster" ? 
+                            displayCombatant(encounter.monsters.filter(m => m.id === combatant.id)[0]) : 
+                            displayCombatant(characters.list.filter(c => c.id === combatant.id)[0])}}>
+                                <h2>{details.name}</h2>
+                
+                        <p>Invisible, Blinded</p>
+                </div>
+                <div className="hitpoints" onClick={() => {window.alert("cool hitpoint calulator :)")}}><h2>{details.hp}{details.maxHP}/{details.hp}{details.maxHP}</h2></div>
+            </div>}
+            </>
+    );
+}
+
+const CombatantDetails = ({combatant}) => {
+    return (
+        <>
+        <div className="combat-details-column">
+            <h3>{combatant.name}</h3>
+            <p>{combatant.description}</p>
+            <div className="flex-row">
+                <button onClick={() => {window.alert(diceRoll(1,20,abilityModifier(combatant.str))[2])}}>{combatant.str}</button>
+                <button onClick={() => {window.alert(diceRoll(1,20,abilityModifier(combatant.dex))[2])}}>{combatant.dex}</button>
+                <button onClick={() => {window.alert(diceRoll(1,20,abilityModifier(combatant.con))[2])}}>{combatant.con}</button>
+                <button onClick={() => {window.alert(diceRoll(1,20,abilityModifier(combatant.int))[2])}}>{combatant.int}</button>
+                <button onClick={() => {window.alert(diceRoll(1,20,abilityModifier(combatant.wis))[2])}}>{combatant.wis}</button>
+                <button onClick={() => {window.alert(diceRoll(1,20,abilityModifier(combatant.cha))[2])}}>{combatant.cha}</button>
+            </div>
+            <div className="flex-row">
+                <p>Speed: {combatant.speed}</p>
+            </div>
+            <div className="flex-column">
+                {combatant.actions && combatant.actions.map(action => (
+                    <div className="flex-row">
+                        <p>{action.name}</p>
+                        {action.attack &&<button onClick={() => {window.alert(diceRoll(1,20,action.attack)[2])}}>To Hit: {action.attack}</button>}
+                        {action.damage &&<button onClick={() => {window.alert(diceRoll(action.damage.dice,action.damage.sides,action.damage.bonus)[2])}}>damage: {action.damage.dice}d{action.damage.sides}+{action.damage.bonus}</button>}
+
+                    </div>
+                ))}
+            </div>
+        </div>
+        </>
     );
 }
 

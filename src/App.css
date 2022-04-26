@@ -65,6 +65,13 @@ body {
   -ms-overflow-style: none;  /*IE and Edge */
 }
 
+@media (max-width: 500px) {
+  body {
+    background-size: auto 150%;
+    background-position: right;
+  }
+}
+
 /* body::-webkit-scrollbar {
     display: none;
 }
@@ -108,6 +115,7 @@ nav p {
   cursor: pointer;
   color: var(--paper);
   padding: 1ch 0.5ch;
+  z-index: 2;
 }
 
 nav a {
@@ -190,6 +198,51 @@ section {
 
 .list-item:hover {
   animation: grow 0.08s ease-in 1 normal forwards; 
+}
+
+.combatant-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--paper);
+  box-shadow: var(--box-shadow);
+  color: black;
+  border-radius: 1px;
+  animation: shrink 0.05s ease-in 1 normal forwards;
+  gap: 1ch;
+}
+
+.combatant-item .initiative {
+  padding: 0.5ch 0.5ch 0ch 0.5ch;
+  text-align: center;
+}
+
+.combatant-item .details {
+  cursor: pointer;
+  padding: 0.5ch 0ch 0ch 0ch;
+  width: 100%;
+  text-align: left;
+}
+
+.combatant-item .hitpoints {
+  display: flex;
+  justify-content: center;
+  /* align-content: center; */
+  font-size: 1.2em;
+  background-color: rgb(56, 56, 56);
+  min-width: 6ch;
+}
+
+.combatant-item .hitpoints h2 {
+  justify-self: center;
+  align-self: center;
+  color: ghostwhite;
+  padding: 0.5ch 1ch;
+}
+
+.combat-details-column {
+  background-color: var(--paper);
+  background: url(./assets/exclusive_paper.png);
+  padding: 1ch;
 }
 
 @keyframes grow {

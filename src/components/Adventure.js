@@ -79,7 +79,10 @@ const Adventure = () => {
                     "modified": getDateTime(),
                     "initiative": [],
                     "monsters": [],
-                    "mode": "editing"});
+                    "mode": "editing",
+                    round: 0,
+                    turn: 0
+                });
                 setModal({"on": false});
         }
     }

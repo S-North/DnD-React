@@ -12,7 +12,7 @@ import CharacterForm from './forms/CharacterForm';
 
 const Campaign = () => {
     const { id } = useParams();
-    const { settings, campaigns, adventures, characters, encounters, addItem, deleteItem, editItem } = useContext(AppContext);
+    const { settings, campaigns, adventures, characters, encounters, addItem, deleteItem, editItem, isSignedIn } = useContext(AppContext);
     const [ campaign, setCampaign ] = useState(campaigns.list.filter(f => { return f.id === id})[0]);
     const [ selected, setSelected ] =useState();
     const [ modal, setModal ] = useState({

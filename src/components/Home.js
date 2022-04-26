@@ -1,6 +1,9 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../AppContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import {auth} from '../Firebase';
 
 import { FaEdit, FaWindowClose } from 'react-icons/fa'
 import { v4 as uuidv4 } from 'uuid';
@@ -10,7 +13,9 @@ import Toolbar from "./Toolbar";
 import BasicForm from "./forms/BasicForm";
 
 const Home = () => {
-
+    const { settings, campaigns, adventures, encounters, addItem, editItem, deleteItem, loggedIn, getCampaigns } = useContext(AppContext);
+    const navigate = useNavigate()
+    console.log(getCampaigns())
     const getDateTime = () => {
         const datetime = new Date();
         let day = datetime.getDate();
@@ -27,7 +32,6 @@ const Home = () => {
         return `${year}:${month}:${day}:${hour}:${minute}:${second}`
     }
 
-    const { settings, campaigns, adventures, encounters, addItem, editItem, deleteItem } = useContext(AppContext);
     const [ selected, setSelected ] =useState();
     const [ modal, setModal ] = useState({
         "type": "none",
@@ -62,6 +66,9 @@ const Home = () => {
 
     return (
         <>
+            {/* <h1>Welcome {auth().currentUser.displayName}</h1>
+            <h1>Welcome {auth().currentUser.email}</h1> */}
+            {loggedIn && <button onClick={() => auth().signOut().then(() => navigate('/login'))}>Sign-out</button>}
             {/* navbar and toolbar */}
             {settings.list.toolbarOpen && <Toolbar></Toolbar>}
             <Nav></Nav>
@@ -84,6 +91,7 @@ const Home = () => {
                 <section>
                     <div className="one-column">
                         <h2>Campaigns</h2>
+                            <button onClick={()=> {console.log(getCampaigns())}}>Check firestore</button>
                             <button className="green" onClick={() => {setSelected({"name": "", "description": ""}, setModal({"on": true, "type": "campaign"}))}}>New</button>
 
                             {campaigns.list.sort((a,b) => {return a.modified < b.modified}).map(campaign => (

@@ -1,13 +1,38 @@
 import { useState, createContext, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
-import { v4 as uuidv4 } from 'uuid';
+const config = {
+    apiKey: process.env.REACT_APP_FIREBASE_APIKEY, 
+    authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDERID,
+    appId: process.env.REACT_APP_FIREBASE_APPID
+  }
+
+console.log(config)
+
+const app = firebase.initializeApp(config);
+const db = getFirestore(app);
 
 export const AppContext = createContext();
+export const auth = app.firebase.auth;
 
-export const AppProvider = (props) => { 
-  // const history = useNavigate();
+export const AppProvider = (props) => {
 
+  async function getCampaigns() {
+    if (firebase.auth().currentUser) {
+      const campaignCol = collection(db, 'campaigns');
+      const campaignSnapshot = await getDocs(campaignCol);
+      const campaignList = await campaignSnapshot.docs.map(doc => doc.data());
+      // console.log(campaignList);
+      return campaignList
+    }
+  }
+  
+  const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
   const [ settings, setSettings] = useState(
       {
           "darkmode": false,
@@ -85,21 +110,21 @@ export const AppProvider = (props) => {
             }
           }
 
-const jsonserver = "http://localhost:8000";
+const jsonserver = process.env.REACT_APP_JSON_SERVER
     useEffect(() => {
-        console.log("fetching campaigns from jsonserver")    
+        console.log(`fetching campaigns from jsonserver ${jsonserver}`)    
         fetch(`${jsonserver}/campaigns`)
             .then(response => response.json())
             .then((campaigns) => {
             setCampaigns(campaigns);
         });
-        console.log("fetching adventures from jsonserver")
+        console.log(`fetching adventures from jsonserver  ${jsonserver}`)
       fetch(`${jsonserver}/adventures`)
       .then(response => response.json())
       .then((adventures) => {
         setAdventures(adventures);
       });
-      console.log("fetching encounters from jsonserver")
+      console.log(`fetching encounters from jsonserver ${jsonserver}`)
     fetch(`${jsonserver}/encounters`)
       .then(response => response.json())
       .then((encounters) => {
@@ -238,6 +263,11 @@ const jsonserver = "http://localhost:8000";
     return (
         <AppContext.Provider
             value={{
+                // app: app,
+                auth: firebase.auth,
+                getCampaigns: getCampaigns,
+                loggedIn: {state: props.loggedIn, setState: props.setLoggedIn},
+                isSignedIn: {"state": isSignedIn, "setState": setIsSignedIn},
                 characters: {"list": characters, "update": setCharacters},
                 monsterBook: {"list": monsterBook, "update": setMonsterBook},
                 equipment: {"list": equipment, "update": setEquipment},

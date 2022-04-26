@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Toolbar = () => {
     const { settings } = useContext(AppContext)
