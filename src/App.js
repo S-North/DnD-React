@@ -36,7 +36,7 @@ function App() {
             <Route exact path="/monsters" element={<MonsterBook />}></Route>
             <Route exact path="/equipment" element={<Equipment />}></Route>
             <Route exact path="/spells" element={<Spells />}></Route>
-            <Route exact path="/login" element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}></Route>
+            {/* <Route exact path="/login" element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}></Route> */}
             {/* {loggedIn && <Route exact path="/campaign/:id" element={<Campaign />} />}
             {loggedIn && <Route exact path="/adventure/:id" element={<Adventure />} />}
             {loggedIn && <Route exact path="/encounter/:id" element={<Encounter />} />}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const BasicForm = ({data, updateFnc}) => {
+const BasicForm = ({data, updateFnc, firebaseCol}) => {
     console.log(data, updateFnc)
     const [ item, setItem ] = useState({"name": "", "description": ""});
 
@@ -35,7 +35,7 @@ const BasicForm = ({data, updateFnc}) => {
                     className='btn green'
                     type='button' 
                     value='Save Campaign'
-                    onClick={(e) => {updateFnc(item)}}
+                    onClick={(e) => {updateFnc(firebaseCol, item)}}
                 >Add</button>
             </form>}
         </>

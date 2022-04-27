@@ -5,8 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 import Nav from "./Nav";
 import Toolbar from "./Toolbar";
 import FormMonster from "./FormMonster";
+import tarrasque from '../tarrasque'
 
 const MonsterList = ({setSelected, deleteMonster, addMonster}) => {
+    console.log(tarrasque)
     console.log(setSelected)
     const { monsterBook, monsterTemplate, addItem, deleteItem, crRange, monsterTypes } = useContext(AppContext);
     const [ search, setSearch ] = useState("");

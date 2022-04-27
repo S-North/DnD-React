@@ -2,6 +2,11 @@ import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../AppContext";
 import { useParams, Link } from 'react-router-dom';
 
+import { firestore as db } from '../Firebase'
+import { onSnapshot, collection, getDoc, doc, addDoc, setDoc, deleteDoc, query, orderBy, where, serverTimestamp } from 'firebase/firestore';
+import { handleNew, handleDelete } from "../firebaseData";
+
+import { truncate } from "../utils";
 import { FaEdit, FaWindowClose } from 'react-icons/fa'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -12,80 +17,111 @@ import CharacterForm from './forms/CharacterForm';
 
 const Campaign = () => {
     const { id } = useParams();
-    const { settings, campaigns, adventures, characters, encounters, addItem, deleteItem, editItem, isSignedIn } = useContext(AppContext);
-    const [ campaign, setCampaign ] = useState(campaigns.list.filter(f => { return f.id === id})[0]);
+    const { settings } = useContext(AppContext);
+    const [ campaign, setCampaign ] = useState([{name: "LOADING...", description: ""}]);
+    const [ adventures, setAdventures ] = useState([{name: "LOADING...", description: ""}])
+    const [ encounters, setEncounters ] = useState([]);
+    const [ characters, setCharacters ] = useState([])
     const [ selected, setSelected ] =useState();
     const [ modal, setModal ] = useState({
         "type": "none",
         "on": false
     })
-
-    useEffect(() => {
-      setCampaign(campaigns.list.filter(f => { return f.id === id})[0])
-      return () => {
-      }
-    }, [campaigns])
-
-    const truncate = (string="", maxlength) => {
-        if (string.length > maxlength) {
-            return `${string.slice(0, maxlength)}...`
-        } else {
-            return string
-        }
-    }
-
-    const getDateTime = () => {
-        const datetime = new Date();
-        let day = datetime.getDate();
-        let month = datetime.getMonth()+1;//January is 0!`
-        let year = datetime.getFullYear();
-        let hour = datetime.getHours();
-        let minute = datetime.getMinutes();
-        let second = datetime.getSeconds();
-        if(month<10){month='0'+month}
-        if(day<10){day='0'+day}
-        if(hour<10){hour='0'+hour}
-        if(minute<10){minute='0'+minute}
-        if(second<10){second='0'+second}
-        return `${year}:${month}:${day}:${hour}:${minute}:${second}`
-    }
-
-    const addCharacter = (character) => {
-        console.log(character)
-        switch (!character.id) {
-            default:
-                console.log("id is not empty. Edit campaign");
-                console.log(Date());
-                console.log(character);
-                editItem("characters", {...character, "modified": getDateTime()}, character.id);
-                setModal({"on": false});
-                break
-            case true:
-                console.log("id is empty. Create new campaign");
-                console.log(character);
-                console.log(Date());
-                addItem("characters", {...character, "id": uuidv4(), "campaignId": id, "modified": getDateTime(), enemy: "pc"});
-                setModal({"on": false});
-        }
-    }
     
-    const addAdventure = (adventure) => {
-        switch (!adventure.id) {
-            default:
-                console.log("id is not empty. Edit campaign");
-                console.log(Date());
-                console.log(adventure);
-                editItem("adventures", {...adventure, "modified": getDateTime()}, adventure.id);
-                setModal({"on": false});
-                break
-            case true:
-                console.log("id is empty. Create new campaign");
-                console.log(campaign);
-                console.log(Date());
-                addItem("adventures", {...adventure, "id": uuidv4(), "campaignId": id, "modified": getDateTime()});
-                setModal({"on": false});
+    useEffect(() => {
+        // create Firebase listener to update the adventures state
+        const collectionRef= collection(db, "adventures")
+        // filter and sort here
+        const q = query(collectionRef, where("campaignId", "==", id), orderBy("modified", "asc")) // Compound queries need to have an index created for them in Firebase console 
+        const unsub = onSnapshot(q, (snapshot) => {
+            setAdventures(
+                snapshot.docs.map(
+                    doc => (({...doc.data(), id: doc.id}))
+                    )
+                    )
+                })
+
+        const campaignReq = async () => {
+            const docRef = doc(db, "campaigns", id);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                setCampaign(docSnap.data());
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
         }
+        campaignReq()
+        
+        return unsub
+      }, [])
+
+      useEffect(() => {
+        // create Firebase listener to update the characters state
+        const charQ = query(collection(db, "characters"), where("campaignId", "==", id)) // Compound queries need to have an index created for them in Firebase console 
+        const unsub = onSnapshot(charQ, (snapshot) => {
+            setCharacters(
+            snapshot.docs.map(
+              doc => (({...doc.data(), id: doc.id}))
+            )
+          )
+        })
+        return unsub
+      }, [])
+
+      useEffect(() => {
+        // create Firebase listener to update the running encounters state
+        const charQ = query(collection(db, "encounters"), where("mode", "==", "running")) // Compound queries need to have an index created for them in Firebase console 
+        const unsub = onSnapshot(charQ, (snapshot) => {
+            setEncounters(
+            snapshot.docs.map(
+              doc => (({...doc.data(), id: doc.id}))
+            )
+          )
+        })
+        return unsub
+      }, [])
+
+    const addCharacter = async (character) => {
+        console.log(character)
+        const collectionRef = collection(db, "characters")
+        if (!character.id) {
+            const payload = {...character, campaignId: id, created: serverTimestamp(), modified: serverTimestamp()}
+            const docRef = await addDoc(collectionRef, payload)
+            console.log(docRef.id)
+        }
+        if (character.id) {
+            // identify the collection and document 
+            const payload = {...character, modified: serverTimestamp()}
+            const docRef = doc(db, "characters", character.id)
+            await setDoc(docRef, payload)
+        }
+            setModal({on: false, type: ""})
     }
+
+    const updateAdventure = async (firebaseCol, adventure) => {
+        console.log(adventure)
+        const collectionRef = collection(db, "adventures")
+        if (!adventure.id) {
+            const payload = {...adventure, campaignId: id, created: serverTimestamp(), modified: serverTimestamp()}
+            const docRef = await addDoc(collectionRef, payload)
+            console.log(docRef.id)
+        }
+        if (adventure.id) {
+            // identify the collection and document 
+            const payload = {...adventure, modified: serverTimestamp()}
+            const docRef = doc(db, "adventures", adventure.id)
+            await setDoc(docRef, payload)
+        }
+            setModal({on: false, type: ""})
+    }
+
+    const handleDelete = async (collection, id) => {
+        console.log(collection)
+        const docRef = doc(db, collection, id)  
+        await deleteDoc(docRef)
+      }
+    
     return (
         <>
             {settings.list.toolbarOpen && <Toolbar></Toolbar>}
@@ -96,10 +132,10 @@ const Campaign = () => {
                     {/* Modal content */}
                     <div class="modal-content">
                         <span class="close" onClick={() => {setModal({"on": false, "type": "none"})}}>&times;</span>
-                        {modal.type === "adventure" &&
+                        {modal.type === "adventures" &&
                         <>
                             <h3>Edit Adventure</h3>
-                            <BasicForm data={selected} updateFnc={addAdventure}></BasicForm>
+                            <BasicForm data={selected} updateFnc={updateAdventure} firebaseCol={modal.type}></BasicForm>
                         </>}
 
                         {modal.type === "character" &&
@@ -113,9 +149,9 @@ const Campaign = () => {
                 <section>
                     <div className="one-column">
                         <h2>Adventures</h2>
-                        <button className="green" onClick={() => {setSelected({"name": "", "description": ""}, setModal({"on": true, "type": "adventure"}))}}>New</button>
+                        <button className="green" onClick={() => {setSelected({"name": "", "description": ""}, setModal({"on": true, "type": "adventures"}))}}>New</button>
 
-                        {adventures.list.filter(f => {return f.campaignId === id}).sort((a,b) => {return a.name < b.name}).map(adventure => (
+                        {adventures.map(adventure => (
                             <div key={adventure.id} className="list-item">
                                 <Link key={adventure.id} to={`/adventure/${adventure.id}`}>
                                     <div className="link">
@@ -127,11 +163,11 @@ const Campaign = () => {
                                 <div><FaWindowClose 
                                     style={{"cursor": "pointer"}} 
                                     color="red"
-                                    onClick={() => {deleteItem("adventures", adventure.id)}} />
+                                    onClick={() => {handleDelete("adventures", adventure.id)}} />
                                 <FaEdit 
                                     style={{"cursor": "pointer"}} 
                                     color="grey"
-                                    onClick={() => {setSelected(adventure); setModal({"on": true, "type": "adventure"})}} />
+                                    onClick={() => {setSelected(adventure); setModal({"on": true, "type": "adventures"})}} />
                                 </div>
                             </div>
                         ))}
@@ -141,7 +177,7 @@ const Campaign = () => {
                         <h2>Characters</h2>
                         <button className="green" onClick={() => {setSelected({"name": "", "description": ""}, setModal({"on": true, "type": "character"}))}}>New</button>
 
-                        {characters.list.filter(f => {return f.campaignId === id}).sort((a,b) => {return a.name < b.name}).map(character => (
+                        {characters.map(character => (
                             <div key={character.id} className="list-item">
                                 <Link to={`/character/${character.id}`}>
                                     <div className="link">
@@ -153,7 +189,7 @@ const Campaign = () => {
                                 <div><FaWindowClose 
                                     style={{"cursor": "pointer"}} 
                                     color="red"
-                                    onClick={() => {deleteItem("characters", character.id)}} />
+                                    onClick={() => {handleDelete("characters", character.id)}} />
                                 <FaEdit 
                                     style={{"cursor": "pointer"}} 
                                     color="grey"
@@ -165,7 +201,7 @@ const Campaign = () => {
 
                     <div className="one-column">
                         <h2>Running Encounters</h2>
-                        {encounters && encounters.list.filter(e => { return e.campaignId === id && e.mode === "running"}).map(encounter => (
+                        {encounters && encounters.map(encounter => (
                         <div key={encounter.id} className="list-item">
                             <Link to={`/encounter/${encounter.id}`}>
                                 <h2>{encounter.name}</h2>
