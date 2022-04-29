@@ -300,7 +300,7 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
 
                                     
                                 </div>
-                                <div className="flex-row">
+                                {selected && selected.hitDice && <div className="flex-row">
                                     <label htmlFor="dice">Hit Dice:</label>
                                     <input id="dice" type="number" placeholder="hp" value={ selected.hitDice.hdDice }
                                         onChange={(e) =>            {setSelected({...selected, "hitDice": {...selected.hitDice, "hdDice": e.target.value}})}} />
@@ -318,7 +318,7 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
                                     <input id="hp" type="number" placeholder="hp" value={ selected.hp }
                                         onChange={(e) =>            {setSelected({...selected, "hp": e.target.value})}} />
 
-                                </div>
+                                </div>}
                                 <div className="flex-row">
                                     <label htmlFor="speed">Speed:</label>
                                     <input id="speed" type="number" placeholder="speed" value={ selected.speed }
@@ -343,11 +343,11 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
                         <article data="stats">
                             <details>
                                 <summary>Abilities</summary>
-                                <form className="flex-row">
+                                <form onSubmit={(e) => {e.preventDefault(); console.log(e); }} className="flex-row">
                                 <div className="ability-box">
                                     <label>Str</label>                                                                   
                                     <input placeholder="str" type="number" value={ selected.str }                            
-                                        onChange={(e) =>            {setSelected({...selected, "str": e.target.value})}} />
+                                        onChange={(e) =>            {setSelected({...selected, "str": (e.target.value)})}} />
                                     <p>{selected.str > 11 ? `+ ${abilityModifier(selected.str)}` : abilityModifier(selected.str)}</p>
                                 </div>
                                 <div className="ability-box">
@@ -428,12 +428,12 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
                             </details>
                         </article>
                         
-                        <article id="conditions">
+                        {/* <article id="conditions">
                             <details>
                                 <summary>Conditions ({conditions && selected.conditions.length})</summary>
                                 <form><CheckboxArray array={conditions} monster={selected} selection={selected.conditions} listName="conditions" setMonster={setSelected}></CheckboxArray></form>
                             </details>
-                        </article>
+                        </article> */}
 
                         {senses && <p>{senses}</p>}
                     </div>
@@ -459,7 +459,7 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
                                             setPanes({...panes, "addTrait": false, "editTrait":false})); 
                                             document.getElementById("traits").open = ""}}>Cancel</MdOutlineChevronLeft>}
                                 </summary>
-                                {panes.addTrait === true && 
+                                {selected && panes.addTrait === true && 
                                 <EditListItem 
                                     item={{"id": uuidv4(), "name": "", "description":""}} 
                                     type="trait"
@@ -469,7 +469,7 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
                                     setPanes={setPanes}>
                                 </EditListItem>}
 
-                                {panes.editTrait === true && 
+                                {selected && panes.editTrait === true && 
                                 <EditListItem 
                                     item={item}
                                     type="trait"
@@ -479,8 +479,8 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
                                     setPanes={setPanes}>
                                 </EditListItem>}
 
-                                {traits && (panes.addTrait === false && panes.editTrait === false) && selected.traits
-                                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                                {selected && selected.traits && traits && (panes.addTrait === false && panes.editTrait === false) && selected.traits
+                                
                                 .map((t) => (
                                     <div
                                         key={t.id}
@@ -613,7 +613,7 @@ const FormMonster = ({ formAction, monsters, monster, dbUpdate }) => {
                                 </EditListItem>}
 
                                 {legendary && (panes.addLegendary === false && panes.editLegendary === false) && selected.legendary
-                                .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) - (a.name.toLowerCase() < b.name.toLowerCase()) )
+                                
                                 .map((l) => (
                                     <div
                                         key={l.id}

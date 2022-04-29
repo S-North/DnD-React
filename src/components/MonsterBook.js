@@ -5,11 +5,23 @@ import { v4 as uuidv4 } from 'uuid';
 import Nav from "./Nav";
 import Toolbar from "./Toolbar";
 import FormMonster from "./FormMonster";
-import tarrasque from '../tarrasque'
+import { importMonster } from "../utils";
+import monsterManual from "../MonsterImport";
 
 const MonsterList = ({setSelected, deleteMonster, addMonster}) => {
-    console.log(tarrasque)
-    console.log(setSelected)
+
+    monsterManual.forEach((monster) => {
+        console.log(importMonster(monster))
+    })
+
+    const importMonsterManual = async () => {
+        monsterManual.forEach(async (monster) => {
+            console.log(`importing next monster... ${monster.name}`)
+            await addMonster(importMonster(monster))
+        });
+        
+    }
+    // console.log(monsterManual(tarrasque))
     const { monsterBook, monsterTemplate, addItem, deleteItem, crRange, monsterTypes } = useContext(AppContext);
     const [ search, setSearch ] = useState("");
     const [ minCr, setMinCr ] = useState("0");
@@ -37,7 +49,7 @@ const MonsterList = ({setSelected, deleteMonster, addMonster}) => {
     return (
         <>
             {addMonster && <button className="green" onClick={() => {setSelected({...monsterTemplate.list})}}>New Monster</button>}
-
+            <button onClick={() => {importMonsterManual()}}>Import Monster Manual</button>
             {/* Search bar and filters */}
             <details open={false} id="details" style={{"flexGrow": 0}}>
                 <summary>Filters</summary>
@@ -104,7 +116,7 @@ const MonsterBook = () => {
   
     const addMonster = (monster) => {
         addItem("monsters", monster);
-        setSelected(monsterTemplate)
+        // setSelected(monsterTemplate)
     }
 
     const deleteMonster = (monster) => {

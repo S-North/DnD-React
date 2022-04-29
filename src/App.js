@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AppProvider } from './AppContext';
 import Login from './components/Login'
 import MonsterBook from './components/MonsterBook';
+import Monsters from './components/Monsters';
 import Home from './components/Home';
 import Campaign from './components/Campaign';
 import Adventure from './components/Adventure';
@@ -33,7 +34,8 @@ function App() {
             <Route exact path="/campaign/:id" element={<Campaign />} />
             <Route exact path="/adventure/:id" element={<Adventure />} />
             <Route exact path="/encounter/:id" element={<Encounter />} />
-            <Route exact path="/monsters" element={<MonsterBook />}></Route>
+            <Route exact path="/monsterbook" element={<MonsterBook />}></Route>
+            <Route exact path="/monsters" element={<Monsters />}></Route>
             <Route exact path="/equipment" element={<Equipment />}></Route>
             <Route exact path="/spells" element={<Spells />}></Route>
             {/* <Route exact path="/login" element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}></Route> */}
