@@ -3,15 +3,19 @@ import { AppContext } from "../AppContext";
 import { Link } from "react-router-dom";
 
 import { firestore as db } from '../Firebase'
-import { onSnapshot, collection, query, orderBy } from 'firebase/firestore';
+import { onSnapshot, collection, query, orderBy, serverTimestamp, addDoc, writeBatch, doc } from 'firebase/firestore';
+import { handleNew, handleDelete } from "../firebaseData";
 
-import { truncate } from "../utils";
+import { truncate,importMonster } from "../utils";
 import { FaEdit, FaWindowClose, FaDiceSix } from 'react-icons/fa';
 import { monsterTemplate, sizes, types, crRange, sensesList, damageTypes, conditions, languagesList, abilityList, skillList } from "../Forms";
+import monsterManual from "../MonsterImport";
 import { diceRoll, abilityModifier, crToXp } from "../Maths";
+import { v4 as uuidv4 } from 'uuid';
 
 import Nav from "./Nav";
 import Toolbar from "./Toolbar";
+// import uuid4 from "uuid4";
 
 const Monsters = () => {
     const { settings } = useContext(AppContext);
@@ -32,6 +36,45 @@ const Monsters = () => {
         })
         return unsub
       }, [])
+
+      const importMonsterManual = async (file) => {
+          monsterManual.forEach(monster => {
+              console.log(importMonster(monster))
+          })
+
+        const batch = writeBatch(db);
+        const collectionRef = collection(db, "monsters") 
+        monsterManual.forEach(monster => {
+            console.log(importMonster(monster).traits)
+            const payload = {...importMonster(monster), enemy: "monster", created: serverTimestamp(), modified: serverTimestamp()}
+            const id = uuidv4()
+            console.log(id)
+            console.log(payload)
+            batch.set(doc(collectionRef, id), payload)
+        })
+        await batch.commit();        
+    }
+
+    const uploadMonster = async (monster) => {
+        console.log(`uploading monster...`)
+        console.log(monster)
+        const collectionRef = collection(db, "monsters")
+        if (!monster.id) {
+            console.log(`monster id not found, add as new`)
+            console.log(monster)
+            const now = serverTimestamp()
+            console.log(now)
+            const payload = {...monster, created: serverTimestamp(), modified: serverTimestamp()}
+            console.log(payload)
+            const docRef = await addDoc(collectionRef, payload)
+            console.log(docRef.id)
+        }
+        setModal({on: false, type: ""})
+    }
+
+    const addMonster = (monster) => {
+        console.log(monster)
+    }
 
     const editMonster = (monster) => {
         if (monster.id) {console.log(`edit monster ${monster}`)}
@@ -68,7 +111,7 @@ const Monsters = () => {
             <section>
                 <div className="one-column">
                     <h2>Monsters</h2>
-                    <MonsterList monsters={monsters} addMonster={editMonster} deleteMonster={deleteMonster} setSelected={setSelected} setModal={setModal}></MonsterList>
+                    <MonsterList importMonsterManual={importMonsterManual} monsters={monsters} addMonster={editMonster} deleteMonster={deleteMonster} setSelected={setSelected} setModal={setModal}></MonsterList>
                 </div>
             </section>
         </main>
@@ -76,9 +119,26 @@ const Monsters = () => {
     );
 }
 
-const MonsterList = ({ monsters, addMonster, deleteMonster, setSelected, setModal }) => {
+const MonsterList = ({ addMonster, deleteMonster, setSelected, setModal, importMonsterManual }) => {
+    const [ monsters, setMonsters ] = useState();
+
+    useEffect(() => {
+        const collectionRef= collection(db, "monsters")
+        // filter and sort here
+        const q = query(collectionRef, orderBy("name", "asc"))
+        const unsub = onSnapshot(q, (snapshot) => {
+          setMonsters(
+            snapshot.docs.map(
+              doc => (({...doc.data(), id: doc.id}))
+            )
+          )
+        })
+        return unsub
+      }, [])
+
     return (
         <>
+        <button onClick={() => {importMonsterManual()}}>Import Monster Manual</button>
         {<button className="green" onClick={() => {setSelected(monsterTemplate); setModal({on:true, view: "edit"})}}>New Monster</button>}
 
         {monsters && monsters.map(monster => (
@@ -93,7 +153,7 @@ const MonsterList = ({ monsters, addMonster, deleteMonster, setSelected, setModa
                     <FaWindowClose 
                         style={{"cursor": "pointer"}} 
                         color="red"
-                        onClick={() => {deleteMonster("delete monster")}} />
+                        onClick={() => {handleDelete("monsters", monster.id)}} />
 
                     <FaEdit
                         style={{"cursor": "pointer"}} 
