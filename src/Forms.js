@@ -6,8 +6,8 @@ const damageTypes = ["bludgeoning", "piercing", "slashing", "acid", "poison", "f
 const conditions = ["blinded", "charmed", "deafened", "frightened", "grappled", "incapacitated", "invisible", "paralyzed", "petrified", "poisoned", "stunned", "unconcious"].sort()
 const sizes =["tiny", "small", "medium", "large", "huge", "gargantuan"]
 const abilityList = ["str", "dex", "con", "int", "wis", "cha"]
-const languagesList = ["aarakocra", "auran", "common", "dwarvish", "elvish", "giant", "gnomish", "goblin", "halfling", "orc", "abyssal", "celestial", "deep speech", "draconic", "infernal", "primordial", "sylvan", "undercommon"]
-const skillList = ["acrobatics", "animal handling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "nature", "perception", "performance", "persuasion", "religion", "sleight of hand", "stealth", "survival"]
+const languagesList = ["Aarakocra", "Auran", "Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Deep Speech", "Draconic", "Infernal", "Primordial", "Sylvan", "Undercommon"]
+const skillList = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"]
 const skillToAbility = (skill) => {
     switch (true) {
         default:

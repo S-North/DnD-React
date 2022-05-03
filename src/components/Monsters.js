@@ -3,7 +3,7 @@ import { AppContext } from "../AppContext";
 import { Link } from "react-router-dom";
 
 import { firestore as db } from '../Firebase'
-import { onSnapshot, collection, query, orderBy, serverTimestamp, addDoc, writeBatch, doc } from 'firebase/firestore';
+import { onSnapshot, collection, query, orderBy, serverTimestamp, addDoc, writeBatch, doc, limit, where, startAfter, endBefore, getDocs, getDoc } from 'firebase/firestore';
 import { handleNew, handleDelete } from "../firebaseData";
 
 import { truncate,importMonster } from "../utils";
@@ -22,20 +22,6 @@ const Monsters = () => {
     const [ monsters, setMonsters ] = useState();
     const [ modal, setModal ] = useState({on: false, view: ""});
     const [ selected, setSelected ] = useState();
-
-    useEffect(() => {
-        const collectionRef= collection(db, "monsters")
-        // filter and sort here
-        const q = query(collectionRef, orderBy("name", "asc"))
-        const unsub = onSnapshot(q, (snapshot) => {
-          setMonsters(
-            snapshot.docs.map(
-              doc => (({...doc.data(), id: doc.id}))
-            )
-          )
-        })
-        return unsub
-      }, [])
 
       const importMonsterManual = async (file) => {
           monsterManual.forEach(monster => {
@@ -110,7 +96,7 @@ const Monsters = () => {
 
             <section>
                 <div className="one-column">
-                    <h2>Monsters</h2>
+                    
                     <MonsterList importMonsterManual={importMonsterManual} monsters={monsters} addMonster={editMonster} deleteMonster={deleteMonster} setSelected={setSelected} setModal={setModal}></MonsterList>
                 </div>
             </section>
@@ -121,32 +107,121 @@ const Monsters = () => {
 
 const MonsterList = ({ addMonster, deleteMonster, setSelected, setModal, importMonsterManual }) => {
     const [ monsters, setMonsters ] = useState();
+    const [ monsterQuery, setMonsterQuery ] = useState(
+        {
+            search: "Tarra",
+            minCR: 0,
+            maxCR: 30,
+            type: "",
+            itemsPerPage: 10,
+            lastItem: 1,
+            offset: 1
+        }
+    )
+    
+    const [ q, setQ ] = useState(query(collection(db, "monsters"), limit(monsterQuery.itemsPerPage), orderBy("name", "asc")))
+    const [ firstItem, setFirstItem ] = useState()
+    const [ lastItem, setLastItem ] = useState()
 
     useEffect(() => {
+        console.log(q)
+        console.log(monsterQuery)
+        console.log(monsterQuery.minCR)
+
         const collectionRef= collection(db, "monsters")
         // filter and sort here
-        const q = query(collectionRef, orderBy("name", "asc"))
+        console.log("filter updated")
+
+        // const q = query(collectionRef, where("type", "==", "monstrosity"), where("cr", ">", monsterQuery.minCR), limit(monsterQuery.itemsPerPage))
+        // const q = query(collectionRef, where("name", ">=", monsterQuery.search), where("name", "<=", monsterQuery.search + "\uf8ff"))
+        
+
         const unsub = onSnapshot(q, (snapshot) => {
-          setMonsters(
-            snapshot.docs.map(
-              doc => (({...doc.data(), id: doc.id}))
+            console.log("firestore queried")
+            setMonsters(
+                snapshot.docs.map(
+                doc => (({...doc.data(), id: doc.id}))
+                )
             )
-          )
+            setFirstItem("")
         })
+
         return unsub
-      }, [])
+      }, [q, monsterQuery])
+
+    const next = async () => {
+        const docs = await getDocs(q)
+        const lastDoc = docs.docs[docs.docs.length -1]
+        const newQuery = query(
+            collection(db, "monsters"), 
+            limit(monsterQuery.itemsPerPage),
+            orderBy("name", "asc"),
+            startAfter(lastDoc))
+
+        const newDocs = await getDocs(newQuery)
+        if (newDocs.docs.length > 0) {
+            setQ(query(
+                collection(db, "monsters"), 
+                limit(monsterQuery.itemsPerPage),
+                orderBy("name", "asc"),
+                startAfter(lastDoc)))
+
+        } else console.log("no new docs")
+    }
+
+    const prev = async () => {
+        const docs = await getDocs(q)
+        const firstDoc = docs.docs[0]
+        const newQuery = query(
+            collection(db, "monsters"), 
+            limit(monsterQuery.itemsPerPage),
+            orderBy("name", "asc"),
+            endBefore(firstDoc))
+
+        const newDocs = await getDocs(newQuery)
+        if (newDocs.docs.length > 0) {
+            setQ(query(
+                collection(db, "monsters"), 
+                limit(monsterQuery.itemsPerPage),
+                orderBy("name", "asc"),
+                endBefore(firstDoc)))
+
+        } else console.log("no new docs")
+    }
+
+
+      
 
     return (
         <>
-        <button onClick={() => {importMonsterManual()}}>Import Monster Manual</button>
-        {<button className="green" onClick={() => {setSelected(monsterTemplate); setModal({on:true, view: "edit"})}}>New Monster</button>}
+        <div className="flex-row">
+            {/* <h2>Monsters</h2> */}
+            <button disabled onClick={() => {importMonsterManual()}}>Import Disabled</button>
+            {<button className="green" onClick={() => {setSelected(monsterTemplate); setModal({on:true, view: "edit"})}}>New Monster</button>}
+        </div>
+        <details>
+            <summary>Filter & Search</summary>
+            <input type="text" placeholder="search"></input>
+            <div className="flex-row">
+                <select value={monsterQuery.minCR} onChange={(e) => {setMonsterQuery({...monsterQuery, minCR: parseInt(e.target.value)})}}>
+                    {crRange.map(cr => (
+                        <option key={cr} value={cr}>{cr}</option>
+                    ))}
+                </select>
+                <select value={monsterQuery.maxCR} onChange={(e) => {setMonsterQuery({...monsterQuery, maxCR: parseInt(e.target.value)})}}>
+                    {crRange.map(cr => (
+                        <option key={cr} value={cr}>{cr}</option>
+                    ))}
+                </select>
 
+            </div>
+        </details>
         {monsters && monsters.map(monster => (
             <div key={monster.id} className="list-item">
                 <div key={monster.id} style={{"cursor": "pointer"}} onClick={() => {setSelected(monster); setModal({on:true, view: "view"})}}>
                     <div className="link">
                             <h2>{monster.name}</h2>
-                            <em>{truncate(monster.description, 50)}</em>
+                            <p><strong>CR: {monster.cr} - </strong></p><em>{monster.size} {monster.type}</em>
                     </div>
                 </div>
                 <div>
@@ -163,6 +238,10 @@ const MonsterList = ({ addMonster, deleteMonster, setSelected, setModal, importM
                 </div>
             </div>
         ))}
+        <div className="flex-row">
+            <button className="blue" onClick={() => {prev()}}>Prev</button>
+            <button className="blue" onClick={() => {next()}}>Next</button>
+        </div>
         </>
     );
 }
@@ -177,21 +256,115 @@ const MonsterView = ({ monster }) => {
 }
 
 const MonsterForm = ({ selected, setSelected, update}) => {
+    const [ modal, setModal ] = useState({on: false, view: ""})
+    const [ item, setItem ] = useState();
+    const [ tabs, setTabs ] = useState("details");
+    
+    const editTrait = () => {
+        console.log("edit trait")
+    }
+    
+    const editAction = () => {
+        console.log("edit action")
+    }
+
+    const editLegendary = () => {
+        console.log("edit legendary")
+    }
+
     return (
         <>
+        {/* modal window */}
+        {modal.on && <div id="modal-window" class="modal">
+                {/* Modal content */}
+                    <div class="modal-content">
+                        <span class="close" onClick={() => {setModal({"on": false, "type": ""}); setItem({})}}>&times;</span>
+
+                        {modal.view === "trait" &&
+                        <>
+                        <h2>Trait Form</h2>
+                        <input type="text" value={item.name}></input>
+                        <textarea rows="10" type="text" value={item.description}></textarea>
+                        </>}
+
+                        {modal.view === "action" &&
+                        <>
+                        <h2>Action Form</h2>
+                        <input type="text" value={item.name}></input>
+                        <textarea rows="6" value={item.description}></textarea>
+
+                        {item.damage1 && 
+                        <div className="flex-row">
+                            <input type="number" value={item.damage1.hdDice}></input>
+                            <input type="number" value={item.damage1.hdSides}></input>
+                            <input type="number" value={item.damage1.hdBonus}></input>
+                            <select value={item.damage1.type}>
+                                {["none", ...damageTypes].map(type => (
+                                    <option value={type}>{type}</option>
+                                ))}
+                            </select>
+                        </div>}
+
+                        {item.damage2 && 
+                        <div className="flex-row">
+                            <input type="number" value={item.damage2.hdDice}></input>
+                            <input type="number" value={item.damage2.hdSides}></input>
+                            <input type="number" value={item.damage2.hdBonus}></input>
+                            <select value={item.damage2.type}>
+                                {["none", ...damageTypes].map(type => (
+                                    <option value={type}>{type}</option>
+                                ))}
+                            </select>
+                        </div>}
+
+                        {item.damage3 && 
+                        <div className="flex-row">
+                            <input type="number" value={item.damage3.hdDice}></input>
+                            <input type="number" value={item.damage3.hdSides}></input>
+                            <input type="number" value={item.damage3.hdBonus}></input>
+                            <select value={item.damage3.type}>
+                                {["none", ...damageTypes].map(type => (
+                                    <option value={type}>{type}</option>
+                                ))}
+                            </select>
+                        </div>}
+
+                        </>}
+
+                        {modal.view === "legendary" &&
+                        <>
+                        <h2>Legendary Form</h2>
+                        <input type="text" value={item.name}></input>
+                        <textarea type="text" rows={10} value={item.text}></textarea>
+                        <input type="number" value={item.cost}></input>
+                        <input type="number" value={item.actions}></input>
+                        </>}
+                    </div>
+                </div>}
+        
         {selected &&<form onSubmit={(e) => {e.preventDefault(); update(selected)}}>
         <div className="flex-row">
-            <h2>Monster Form</h2>
-            <button className="green" type="submit">Submit</button>
+            {/* <h2>Monster Form</h2> */}
+            <button className="green" type="submit">Save</button>
+        </div>
+        
+        <div id="tabs" className="flex-row">
+            <button className="tab" style={tabs === "details" ? {backgroundColor: "#babdd4"} : {}} onClick={() => {setTabs("details")}}>Details</button>
+            <button className="tab" style={tabs === "skills" ? {backgroundColor: "#babdd4"} : {}} onClick={() => {setTabs("skills")}}>skills</button>
+            <button className="tab" style={tabs === "resist" ? {backgroundColor: "#babdd4"} : {}} onClick={() => {setTabs("resist")}}>resistance</button>
+            <button className="tab" style={tabs === "actions" ? {backgroundColor: "#babdd4"} : {}} onClick={() => {setTabs("actions")}}>actions</button>
+            <button className="tab" style={tabs === "legend" ? {backgroundColor: "#babdd4"} : {}} onClick={() => {setTabs("legend")}}>legendary</button>
+            <button className="tab" style={tabs === "traits" ? {backgroundColor: "#babdd4"} : {}} onClick={() => {setTabs("traits")}}>traits</button>
+
         </div>
 
-            <label htmlFor="name">Name:</label>
+        <div style={tabs === "details" ? {display: "block"} : {display: "none"}}>
+        <label htmlFor="name">Name:</label>
             <input id="name" type="text" required placeholder="name"
                 value={ selected.name } 
                 onChange={(e) => {setSelected({...selected, "name": e.target.value})}} />
 
             <div className="flex-row">
-
                 <label htmlFor="type">Size:</label>
                 <select name="size" id="size" value={selected.size} onChange={e => {setSelected({...selected, "size": e.target.value})}}>
                     {sizes.map(o => (
@@ -343,7 +516,10 @@ const MonsterForm = ({ selected, setSelected, update}) => {
                 ))}
             </div>
 
-            <hr/><h2>Languages</h2><br />
+        </div>
+        
+        <div style={tabs === "skills" ? {display: "block"} : {display: "none"}}>
+        <hr/><h2>Languages</h2><br />
             <div className="flex-checkboxes">
                 {languagesList.map((c) => (
                 <div key={c} className="checkboxs">
@@ -358,7 +534,7 @@ const MonsterForm = ({ selected, setSelected, update}) => {
                 ))}
             </div>
 
-            <hr/><h2>Skils</h2><br />
+            <hr/><h2>Skills</h2><br />
             <div className="flex-checkboxes">
                 {skillList.map((c) => (
                 <div key={c} className="checkboxs">
@@ -372,65 +548,163 @@ const MonsterForm = ({ selected, setSelected, update}) => {
                 </div>
                 ))}
             </div>
+        </div>
+
+        <div style={tabs === "resist" ? {display: "block"} : {display: "none"}}>
+            <div className="list-columns">
+
             
-            <hr/><h2>Vulnerabilities</h2><br />
-            <div className="flex-checkboxes">
-                {damageTypes.map((c) => (
-                <div key={c} className="checkboxs">
-                        <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
-                            checked={selected.vulnerabilities.includes(c)} 
-                            value={c} 
-                            onChange={(e) => {selected.vulnerabilities.includes(e.target.value) ?
-                                setSelected({...selected, "vulnerabilities": [...selected.vulnerabilities.filter(f => { return f !== e.target.value})]})
-                                : setSelected({...selected, "vulnerabilities": [...selected.vulnerabilities, e.target.value]})}} />
-                        <label htmlFor={c}>{c}</label>
+            <div style={{padding: "0.5ch", backgroundColor: "white", boxShadow: "0 0 5px grey"}}>
+                <h2 style={{padding: "0.5ch"}}>Vulnerabilities</h2>
+                <div className="flex-checkboxes">
+                    {damageTypes.map((c) => (
+                    <div key={c} className="checkboxs">
+                            <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
+                                checked={selected.vulnerabilities.includes(c)} 
+                                value={c} 
+                                onChange={(e) => {selected.vulnerabilities.includes(e.target.value) ?
+                                    setSelected({...selected, "vulnerabilities": [...selected.vulnerabilities.filter(f => { return f !== e.target.value})]})
+                                    : setSelected({...selected, "vulnerabilities": [...selected.vulnerabilities, e.target.value]})}} />
+                            <label htmlFor={c}>{c}</label>
+                    </div>
+                    ))}
                 </div>
-                ))}
             </div>
 
-            <hr/><h2>Resistances</h2><br />
-            <div className="flex-checkboxes">
-                {damageTypes.map((c) => (
-                <div key={c} className="checkboxs">
-                        <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
-                            checked={selected.resistances.includes(c)} 
-                            value={c} 
-                            onChange={(e) => {selected.resistances.includes(e.target.value) ?
-                                setSelected({...selected, "resistances": [...selected.resistances.filter(f => { return f !== e.target.value})]})
-                                : setSelected({...selected, "resistances": [...selected.resistances, e.target.value]})}} />
-                        <label htmlFor={c}>{c}</label>
+            <div style={{padding: "0.5ch", backgroundColor: "white", boxShadow: "0 0 5px grey"}}>
+                <h2 style={{paddingBottom: "2ch"}}>Resistances</h2>
+                <div className="flex-checkboxes">
+                    {damageTypes.map((c) => (
+                    <div key={c} className="checkboxs">
+                            <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
+                                checked={selected.resistances.includes(c)} 
+                                value={c} 
+                                onChange={(e) => {selected.resistances.includes(e.target.value) ?
+                                    setSelected({...selected, "resistances": [...selected.resistances.filter(f => { return f !== e.target.value})]})
+                                    : setSelected({...selected, "resistances": [...selected.resistances, e.target.value]})}} />
+                            <label htmlFor={c}>{c}</label>
+                    </div>
+                    ))}
                 </div>
-                ))}
             </div>
 
-            <hr/><h2>Immuities</h2><br />
-            <div className="flex-checkboxes">
-                {damageTypes.map((c) => (
-                <div key={c} className="checkboxs">
-                        <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
-                            checked={selected.damageImmunity.includes(c)} 
-                            value={c} 
-                            onChange={(e) => {selected.damageImmunity.includes(e.target.value) ?
-                                setSelected({...selected, "damageImmunity": [...selected.damageImmunity.filter(f => { return f !== e.target.value})]})
-                                : setSelected({...selected, "damageImmunity": [...selected.damageImmunity, e.target.value]})}} />
-                        <label htmlFor={c}>{c}</label>
+            <div style={{padding: "0.5ch", backgroundColor: "white", boxShadow: "0 0 5px grey"}}>
+
+                <h2>Immuities</h2>
+                <div className="flex-checkboxes">
+                    {damageTypes.map((c) => (
+                    <div key={c} className="checkboxs">
+                            <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
+                                checked={selected.damageImmunity.includes(c)} 
+                                value={c} 
+                                onChange={(e) => {selected.damageImmunity.includes(e.target.value) ?
+                                    setSelected({...selected, "damageImmunity": [...selected.damageImmunity.filter(f => { return f !== e.target.value})]})
+                                    : setSelected({...selected, "damageImmunity": [...selected.damageImmunity, e.target.value]})}} />
+                            <label htmlFor={c}>{c}</label>
+                    </div>
+                    ))}
                 </div>
-                ))}
             </div>
-            <br />
-            <div className="flex-checkboxes">
-                {conditions.map((c) => (
-                <div key={c} className="checkboxs">
-                        <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
-                            checked={selected.conditionImmunity.includes(c)} 
-                            value={c} 
-                            onChange={(e) => {selected.conditionImmunity.includes(e.target.value) ?
-                                setSelected({...selected, "conditionImmunity": [...selected.conditionImmunity.filter(f => { return f !== e.target.value})]})
-                                : setSelected({...selected, "conditionImmunity": [...selected.conditionImmunity, e.target.value]})}} />
-                        <label htmlFor={c}>{c}</label>
+
+            <div style={{padding: "0.5ch", backgroundColor: "white", boxShadow: "0 0 5px grey"}}>
+                <div className="flex-checkboxes">
+                    {conditions.map((c) => (
+                    <div key={c} className="checkboxs">
+                            <input title={c} style={{"cursor": "pointer"}} type="checkbox" name={c} 
+                                checked={selected.conditionImmunity.includes(c)} 
+                                value={c} 
+                                onChange={(e) => {selected.conditionImmunity.includes(e.target.value) ?
+                                    setSelected({...selected, "conditionImmunity": [...selected.conditionImmunity.filter(f => { return f !== e.target.value})]})
+                                    : setSelected({...selected, "conditionImmunity": [...selected.conditionImmunity, e.target.value]})}} />
+                            <label htmlFor={c}>{c}</label>
+                    </div>
+                    ))}
                 </div>
-                ))}
             </div>
+                
+</div>
+        </div>
+
+        
+        <div style={tabs === "actions" ? {display: "block"} : {display: "none"}}>
+            {/* actions */}
+            {selected.actions && <div id="actions" className="list-columns">
+                {selected.actions.map((action, i) => (
+                    <div className="flex-row" key={i}>
+                        <div className="list-item" style={{textAlign: "left", width: "100%"}}>
+                            <div className="flex-row" style={{cursor: "pointer", width: "100%"}} onClick={() => {setItem(action); setModal({on: true, view: "action"})}}>
+                                {action.name && <h2 style={{display: "inline-block", paddingRight: "1ch", width: "15ch", textAlign: "left"}}>{action.name}: </h2>}
+                                {action.description && <p style={{display: "inline-block", textAlign: "left", width: "100%"}}>{action.description}</p>}
+                            </div>
+                            <FaWindowClose size="20px" color="red" style={{cursor: "pointer", float: "right"}} onClick={() => {window.alert("delete")}}></FaWindowClose>
+                        </div>
+                    </div>
+                ))}
+            </div>}
+        </div>
+
+        <div style={tabs === "legend" ? {display: "block"} : {display: "none"}}>
+            {/* legendary */}
+            {selected.legendary && <div id="legendary" className="list-columns">
+                {selected.legendary.map((action, i) => (
+                    <div className="flex-row" key={i}>
+                        <div className="list-item" style={{textAlign: "left", width: "100%"}}>
+                            <div className="flex-row" style={{cursor: "pointer", width: "100%"}} onClick={() => {setItem(action); setModal({on: true, view: "legendary"})}}>
+                                {action.name && <h2 style={{display: "inline-block", paddingRight: "1ch", width: "15ch", textAlign: "left"}}>{action.name}: </h2>}
+                                {action.text && <p style={{display: "inline-block", textAlign: "left", width: "100%"}}>{truncate(action.text, 70)}</p>}
+                            </div>
+                            <FaWindowClose size="20px" color="red" style={{cursor: "pointer", float: "right"}} onClick={() => {window.alert("delete")}}></FaWindowClose>
+                        </div>
+                    </div>
+                ))}
+            </div>}
+        </div>
+
+        <div style={tabs === "traits" ? {display: "block"} : {display: "none"}}>
+            {/* traits */}
+            {selected.traits && <div id="traits" className="list-columns">
+                {selected.traits.map((trait, i) => (
+                    <div className="flex-row" key={i}>
+                        <div className="list-item" style={{textAlign: "left", width: "100%"}}>
+                            <div className="flex-row" style={{cursor: "pointer", width: "100%"}} onClick={() => {setItem(trait); setModal({on: true, view: "trait"})}}>
+                                {trait.name && <h2 style={{display: "inline-block", paddingRight: "1ch", width: "15ch", textAlign: "left"}}>{trait.name}: </h2>}
+                                {trait.description && <p style={{display: "inline-block", textAlign: "left", width: "100%"}}>{trait.description}</p>}
+                                <FaWindowClose size="20px" color="red" style={{cursor: "pointer", float: "right"}} onClick={() => {window.alert("delete")}}></FaWindowClose>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                <br></br>
+            </div>}
+        </div>
+            
+            
+
+            
+
+            
+
+            
+
+            {/* spell slots */}
+            {selected.spellSlots && <div id="spellslots">
+                <ol>
+                    {selected.spellSlots.map((slot, i) => (
+                        <li>{slot}</li>
+                    ))}
+                </ol>
+                <br></br>
+            </div>}
+
+            {/* spells */}
+            {selected.spells && <div id="spells">
+                <ul>
+                    {selected.spells.map((spell, i) => (
+                        <li>{spell}</li>
+                    ))}
+                </ul>
+                <br></br>
+            </div>}
         </form>}
         </>
     );

@@ -187,7 +187,7 @@ section {
   background-color: var(--paper);
   box-shadow: var(--box-shadow);
   color: black;
-  padding: 0.5ch 0.5ch 0ch 0.5ch;
+  padding: 0.5ch 0.5ch 0.5ch 0.5ch;
   border-radius: 1px;
   animation: shrink 0.05s ease-in 1 normal forwards;
 }
@@ -337,12 +337,32 @@ button:hover {
   text-align: center;
 }
 
+.list-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch
+}
+
 summary::-webkit-details-marker {display: none; }
 #details summary::before {
   background-color: rgb(145, 145, 145);
   color: blue;
 }
 
+#tabs {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  background-color: #c9cad4;
+  color: black;
+  margin-bottom: 1ch;
+}
+
+.tab {
+  padding: 1ch;
+  flex-grow: 1;
+  margin: 0;
+}
 
 form {
   box-sizing: inherit;
@@ -435,8 +455,10 @@ input[type=number]::-webkit-outer-spin-button {
   /* background-color: #fefefe; */
   background: url(./assets/full-bloom.png);
   margin: 1ch auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 0.5ch;
   border: 1px solid #888;
+  max-width: 700px;
+  min-height: 80%;
   /* width: max-content; Could be more or less, depending on screen size */
   /* min-width: 40ch; */
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.434);
